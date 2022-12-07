@@ -1,0 +1,23 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+        flatDir {
+            dirs '..\\WallpaperApp\\androidBuild\\unityLibrary\\libs'
+        }
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+rootProject.name = "UnityWrapper"
+include ':app'
+include ':unityLibrary'
+
+project(':unityLibrary').projectDir=new File('..\\WallpaperApp\\androidBuild\\unityLibrary')
