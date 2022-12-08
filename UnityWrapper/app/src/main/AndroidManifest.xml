@@ -36,6 +36,11 @@
             </meta-data>
 
         </activity>
+        <activity android:name=".UnityToAndroidImplementation"
+
+            >
+
+        </activity>
 
         <service
             android:name=".MyWallpaperService"

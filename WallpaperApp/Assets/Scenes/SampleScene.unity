@@ -536,8 +536,8 @@ GameObject:
   m_Component:
   - component: {fileID: 473877031}
   - component: {fileID: 473877036}
+  - component: {fileID: 473877037}
   - component: {fileID: 473877034}
-  - component: {fileID: 473877035}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -558,7 +558,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &473877034
 MonoBehaviour:
@@ -575,18 +575,6 @@ MonoBehaviour:
   emailInput: {fileID: 485993611}
   passwordInput: {fileID: 1525694593}
   outputLog: {fileID: 1523701537}
---- !u!114 &473877035
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 473877029}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 71fda05a048b476408ce09f8c616b510, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &473877036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -599,8 +587,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d9b247fb39270143a8725ab2e726ce6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_NetworkManager: {fileID: 473877035}
+  m_NetworkManager: {fileID: 473877037}
   m_UIHandler: {fileID: 473877034}
+--- !u!114 &473877037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473877029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71fda05a048b476408ce09f8c616b510, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &485993609
 GameObject:
   m_ObjectHideFlags: 0
@@ -3245,6 +3245,37 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!1 &1704644855
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1704644856}
+  m_Layer: 0
+  m_Name: ----------Managers-----------
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1704644856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704644855}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1978687619
 GameObject:
   m_ObjectHideFlags: 0
@@ -3291,7 +3322,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1978687623
 MonoBehaviour:

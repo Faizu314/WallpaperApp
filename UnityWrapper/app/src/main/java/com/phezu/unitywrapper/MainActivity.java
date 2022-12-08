@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void runUnity() {
-        Intent intent = new Intent(this, UnityPlayerActivity.class);
+        Intent intent = new Intent(this, UnityToAndroidImplementation.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
         startActivity(intent);
     }

@@ -32,9 +32,9 @@ android {
     signingConfigs {
         release {
             storeFile file('C:/Users/Faizan/.android/user.keystore')
-            storePassword 'com.phezu'
+            storePassword ''
             keyAlias 'phezu1'
-            keyPassword 'com.phezu'
+            keyPassword ''
         }
     }
 
