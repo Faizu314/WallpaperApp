@@ -16,16 +16,14 @@ public abstract class OverrideUnityActivity extends UnityPlayerActivity
     public static final String START_AS_APPLICATION_COMMAND = "START_AS_APPLICATION";
     public static final String GET_IS_WALLPAPER_SET_COMMAND = "GET_IS_WALLPAPER_SET";
 
-    protected Object mCommandResult;
+    protected String mCommandResult;
 
-    public Object executeCommandInUnity(String command) {
+    public static void executeCommandInUnity(String command) {
         UnityPlayer.UnitySendMessage(ANDROID_COMMUNICATOR_GAMEOBJECT, COMMAND_FUNCTION, command);
-        Object tempResult = mCommandResult;
-        return tempResult;
     }
 
-    public void receiveCommandResult(Object commandResult) {
-        mCommandResult = null;
+    public void receiveCommandResult(String commandResult) {
+        mCommandResult = "";
         mCommandResult = commandResult;
     }
 
