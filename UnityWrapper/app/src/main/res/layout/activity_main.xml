@@ -7,10 +7,10 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/previewButton"
+        android:id="@+id/activateWallpaperButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Preview Wallpaper"
+        android:text="Activate Wallpaper"
         app:layout_constraintBottom_toTopOf="@+id/unityButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Start Unity"
-        app:layout_constraintTop_toBottomOf="@+id/previewButton"
+        app:layout_constraintTop_toBottomOf="@+id/activateWallpaperButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

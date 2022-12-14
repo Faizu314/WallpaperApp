@@ -1,54 +1,55 @@
 using UnityEngine;
+using Phezu.SceneManagingSystem;
 using Phezu.Util;
 
 namespace Wallpaper {
 
     public class AppManager : Singleton<AppManager> {
-        [SerializeField] [RequireInterface(typeof(INetworkManager))]
-        private Object m_NetworkManager;
+        [SerializeField] [RequireInterface(typeof(IAndroidInterface))]
+        private Object m_AndroidInterface;
 
-        [SerializeField] private UIHandler m_UIHandler;
+        [Header("Scenes")]
+        [SerializeField][SceneField] private string wallpaperScene;
+        [SerializeField][SceneField] private string appEntryScene;
 
-        private INetworkManager NetworkManager => (INetworkManager)m_NetworkManager;
+        private int m_SetWallpaperID = -1;
+        public int PreviewWallpaperID { get; private set; }
 
-        public void SignUp() {
-            m_UIHandler.OnSubmit();
-            //if the user input was valid we sign user up.
-            if (m_UIHandler.IsFormValid)
-                SignUpUser();
+        public IAndroidInterface AndroidInterface => (IAndroidInterface)m_AndroidInterface;
+
+        private void Start() {
+            m_SetWallpaperID = PlayerPrefs.GetInt("WallpaperID", -1);
         }
 
-        public void SignIn() {
-            m_UIHandler.OnSubmit();
-            //if the user input was valid we sign user in.
-            if (m_UIHandler.IsFormValid)
-                SignInUser();
+        private void OnDestroy() {
+            PlayerPrefs.SetInt("WallpaperID", m_SetWallpaperID);
         }
 
-        public void GoogleSignIn() {
-            NetworkManager?.SignInViaGoogle();
-            //Load the home page
+        public void StartAsWallpaper() {
+            SceneLoadManager.Instance.LoadNewScene(wallpaperScene, false);
         }
 
-        public void FacebookSignIn() {
-            NetworkManager?.SignInViaFacebook();
-            //Load the home page
+        public void StartAsApplication() {
+            SceneLoadManager.Instance.LoadNewScene(appEntryScene, false);
         }
 
-        private void SignUpUser() {
-            var email = m_UIHandler.GetUserEmail();
-            var pass = m_UIHandler.GetUserPass();
 
-            NetworkManager?.SignUpViaEmail(email, pass);
-            //Load the home page
+        private void PreviewWallpaper() {
+            SceneLoadManager.Instance.LoadNewScene(wallpaperScene, false);
         }
 
-        private void SignInUser() {
-            var email = m_UIHandler.GetUserEmail();
-            var pass = m_UIHandler.GetUserPass();
+        public bool IsWallpaperSet() {
+            return m_SetWallpaperID != -1;
+        }
 
-            NetworkManager?.SignInViaEmail(email, pass);
-            //Load the home page
+        public void OnPreviewWallpaperClick(int wallpaperID) {
+            PreviewWallpaperID = wallpaperID;
+            PreviewWallpaper();
+        }
+
+        public void OnSetWallpaperClick(int wallpaperID) {
+            m_SetWallpaperID = wallpaperID;
+            PreviewWallpaperID = wallpaperID;
         }
     }
 }

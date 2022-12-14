@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.phezu.scenemanagement": "https://github.com/harrissaleem/UnityPackages.git?path=/Assets/com.phezu.scenemanagement",
     "com.phezu.util": "https://github.com/harrissaleem/UnityPackages.git?path=/Assets/com.phezu.util",
     "com.unity.collab-proxy": "1.17.6",
     "com.unity.feature.development": "1.0.1",

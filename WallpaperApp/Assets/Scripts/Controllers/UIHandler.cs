@@ -12,7 +12,8 @@ namespace Wallpaper {
         private string UserEmail => emailInput.text;
         private string UserPass => passwordInput.text;
 
-        public bool IsFormValid { get; private set; }
+        public bool IsFormValid => !string.IsNullOrWhiteSpace(UserEmail) && !string.IsNullOrWhiteSpace(UserPass);
+        public IAndroidInterface androidInterface => AppManager.Instance.AndroidInterface;
 
         private void Start() {
             emailInput.text = string.Empty;
@@ -23,21 +24,40 @@ namespace Wallpaper {
             Application.logMessageReceived += OnDebugLog;
         }
 
-        //This method will check using an external class whether the user input is valid and set the IsFormValid property.
-        //In case of an invalid input we will set a hint text that will log the user.
-        public void OnSubmit() {
-            IsFormValid = !string.IsNullOrWhiteSpace(UserEmail) && !string.IsNullOrWhiteSpace(UserPass);
+        public void SignUp() {
+            if (IsFormValid)
+                SignUpUser();
         }
 
-        public string GetUserEmail() {
-            //check if valid before returning
-            return UserEmail;
+        public void SignIn() {
+            if (IsFormValid)
+                SignInUser();
         }
 
-        public string GetUserPass() {
-            //check if valid before returning
-            return UserPass;
+        public void GoogleSignIn() {
+            androidInterface.SignInViaGoogle();
         }
+
+        public void FacebookSignIn() {
+            androidInterface.SignInViaFacebook();
+        }
+
+        private void SignUpUser() {
+            var email = UserEmail;
+            var pass = UserPass;
+
+            androidInterface.SignUpViaEmail(email, pass);
+        }
+
+        private void SignInUser() {
+            var email = UserEmail;
+            var pass = UserPass;
+
+            androidInterface.SignInViaEmail(email, pass);
+        }
+
+
+
 
         private void OnDebugLog(string condition, string stackTrace, LogType type) {
             switch (type) {

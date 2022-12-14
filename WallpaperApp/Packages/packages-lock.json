@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.phezu.scenemanagement": {
+      "version": "https://github.com/harrissaleem/UnityPackages.git?path=/Assets/com.phezu.scenemanagement",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.phezu.util": "1.0.3"
+      },
+      "hash": "0ed9e015d8e03d1501981496dca2d29d269dcf84"
+    },
     "com.phezu.util": {
       "version": "https://github.com/harrissaleem/UnityPackages.git?path=/Assets/com.phezu.util",
       "depth": 0,
