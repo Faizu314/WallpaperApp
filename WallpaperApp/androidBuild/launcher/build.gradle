@@ -5,7 +5,7 @@ dependencies {
     }
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     buildToolsVersion '30.0.2'
 
     compileOptions {
@@ -14,8 +14,8 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 29
-        targetSdkVersion 30
+        minSdkVersion 22
+        targetSdkVersion 31
         applicationId 'com.phezu.wallpaper'
         ndk {
             abiFilters 'armeabi-v7a'
@@ -31,7 +31,7 @@ android {
 
     signingConfigs {
         release {
-            storeFile file('C:/Users/bilal/user.keystore')
+            storeFile file('C:/Users/Faizan/.android/user.keystore')
             storePassword ''
             keyAlias 'phezu1'
             keyPassword ''
