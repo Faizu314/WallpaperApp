@@ -5,7 +5,7 @@ using Phezu.Util;
 namespace Wallpaper {
 
     public class AppManager : Singleton<AppManager> {
-        [SerializeField] [RequireInterface(typeof(IAndroidInterface))]
+        [SerializeField] [RequireInterface(typeof(IAndroidCommander))]
         private Object m_AndroidInterface;
 
         [Header("Scenes")]
@@ -15,7 +15,7 @@ namespace Wallpaper {
         private int m_SetWallpaperID = -1;
         public int PreviewWallpaperID { get; private set; }
 
-        public IAndroidInterface AndroidInterface => (IAndroidInterface)m_AndroidInterface;
+        public IAndroidCommander AndroidCommander => (IAndroidCommander)m_AndroidInterface;
 
         private void Start() {
             m_SetWallpaperID = PlayerPrefs.GetInt("WallpaperID", -1);

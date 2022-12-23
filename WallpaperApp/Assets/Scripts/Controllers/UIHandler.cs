@@ -13,7 +13,7 @@ namespace Wallpaper {
         private string UserPass => passwordInput.text;
 
         public bool IsFormValid => !string.IsNullOrWhiteSpace(UserEmail) && !string.IsNullOrWhiteSpace(UserPass);
-        public IAndroidInterface androidInterface => AppManager.Instance.AndroidInterface;
+        public IAndroidCommander androidInterface => AppManager.Instance.AndroidCommander;
 
         private void Start() {
             emailInput.text = string.Empty;

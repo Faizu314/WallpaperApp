@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1094857379190",
+    "project_id": "wallpaperapp-f5761",
+    "storage_bucket": "wallpaperapp-f5761.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1094857379190:android:bfad5921615fb6d85ffe57",
+        "android_client_info": {
+          "package_name": "com.phezu.unitywrapper"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1094857379190-e315p8d5abc4mpfe6qshc4g0vlohd7lb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD7p4PjJBnMYU0Icc7GtTY4OP7we_jqvi4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1094857379190-e315p8d5abc4mpfe6qshc4g0vlohd7lb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

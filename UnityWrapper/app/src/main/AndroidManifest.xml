@@ -41,6 +41,8 @@
 
         </activity>
 
+        <activity android:name=".GoogleHelperActivity"></activity>
+
         <service
             android:name=".MyWallpaperService"
             android:process=":WallpaperService"

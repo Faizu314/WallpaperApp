@@ -4,9 +4,9 @@
 4    package="com.unity3d.player" >
 5
 6    <uses-sdk
-7        android:minSdkVersion="29"
+7        android:minSdkVersion="22"
 7-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml
-8        android:targetSdkVersion="30" />
+8        android:targetSdkVersion="31" />
 8-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml
 9
 10    <uses-feature android:glEsVersion="0x00030000" />
