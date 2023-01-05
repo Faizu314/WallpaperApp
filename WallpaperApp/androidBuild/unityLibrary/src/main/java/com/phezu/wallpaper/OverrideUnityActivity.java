@@ -12,9 +12,11 @@ public abstract class OverrideUnityActivity extends UnityPlayerActivity
 
     private static final String ANDROID_COMMUNICATOR_GAMEOBJECT = "AndroidCommunicator";
     private static final String COMMAND_FUNCTION = "ExecuteAndroidCommand";
+
     public static final String START_AS_WALLPAPER_COMMAND = "START_AS_WALLPAPER";
     public static final String START_AS_APPLICATION_COMMAND = "START_AS_APPLICATION";
     public static final String GET_IS_WALLPAPER_SET_COMMAND = "GET_IS_WALLPAPER_SET";
+    public static final String GET_IMAGE_FROM_ANDROID_COMMAND = "GET_IMAGE_FROM_ANDROID";
 
     protected String mCommandResult;
 
@@ -42,9 +44,8 @@ public abstract class OverrideUnityActivity extends UnityPlayerActivity
 
     //Here is the interface unity will use to communicate with android
 
-    public abstract void SignUpViaEmail(String email, String password);
-    public abstract void SignInViaEmail(String email, String password);
-    public abstract void SignInViaGoogle();
-    public abstract void SignInViaFacebook();
-
+    public abstract void OpenAndroidGallery();
+    public abstract byte[] GetImageData();
+    public abstract int GetImageHeight();
+    public abstract int GetImageWidth();
 }

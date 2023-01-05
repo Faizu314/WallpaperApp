@@ -1,14 +1,27 @@
 package com.phezu.unitywrapper;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.Matrix;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.Toast;
 
 import com.phezu.wallpaper.OverrideUnityActivity;
 
+import java.io.IOException;
+import java.nio.ByteBuffer;
+
 public class WallpaperAppActivity extends OverrideUnityActivity {
+
+    private final int SELECT_ANDROID_IMAGE = 10;
+
+    private byte[] mSelectedImage;
+    private int mImageHeight;
+    private int mImageWidth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,36 +30,88 @@ public class WallpaperAppActivity extends OverrideUnityActivity {
 
         FrameLayout layout = mUnityPlayer;
         {
-            Button myButton = new Button(this);
-            myButton.setText("Back");
-            myButton.setX(10);
-            myButton.setY(10);
+            Button backButton = new Button(this);
+            backButton.setText("Back");
+            backButton.setX(10);
+            backButton.setY(10);
 
-            myButton.setOnClickListener(view -> {
-                mUnityPlayer.destroy();
-                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+            backButton.setOnClickListener(view -> {
+                onBackButtonPressed();
             });
-            layout.addView(myButton, 300, 200);
+            layout.addView(backButton, 300, 200);
         }
     }
 
-    @Override
-    public void SignUpViaEmail(String email, String password) {
-        Log.d("Me", "SignUpViaEmail: email = " + email + ", password = " + password);
+    private void onBackButtonPressed() {
+        mUnityPlayer.destroy();
+        startActivity(new Intent(getApplicationContext(), MainActivity.class));
     }
 
     @Override
-    public void SignInViaEmail(String email, String password) {
-        Log.d("Me", "SignInViaEmail: email = " + email + ", password = " + password);
+    public void OpenAndroidGallery() {
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+
+        startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECT_ANDROID_IMAGE);
     }
 
     @Override
-    public void SignInViaGoogle() {
-        Log.d("Me", "SignInViaGoogle");
+    public byte[] GetImageData() {
+        return mSelectedImage;
     }
 
     @Override
-    public void SignInViaFacebook() {
-        Log.d("Me", "SignInViaFacebook");
+    public int GetImageHeight() {
+        return mImageHeight;
+    }
+
+    @Override
+    public int GetImageWidth() {
+        return mImageWidth;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == SELECT_ANDROID_IMAGE) {
+            if (resultCode == RESULT_OK) {
+                if (data != null) {
+                    try {
+                        onImageSelectedFromGallery(data);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            } else if (resultCode == RESULT_CANCELED)  {
+                Toast.makeText(this, "Canceled", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private void onImageSelectedFromGallery(Intent data) throws IOException {
+        Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), data.getData());
+        //Because unity interprets it upside down
+        bitmap = flipBitMapVertically(bitmap);
+
+        mSelectedImage = toByteArray(bitmap);
+        mImageHeight = bitmap.getHeight();
+        mImageWidth = bitmap.getWidth();
+
+        executeCommandInUnity(GET_IMAGE_FROM_ANDROID_COMMAND);
+    }
+
+    private Bitmap flipBitMapVertically(Bitmap source) {
+        Matrix matrix = new Matrix();
+        matrix.postScale(1, -1, source.getWidth() / 2f, source.getHeight() / 2f);
+        return Bitmap.createBitmap(source, 0, 0, source.getWidth(), source.getHeight(), matrix, true);
+    }
+
+    private byte[] toByteArray(Bitmap source) {
+        ByteBuffer byteBuffer = ByteBuffer.allocate(source.getByteCount());
+        source.copyPixelsToBuffer(byteBuffer);
+
+        return byteBuffer.array();
     }
 }
