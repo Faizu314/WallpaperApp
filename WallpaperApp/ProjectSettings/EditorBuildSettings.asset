@@ -6,16 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Application.unity
+    path: Assets/Scenes/Master.unity
     guid: e33c8d038d86b7c41ac7ee5fab250f02
-  - enabled: 0
-    path: Assets/Scenes/WallpaperService.unity
-    guid: d6ab76e3883a88241af633da5ee32341
-  - enabled: 0
-    path: Assets/Scenes/RegistrationPage.unity
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
     guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 0
-    path: Assets/Scenes/TestScenes/CropTesting.unity
-    guid: 8e4d273c5edd4f742823ab83682d0489
+  - enabled: 1
+    path: Assets/Scenes/TestAppScene.unity
+    guid: 9530a561bef0d0c4aa8df116c2601d04
+  - enabled: 1
+    path: Assets/Scenes/WallpaperScene.unity
+    guid: d6ab76e3883a88241af633da5ee32341
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: a838b956a01bac34aa41e6e75d4ecd81, type: 2}
