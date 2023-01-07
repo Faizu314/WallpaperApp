@@ -6,34 +6,65 @@ namespace Wallpaper {
     [AddComponentMenu("Wallpaper/App Manager")]
     public class AppManager : Singleton<AppManager> {
 
+        private const string SET_WALLPAPER_KEY = "WallpaperID";
+
         public enum Page { Home, Collection, Preview, Editor, ImageCrop, InputField };
 
+        [SerializeField][RequireInterface(typeof(IWallpaperDatabase))]
+        private Object m_WallpaperDatabase;
+        private IWallpaperDatabase WallpaperDatabase => (IWallpaperDatabase)m_WallpaperDatabase;
+
+
         [Header("Popups")][Space(5)]
-        [SerializeField] private Canvas m_ImageCropCanvas;
-        [SerializeField] private Canvas m_InputFieldCanvas;
+        [SerializeField] private BaseController m_ImageCropCanvas;
+        [SerializeField] private BaseController m_InputFieldCanvas;
 
         [Header("Screens")][Space(5)]
-        [SerializeField] private Canvas m_HomeCanvas;
-        [SerializeField] private Canvas m_WallpaperCollectionCanvas;
-        [SerializeField] private Canvas m_WallpaperPreviewCanvas;
-        [SerializeField] private Canvas m_WallpaperEditorCanvas;
-
-        private int m_SetWallpaperID;
-        public int PreviewWallpaperID { get; private set; }
+        [SerializeField] private BaseController m_HomeCanvas;
+        [SerializeField] private BaseController m_WallpaperCollectionCanvas;
+        [SerializeField] private BaseController m_WallpaperPreviewCanvas;
+        [SerializeField] private BaseController m_WallpaperEditorCanvas;
 
         private GameObject m_CurrentlyActiveCanvas;
+        private string m_SetWallpaperID;
 
         private void Awake() {
-            m_SetWallpaperID = PlayerPrefs.GetInt("WallpaperID", -1);
+            Initialize();
+            DeactivateAllScreens();
+            InvokeOnApplicationStart();
+        }
 
+        private void Initialize() {
+            m_SetWallpaperID = PlayerPrefs.GetString(SET_WALLPAPER_KEY, null);
+        }
+
+        private void DeactivateAllScreens() {
+            m_ImageCropCanvas.gameObject.SetActive(false);
             m_InputFieldCanvas.gameObject.SetActive(false);
             m_HomeCanvas.gameObject.SetActive(false);
             m_WallpaperCollectionCanvas.gameObject.SetActive(false);
             m_WallpaperPreviewCanvas.gameObject.SetActive(false);
+            m_WallpaperEditorCanvas.gameObject.SetActive(false);
+        }
+
+        private void InvokeOnApplicationStart() {
+            ///Can't rely on events because the listener's Awake method may not have been called at this point.
+
+            m_ImageCropCanvas.OnApplicationStart();
+            m_InputFieldCanvas.OnApplicationStart();
+            m_HomeCanvas.OnApplicationStart();
+            m_WallpaperCollectionCanvas.OnApplicationStart();
+            m_WallpaperPreviewCanvas.OnApplicationStart();
+            m_WallpaperEditorCanvas.OnApplicationStart();
         }
 
         private void OnDestroy() {
-            PlayerPrefs.SetInt("WallpaperID", m_SetWallpaperID);
+            PlayerPrefs.SetString(SET_WALLPAPER_KEY, m_SetWallpaperID);
+        }
+
+        public void StartAsWallpaperService() {
+            Wallpaper wallpaper = WallpaperDatabase.Load(m_SetWallpaperID);
+            ApplicationEvents.InvokeOnWallpaperPreview(wallpaper);
         }
 
         public void ShowScreen(Page page) {
@@ -64,7 +95,9 @@ namespace Wallpaper {
                 m_CurrentlyActiveCanvas.SetActive(false);
         }
 
-        private void ShowCanvas(Canvas canvas) {
+        private void ShowCanvas(BaseController canvas) {
+            if (canvas == null)
+                return;
             if (m_CurrentlyActiveCanvas != null)
                 m_CurrentlyActiveCanvas.SetActive(false);
 
@@ -73,11 +106,12 @@ namespace Wallpaper {
         }
 
         public bool IsWallpaperSet() {
-            return m_SetWallpaperID != -1;
+            return m_SetWallpaperID != null;
         }
 
-        public void SetCurrentWallpaper(int wallpaperID) {
+        public void SetCurrentWallpaper(string wallpaperID) {
             m_SetWallpaperID = wallpaperID;
+            PlayerPrefs.SetString(SET_WALLPAPER_KEY, m_SetWallpaperID);
         }
 
     }

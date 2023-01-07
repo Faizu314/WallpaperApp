@@ -994,7 +994,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_WallpaperDatabase: {fileID: 138044771}
   m_WallpaperEditor: {fileID: 1573306481}
-  m_WallpaperToTest: name2
+  m_WallpaperToTest: name
 --- !u!1 &1943992035
 GameObject:
   m_ObjectHideFlags: 0

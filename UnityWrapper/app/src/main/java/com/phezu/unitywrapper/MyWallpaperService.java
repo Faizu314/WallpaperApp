@@ -16,6 +16,7 @@ public class MyWallpaperService extends WallpaperService {
     public void onCreate() {
         super.onCreate();
         mUnityPlayer = new UnityPlayer(getApplicationContext());
+        OverrideUnityActivity.executeCommandInUnity(OverrideUnityActivity.START_AS_WALLPAPER_COMMAND);
     }
 
     @Override
@@ -59,7 +60,6 @@ public class MyWallpaperService extends WallpaperService {
         @Override
         public void onCreate(SurfaceHolder surfaceHolder) {
             super.onCreate(surfaceHolder);
-            OverrideUnityActivity.executeCommandInUnity(OverrideUnityActivity.START_AS_WALLPAPER_COMMAND);
         }
 
         @Override

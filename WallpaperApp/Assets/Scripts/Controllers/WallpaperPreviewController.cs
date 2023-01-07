@@ -12,7 +12,7 @@ namespace Wallpaper.Controllers {
         private Camera m_PrevCamera;
         private LayerMask m_PrevCamCullingMask;
 
-        private void Start() {
+        private void Awake() {
             m_PrevCamera = Camera.main;
             m_PrevCamCullingMask = m_PrevCamera.cullingMask;
             m_PrevCamera.cullingMask = m_PrevCamCullingMaskOverride;

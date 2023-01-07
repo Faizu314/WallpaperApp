@@ -36,7 +36,7 @@ namespace Wallpaper.Android {
         }
 
         private void StartAsWallpaper() {
-            AppManager.Instance.HideAllScreens();
+            AppManager.Instance.StartAsWallpaperService();
         }
 
         private void StartAsApplication() {

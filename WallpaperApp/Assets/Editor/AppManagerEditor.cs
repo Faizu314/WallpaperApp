@@ -28,7 +28,7 @@ public class AppManagerEditor : Editor
             Target.ShowScreen(AppManager.Page.Home);
         }
         if (GUILayout.Button("Start as Wallpaper")) {
-            Target.HideAllScreens();
+            Target.StartAsWallpaperService();
         }
     }
 }

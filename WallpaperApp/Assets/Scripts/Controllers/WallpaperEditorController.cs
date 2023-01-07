@@ -8,7 +8,7 @@ using Phezu.Util;
 namespace Wallpaper.Controllers {
 
     [AddComponentMenu("Wallpaper/Controllers/Wallpaper Editor Controller")]
-    public class WallpaperEditorController : MonoBehaviour {
+    public class WallpaperEditorController : BaseController {
 
         [SerializeField][RequireInterface(typeof(IWallpaperDatabase))]
         private Object m_WallpaperDatabase;
@@ -22,8 +22,38 @@ namespace Wallpaper.Controllers {
         private Wallpaper m_CurrWallpaper;
         private List<Image> m_WallpaperImages = new();
 
-        private void Awake() {
+        public void Awake() {
             m_SaveButton.onClick.AddListener(OnSave);
+        }
+
+        public override void OnApplicationStart() {
+            base.OnApplicationStart();
+            ApplicationEvents.OnWallpaperEdit += OnWallpaperEdit;
+            ApplicationEvents.OnWallpaperPreview += OnPreviewWallpaper;
+        }
+
+        protected override void OnSceneLoaded() {
+        }
+
+        protected override void OnSceneUnLoaded() {
+        }
+
+        private void OnPreviewWallpaper(Wallpaper wallpaper) {
+            OnWallpaperEdit(wallpaper);
+            BeginPreview();
+        }
+
+        public void BeginPreview() {
+            m_UIPanel.gameObject.SetActive(false);
+        }
+
+        public void EndPreview() {
+            m_UIPanel.gameObject.SetActive(true);
+        }
+
+        private void OnWallpaperEdit(Wallpaper wallpaper) {
+            AppManager.Instance.ShowScreen(AppManager.Page.Editor);
+            BeginEditing(wallpaper);
         }
 
         private void OnSave() {
@@ -31,11 +61,10 @@ namespace Wallpaper.Controllers {
             AppManager.Instance.ShowScreen(AppManager.Page.Collection);
         }
 
-        public void BeginEditing(string wallpaperID) {
+        private void BeginEditing(Wallpaper wallpaperToEdit) {
             RemoveCurrentWallpaper();
-            SetCurrentWallpaper(wallpaperID);
+            SetCurrentWallpaper(wallpaperToEdit);
             OpenCurrentWallpaper();
-            m_UIPanel.SetSiblingIndex(transform.childCount - 1);
         }
 
         private void RemoveCurrentWallpaper() {
@@ -45,16 +74,19 @@ namespace Wallpaper.Controllers {
             m_WallpaperImages.Clear();
         }
 
-        private void SetCurrentWallpaper(string wallpaperID) {
-            m_CurrWallpaperID = wallpaperID;
-            m_CurrWallpaper = WallpaperDatabase.Load(wallpaperID);
+        private void SetCurrentWallpaper(Wallpaper wallpaper) {
+            m_CurrWallpaperID = wallpaper.name;
+            m_CurrWallpaper = wallpaper;
         }
 
         private void OpenCurrentWallpaper() {
             m_WallpaperName.text = m_CurrWallpaperID;
             var obj = CreateImageObject();
-            obj.transform.position = new(m_CurrWallpaper.CropPositionX, m_CurrWallpaper.CropPositionY, m_CurrWallpaper.CropPositionZ);
-            obj.transform.localScale = new(m_CurrWallpaper.CropScaleX, m_CurrWallpaper.CropScaleY, m_CurrWallpaper.CropScaleZ);
+            Vector2 loadedPos = new(m_CurrWallpaper.CropPositionX, m_CurrWallpaper.CropPositionY);
+            obj.GetComponent<RectTransform>().anchoredPosition = loadedPos;
+            Vector3 loadedScale = new(m_CurrWallpaper.CropScaleX, m_CurrWallpaper.CropScaleY, m_CurrWallpaper.CropScaleZ);
+            obj.transform.localScale = loadedScale;
+            m_UIPanel.SetSiblingIndex(transform.childCount - 1);
         }
 
         private GameObject CreateImageObject() {
@@ -73,5 +105,6 @@ namespace Wallpaper.Controllers {
 
             return bgImageObj;
         }
+
     }
 }

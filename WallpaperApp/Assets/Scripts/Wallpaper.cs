@@ -4,6 +4,7 @@ namespace Wallpaper {
 
     [Serializable]
     public class Wallpaper {
+        public string name;
         public byte[] BackgroundImage;
         public int ImageWidth;
         public int ImageHeight;

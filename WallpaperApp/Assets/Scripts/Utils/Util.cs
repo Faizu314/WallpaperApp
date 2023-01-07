@@ -81,9 +81,9 @@ namespace Wallpaper.Utils {
                 cornersScreenPos[i] = camera.WorldToScreenPoint(cornersWorldPos[i]);
 
             float pivotToScreenLeftBound = -pivotScreenPos.x;
-            float pivotToScreenRightBound = Screen.width + pivotToScreenLeftBound;
+            float pivotToScreenRightBound = camera.pixelWidth + pivotToScreenLeftBound;
             float pivotToScreenBottomBound = -pivotScreenPos.y;
-            float pivotToScreenTopBound = Screen.height + pivotToScreenBottomBound;
+            float pivotToScreenTopBound = camera.pixelHeight + pivotToScreenBottomBound;
 
             float pivotToPanelLeftBound = cornersScreenPos[0].x - pivotScreenPos.x;
             float pivotToPanelRightBound = cornersScreenPos[3].x - pivotScreenPos.x;
@@ -114,9 +114,9 @@ namespace Wallpaper.Utils {
                 cornersScreenPos[i] = camera.WorldToScreenPoint(cornersWorldPos[i]);
 
             float pivotToScreenLeftBound = -pivotScreenPos.x;
-            float pivotToScreenRightBound = Screen.width + pivotToScreenLeftBound;
+            float pivotToScreenRightBound = camera.pixelWidth + pivotToScreenLeftBound;
             float pivotToScreenBottomBound = -pivotScreenPos.y;
-            float pivotToScreenTopBound = Screen.height + pivotToScreenBottomBound;
+            float pivotToScreenTopBound = camera.pixelHeight + pivotToScreenBottomBound;
 
             float pivotToPanelLeftBound = (cornersScreenPos[0].x - pivotScreenPos.x) * scaleFactor;
             float pivotToPanelRightBound = (cornersScreenPos[3].x - pivotScreenPos.x) * scaleFactor;

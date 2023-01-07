@@ -12,9 +12,16 @@ namespace Wallpaper.Utils {
 
         private void Awake() {
             m_ScrollRect = GetComponent<ScrollRect>();
+        }
 
+        private void OnEnable() {
             ApplicationEvents.OnSecondTouchDown += OnSecondTouchDown;
             ApplicationEvents.OnSecondTouchUp += OnSecondTouchUp;
+        }
+
+        private void OnDisable() {
+            ApplicationEvents.OnSecondTouchDown -= OnSecondTouchDown;
+            ApplicationEvents.OnSecondTouchUp -= OnSecondTouchUp;
         }
 
         private void OnSecondTouchDown() {

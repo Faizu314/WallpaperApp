@@ -24,8 +24,9 @@ namespace Wallpaper.Utils {
 
         private void OnDisable() {
             ApplicationEvents.OnTouchPinch -= OnTouchPinch;
+            ApplicationEvents.OnSecondTouchUp -= OnTouchPinchEnd;
         }
-        
+
         private void OnTouchPinchEnd() {
             m_IsPinching = false;
         }

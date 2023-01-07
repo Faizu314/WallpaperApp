@@ -7,6 +7,10 @@ namespace Wallpaper.UI {
     public class SafeAreaPanel : MonoBehaviour {
 
         private void Start() {
+            CalculateSafeArea();
+        }
+
+        public void CalculateSafeArea() {
             Rect safeArea = Screen.safeArea;
             RectTransform mTransform = (RectTransform)transform;
 
@@ -19,6 +23,5 @@ namespace Wallpaper.UI {
             mTransform.offsetMax = Vector2.zero;
             mTransform.pivot = new(0.5f, 0.5f);
         }
-
     }
 }

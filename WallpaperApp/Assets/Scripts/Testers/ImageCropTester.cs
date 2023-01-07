@@ -19,6 +19,7 @@ namespace Wallpaper.Testers {
 
         private void Start() {
             m_ImageCropper.gameObject.SetActive(true);
+            m_ImageCropper.OnApplicationStart();
             m_TestWallpaper = WallpaperDatabase.Load("name");
             StartCoroutine("wait");
         }
@@ -36,10 +37,11 @@ namespace Wallpaper.Testers {
 
             m_TestWallpaper.CropPositionX = cropData.Position.x;
             m_TestWallpaper.CropPositionY = cropData.Position.y;
-            m_TestWallpaper.CropPositionZ = cropData.Position.z;
             m_TestWallpaper.CropScaleX = cropData.Scale.x;
             m_TestWallpaper.CropScaleY = cropData.Scale.y;
             m_TestWallpaper.CropScaleZ = cropData.Scale.z;
+
+            Debug.Log(cropData.Position);
 
             WallpaperDatabase.Save(m_TestWallpaper, "name");
         }

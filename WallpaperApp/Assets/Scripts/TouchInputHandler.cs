@@ -7,8 +7,10 @@ namespace Wallpaper.Input {
     [AddComponentMenu("Wallpaper/Touch Input Handler")]
     public class TouchInputHandler : Singleton<TouchInputHandler> {
 
+        public float ZoomMagnitudeToSimulate;
+        public Vector2 ZoomPivotToSimulate;
+
         private TouchControls m_TouchControls;
-        private Coroutine m_FingerMoveCoroutine;
         private Coroutine m_PinchCoroutine;
 
         private Vector2 m_PrevPrimaryPos;
@@ -54,7 +56,7 @@ namespace Wallpaper.Input {
                 float zoomMagnitude = CalculateZoomMagnitude(positionA, positionB, deltaPositionA, deltaPositionB);
                 Vector2 pivot = (positionA + positionB) / 2f;
 
-                ApplicationEvents.InvokeOnTouchPinch(new((int)pivot.x, (int)pivot.y), zoomMagnitude);
+                InvokeOnTouchPinch(pivot, zoomMagnitude);
 
                 m_PrevPrimaryPos = positionA;
                 m_PrevSecondaryPos = positionB;
@@ -74,6 +76,11 @@ namespace Wallpaper.Input {
             zoomMagnitude = postLength / preLength;
 
             return zoomMagnitude;
+        }
+
+
+        public void InvokeOnTouchPinch(Vector2 pivot, float magnitude) {
+            ApplicationEvents.InvokeOnTouchPinch(new((int)pivot.x, (int)pivot.y), magnitude);
         }
     }
 }
