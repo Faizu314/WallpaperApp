@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -30,6 +29,12 @@ namespace Wallpaper.Utils {
         }
 
         private void OnSecondTouchUp() {
+            StartCoroutine(nameof(WaitAndEnableScroll));
+        }
+
+        private IEnumerator WaitAndEnableScroll() {
+            yield return null;
+
             m_ScrollRect.vertical = true;
             m_ScrollRect.horizontal = true;
         }

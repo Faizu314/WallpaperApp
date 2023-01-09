@@ -1899,10 +1899,10 @@ MonoBehaviour:
   m_Content: {fileID: 1363639341}
   m_Horizontal: 1
   m_Vertical: 1
-  m_MovementType: 0
-  m_Elasticity: 0.1
-  m_Inertia: 0
-  m_DecelerationRate: 0.135
+  m_MovementType: 1
+  m_Elasticity: 0.5
+  m_Inertia: 1
+  m_DecelerationRate: 0.01
   m_ScrollSensitivity: 1
   m_Viewport: {fileID: 1556793364}
   m_HorizontalScrollbar: {fileID: 1384240072}
@@ -1915,8 +1915,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1363639338}
-        m_TargetAssemblyTypeName: MoveablePanel, Assembly-CSharp
-        m_MethodName: KeepContentInsideScreen
+        m_TargetAssemblyTypeName: Wallpaper.Utils.MoveablePanel, Assembly-CSharp
+        m_MethodName: OnScrollRectUpdate
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3503,6 +3503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44b12ced88a2c7041bd5296a65e2bfa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_AlwaysMoveInsideScreen: 1
 --- !u!114 &1363639339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3515,6 +3516,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 227a85e47ef1cab41ae38fd2e7f80cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ZoomLerpLife: 0.1
+  m_ZoomLerpRatio: 0.95
   m_AlwaysCoverEntireScreen: 1
 --- !u!222 &1363639340
 CanvasRenderer:

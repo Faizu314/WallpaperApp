@@ -104,7 +104,7 @@ namespace Wallpaper.Utils {
             return correction == Vector2.zero;
         }
 
-        public static bool IsRectInsideScreenAfterScaling(RectTransform rectTransform, Camera camera, float scaleFactor) {
+        public static bool IsRectInsideScreenAfterScaling_(RectTransform rectTransform, Camera camera, float scaleFactor) {
             Vector3 pivotWorldPos = rectTransform.TransformPoint(rectTransform.position);
             Vector2 pivotScreenPos = camera.WorldToScreenPoint(pivotWorldPos);
             Vector3[] cornersWorldPos = new Vector3[4];
@@ -133,6 +133,34 @@ namespace Wallpaper.Utils {
                 return false;
 
             return true;
+        }
+
+        public static bool IsRectInsideScreenAfterScaling(RectTransform rectTransform, Camera camera, float scaleFactor) {
+            Vector3[] cornersWorldPos = new Vector3[4];
+            rectTransform.GetWorldCorners(cornersWorldPos);
+            Vector2[] cornersScreenPos = new Vector2[4];
+
+            cornersScreenPos[0] = camera.WorldToScreenPoint(cornersWorldPos[0]);  //bottom left
+            cornersScreenPos[2] = camera.WorldToScreenPoint(cornersWorldPos[2]);  //top right
+
+            float screenWidth = camera.pixelWidth;
+            float screenHeight = camera.pixelHeight;
+
+            float panelWidth = Mathf.Abs(cornersScreenPos[0].x - cornersScreenPos[2].x) * scaleFactor;
+            float panelHeight = Mathf.Abs(cornersScreenPos[0].y - cornersScreenPos[2].y) * scaleFactor;
+
+            return panelWidth >= screenWidth && panelHeight >= screenHeight;
+        }
+
+
+        public static float GetPanelPixelWidth(RectTransform rectTransform, Camera camera) {
+            Vector3[] cornersWorldPos = new Vector3[4];
+            rectTransform.GetWorldCorners(cornersWorldPos);
+            Vector2[] cornersScreenPos = new Vector2[4];
+            for (int i = 0; i < 4; i++)
+                cornersScreenPos[i] = camera.WorldToScreenPoint(cornersWorldPos[i]);
+
+            return cornersScreenPos[3].x - cornersScreenPos[0].x;
         }
 
         public static void SaveByteArrayInAndroid(string name, byte[] array) {

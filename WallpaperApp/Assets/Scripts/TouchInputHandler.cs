@@ -16,23 +16,31 @@ namespace Wallpaper.Input {
         private Vector2 m_PrevPrimaryPos;
         private Vector2 m_PrevSecondaryPos;
 
+        private bool m_TwoFingersDown = false;
+
         private void Start() {
             m_TouchControls = new();
             m_TouchControls.Touch.Enable();
 
             m_TouchControls.Touch.SecondaryTouchDown.performed += _ => OnSecondaryTouchDown();
-            m_TouchControls.Touch.SecondaryTouchDown.canceled += _ => OnSecondaryTouchUp();
+            m_TouchControls.Touch.PrimaryTouchDown.canceled += _ => OnTouchUp();
+            m_TouchControls.Touch.SecondaryTouchDown.canceled += _ => OnTouchUp();
         }
 
 
         private void OnSecondaryTouchDown() {
+            m_TwoFingersDown = true;
             ApplicationEvents.InvokeOnSecondTouchDown();
             m_PinchCoroutine = StartCoroutine(nameof(Pinch_Coroutine));
         }
 
-        private void OnSecondaryTouchUp() {
+        private void OnTouchUp() {
+            if (!m_TwoFingersDown)
+                return;
+
             StopCoroutine(m_PinchCoroutine);
             ApplicationEvents.InvokeOnSecondTouchUp();
+            m_TwoFingersDown = false;
         }
 
         private IEnumerator Pinch_Coroutine() {

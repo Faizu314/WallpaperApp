@@ -1,20 +1,28 @@
 ﻿using UnityEngine;
+using Phezu.Util;
 
 namespace Wallpaper.Utils {
 
     [RequireComponent(typeof(RectTransform))]
     public class ZoomablePanel : MonoBehaviour {
 
+        [SerializeField][Range(0f, 1f)] private float m_ZoomLerpLife;
+        [SerializeField][Range(0f, 1f)] private float m_ZoomLerpRatio;
+
         [SerializeField] private bool m_AlwaysCoverEntireScreen;
 
         private RectTransform m_Transform;
         private Camera m_Camera;
-        private float m_ZoomLevel = 1f;
+
+        private float m_CurrentZoomLevel = 1f;
+        private float m_TargetZoomLevel = 1f;
         private bool m_IsPinching = false;
+        private float K;
 
         private void Awake() {
             m_Transform = GetComponent<RectTransform>();
             m_Camera = Camera.main;
+            K = FMath.GetFreeLerpK(m_ZoomLerpLife, m_ZoomLerpRatio);
         }
 
         private void OnEnable() {
@@ -52,14 +60,20 @@ namespace Wallpaper.Utils {
         }
 
         private float GetZoomFactor(float magnitude) {
-            float prevZoomLevel = m_ZoomLevel;
-            m_ZoomLevel *= magnitude;
+            m_TargetZoomLevel *= magnitude;
 
-            if (m_ZoomLevel <= 0f)
-                m_ZoomLevel = 0.01f;
+            if (m_TargetZoomLevel <= 0f)
+                m_TargetZoomLevel = 0.01f;
 
-            return m_ZoomLevel / prevZoomLevel;
+            float prevZoomLevel = m_CurrentZoomLevel;
+            m_CurrentZoomLevel = GetLerpedZoomValue();
+
+            return m_CurrentZoomLevel / prevZoomLevel;
         }
 
+        private float GetLerpedZoomValue() {
+            float t = FMath.GetFreeLerpT(K, Time.deltaTime);
+            return Mathf.Lerp(m_CurrentZoomLevel, m_TargetZoomLevel, t);
+        }
     }
 }

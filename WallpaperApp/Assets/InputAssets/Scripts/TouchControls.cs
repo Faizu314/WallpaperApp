@@ -82,6 +82,15 @@ namespace Wallpaper.Input
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""PrimaryTouchDown"",
+                    ""type"": ""Button"",
+                    ""id"": ""0e589182-fd41-45e6-9fbd-84223fd5eae1"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -148,6 +157,17 @@ namespace Wallpaper.Input
                     ""processors"": """",
                     ""groups"": ""Touch"",
                     ""action"": ""PrimaryTouch"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3a6729d9-0526-4d58-858c-c80cd9806dbc"",
+                    ""path"": ""<Touchscreen>/touch0/press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Touch"",
+                    ""action"": ""PrimaryTouchDown"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -220,6 +240,7 @@ namespace Wallpaper.Input
             m_Touch_PrimaryTouchPosition = m_Touch.FindAction("PrimaryTouchPosition", throwIfNotFound: true);
             m_Touch_SecondaryTouchPosition = m_Touch.FindAction("SecondaryTouchPosition", throwIfNotFound: true);
             m_Touch_PrimaryTouch = m_Touch.FindAction("PrimaryTouch", throwIfNotFound: true);
+            m_Touch_PrimaryTouchDown = m_Touch.FindAction("PrimaryTouchDown", throwIfNotFound: true);
             // MouseWheel
             m_MouseWheel = asset.FindActionMap("MouseWheel", throwIfNotFound: true);
             m_MouseWheel_Zoom = m_MouseWheel.FindAction("Zoom", throwIfNotFound: true);
@@ -288,6 +309,7 @@ namespace Wallpaper.Input
         private readonly InputAction m_Touch_PrimaryTouchPosition;
         private readonly InputAction m_Touch_SecondaryTouchPosition;
         private readonly InputAction m_Touch_PrimaryTouch;
+        private readonly InputAction m_Touch_PrimaryTouchDown;
         public struct TouchActions
         {
             private @TouchControls m_Wrapper;
@@ -298,6 +320,7 @@ namespace Wallpaper.Input
             public InputAction @PrimaryTouchPosition => m_Wrapper.m_Touch_PrimaryTouchPosition;
             public InputAction @SecondaryTouchPosition => m_Wrapper.m_Touch_SecondaryTouchPosition;
             public InputAction @PrimaryTouch => m_Wrapper.m_Touch_PrimaryTouch;
+            public InputAction @PrimaryTouchDown => m_Wrapper.m_Touch_PrimaryTouchDown;
             public InputActionMap Get() { return m_Wrapper.m_Touch; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -325,6 +348,9 @@ namespace Wallpaper.Input
                     @PrimaryTouch.started -= m_Wrapper.m_TouchActionsCallbackInterface.OnPrimaryTouch;
                     @PrimaryTouch.performed -= m_Wrapper.m_TouchActionsCallbackInterface.OnPrimaryTouch;
                     @PrimaryTouch.canceled -= m_Wrapper.m_TouchActionsCallbackInterface.OnPrimaryTouch;
+                    @PrimaryTouchDown.started -= m_Wrapper.m_TouchActionsCallbackInterface.OnPrimaryTouchDown;
+                    @PrimaryTouchDown.performed -= m_Wrapper.m_TouchActionsCallbackInterface.OnPrimaryTouchDown;
+                    @PrimaryTouchDown.canceled -= m_Wrapper.m_TouchActionsCallbackInterface.OnPrimaryTouchDown;
                 }
                 m_Wrapper.m_TouchActionsCallbackInterface = instance;
                 if (instance != null)
@@ -347,6 +373,9 @@ namespace Wallpaper.Input
                     @PrimaryTouch.started += instance.OnPrimaryTouch;
                     @PrimaryTouch.performed += instance.OnPrimaryTouch;
                     @PrimaryTouch.canceled += instance.OnPrimaryTouch;
+                    @PrimaryTouchDown.started += instance.OnPrimaryTouchDown;
+                    @PrimaryTouchDown.performed += instance.OnPrimaryTouchDown;
+                    @PrimaryTouchDown.canceled += instance.OnPrimaryTouchDown;
                 }
             }
         }
@@ -410,6 +439,7 @@ namespace Wallpaper.Input
             void OnPrimaryTouchPosition(InputAction.CallbackContext context);
             void OnSecondaryTouchPosition(InputAction.CallbackContext context);
             void OnPrimaryTouch(InputAction.CallbackContext context);
+            void OnPrimaryTouchDown(InputAction.CallbackContext context);
         }
         public interface IMouseWheelActions
         {
