@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Wallpaper.Utils;
 using TMPro;
+using Wallpaper.Utils;
 using Phezu.Util;
 
 namespace Wallpaper.Controllers {
@@ -17,17 +17,21 @@ namespace Wallpaper.Controllers {
         [SerializeField] private RectTransform m_UIPanel;
         [SerializeField] private TextMeshProUGUI m_WallpaperName;
         [SerializeField] private Button m_SaveButton;
+        [SerializeField] private Button m_SetButton;
 
         private string m_CurrWallpaperID;
         private Wallpaper m_CurrWallpaper;
         private List<Image> m_WallpaperImages = new();
 
-        public void Awake() {
-            m_SaveButton.onClick.AddListener(OnSave);
-        }
-
         public override void OnApplicationStart() {
             base.OnApplicationStart();
+
+            m_SaveButton.onClick.RemoveAllListeners();
+            m_SaveButton.onClick.AddListener(OnSaveButtonPressed);
+
+            m_SetButton.onClick.RemoveAllListeners();
+            m_SetButton.onClick.AddListener(() => AppManager.Instance.SetCurrentWallpaper(m_CurrWallpaperID));
+
             ApplicationEvents.OnWallpaperEdit += OnWallpaperEdit;
             ApplicationEvents.OnWallpaperPreview += OnPreviewWallpaper;
         }
@@ -56,7 +60,7 @@ namespace Wallpaper.Controllers {
             BeginEditing(wallpaper);
         }
 
-        private void OnSave() {
+        private void OnSaveButtonPressed() {
             WallpaperDatabase.Save(m_CurrWallpaper, m_CurrWallpaperID);
             AppManager.Instance.ShowScreen(AppManager.Page.Collection);
         }

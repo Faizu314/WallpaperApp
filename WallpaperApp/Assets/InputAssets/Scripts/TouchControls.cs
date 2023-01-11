@@ -91,6 +91,15 @@ namespace Wallpaper.Input
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Tap"",
+                    ""type"": ""Button"",
+                    ""id"": ""36904ac3-2558-4587-8bed-96ef5ca5b742"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -140,6 +149,17 @@ namespace Wallpaper.Input
                 },
                 {
                     ""name"": """",
+                    ""id"": ""01cd886c-dd78-48a1-8365-4c480d678e8c"",
+                    ""path"": ""<Mouse>/position"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Desktop"",
+                    ""action"": ""PrimaryTouchPosition"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
                     ""id"": ""7a311353-2a49-4a9b-9f24-d04f56f8cb86"",
                     ""path"": ""<Touchscreen>/touch1/position"",
                     ""interactions"": """",
@@ -168,6 +188,28 @@ namespace Wallpaper.Input
                     ""processors"": """",
                     ""groups"": ""Touch"",
                     ""action"": ""PrimaryTouchDown"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d16d646d-78ff-4b22-b790-578764c7a1ae"",
+                    ""path"": ""<Touchscreen>/primaryTouch/tap"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Touch"",
+                    ""action"": ""Tap"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1ab350fa-d6df-4ced-98de-39efc45dc1fa"",
+                    ""path"": ""<Mouse>/press"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Desktop"",
+                    ""action"": ""Tap"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -241,6 +283,7 @@ namespace Wallpaper.Input
             m_Touch_SecondaryTouchPosition = m_Touch.FindAction("SecondaryTouchPosition", throwIfNotFound: true);
             m_Touch_PrimaryTouch = m_Touch.FindAction("PrimaryTouch", throwIfNotFound: true);
             m_Touch_PrimaryTouchDown = m_Touch.FindAction("PrimaryTouchDown", throwIfNotFound: true);
+            m_Touch_Tap = m_Touch.FindAction("Tap", throwIfNotFound: true);
             // MouseWheel
             m_MouseWheel = asset.FindActionMap("MouseWheel", throwIfNotFound: true);
             m_MouseWheel_Zoom = m_MouseWheel.FindAction("Zoom", throwIfNotFound: true);
@@ -310,6 +353,7 @@ namespace Wallpaper.Input
         private readonly InputAction m_Touch_SecondaryTouchPosition;
         private readonly InputAction m_Touch_PrimaryTouch;
         private readonly InputAction m_Touch_PrimaryTouchDown;
+        private readonly InputAction m_Touch_Tap;
         public struct TouchActions
         {
             private @TouchControls m_Wrapper;
@@ -321,6 +365,7 @@ namespace Wallpaper.Input
             public InputAction @SecondaryTouchPosition => m_Wrapper.m_Touch_SecondaryTouchPosition;
             public InputAction @PrimaryTouch => m_Wrapper.m_Touch_PrimaryTouch;
             public InputAction @PrimaryTouchDown => m_Wrapper.m_Touch_PrimaryTouchDown;
+            public InputAction @Tap => m_Wrapper.m_Touch_Tap;
             public InputActionMap Get() { return m_Wrapper.m_Touch; }
             public void Enable() { Get().Enable(); }
             public void Disable() { Get().Disable(); }
@@ -351,6 +396,9 @@ namespace Wallpaper.Input
                     @PrimaryTouchDown.started -= m_Wrapper.m_TouchActionsCallbackInterface.OnPrimaryTouchDown;
                     @PrimaryTouchDown.performed -= m_Wrapper.m_TouchActionsCallbackInterface.OnPrimaryTouchDown;
                     @PrimaryTouchDown.canceled -= m_Wrapper.m_TouchActionsCallbackInterface.OnPrimaryTouchDown;
+                    @Tap.started -= m_Wrapper.m_TouchActionsCallbackInterface.OnTap;
+                    @Tap.performed -= m_Wrapper.m_TouchActionsCallbackInterface.OnTap;
+                    @Tap.canceled -= m_Wrapper.m_TouchActionsCallbackInterface.OnTap;
                 }
                 m_Wrapper.m_TouchActionsCallbackInterface = instance;
                 if (instance != null)
@@ -376,6 +424,9 @@ namespace Wallpaper.Input
                     @PrimaryTouchDown.started += instance.OnPrimaryTouchDown;
                     @PrimaryTouchDown.performed += instance.OnPrimaryTouchDown;
                     @PrimaryTouchDown.canceled += instance.OnPrimaryTouchDown;
+                    @Tap.started += instance.OnTap;
+                    @Tap.performed += instance.OnTap;
+                    @Tap.canceled += instance.OnTap;
                 }
             }
         }
@@ -440,6 +491,7 @@ namespace Wallpaper.Input
             void OnSecondaryTouchPosition(InputAction.CallbackContext context);
             void OnPrimaryTouch(InputAction.CallbackContext context);
             void OnPrimaryTouchDown(InputAction.CallbackContext context);
+            void OnTap(InputAction.CallbackContext context);
         }
         public interface IMouseWheelActions
         {

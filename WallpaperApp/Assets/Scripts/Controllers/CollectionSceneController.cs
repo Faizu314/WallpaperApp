@@ -19,27 +19,27 @@ namespace Wallpaper.Controllers {
         [SerializeField] private ImageCropController m_ImageCropper;
         [SerializeField] private StringInputFieldController m_InputFieldController;
         [SerializeField] private Button m_CreateButton;
+        [SerializeField] private Button m_BackButton;
 
         private Wallpaper m_CreatedWallpaper;
 
         private void Awake() {
             m_CreateButton.onClick.RemoveAllListeners();
-            m_CreateButton.onClick.AddListener(OnCreateWallpaperClick);
+            m_CreateButton.onClick.AddListener(() => AndroidCommander.OpenAndroidGallery());
+            m_BackButton.onClick.AddListener(() => AppManager.Instance.ShowScreen(AppManager.Page.Home));
         }
 
         protected override void OnSceneLoaded() {
-            ApplicationEvents.OnAndroidImageReceived += OnImageReceivedFromAndroid;
+            base.OnSceneLoaded();
+            ApplicationEvents.OnAndroidImageReceived += CreateWallpaper;
         }
 
         protected override void OnSceneUnLoaded() {
-            ApplicationEvents.OnAndroidImageReceived -= OnImageReceivedFromAndroid;
+            base.OnSceneUnLoaded();
+            ApplicationEvents.OnAndroidImageReceived -= CreateWallpaper;
         }
 
-        private void OnCreateWallpaperClick() {
-            AndroidCommander.OpenAndroidGallery();
-        }
-
-        private void OnImageReceivedFromAndroid(byte[] imageData, int imageWidth, int imageHeight) {
+        public void CreateWallpaper(byte[] imageData, int imageWidth, int imageHeight) {
             m_CreatedWallpaper = new() {
                 BackgroundImage = imageData,
                 ImageWidth = imageWidth,

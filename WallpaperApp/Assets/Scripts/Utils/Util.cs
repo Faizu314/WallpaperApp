@@ -152,15 +152,11 @@ namespace Wallpaper.Utils {
             return panelWidth >= screenWidth && panelHeight >= screenHeight;
         }
 
+        public static float GetPanelPixelWidthInRectSpace(RectTransform rectTransform) {
+            Vector3[] cornersPos = new Vector3[4];
+            rectTransform.GetLocalCorners(cornersPos);
 
-        public static float GetPanelPixelWidth(RectTransform rectTransform, Camera camera) {
-            Vector3[] cornersWorldPos = new Vector3[4];
-            rectTransform.GetWorldCorners(cornersWorldPos);
-            Vector2[] cornersScreenPos = new Vector2[4];
-            for (int i = 0; i < 4; i++)
-                cornersScreenPos[i] = camera.WorldToScreenPoint(cornersWorldPos[i]);
-
-            return cornersScreenPos[3].x - cornersScreenPos[0].x;
+            return cornersPos[3].x - cornersPos[0].x;
         }
 
         public static void SaveByteArrayInAndroid(string name, byte[] array) {

@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using Phezu.Util;
-using System.Collections.Generic;
 
 namespace Wallpaper.UI {
 
@@ -25,7 +25,7 @@ namespace Wallpaper.UI {
 
             foreach (var wallpaper in wallpapers) {
                 GameObject icon = Instantiate(m_WallpaperIconPrefab, transform);
-                icon.GetComponent<WallpaperIcon>().Initialize(wallpaper);
+                icon.GetComponent<CollectionWallpaperIcon>().Initialize(wallpaper);
             }
         }
 

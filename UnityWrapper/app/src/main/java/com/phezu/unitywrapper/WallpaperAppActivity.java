@@ -27,24 +27,12 @@ public class WallpaperAppActivity extends OverrideUnityActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         executeCommandInUnity(START_AS_APPLICATION_COMMAND);
-
-        FrameLayout layout = mUnityPlayer;
-        {
-            Button backButton = new Button(this);
-            backButton.setText("Back");
-            backButton.setX(10);
-            backButton.setY(10);
-
-            backButton.setOnClickListener(view -> {
-                onBackButtonPressed();
-            });
-            layout.addView(backButton, 300, 200);
-        }
     }
 
-    private void onBackButtonPressed() {
-        mUnityPlayer.destroy();
+    @Override
+    public void OnBackButtonPressed() {
         startActivity(new Intent(getApplicationContext(), MainActivity.class));
+        finish();
     }
 
     @Override

@@ -21,20 +21,28 @@ public class SlidingBarEditor : Editor {
 
         GUILayout.Space(10);
 
-        if (GUILayout.Button("Setup Panel")) {
-            Target.SetupPanel();
-        }
-
         if (!Application.isPlaying) {
-            GUILayout.Label("Enter play mode to demo opening and closing.");
-            return;
-        }
+            if (GUILayout.Button("Setup Panel"))
+                Target.Editor_SetupPanel();
 
-        if (GUILayout.Button("Demo Open")) {
-            Target.Open();
+            GUILayout.Label("Enter Play Mode to demo animation.");
+
+            if (GUILayout.Button("Open")) {
+                Target.Editor_SetupPanel();
+                Target.Editor_Open();
+            }
+            if (GUILayout.Button("Close")) {
+                Target.Editor_SetupPanel();
+                Target.Editor_Close();
+            }
         }
-        if (GUILayout.Button("Demo Close")) {
-            Target.Close();
+        else {
+            if (GUILayout.Button("Demo Open")) {
+                Target.Open();
+            }
+            if (GUILayout.Button("Demo Close")) {
+                Target.Close();
+            }
         }
     }
 }

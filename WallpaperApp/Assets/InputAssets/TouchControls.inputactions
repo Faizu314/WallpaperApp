@@ -67,6 +67,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "Tap",
+                    "type": "Button",
+                    "id": "36904ac3-2558-4587-8bed-96ef5ca5b742",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -116,6 +125,17 @@
                 },
                 {
                     "name": "",
+                    "id": "01cd886c-dd78-48a1-8365-4c480d678e8c",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Desktop",
+                    "action": "PrimaryTouchPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "7a311353-2a49-4a9b-9f24-d04f56f8cb86",
                     "path": "<Touchscreen>/touch1/position",
                     "interactions": "",
@@ -144,6 +164,28 @@
                     "processors": "",
                     "groups": "Touch",
                     "action": "PrimaryTouchDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d16d646d-78ff-4b22-b790-578764c7a1ae",
+                    "path": "<Touchscreen>/primaryTouch/tap",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Touch",
+                    "action": "Tap",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1ab350fa-d6df-4ced-98de-39efc45dc1fa",
+                    "path": "<Mouse>/press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Desktop",
+                    "action": "Tap",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

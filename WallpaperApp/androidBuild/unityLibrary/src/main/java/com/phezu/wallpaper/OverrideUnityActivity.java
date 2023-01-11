@@ -24,10 +24,7 @@ public abstract class OverrideUnityActivity extends UnityPlayerActivity
         UnityPlayer.UnitySendMessage(ANDROID_COMMUNICATOR_GAMEOBJECT, COMMAND_FUNCTION, command);
     }
 
-    public void receiveCommandResult(String commandResult) {
-        mCommandResult = "";
-        mCommandResult = commandResult;
-    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -44,8 +41,13 @@ public abstract class OverrideUnityActivity extends UnityPlayerActivity
 
     //Here is the interface unity will use to communicate with android
 
+    public void ReceiveCommandResult(String commandResult) {
+        mCommandResult = "";
+        mCommandResult = commandResult;
+    }
     public abstract void OpenAndroidGallery();
     public abstract byte[] GetImageData();
     public abstract int GetImageHeight();
     public abstract int GetImageWidth();
+    public abstract void OnBackButtonPressed();
 }

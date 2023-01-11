@@ -22,6 +22,10 @@ namespace Wallpaper.Android {
             m_UnityToAndroidInterface.Call(nameof(OpenAndroidGallery));
         }
 
+        public void OnBackButtonPressed() {
+            m_UnityToAndroidInterface.Call(nameof(OnBackButtonPressed));
+        }
+
         public byte[] GetImageData() {
             return m_UnityToAndroidInterface.Call<byte[]>(nameof(GetImageData));
         }
@@ -35,7 +39,7 @@ namespace Wallpaper.Android {
         }
 
         public void SendData(string data) {
-            m_UnityToAndroidInterface.Call("receiveCommandResult", data);
+            m_UnityToAndroidInterface.Call("ReceiveCommandResult", data);
         }
     }
 }
