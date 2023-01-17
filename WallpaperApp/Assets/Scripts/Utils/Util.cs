@@ -5,7 +5,11 @@ namespace Wallpaper.Utils {
 
     public static class Util {
 
-        public static Texture2D ToTexture2D(byte[] imageData, int imageWidth, int imageHeight) {
+        public static Texture2D ToTexture2D(WallpaperImage wallpaperImage) {
+            byte[] imageData = wallpaperImage.Data;
+            int imageWidth = wallpaperImage.Width;
+            int imageHeight = wallpaperImage.Height;
+
             Texture2D texture = new(imageWidth, imageHeight);
 
             texture.SetPixelData(imageData, 0);

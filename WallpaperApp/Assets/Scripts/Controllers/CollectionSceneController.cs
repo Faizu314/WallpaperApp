@@ -1,7 +1,7 @@
 using UnityEngine;
+using UnityEngine.UI;
 using Wallpaper.Utils;
 using Phezu.Util;
-using UnityEngine.UI;
 
 namespace Wallpaper.Controllers {
 
@@ -40,13 +40,18 @@ namespace Wallpaper.Controllers {
         }
 
         public void CreateWallpaper(byte[] imageData, int imageWidth, int imageHeight) {
-            m_CreatedWallpaper = new() {
-                BackgroundImage = imageData,
-                ImageWidth = imageWidth,
-                ImageHeight = imageHeight
+            WallpaperImage wallpaperImage = new() {
+                Data = imageData,
+                Width = imageWidth,
+                Height = imageHeight
             };
 
-            Texture2D image = Util.ToTexture2D(imageData, imageWidth, imageHeight);
+            m_CreatedWallpaper = new() {
+                Version = Application.version,
+                Images = new() { wallpaperImage }
+            };
+
+            Texture2D image = Util.ToTexture2D(wallpaperImage);
 
             AppManager.Instance.ShowScreen(AppManager.Page.ImageCrop);
 
@@ -54,11 +59,8 @@ namespace Wallpaper.Controllers {
         }
 
         private void OnImageCropped(ImageCropController.CropData cropData) {
-            m_CreatedWallpaper.CropPositionX = cropData.Position.x;
-            m_CreatedWallpaper.CropPositionY = cropData.Position.y;
-            m_CreatedWallpaper.CropScaleX = cropData.Scale.x;
-            m_CreatedWallpaper.CropScaleY = cropData.Scale.y;
-            m_CreatedWallpaper.CropScaleZ = cropData.Scale.z;
+            m_CreatedWallpaper.Images[0].Position = cropData.Position;
+            m_CreatedWallpaper.Images[0].Scale = cropData.Scale;
 
             AppManager.Instance.ShowScreen(AppManager.Page.InputField);
 
@@ -66,8 +68,8 @@ namespace Wallpaper.Controllers {
         }
 
         private void OnWallpaperNameAssigned(string name) {
-            m_CreatedWallpaper.name = name;
-            WallpaperDatabase.Save(m_CreatedWallpaper, name);
+            m_CreatedWallpaper.Name = name;
+            WallpaperDatabase.Save(m_CreatedWallpaper);
 
             ApplicationEvents.InvokeOnWallpaperEdit(m_CreatedWallpaper);
         }

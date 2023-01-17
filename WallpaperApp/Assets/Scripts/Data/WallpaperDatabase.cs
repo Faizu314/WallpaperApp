@@ -1,5 +1,4 @@
-﻿using System;
-using System.Runtime.Serialization.Formatters.Binary;
+﻿using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
@@ -10,15 +9,33 @@ namespace Wallpaper.Data {
 
         private const string DATA_SUB_DIRECTORY = "/Wallpapers/";
 
-        public void Save(Wallpaper wallpaper, string wallpaperID) {
-            string filePath = GetWallpaperPath(wallpaperID);
+        public void Save(Wallpaper wallpaper) {
+            string filePath = GetWallpaperPath(wallpaper.Name);
 
-            FileStream wallpaperStream = new(filePath, FileMode.Create);
+            string jsonWallpaper = JsonUtility.ToJson(WallpaperConverter.GetData(wallpaper));
 
-            BinaryFormatter binaryFormatter = new();
-            binaryFormatter.Serialize(wallpaperStream, wallpaper);
+            File.WriteAllText(filePath, jsonWallpaper);
+        }
 
-            wallpaperStream.Close();
+        private Wallpaper LoadFromPath(string filePath) {
+            if (!File.Exists(filePath))
+                return null;
+
+            string jsonWallpaper = File.ReadAllText(filePath);
+
+            WallpaperData wallpaperData = null;
+
+            try {
+                wallpaperData = JsonUtility.FromJson<WallpaperData>(jsonWallpaper);
+            }
+            catch {
+                return null;
+            }
+
+            if (wallpaperData == null)
+                return null;
+
+            return WallpaperConverter.GetWallpaper(wallpaperData);
         }
 
         public Wallpaper Load(string wallpaperID) {
@@ -27,29 +44,17 @@ namespace Wallpaper.Data {
             return LoadFromPath(filePath);
         }
 
-        private Wallpaper LoadFromPath(string filePath) {
-            if (!File.Exists(filePath))
-                return null;
-
-            FileStream wallpaperStream = new(filePath, FileMode.Open);
-
-            BinaryFormatter binaryFormatter = new();
-            Wallpaper wallpaper = binaryFormatter.Deserialize(wallpaperStream) as Wallpaper;
-
-            wallpaperStream.Close();
-
-            return wallpaper;
-        }
-
-        public Wallpaper[] GetWallpaperCollection() {
+        public List<Wallpaper> GetWallpaperCollection() {
             var info = new DirectoryInfo(GetCollectionPath());
             var fileInfo = info.GetFiles();
 
-            Wallpaper[] wallpapers = new Wallpaper[fileInfo.Length];
+            List<Wallpaper> wallpapers = new();
 
-            int i = 0;
-            foreach (var file in fileInfo)
-                wallpapers[i++] = LoadFromPath(file.FullName);
+            foreach (var file in fileInfo) {
+                var wallpaper = LoadFromPath(file.FullName);
+                if (wallpaper != null)
+                    wallpapers.Add(wallpaper);
+            }
 
             return wallpapers;
         }
@@ -61,7 +66,7 @@ namespace Wallpaper.Data {
         private string GetWallpaperPath(string wallpaperID) {
             Directory.CreateDirectory(Application.persistentDataPath + DATA_SUB_DIRECTORY);
 
-            return Application.persistentDataPath + DATA_SUB_DIRECTORY + wallpaperID + ".data";
+            return Application.persistentDataPath + DATA_SUB_DIRECTORY + wallpaperID + ".txt";
         }
 
     }

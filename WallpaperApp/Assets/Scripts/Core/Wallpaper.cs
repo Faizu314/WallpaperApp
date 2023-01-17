@@ -1,18 +1,20 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Wallpaper {
 
-    [Serializable]
     public class Wallpaper {
-        public string name;
-        public byte[] BackgroundImage;
-        public int ImageWidth;
-        public int ImageHeight;
-        public float CropScaleX;
-        public float CropScaleY;
-        public float CropScaleZ;
-        public float CropPositionX;
-        public float CropPositionY;
-        public float CropPositionZ;
+        public string Version;
+        public string Name;
+        public string Author;
+        public List<WallpaperImage> Images;
+    }
+
+    public class WallpaperImage {
+        public byte[] Data;
+        public int Width;
+        public int Height;
+        public Vector2 Scale;
+        public Vector2 Position;
     }
 }

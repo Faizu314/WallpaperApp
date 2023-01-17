@@ -21,7 +21,7 @@ namespace Wallpaper.UI {
         }
 
         private void OnCollectionSceneLoaded() {
-            Wallpaper[] wallpapers = WallpaperDatabase.GetWallpaperCollection();
+            var wallpapers = WallpaperDatabase.GetWallpaperCollection();
 
             foreach (var wallpaper in wallpapers) {
                 GameObject icon = Instantiate(m_WallpaperIconPrefab, transform);

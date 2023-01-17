@@ -27,7 +27,9 @@ namespace Wallpaper.Testers {
         private IEnumerator wait() {
             yield return new WaitForSeconds(1f);
 
-            m_ImageToCrop = Util.ToTexture2D(m_TestWallpaper.BackgroundImage, m_TestWallpaper.ImageWidth, m_TestWallpaper.ImageHeight);
+            var image = m_TestWallpaper.Images[0];
+
+            m_ImageToCrop = Util.ToTexture2D(image);
 
             m_ImageCropper.BeginImageCropping(m_ImageToCrop, OnImageCropped);
         }
@@ -35,15 +37,13 @@ namespace Wallpaper.Testers {
         private void OnImageCropped(ImageCropController.CropData cropData) {
             m_ImageCropper.gameObject.SetActive(false);
 
-            m_TestWallpaper.CropPositionX = cropData.Position.x;
-            m_TestWallpaper.CropPositionY = cropData.Position.y;
-            m_TestWallpaper.CropScaleX = cropData.Scale.x;
-            m_TestWallpaper.CropScaleY = cropData.Scale.y;
-            m_TestWallpaper.CropScaleZ = cropData.Scale.z;
+            m_TestWallpaper.Images[0].Position = cropData.Position;
+            m_TestWallpaper.Images[0].Scale = cropData.Scale;
 
             Debug.Log(cropData.Position);
 
-            WallpaperDatabase.Save(m_TestWallpaper, "name");
+            m_TestWallpaper.Name = "name";
+            WallpaperDatabase.Save(m_TestWallpaper);
         }
     }
 }

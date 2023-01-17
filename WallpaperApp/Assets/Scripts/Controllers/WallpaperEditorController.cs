@@ -61,7 +61,7 @@ namespace Wallpaper.Controllers {
         }
 
         private void OnSaveButtonPressed() {
-            WallpaperDatabase.Save(m_CurrWallpaper, m_CurrWallpaperID);
+            WallpaperDatabase.Save(m_CurrWallpaper);
             AppManager.Instance.ShowScreen(AppManager.Page.Collection);
         }
 
@@ -79,22 +79,22 @@ namespace Wallpaper.Controllers {
         }
 
         private void SetCurrentWallpaper(Wallpaper wallpaper) {
-            m_CurrWallpaperID = wallpaper.name;
+            m_CurrWallpaperID = wallpaper.Name;
             m_CurrWallpaper = wallpaper;
         }
 
         private void OpenCurrentWallpaper() {
             m_WallpaperName.text = m_CurrWallpaperID;
             var obj = CreateImageObject();
-            Vector2 loadedPos = new(m_CurrWallpaper.CropPositionX, m_CurrWallpaper.CropPositionY);
+            Vector2 loadedPos = m_CurrWallpaper.Images[0].Position;
             obj.GetComponent<RectTransform>().anchoredPosition = loadedPos;
-            Vector3 loadedScale = new(m_CurrWallpaper.CropScaleX, m_CurrWallpaper.CropScaleY, m_CurrWallpaper.CropScaleZ);
+            Vector3 loadedScale = m_CurrWallpaper.Images[0].Scale;
             obj.transform.localScale = loadedScale;
             m_UIPanel.SetSiblingIndex(transform.childCount - 1);
         }
 
         private GameObject CreateImageObject() {
-            Texture2D bgImage = Util.ToTexture2D(m_CurrWallpaper.BackgroundImage, m_CurrWallpaper.ImageWidth, m_CurrWallpaper.ImageHeight);
+            Texture2D bgImage = Util.ToTexture2D(m_CurrWallpaper.Images[0]);
             GameObject bgImageObj = new("BackGround");
             m_WallpaperImages.Add(bgImageObj.AddComponent<Image>());
             RectTransform imageTransform = bgImageObj.GetComponent<RectTransform>();

@@ -59,7 +59,7 @@ namespace Wallpaper.Controllers {
 
         public class CropData {
             public Vector2 Position;
-            public Vector3 Scale;
+            public Vector2 Scale;
         }
     }
 }

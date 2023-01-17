@@ -18,7 +18,8 @@ namespace Wallpaper.UI {
 
         public void Initialize(Wallpaper wallpaper) {
             m_Wallpaper = wallpaper;
-            m_PreviewImage.sprite = Util.ImageToSprite(Util.ToTexture2D(wallpaper.BackgroundImage, wallpaper.ImageWidth, wallpaper.ImageHeight));
+            var image = wallpaper.Images[0];
+            m_PreviewImage.sprite = Util.ImageToSprite(Util.ToTexture2D(image));
         }
     }
 }
