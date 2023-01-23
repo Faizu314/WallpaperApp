@@ -12,16 +12,8 @@ namespace Wallpaper.Controllers {
         private Object m_AndroidCommander;
         private IAndroidCommander AndroidCommander => (IAndroidCommander)m_AndroidCommander;
 
-        [SerializeField][RequireInterface(typeof(IWallpaperDatabase))]
-        private Object m_WallpaperDatabase;
-        private IWallpaperDatabase WallpaperDatabase => (IWallpaperDatabase)m_WallpaperDatabase;
-
-        [SerializeField] private ImageCropController m_ImageCropper;
-        [SerializeField] private StringInputFieldController m_InputFieldController;
         [SerializeField] private Button m_CreateButton;
         [SerializeField] private Button m_BackButton;
-
-        private Wallpaper m_CreatedWallpaper;
 
         private void Awake() {
             m_CreateButton.onClick.RemoveAllListeners();
@@ -43,35 +35,18 @@ namespace Wallpaper.Controllers {
             WallpaperImage wallpaperImage = new() {
                 Data = imageData,
                 Width = imageWidth,
-                Height = imageHeight
+                Height = imageHeight,
+                Position = Vector2.zero,
+                Scale = Vector2.one
             };
 
-            m_CreatedWallpaper = new() {
+            Wallpaper wallpaper = new() {
+                Name = null,
                 Version = Application.version,
                 Images = new() { wallpaperImage }
             };
 
-            Texture2D image = Util.ToTexture2D(wallpaperImage);
-
-            AppManager.Instance.ShowScreen(AppManager.Page.ImageCrop);
-
-            m_ImageCropper.BeginImageCropping(image, OnImageCropped);
-        }
-
-        private void OnImageCropped(ImageCropController.CropData cropData) {
-            m_CreatedWallpaper.Images[0].Position = cropData.Position;
-            m_CreatedWallpaper.Images[0].Scale = cropData.Scale;
-
-            AppManager.Instance.ShowScreen(AppManager.Page.InputField);
-
-            m_InputFieldController.GetUserInput("Enter Wallpaper Name", OnWallpaperNameAssigned);
-        }
-
-        private void OnWallpaperNameAssigned(string name) {
-            m_CreatedWallpaper.Name = name;
-            WallpaperDatabase.Save(m_CreatedWallpaper);
-
-            ApplicationEvents.InvokeOnWallpaperEdit(m_CreatedWallpaper);
+            ApplicationEvents.InvokeOnWallpaperEdit(wallpaper);
         }
 
     }

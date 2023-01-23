@@ -8,16 +8,11 @@ namespace Wallpaper {
 
         private const string SET_WALLPAPER_KEY = "WallpaperID";
 
-        public enum Page { Home, Collection, Preview, Editor, ImageCrop, InputField };
+        public enum Page { Home, Collection, Preview, Editor };
 
         [SerializeField][RequireInterface(typeof(IWallpaperDatabase))]
         private Object m_WallpaperDatabase;
         private IWallpaperDatabase WallpaperDatabase => (IWallpaperDatabase)m_WallpaperDatabase;
-
-
-        [Header("Popups")][Space(5)]
-        [SerializeField] private BaseController m_ImageCropCanvas;
-        [SerializeField] private BaseController m_InputFieldCanvas;
 
         [Header("Screens")][Space(5)]
         [SerializeField] private BaseController m_HomeCanvas;
@@ -39,8 +34,6 @@ namespace Wallpaper {
         }
 
         private void DeactivateAllScreens() {
-            m_ImageCropCanvas.gameObject.SetActive(false);
-            m_InputFieldCanvas.gameObject.SetActive(false);
             m_HomeCanvas.gameObject.SetActive(false);
             m_WallpaperCollectionCanvas.gameObject.SetActive(false);
             m_WallpaperPreviewCanvas.gameObject.SetActive(false);
@@ -50,8 +43,6 @@ namespace Wallpaper {
         private void InvokeOnApplicationStart() {
             ///Can't rely on events because the listener's Awake method may not have been called at this point.
 
-            m_ImageCropCanvas.OnApplicationStart();
-            m_InputFieldCanvas.OnApplicationStart();
             m_HomeCanvas.OnApplicationStart();
             m_WallpaperCollectionCanvas.OnApplicationStart();
             m_WallpaperPreviewCanvas.OnApplicationStart();
@@ -80,12 +71,6 @@ namespace Wallpaper {
                     break;
                 case Page.Editor:
                     ShowCanvas(m_WallpaperEditorCanvas);
-                    break;
-                case Page.ImageCrop:
-                    ShowCanvas(m_ImageCropCanvas);
-                    break;
-                case Page.InputField:
-                    ShowCanvas(m_InputFieldCanvas);
                     break;
             }
         }

@@ -6,5 +6,9 @@ namespace Wallpaper {
         Wallpaper Load(string wallpaperId);
 
         List<Wallpaper> GetWallpaperCollection();
+        bool DoesWallpaperExist(string wallpaperName);
+        void Rename(string oldName, string newName);
+        int GetWallpaperCount();
+
     }
 }

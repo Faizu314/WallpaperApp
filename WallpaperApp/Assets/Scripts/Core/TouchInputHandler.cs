@@ -55,28 +55,42 @@ namespace Wallpaper.Input {
             m_PrevPrimaryPos = m_TouchControls.Touch.PrimaryTouchPosition.ReadValue<Vector2>();
             m_PrevSecondaryPos = m_TouchControls.Touch.SecondaryTouchPosition.ReadValue<Vector2>();
 
+            var data = PinchCoroutineUpdateLoop();
+
+            InvokeOnTouchPinchBegin(data.Pivot, data.ZoomMagnitude);
+
+            yield return new WaitForEndOfFrame();
+
             while (true) {
-                Vector2 positionA = m_TouchControls.Touch.PrimaryTouchPosition.ReadValue<Vector2>();
-                Vector2 positionB = m_TouchControls.Touch.SecondaryTouchPosition.ReadValue<Vector2>();
-                Vector2 deltaPositionA = positionA - m_PrevPrimaryPos;
-                Vector2 deltaPositionB = positionB - m_PrevSecondaryPos;
+                data = PinchCoroutineUpdateLoop();
 
-                if (deltaPositionA.SqrMagnitude() < 1 && deltaPositionB.SqrMagnitude() < 1) {
-                    m_PrevPrimaryPos = positionA;
-                    m_PrevSecondaryPos = positionB;
-                    yield return new WaitForEndOfFrame();
-                }
-
-                float zoomMagnitude = CalculateZoomMagnitude(positionA, positionB, deltaPositionA, deltaPositionB);
-                Vector2 pivot = (positionA + positionB) / 2f;
-
-                InvokeOnTouchPinch(pivot, zoomMagnitude);
-
-                m_PrevPrimaryPos = positionA;
-                m_PrevSecondaryPos = positionB;
+                if (data.IsPinching)
+                    InvokeOnTouchPinch(data.Pivot, data.ZoomMagnitude);
 
                 yield return new WaitForEndOfFrame();
             }
+        }
+
+        private PinchData PinchCoroutineUpdateLoop() {
+            Vector2 positionA = m_TouchControls.Touch.PrimaryTouchPosition.ReadValue<Vector2>();
+            Vector2 positionB = m_TouchControls.Touch.SecondaryTouchPosition.ReadValue<Vector2>();
+            Vector2 deltaPositionA = positionA - m_PrevPrimaryPos;
+            Vector2 deltaPositionB = positionB - m_PrevSecondaryPos;
+
+            Vector2 pivot = (positionA + positionB) / 2f;
+
+            if (deltaPositionA.SqrMagnitude() < 1 && deltaPositionB.SqrMagnitude() < 1) {
+                m_PrevPrimaryPos = positionA;
+                m_PrevSecondaryPos = positionB;
+                return new(pivot, 1f, false);
+            }
+
+            float zoomMagnitude = CalculateZoomMagnitude(positionA, positionB, deltaPositionA, deltaPositionB);
+
+            m_PrevPrimaryPos = positionA;
+            m_PrevSecondaryPos = positionB;
+
+            return new(pivot, zoomMagnitude, true);
         }
 
         private float CalculateZoomMagnitude(Vector2 positionA, Vector2 positionB, Vector2 deltaPositionA, Vector2 deltaPositionB) {
@@ -94,7 +108,23 @@ namespace Wallpaper.Input {
 
 
         public void InvokeOnTouchPinch(Vector2 pivot, float magnitude) {
-            ApplicationEvents.InvokeOnTouchPinch(new((int)pivot.x, (int)pivot.y), magnitude);
+            ApplicationEvents.InvokeOnTouchPinch(pivot, magnitude);
+        }
+
+        public void InvokeOnTouchPinchBegin(Vector2 pivot, float magnitude) {
+            ApplicationEvents.InvokeOnTouchPinchBegin(pivot, magnitude);
+        }
+
+        private class PinchData {
+            public Vector2 Pivot;
+            public float ZoomMagnitude;
+            public bool IsPinching;
+
+            public PinchData(Vector2 pivot, float zoomMagnitude, bool isPinching) {
+                Pivot = pivot;
+                ZoomMagnitude = zoomMagnitude;
+                IsPinching = isPinching;
+            }
         }
     }
 }

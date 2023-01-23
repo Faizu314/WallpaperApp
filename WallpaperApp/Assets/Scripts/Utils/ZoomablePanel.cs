@@ -9,14 +9,13 @@ namespace Wallpaper.Utils {
         [SerializeField][Range(0f, 1f)] private float m_ZoomLerpLife;
         [SerializeField][Range(0f, 1f)] private float m_ZoomLerpRatio;
 
-        [SerializeField] private bool m_AlwaysCoverEntireScreen;
+        public bool AlwaysCoverEntireScreen;
 
         private RectTransform m_Transform;
         private Camera m_Camera;
 
         private float m_CurrentZoomLevel = 1f;
         private float m_TargetZoomLevel = 1f;
-        private bool m_IsPinching = false;
         private float K;
 
         private void Awake() {
@@ -27,42 +26,60 @@ namespace Wallpaper.Utils {
 
         private void OnEnable() {
             ApplicationEvents.OnTouchPinch += OnTouchPinch;
-            ApplicationEvents.OnSecondTouchUp += OnTouchPinchEnd;
         }
 
         private void OnDisable() {
             ApplicationEvents.OnTouchPinch -= OnTouchPinch;
-            ApplicationEvents.OnSecondTouchUp -= OnTouchPinchEnd;
         }
 
-        private void OnTouchPinchEnd() {
-            m_IsPinching = false;
+        public bool IsScaleValid(Vector2 scale) {
+            if (!AlwaysCoverEntireScreen)
+                return true;
+
+            Vector2 currScale = m_Transform.localScale;
+            
+            if (!Util.IsRectHeightLargerThanScreenAfterScaling(m_Transform, m_Camera, scale.y / currScale.y))
+                return false;
+            if (!Util.IsRectWidthLargerThanScreenAfterScaling(m_Transform, m_Camera, scale.x / currScale.x))
+                return false;
+
+            return true;
         }
 
-        private void OnTouchPinch(Vector2Int pivot, float zoomMagnitude) {
-            if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(m_Transform, pivot, Camera.main, out var nPivot))
+        public void Scale(float scaleFactor) {
+            if (AlwaysCoverEntireScreen) {
+                if (Util.DoesRectFitScreenAfterScaling(m_Transform, m_Camera, scaleFactor))
+                    ScaleDirectly(scaleFactor);
+            } else
+                ScaleDirectly(scaleFactor);
+        }
+
+        private void ScaleDirectly(float scaleFactor) {
+            m_TargetZoomLevel *= scaleFactor;
+            m_CurrentZoomLevel = m_TargetZoomLevel;
+            m_Transform.localScale *= scaleFactor;
+        }
+
+        private void OnTouchPinch(Vector2 pivot, float zoomMagnitude) {
+            if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(m_Transform, pivot, m_Camera, out var pivotInRect))
                 return;
 
-            if (!m_IsPinching) {
-                nPivot.x /= m_Transform.sizeDelta.x;
-                nPivot.y /= m_Transform.sizeDelta.y;
+            pivotInRect = Rect.PointToNormalized(m_Transform.rect, pivotInRect);
 
-                Util.SetRectTransformPivot(m_Transform, m_Transform.pivot + nPivot);
-                m_IsPinching = true;
-            }
+            Util.SetRectTransformPivot(m_Transform, pivotInRect);
 
             float zoomFactor = GetZoomFactor(zoomMagnitude);
 
-            if (!m_AlwaysCoverEntireScreen)
+            if (!AlwaysCoverEntireScreen)
                 m_Transform.localScale *= zoomFactor;
-            else if (Util.IsRectInsideScreenAfterScaling(m_Transform, m_Camera, zoomFactor))
+            else if (Util.DoesRectFitScreenAfterScaling(m_Transform, m_Camera, zoomFactor))
                 m_Transform.localScale *= zoomFactor;
         }
 
         private float GetZoomFactor(float magnitude) {
             m_TargetZoomLevel *= magnitude;
 
-            if (m_TargetZoomLevel <= 0f)
+            if (m_TargetZoomLevel <= 0.01f)
                 m_TargetZoomLevel = 0.01f;
 
             float prevZoomLevel = m_CurrentZoomLevel;

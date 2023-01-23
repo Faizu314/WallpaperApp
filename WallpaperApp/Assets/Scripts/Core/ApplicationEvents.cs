@@ -10,7 +10,7 @@ namespace Wallpaper {
 
         public delegate void AndroidImageReceived(byte[] imageData, int width, int height);
 
-        public delegate void TouchPinch(Vector2Int pivot, float zoomMagnitude);
+        public delegate void TouchPinch(Vector2 pivot, float zoomMagnitude);
 
         public delegate void Tap(Vector2 screenPos);
 
@@ -21,6 +21,7 @@ namespace Wallpaper {
         public static event AndroidImageReceived OnAndroidImageReceived;
 
         public static event TouchPinch OnTouchPinch;
+        public static event TouchPinch OnTouchPinchBegin;
         public static event Tap OnTap;
         public static event Notification OnSecondTouchDown;
         public static event Notification OnSecondTouchUp;
@@ -42,8 +43,12 @@ namespace Wallpaper {
         /// </summary>
         /// <param name="position1">Position of finger one.</param>
         /// <param name="zoomMagnitude"></param>
-        public static void InvokeOnTouchPinch(Vector2Int pivot, float zoomMagnitude) {
+        public static void InvokeOnTouchPinch(Vector2 pivot, float zoomMagnitude) {
             OnTouchPinch?.Invoke(pivot, zoomMagnitude);
+        }
+
+        public static void InvokeOnTouchPinchBegin(Vector2 pivot, float zoomMagnitude) {
+            OnTouchPinchBegin?.Invoke(pivot, zoomMagnitude);
         }
 
         public static void InvokeOnTap(Vector2 screenPos) {

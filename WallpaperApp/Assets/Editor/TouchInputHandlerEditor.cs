@@ -27,6 +27,7 @@ public class TouchInputHandlerEditor : Editor {
 
         if (GUILayout.Button("Simulate Android Zoom")) {
             ApplicationEvents.InvokeOnSecondTouchDown();
+            Target.InvokeOnTouchPinchBegin(Target.ZoomPivotToSimulate, Target.ZoomMagnitudeToSimulate);
             Target.InvokeOnTouchPinch(Target.ZoomPivotToSimulate, Target.ZoomMagnitudeToSimulate);
             ApplicationEvents.InvokeOnSecondTouchUp();
         }

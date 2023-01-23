@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace Wallpaper.Data {
@@ -16,6 +15,8 @@ namespace Wallpaper.Data {
         private const string NAME_PROPERTY = "name";
         private const string IMAGES_COUNT = "images_count";
         private const string IMAGE_DATA_PREFIX = "image_data";
+        private const string IMAGE_WIDTH_PREFIX = "image_width";
+        private const string IMAGE_HEIGHT_PREFIX = "image_height";
         private const string IMAGE_POSITION_PREFIX = "image_position";
         private const string IMAGE_SCALE_PREFIX = "image_scale";
 
@@ -59,6 +60,8 @@ namespace Wallpaper.Data {
             string imageDataPath = ImageDatabase.GetImagesPath(wallpaper.Name, imageIndex);
 
             data.Add(IMAGE_DATA_PREFIX + imageIndex, imageDataPath);
+            data.Add(IMAGE_WIDTH_PREFIX + imageIndex, wallpaper.Images[imageIndex].Width.ToString());
+            data.Add(IMAGE_HEIGHT_PREFIX + imageIndex, wallpaper.Images[imageIndex].Height.ToString());
             data.Add(IMAGE_POSITION_PREFIX + imageIndex, wallpaper.Images[imageIndex].Position.ToString());
             data.Add(IMAGE_SCALE_PREFIX + imageIndex, wallpaper.Images[imageIndex].Scale.ToString());
         }
@@ -66,6 +69,8 @@ namespace Wallpaper.Data {
         private static WallpaperImage ReadImage(Wallpaper wallpaper, Dictionary<string, string> data, int imageIndex) {
             return new() {
                 Data = ImageDatabase.Load(wallpaper.Name, imageIndex),
+                Width = int.Parse(data[IMAGE_WIDTH_PREFIX + imageIndex]),
+                Height = int.Parse(data[IMAGE_HEIGHT_PREFIX + imageIndex]),
                 Position = StringToVector(data[IMAGE_POSITION_PREFIX + imageIndex]),
                 Scale = StringToVector(data[IMAGE_SCALE_PREFIX + imageIndex])
             };

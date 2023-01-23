@@ -9,6 +9,28 @@ namespace Wallpaper.Data {
 
         private const string DATA_SUB_DIRECTORY = "/Wallpapers/";
 
+        public void Rename(string oldName, string newName) {
+            if (!DoesWallpaperExist(oldName))
+                return;
+
+            string oldPath = GetWallpaperPath(oldName);
+            string newPath = GetWallpaperPath(newName);
+
+            File.Delete(newPath);
+            File.Move(oldPath, newPath);
+        }
+
+        public bool DoesWallpaperExist(string wallpaperName) {
+            return File.Exists(GetWallpaperPath(wallpaperName));
+        }
+
+        public int GetWallpaperCount() {
+            var info = new DirectoryInfo(GetCollectionPath());
+            var fileInfo = info.GetFiles();
+
+            return fileInfo.Length;
+        }
+
         public void Save(Wallpaper wallpaper) {
             string filePath = GetWallpaperPath(wallpaper.Name);
 
@@ -23,7 +45,7 @@ namespace Wallpaper.Data {
 
             string jsonWallpaper = File.ReadAllText(filePath);
 
-            WallpaperData wallpaperData = null;
+            WallpaperData wallpaperData;
 
             try {
                 wallpaperData = JsonUtility.FromJson<WallpaperData>(jsonWallpaper);
@@ -38,8 +60,8 @@ namespace Wallpaper.Data {
             return WallpaperConverter.GetWallpaper(wallpaperData);
         }
 
-        public Wallpaper Load(string wallpaperID) {
-            string filePath = GetWallpaperPath(wallpaperID);
+        public Wallpaper Load(string wallpaperName) {
+            string filePath = GetWallpaperPath(wallpaperName);
 
             return LoadFromPath(filePath);
         }
@@ -60,6 +82,8 @@ namespace Wallpaper.Data {
         }
 
         private string GetCollectionPath() {
+            Directory.CreateDirectory(Application.persistentDataPath + DATA_SUB_DIRECTORY);
+
             return Application.persistentDataPath + DATA_SUB_DIRECTORY;
         }
 

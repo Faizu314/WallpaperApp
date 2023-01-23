@@ -1,5 +1,4 @@
-﻿using System.IO;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Wallpaper.Utils {
 
@@ -16,6 +15,23 @@ namespace Wallpaper.Utils {
             texture.Apply();
 
             return texture;
+        }
+
+        public static Texture2D ToTexture2D(byte[] imageData, int imageWidth, int imageHeight) {
+            Texture2D texture = new(imageWidth, imageHeight);
+
+            texture.SetPixelData(imageData, 0);
+            texture.Apply();
+
+            return texture;
+        }
+
+        public static WallpaperImage ToWallpaperImage(byte[] imageData, int imageWidth, int imageHeight) {
+            return new() {
+                Data = imageData,
+                Width = imageWidth,
+                Height = imageHeight
+            };
         }
 
         public static Mesh GenerateQuadMesh(float width, float height) {
@@ -54,6 +70,10 @@ namespace Wallpaper.Utils {
             return Sprite.Create(texture, rect, Vector2.one / 2f);
         }
 
+        public static Sprite WallpaperImageToSprite(WallpaperImage image) {
+            return ImageToSprite(ToTexture2D(image));
+        }
+
         public static Texture2D ToTexture2D(RenderTexture renderTexture) {
             Texture2D texture = new(Screen.width, Screen.height, TextureFormat.RGB24, false);
             RenderTexture.active = renderTexture;
@@ -75,101 +95,110 @@ namespace Wallpaper.Utils {
         /// <summary>
         /// Correction is the translation required to get the rect back inside screen.
         /// </summary>
-        public static bool IsRectInsideScreen(RectTransform rectTransform, Camera camera, out Vector2 correction) {
-            Vector3 pivotWorldPos = rectTransform.TransformPoint(rectTransform.position);
-            Vector2 pivotScreenPos = camera.WorldToScreenPoint(pivotWorldPos);
-            Vector3[] cornersWorldPos = new Vector3[4];
-            rectTransform.GetWorldCorners(cornersWorldPos);
-            Vector2[] cornersScreenPos = new Vector2[4];
+        public static bool DoesRectFitThanScreen(RectTransform transform, Camera camera, out Vector2 correction) {
+            Vector3[] panelCornersWorldPos = new Vector3[4];
+            transform.GetWorldCorners(panelCornersWorldPos);
+            Vector2[] panelCornersScreenPos = new Vector2[4];
             for (int i = 0; i < 4; i++)
-                cornersScreenPos[i] = camera.WorldToScreenPoint(cornersWorldPos[i]);
+                panelCornersScreenPos[i] = camera.WorldToScreenPoint(panelCornersWorldPos[i]);
 
-            float pivotToScreenLeftBound = -pivotScreenPos.x;
-            float pivotToScreenRightBound = camera.pixelWidth + pivotToScreenLeftBound;
-            float pivotToScreenBottomBound = -pivotScreenPos.y;
-            float pivotToScreenTopBound = camera.pixelHeight + pivotToScreenBottomBound;
-
-            float pivotToPanelLeftBound = cornersScreenPos[0].x - pivotScreenPos.x;
-            float pivotToPanelRightBound = cornersScreenPos[3].x - pivotScreenPos.x;
-            float pivotToPanelBottomBound = cornersScreenPos[0].y - pivotScreenPos.y;
-            float pivotToPanelTopBound = cornersScreenPos[1].y - pivotScreenPos.y;
+            Vector2 bottomLeft = panelCornersScreenPos[0];
+            Vector2 topRight = panelCornersScreenPos[2];
+            float cameraWidth = camera.pixelWidth;
+            float cameraHeight = camera.pixelHeight;
 
             correction = Vector2.zero;
 
-            if (pivotToPanelLeftBound > pivotToScreenLeftBound)
-                correction.x -= pivotToPanelLeftBound - pivotToScreenLeftBound;
-            if (pivotToPanelRightBound < pivotToScreenRightBound)
-                correction.x += pivotToScreenRightBound - pivotToPanelRightBound;
-            if (pivotToPanelBottomBound > pivotToScreenBottomBound)
-                correction.y -= pivotToPanelBottomBound - pivotToScreenBottomBound;
-            if (pivotToPanelTopBound < pivotToScreenTopBound)
-                correction.y += pivotToScreenTopBound - pivotToPanelTopBound;
+            if (IsRectHeightLargerThanScreen(transform, camera)) {
+                if (bottomLeft.y > 0)
+                    correction.y -= bottomLeft.y;
+                if (topRight.y < cameraHeight)
+                    correction.y += cameraHeight - topRight.y;
+            }
+            else {
+                if (bottomLeft.y < 0)
+                    correction.y -= bottomLeft.y;
+                if (topRight.y > cameraHeight)
+                    correction.y -= topRight.y - cameraHeight;
+            }
+
+            if (IsRectWidthLargerThanScreen(transform, camera)) {
+                if (bottomLeft.x > 0)
+                    correction.x -= bottomLeft.x;
+                if (topRight.x < cameraWidth)
+                    correction.x += cameraWidth - topRight.x;
+            }
+            else {
+                if (bottomLeft.x < 0)
+                    correction.x -= bottomLeft.x;
+                if (topRight.x > cameraWidth)
+                    correction.x -= topRight.x - cameraWidth;
+            }
 
             return correction == Vector2.zero;
         }
 
-        public static bool IsRectInsideScreenAfterScaling_(RectTransform rectTransform, Camera camera, float scaleFactor) {
-            Vector3 pivotWorldPos = rectTransform.TransformPoint(rectTransform.position);
-            Vector2 pivotScreenPos = camera.WorldToScreenPoint(pivotWorldPos);
+        public static bool IsRectHeightLargerThanScreen(RectTransform transform, Camera camera) {
             Vector3[] cornersWorldPos = new Vector3[4];
-            rectTransform.GetWorldCorners(cornersWorldPos);
-            Vector2[] cornersScreenPos = new Vector2[4];
-            for (int i = 0; i < 4; i++)
-                cornersScreenPos[i] = camera.WorldToScreenPoint(cornersWorldPos[i]);
+            transform.GetWorldCorners(cornersWorldPos);
 
-            float pivotToScreenLeftBound = -pivotScreenPos.x;
-            float pivotToScreenRightBound = camera.pixelWidth + pivotToScreenLeftBound;
-            float pivotToScreenBottomBound = -pivotScreenPos.y;
-            float pivotToScreenTopBound = camera.pixelHeight + pivotToScreenBottomBound;
+            Vector2 bottomLeft = camera.WorldToScreenPoint(cornersWorldPos[0]);
+            Vector2 topRight = camera.WorldToScreenPoint(cornersWorldPos[2]);
 
-            float pivotToPanelLeftBound = (cornersScreenPos[0].x - pivotScreenPos.x) * scaleFactor;
-            float pivotToPanelRightBound = (cornersScreenPos[3].x - pivotScreenPos.x) * scaleFactor;
-            float pivotToPanelBottomBound = (cornersScreenPos[0].y - pivotScreenPos.y) * scaleFactor;
-            float pivotToPanelTopBound = (cornersScreenPos[1].y - pivotScreenPos.y) * scaleFactor;
-
-            if (pivotToPanelLeftBound > pivotToScreenLeftBound)
-                return false;
-            if (pivotToPanelRightBound < pivotToScreenRightBound)
-                return false;
-            if (pivotToPanelBottomBound > pivotToScreenBottomBound)
-                return false;
-            if (pivotToPanelTopBound < pivotToScreenTopBound)
-                return false;
-
-            return true;
+            return Mathf.Abs(topRight.y - bottomLeft.y) > camera.pixelHeight;
         }
 
-        public static bool IsRectInsideScreenAfterScaling(RectTransform rectTransform, Camera camera, float scaleFactor) {
+        public static bool IsRectHeightLargerThanScreenAfterScaling(RectTransform transform, Camera camera, float scaleFactor) {
             Vector3[] cornersWorldPos = new Vector3[4];
-            rectTransform.GetWorldCorners(cornersWorldPos);
-            Vector2[] cornersScreenPos = new Vector2[4];
+            transform.GetWorldCorners(cornersWorldPos);
 
-            cornersScreenPos[0] = camera.WorldToScreenPoint(cornersWorldPos[0]);  //bottom left
-            cornersScreenPos[2] = camera.WorldToScreenPoint(cornersWorldPos[2]);  //top right
+            Vector2 bottomLeft = camera.WorldToScreenPoint(cornersWorldPos[0]);
+            Vector2 topRight = camera.WorldToScreenPoint(cornersWorldPos[2]);
+
+            return Mathf.Abs(topRight.y - bottomLeft.y) * scaleFactor > camera.pixelHeight;
+        }
+
+        public static bool IsRectWidthLargerThanScreen(RectTransform transform, Camera camera) {
+            Vector3[] cornersWorldPos = new Vector3[4];
+            transform.GetWorldCorners(cornersWorldPos);
+
+            Vector2 bottomLeft = camera.WorldToScreenPoint(cornersWorldPos[0]);
+            Vector2 topRight = camera.WorldToScreenPoint(cornersWorldPos[2]);
+
+            return Mathf.Abs(topRight.x - bottomLeft.x) > camera.pixelWidth;
+        }
+
+        public static bool IsRectWidthLargerThanScreenAfterScaling(RectTransform transform, Camera camera, float scaleFactor) {
+            Vector3[] cornersWorldPos = new Vector3[4];
+            transform.GetWorldCorners(cornersWorldPos);
+
+            Vector2 bottomLeft = camera.WorldToScreenPoint(cornersWorldPos[0]);
+            Vector2 topRight = camera.WorldToScreenPoint(cornersWorldPos[2]);
+
+            return Mathf.Abs(topRight.x - bottomLeft.x) * scaleFactor > camera.pixelWidth;
+        }
+
+        public static bool DoesRectFitScreenAfterScaling(RectTransform transform, Camera camera, float scaleFactor) {
+            Vector3[] cornersWorldPos = new Vector3[4];
+            transform.GetWorldCorners(cornersWorldPos);
+
+            Vector2 bottomLeftScreenPos = camera.WorldToScreenPoint(cornersWorldPos[0]);
+            Vector2 topRightScreenPos = camera.WorldToScreenPoint(cornersWorldPos[2]);
 
             float screenWidth = camera.pixelWidth;
             float screenHeight = camera.pixelHeight;
 
-            float panelWidth = Mathf.Abs(cornersScreenPos[0].x - cornersScreenPos[2].x) * scaleFactor;
-            float panelHeight = Mathf.Abs(cornersScreenPos[0].y - cornersScreenPos[2].y) * scaleFactor;
+            float panelWidth = Mathf.Abs(bottomLeftScreenPos.x - topRightScreenPos.x) * scaleFactor;
+            float panelHeight = Mathf.Abs(bottomLeftScreenPos.y - topRightScreenPos.y) * scaleFactor;
 
             return panelWidth >= screenWidth && panelHeight >= screenHeight;
         }
 
-        public static float GetPanelPixelWidthInRectSpace(RectTransform rectTransform) {
+        public static float GetPanelPixelWidthInRectSpace(RectTransform transform) {
             Vector3[] cornersPos = new Vector3[4];
-            rectTransform.GetLocalCorners(cornersPos);
+            transform.GetLocalCorners(cornersPos);
 
             return cornersPos[3].x - cornersPos[0].x;
-        }
-
-        public static void SaveByteArrayInAndroid(string name, byte[] array) {
-            Debug.Log(Application.dataPath + "/" + name + ".txt");
-
-            StreamWriter writer = new(Application.dataPath + "/" + name + ".txt");
-
-            foreach (byte b in array)
-                writer.WriteLine(b);
         }
 
     }
