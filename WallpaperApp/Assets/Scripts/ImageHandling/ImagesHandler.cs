@@ -18,11 +18,11 @@ namespace Wallpaper.ImageHandling {
         public int SelectedLayer => m_SelectedLayer;
         public bool IsCropping => m_IsCropping;
 
-        private EventSystem m_EventSystem;
+        private PointerEventData m_PointerEventData;
         private Dictionary<WallpaperImage, GameObject> m_ImageToObject = new();
         private Dictionary<GameObject, ImageCropper> m_ObjectToCropper = new();
         private List<ImageCropper> m_Croppers = new();
-        private ImageCropper m_CurrentlyZoomingCropper;
+        private ImageCropper m_CurrentlySelectedCropper;
         private int m_SelectedLayer;
         private bool m_IsCropping;
 
@@ -33,54 +33,62 @@ namespace Wallpaper.ImageHandling {
         }
 
         private void Awake() {
-            m_EventSystem = EventSystem.current;
+            m_PointerEventData = new(EventSystem.current);
         }
 
         private void OnEnable() {
+            ApplicationEvents.OnPrimaryTouchDown += OnTouchDown;
+            ApplicationEvents.OnPrimaryTouchUp += OnTouchUp;
             ApplicationEvents.OnTouchPinchBegin += OnPinchBegin;
             ApplicationEvents.OnSecondTouchUp += OnPinchEnd;
         }
 
         private void OnDisable() {
+            ApplicationEvents.OnPrimaryTouchDown -= OnTouchDown;
+            ApplicationEvents.OnPrimaryTouchUp -= OnTouchUp;
             ApplicationEvents.OnTouchPinchBegin -= OnPinchBegin;
             ApplicationEvents.OnSecondTouchUp -= OnPinchEnd;
         }
 
+        private void OnTouchDown(Vector2 screenPosition) {
+            if (!m_IsCropping)
+                return;
+            if (!Util.CanvasRaycast(m_PointerEventData, m_Raycaster, screenPosition, m_EditorImagesLayer, out var results))
+                return;
+
+            m_ObjectToCropper.TryGetValue(results[0].gameObject, out m_CurrentlySelectedCropper);
+
+            if (m_CurrentlySelectedCropper == null)
+                return;
+
+            m_CurrentlySelectedCropper.EnableMovement();
+            m_CurrentlySelectedCropper.DisableZooming();
+        }
+
+        private void OnTouchUp() {
+            if (m_CurrentlySelectedCropper != null) {
+                m_CurrentlySelectedCropper.DisableZooming();
+                m_CurrentlySelectedCropper.DisableMovement();
+            }
+            m_CurrentlySelectedCropper = null;
+        }
+
         private void OnPinchBegin(Vector2 pivot, float magnitude) {
-            PointerEventData m_PointerEventData = new(m_EventSystem) {
-                position = pivot
-            };
-
-            List<RaycastResult> results = new();
-
-            m_Raycaster.Raycast(m_PointerEventData, results);
-
-            if (results.Count == 0)
-                return;
-            if (!FMath.IsInLayerMask(m_EditorImagesLayer, results[0].gameObject.layer))
+            if (!m_IsCropping)
                 return;
 
-            m_ObjectToCropper.TryGetValue(results[0].gameObject.transform.parent.parent.gameObject, out m_CurrentlyZoomingCropper);
-
-            if (m_CurrentlyZoomingCropper == null)
+            if (m_CurrentlySelectedCropper == null)
                 return;
 
-            m_CurrentlyZoomingCropper.EnableZooming();
-
-            //Util.SetRectTransformPivot((RectTransform)m_CurrentlyZoomingCropper.transform, pivot);
+            m_CurrentlySelectedCropper.EnableZooming();
+            m_CurrentlySelectedCropper.DisableMovement();
         }
 
         private void OnPinchEnd() {
-            if (m_CurrentlyZoomingCropper != null)
-                m_CurrentlyZoomingCropper.DisableZooming();
-            m_CurrentlyZoomingCropper = null;
-        }
-
-        public void CancelCropping() {
-            if (!m_IsCropping)
+            if (m_CurrentlySelectedCropper == null)
                 return;
-            m_Croppers[SelectedLayer].CancelCropping();
-            m_IsCropping = false;
+            m_CurrentlySelectedCropper.DisableZooming();
+            m_CurrentlySelectedCropper.EnableMovement();
         }
 
         public void SetCurrentLayer(int layer) {
@@ -106,10 +114,18 @@ namespace Wallpaper.ImageHandling {
         }
 
         private void BeginCropping() {
-            for (int i = 0; i < Count; i++) {
+            for (int i = 0; i < Count; i++)
                 m_Croppers[i].BeginCropping();
-                m_Croppers[i].EnableMovement();
-            }
+        }
+
+        public void CancelCropping() {
+            if (!m_IsCropping)
+                return;
+
+            for (int i = 0; i < Count; i++)
+                m_Croppers[i].CancelCropping();
+
+            m_IsCropping = false;
         }
 
         private List<ImageCropper.CropData[]> FinishCropping() {
@@ -142,7 +158,7 @@ namespace Wallpaper.ImageHandling {
             imageObj.transform.SetSiblingIndex(m_ImagesParent.childCount - 2);
 
             m_ImageToObject.Add(wallpaperImage, imageObj);
-            m_ObjectToCropper.Add(imageObj, cropper);
+            m_ObjectToCropper.Add(imageObj.transform.GetChild(0).GetChild(0).gameObject, cropper);
             m_Croppers.Add(cropper);
         }
 

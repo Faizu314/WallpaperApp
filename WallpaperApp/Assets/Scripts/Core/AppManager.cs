@@ -20,7 +20,7 @@ namespace Wallpaper {
         [SerializeField] private BaseController m_WallpaperPreviewCanvas;
         [SerializeField] private BaseController m_WallpaperEditorCanvas;
 
-        private GameObject m_CurrentlyActiveCanvas;
+        private BaseController m_CurrentlyActiveController;
         private string m_SetWallpaperID;
 
         private void Awake() {
@@ -31,6 +31,12 @@ namespace Wallpaper {
 
         private void Initialize() {
             m_SetWallpaperID = PlayerPrefs.GetString(SET_WALLPAPER_KEY, null);
+            ApplicationEvents.OnAndroidBackPressed += OnAndroidBack;
+        }
+
+        private void OnAndroidBack() {
+            if (m_CurrentlyActiveController != null)
+                m_CurrentlyActiveController.OnAndroidBackPressed();
         }
 
         private void DeactivateAllScreens() {
@@ -76,18 +82,18 @@ namespace Wallpaper {
         }
 
         public void HideAllScreens() {
-            if (m_CurrentlyActiveCanvas != null)
-                m_CurrentlyActiveCanvas.SetActive(false);
+            if (m_CurrentlyActiveController != null)
+                m_CurrentlyActiveController.gameObject.SetActive(false);
         }
 
-        private void ShowCanvas(BaseController canvas) {
-            if (canvas == null)
+        private void ShowCanvas(BaseController controller) {
+            if (controller == null)
                 return;
-            if (m_CurrentlyActiveCanvas != null)
-                m_CurrentlyActiveCanvas.SetActive(false);
+            if (m_CurrentlyActiveController != null)
+                m_CurrentlyActiveController.gameObject.SetActive(false);
 
-            m_CurrentlyActiveCanvas = canvas.gameObject;
-            m_CurrentlyActiveCanvas.SetActive(true);
+            m_CurrentlyActiveController = controller;
+            m_CurrentlyActiveController.gameObject.SetActive(true);
         }
 
         public bool IsWallpaperSet() {

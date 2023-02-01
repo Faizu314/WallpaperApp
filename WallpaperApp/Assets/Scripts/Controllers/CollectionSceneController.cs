@@ -21,6 +21,12 @@ namespace Wallpaper.Controllers {
             m_BackButton.onClick.AddListener(() => AppManager.Instance.ShowScreen(AppManager.Page.Home));
         }
 
+        public override void OnAndroidBackPressed() {
+            base.OnAndroidBackPressed();
+
+            m_BackButton.onClick.Invoke();
+        }
+
         protected override void OnSceneLoaded() {
             base.OnSceneLoaded();
             ApplicationEvents.OnAndroidImageReceived += CreateWallpaper;

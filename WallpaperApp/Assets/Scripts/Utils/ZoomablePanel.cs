@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using Phezu.Util;
+﻿using Phezu.Util;
+using UnityEngine;
 
 namespace Wallpaper.Utils {
 
@@ -16,6 +16,7 @@ namespace Wallpaper.Utils {
 
         private float m_CurrentZoomLevel = 1f;
         private float m_TargetZoomLevel = 1f;
+        private float m_AccumulatedZoom = 1f;
         private float K;
 
         private void Awake() {
@@ -61,12 +62,12 @@ namespace Wallpaper.Utils {
         }
 
         private void OnTouchPinch(Vector2 pivot, float zoomMagnitude) {
-            if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(m_Transform, pivot, m_Camera, out var pivotInRect))
+            if (!RectTransformUtility.ScreenPointToLocalPointInRectangle(m_Transform, pivot, m_Camera, out var localPivot))
                 return;
 
-            pivotInRect = Rect.PointToNormalized(m_Transform.rect, pivotInRect);
+            var localPivotNormalized = Rect.PointToNormalized(m_Transform.rect, localPivot);
 
-            Util.SetRectTransformPivot(m_Transform, pivotInRect);
+            Util.SetRectTransformPivot(m_Transform, localPivotNormalized);
 
             float zoomFactor = GetZoomFactor(zoomMagnitude);
 
@@ -74,6 +75,10 @@ namespace Wallpaper.Utils {
                 m_Transform.localScale *= zoomFactor;
             else if (Util.DoesRectFitScreenAfterScaling(m_Transform, m_Camera, zoomFactor))
                 m_Transform.localScale *= zoomFactor;
+
+            m_Transform.ForceUpdateRectTransforms();
+
+            Util.SetRectTransformPivot(m_Transform, localPivotNormalized);
         }
 
         private float GetZoomFactor(float magnitude) {

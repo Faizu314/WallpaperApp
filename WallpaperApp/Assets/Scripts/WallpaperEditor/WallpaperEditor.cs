@@ -5,7 +5,6 @@ using TMPro;
 using Wallpaper.ImageHandling;
 using Phezu.Util;
 using Wallpaper.Utils;
-using Unity.VisualScripting;
 
 namespace Wallpaper.Editor {
 
@@ -65,12 +64,10 @@ namespace Wallpaper.Editor {
                 int index = i;
                 m_LayerButtons[i].onClick.AddListener(() => OnLayerButtonPressed(index));
             }
-
-            ApplicationEvents.OnWallpaperEdit += OnWallpaperEdit;
-            ApplicationEvents.OnWallpaperPreview += OnPreviewWallpaper;
         }
 
         public void OpenEditor() {
+            CancelAllIncompleteActions();
         }
 
         public void CloseEditor() {
@@ -88,8 +85,8 @@ namespace Wallpaper.Editor {
             m_CropButtonText.SetState(true);
         }
 
-        private void OnPreviewWallpaper(Wallpaper wallpaper) {
-            OnWallpaperEdit(wallpaper);
+        public void PreviewWallpaper(Wallpaper wallpaper) {
+            BeginEditing(wallpaper);
             BeginPreview();
         }
 
@@ -99,11 +96,6 @@ namespace Wallpaper.Editor {
 
         public void EndPreview() {
             m_UIPanel.gameObject.SetActive(true);
-        }
-
-        private void OnWallpaperEdit(Wallpaper wallpaper) {
-            AppManager.Instance.ShowScreen(AppManager.Page.Editor);
-            BeginEditing(wallpaper);
         }
 
         private void OnDeleteImageButtonPressed() {
@@ -164,9 +156,10 @@ namespace Wallpaper.Editor {
 
         private void CancelAllIncompleteActions() {
             m_ImagesHandler.CancelCropping();
+            m_CropButtonText.SetState(false);
         }
 
-        private void BeginEditing(Wallpaper wallpaperToEdit) {
+        public void BeginEditing(Wallpaper wallpaperToEdit) {
             RemoveCurrentWallpaper();
             m_CurrWallpaper = wallpaperToEdit;
             OpenWallpaper();

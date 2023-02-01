@@ -13,12 +13,14 @@ namespace Wallpaper.ImageHandling {
 
         private ScrollRect m_ScrollRect;
         private RectTransform m_ImageRect;
+        private RectTransform m_CropperRect;
         private Camera m_Camera;
         private CropData m_StartState;
         private CropData m_EndState;
 
         private void Awake() {
             m_ScrollRect = GetComponent<ScrollRect>();
+            m_CropperRect = GetComponent<RectTransform>();
 
             m_ImageRect = m_Image.GetComponent<RectTransform>();
             m_Image.preserveAspect = true;
@@ -34,24 +36,19 @@ namespace Wallpaper.ImageHandling {
             DisableCropping();
         }
 
-        private void OnEnable() {
-            ApplicationEvents.OnSecondTouchDown += OnSecondTouchDown;
-            ApplicationEvents.OnSecondTouchUp += OnSecondTouchUp;
-        }
-
-        private void OnDisable() {
-            ApplicationEvents.OnSecondTouchDown -= OnSecondTouchDown;
-            ApplicationEvents.OnSecondTouchUp -= OnSecondTouchUp;
-        }
-
         private void DisableCropping() {
             DisableMovement();
             DisableZooming();
         }
 
         public void EnableMovement() {
+            //var currentState = GetCurrentState();
+
             m_ScrollRect.horizontal = true;
             m_ScrollRect.vertical = true;
+            m_ScrollRect.StopMovement();
+
+            //SetCurrentState(currentState);
         }
 
         public void DisableMovement() {
@@ -109,27 +106,14 @@ namespace Wallpaper.ImageHandling {
             Util.SetRectTransformPivot(m_ImageRect, Vector2.one / 2f);
         }
 
-        private void OnSecondTouchDown() {
-            m_ScrollRect.vertical = false;
-            m_ScrollRect.horizontal = false;
-        }
 
-        private void OnSecondTouchUp() {
-            StartCoroutine(nameof(WaitAndEnableScroll));
-        }
-
-        private IEnumerator WaitAndEnableScroll() {
-            yield return null;
-
-            m_ScrollRect.vertical = true;
-            m_ScrollRect.horizontal = true;
-        }
-
-        // TODO: anchored position should be normalized in screen coordinates.
         public CropData GetCurrentState() {
             ResetPivot();
 
-            return new(m_ImageRect.anchoredPosition, m_ImageRect.localScale);
+            CropData cropData = new(m_ImageRect.anchoredPosition, m_ImageRect.localScale);
+            cropData.NormalizePosition(m_Camera);
+
+            return cropData;
         }
         public void SetCurrentState(CropData cropData) {
             StartCoroutine(nameof(SetStateCoroutine), cropData);
@@ -139,6 +123,8 @@ namespace Wallpaper.ImageHandling {
             yield return new WaitForEndOfFrame();
 
             ResetPivot();
+
+            cropData.DenormalizePosition(m_Camera);
 
             m_ImageRect.anchoredPosition = cropData.Position;
 
@@ -153,6 +139,14 @@ namespace Wallpaper.ImageHandling {
             public CropData(Vector2 position, Vector2 scale) {
                 Position = position;
                 Scale = scale;
+            }
+
+            public void NormalizePosition(Camera camera) {
+                Position.Scale(new(1f / camera.pixelWidth, 1f / camera.pixelHeight));
+            }
+
+            public void DenormalizePosition(Camera camera) {
+                Position.Scale(new(camera.pixelWidth, camera.pixelHeight));
             }
         }
     }

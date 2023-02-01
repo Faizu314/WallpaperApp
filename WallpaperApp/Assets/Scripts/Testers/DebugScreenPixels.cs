@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TestScript : MonoBehaviour
+public class DebugScreenPixels : MonoBehaviour
 {
     [SerializeField] private Camera m_Camera;
     [SerializeField] private RectTransform m_Transform;

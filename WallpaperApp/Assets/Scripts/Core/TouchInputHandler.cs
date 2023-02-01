@@ -24,8 +24,9 @@ namespace Wallpaper.Input {
 
             m_TouchControls.Touch.Tap.performed += _ => OnTap();
             m_TouchControls.Touch.SecondaryTouchDown.performed += _ => OnSecondaryTouchDown();
-            m_TouchControls.Touch.PrimaryTouchDown.canceled += _ => OnTouchUp();
-            m_TouchControls.Touch.SecondaryTouchDown.canceled += _ => OnTouchUp();
+            m_TouchControls.Touch.PrimaryTouchDown.performed += _ => OnPrimaryTouchDown();
+            m_TouchControls.Touch.PrimaryTouchDown.canceled += _ => OnAnyTouchUp();
+            m_TouchControls.Touch.SecondaryTouchDown.canceled += _ => OnAnyTouchUp();
         }
 
 
@@ -36,13 +37,22 @@ namespace Wallpaper.Input {
 
         private void OnSecondaryTouchDown() {
             m_TwoFingersDown = true;
+
             ApplicationEvents.InvokeOnSecondTouchDown();
             m_PinchCoroutine = StartCoroutine(nameof(Pinch_Coroutine));
         }
 
-        private void OnTouchUp() {
-            if (!m_TwoFingersDown)
+        private void OnPrimaryTouchDown() {
+            Vector2 touchPos = m_TouchControls.Touch.PrimaryTouchPosition.ReadValue<Vector2>();
+
+            ApplicationEvents.InvokeOnPrimaryTouchDown(touchPos);
+        }
+
+        private void OnAnyTouchUp() {
+            if (!m_TwoFingersDown) {
+                ApplicationEvents.InvokeOnPrimaryTouchUp();
                 return;
+            }
 
             StopCoroutine(m_PinchCoroutine);
             ApplicationEvents.InvokeOnSecondTouchUp();
@@ -52,26 +62,31 @@ namespace Wallpaper.Input {
         private IEnumerator Pinch_Coroutine() {
             yield return new WaitForEndOfFrame();
 
-            m_PrevPrimaryPos = m_TouchControls.Touch.PrimaryTouchPosition.ReadValue<Vector2>();
-            m_PrevSecondaryPos = m_TouchControls.Touch.SecondaryTouchPosition.ReadValue<Vector2>();
-
-            var data = PinchCoroutineUpdateLoop();
-
-            InvokeOnTouchPinchBegin(data.Pivot, data.ZoomMagnitude);
-
-            yield return new WaitForEndOfFrame();
+            PinchStart();
 
             while (true) {
-                data = PinchCoroutineUpdateLoop();
-
-                if (data.IsPinching)
-                    InvokeOnTouchPinch(data.Pivot, data.ZoomMagnitude);
-
                 yield return new WaitForEndOfFrame();
+
+                PinchUpdateLoop();
             }
         }
 
-        private PinchData PinchCoroutineUpdateLoop() {
+        private void PinchStart() {
+            m_PrevPrimaryPos = m_TouchControls.Touch.PrimaryTouchPosition.ReadValue<Vector2>();
+            m_PrevSecondaryPos = m_TouchControls.Touch.SecondaryTouchPosition.ReadValue<Vector2>();
+
+            var data = GetPinchData();
+            InvokeOnTouchPinchBegin(data.Pivot, data.ZoomMagnitude);
+        }
+
+        private void PinchUpdateLoop() {
+            var data = GetPinchData();
+
+            if (data.IsPinching)
+                InvokeOnTouchPinch(data.Pivot, data.ZoomMagnitude);
+        }
+
+        private PinchData GetPinchData() {
             Vector2 positionA = m_TouchControls.Touch.PrimaryTouchPosition.ReadValue<Vector2>();
             Vector2 positionB = m_TouchControls.Touch.SecondaryTouchPosition.ReadValue<Vector2>();
             Vector2 deltaPositionA = positionA - m_PrevPrimaryPos;
@@ -105,7 +120,6 @@ namespace Wallpaper.Input {
 
             return zoomMagnitude;
         }
-
 
         public void InvokeOnTouchPinch(Vector2 pivot, float magnitude) {
             ApplicationEvents.InvokeOnTouchPinch(pivot, magnitude);

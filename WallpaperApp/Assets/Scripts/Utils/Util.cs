@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿using Phezu.Util;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 namespace Wallpaper.Utils {
 
@@ -83,13 +87,12 @@ namespace Wallpaper.Utils {
         }
 
         public static void SetRectTransformPivot(RectTransform rectTransform, Vector2 pivot) {
-            Vector3 deltaPosition = rectTransform.pivot - pivot;    // get change in pivot
-            deltaPosition.Scale(rectTransform.rect.size);           // apply sizing
-            deltaPosition.Scale(rectTransform.localScale);          // apply scaling
-            deltaPosition = rectTransform.rotation * deltaPosition; // apply rotation
+            Vector3 deltaPosition = pivot - rectTransform.pivot;
+            deltaPosition.Scale(rectTransform.rect.size);
+            Vector3 worldPosition = rectTransform.position + rectTransform.TransformVector(deltaPosition);
 
-            rectTransform.pivot = pivot;                            // change the pivot
-            rectTransform.localPosition -= deltaPosition;           // reverse the position change
+            rectTransform.pivot = pivot;
+            rectTransform.position = worldPosition;
         }
 
         /// <summary>
@@ -199,6 +202,22 @@ namespace Wallpaper.Utils {
             transform.GetLocalCorners(cornersPos);
 
             return cornersPos[3].x - cornersPos[0].x;
+        }
+
+
+        public static bool CanvasRaycast(PointerEventData pointerEventData, GraphicRaycaster raycaster, Vector2 position, LayerMask layer, out List<RaycastResult> results) {
+            pointerEventData.position = position;
+
+            results = new();
+
+            raycaster.Raycast(pointerEventData, results);
+
+            if (results.Count == 0)
+                return false;
+            if (!FMath.IsInLayerMask(layer, results[0].gameObject.layer))
+                return false;
+
+            return true;
         }
 
     }

@@ -8,6 +8,7 @@ namespace Wallpaper {
         /// Called at the start of the application even if controller is inactive.
         /// </summary>
         public virtual void OnApplicationStart() { }
+        public virtual void OnAndroidBackPressed() { }
 
         protected void OnEnable() {
             OnSceneLoaded();

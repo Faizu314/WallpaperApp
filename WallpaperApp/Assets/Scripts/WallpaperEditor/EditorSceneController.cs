@@ -25,6 +25,27 @@ namespace Wallpaper.Editor {
             m_PromptPanelNoButton.onClick.AddListener(() => m_PromptPanel.SetActive(false));
 
             m_Editor.Initialize(this);
+
+            ApplicationEvents.OnWallpaperEdit += OnWallpaperEdit;
+            ApplicationEvents.OnWallpaperPreview += OnPreviewWallpaper;
+        }
+
+        public override void OnAndroidBackPressed() {
+            base.OnAndroidBackPressed();
+
+            m_Editor.CloseEditor();
+
+            AppManager.Instance.ShowScreen(AppManager.Page.Collection);
+        }
+
+        private void OnWallpaperEdit(Wallpaper wallpaper) {
+            AppManager.Instance.ShowScreen(AppManager.Page.Editor);
+            m_Editor.BeginEditing(wallpaper);
+        }
+
+        private void OnPreviewWallpaper(Wallpaper wallpaper) {
+            AppManager.Instance.ShowScreen(AppManager.Page.Editor);
+            m_Editor.PreviewWallpaper(wallpaper);
         }
 
         protected override void OnSceneLoaded() {
@@ -50,7 +71,6 @@ namespace Wallpaper.Editor {
 
             m_Editor.OnNewImageSelected(image);
         }
-
 
     }
 }

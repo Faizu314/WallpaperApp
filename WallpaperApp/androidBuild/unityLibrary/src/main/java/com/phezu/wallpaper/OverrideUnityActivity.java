@@ -17,6 +17,7 @@ public abstract class OverrideUnityActivity extends UnityPlayerActivity
     public static final String START_AS_APPLICATION_COMMAND = "START_AS_APPLICATION";
     public static final String GET_IS_WALLPAPER_SET_COMMAND = "GET_IS_WALLPAPER_SET";
     public static final String GET_IMAGE_FROM_ANDROID_COMMAND = "GET_IMAGE_FROM_ANDROID";
+    public static final String GO_BACK_COMMAND = "GO_BACK";
 
     protected String mCommandResult;
 

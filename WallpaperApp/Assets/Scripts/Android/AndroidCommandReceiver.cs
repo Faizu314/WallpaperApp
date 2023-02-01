@@ -10,6 +10,7 @@ namespace Wallpaper.Android {
         public const string START_AS_APPLICATION_COMMAND = "START_AS_APPLICATION";
         public const string GET_IS_WALLPAPER_SET_COMMAND = "GET_IS_WALLPAPER_SET";
         public const string GET_IMAGE_FROM_ANDROID_COMMAND = "GET_IMAGE_FROM_ANDROID";
+        public const string GO_BACK_COMMAND = "GO_BACK";
 
         [SerializeField][RequireInterface(typeof(IAndroidCommander))]
         private Object m_AndroidCommander;
@@ -29,6 +30,10 @@ namespace Wallpaper.Android {
                 case GET_IMAGE_FROM_ANDROID_COMMAND:
                     GetImageFromAndroid();
                     break;
+                case GO_BACK_COMMAND:
+                    GoBack();
+                    break;
+
                 default:
                     Debug.LogError("Android Command not recognized");
                     break;
@@ -54,6 +59,10 @@ namespace Wallpaper.Android {
             int imageHeight = AndroidCommander.GetImageHeight();
 
             ApplicationEvents.InvokeOnAndroidImageReceived(imageData, imageWidth, imageHeight);
+        }
+
+        private void GoBack() {
+            ApplicationEvents.InvokeOnAndroidBackPressed();
         }
     }
 }

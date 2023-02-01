@@ -3,12 +3,16 @@ package com.phezu.unitywrapper;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
-import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.Toast;
+import android.window.OnBackInvokedCallback;
+import android.window.OnBackInvokedDispatcher;
+
+import androidx.activity.OnBackPressedCallback;
+import androidx.activity.OnBackPressedDispatcher;
 
 import com.phezu.wallpaper.OverrideUnityActivity;
 
@@ -27,6 +31,13 @@ public class WallpaperAppActivity extends OverrideUnityActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         executeCommandInUnity(START_AS_APPLICATION_COMMAND);
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        Log.e("Me", "Back");
+        executeCommandInUnity(GO_BACK_COMMAND);
     }
 
     @Override
@@ -102,4 +113,5 @@ public class WallpaperAppActivity extends OverrideUnityActivity {
 
         return byteBuffer.array();
     }
+
 }

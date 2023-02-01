@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 using UnityEditor;
 
-[CustomEditor(typeof(TestScript))]
+[CustomEditor(typeof(DebugScreenPixels))]
 public class TestScriptEditor : Editor {
 
-    private TestScript m_Target;
+    private DebugScreenPixels m_Target;
 
-    private TestScript Target {
+    private DebugScreenPixels Target {
         get {
             if (m_Target == null)
-                m_Target = (TestScript)target;
+                m_Target = (DebugScreenPixels)target;
 
             return m_Target;
         }

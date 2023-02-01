@@ -14,6 +14,8 @@ namespace Wallpaper {
 
         public delegate void Tap(Vector2 screenPos);
 
+
+        public static event Notification OnAndroidBackPressed;
         
         public static event WallpaperNotification OnWallpaperEdit;
         public static event WallpaperNotification OnWallpaperPreview;
@@ -23,8 +25,14 @@ namespace Wallpaper {
         public static event TouchPinch OnTouchPinch;
         public static event TouchPinch OnTouchPinchBegin;
         public static event Tap OnTap;
+        public static event Tap OnPrimaryTouchDown;
+        public static event Notification OnPrimaryTouchUp;
         public static event Notification OnSecondTouchDown;
         public static event Notification OnSecondTouchUp;
+
+        public static void InvokeOnAndroidBackPressed() {
+            OnAndroidBackPressed?.Invoke();
+        }
 
         public static void InvokeOnWallpaperEdit(Wallpaper wallpaper) {
             OnWallpaperEdit?.Invoke(wallpaper);
@@ -53,6 +61,14 @@ namespace Wallpaper {
 
         public static void InvokeOnTap(Vector2 screenPos) {
             OnTap?.Invoke(screenPos);
+        }
+
+        public static void InvokeOnPrimaryTouchDown(Vector2 screenPos) {
+            OnPrimaryTouchDown?.Invoke(screenPos);
+        }
+
+        public static void InvokeOnPrimaryTouchUp() {
+            OnPrimaryTouchUp?.Invoke();
         }
 
         public static void InvokeOnSecondTouchDown() {

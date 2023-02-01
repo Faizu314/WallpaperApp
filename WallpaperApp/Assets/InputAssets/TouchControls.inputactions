@@ -169,6 +169,17 @@
                 },
                 {
                     "name": "",
+                    "id": "14e37283-6c85-4dbd-9343-e2fdb48aee47",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Desktop",
+                    "action": "PrimaryTouchDown",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "d16d646d-78ff-4b22-b790-578764c7a1ae",
                     "path": "<Touchscreen>/primaryTouch/tap",
                     "interactions": "",
