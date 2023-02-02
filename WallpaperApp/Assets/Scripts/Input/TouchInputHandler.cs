@@ -7,15 +7,24 @@ namespace Wallpaper.Input {
     [AddComponentMenu("Wallpaper/Touch Input Handler")]
     public class TouchInputHandler : Singleton<TouchInputHandler> {
 
+        #region Editor
+
         public float ZoomMagnitudeToSimulate;
         public Vector2 ZoomPivotToSimulate;
 
+        #endregion
+
         private TouchControls m_TouchControls;
+
         private Coroutine m_PinchCoroutine;
+        private Coroutine m_ParallaxCoroutine;
 
         private Vector2 m_PrevPrimaryPos;
         private Vector2 m_PrevSecondaryPos;
 
+        private Vector2 m_InitialPrimaryPos;
+
+        private bool m_OneFingerDown = false;
         private bool m_TwoFingersDown = false;
 
         private void Start() {
@@ -27,6 +36,7 @@ namespace Wallpaper.Input {
             m_TouchControls.Touch.PrimaryTouchDown.performed += _ => OnPrimaryTouchDown();
             m_TouchControls.Touch.PrimaryTouchDown.canceled += _ => OnAnyTouchUp();
             m_TouchControls.Touch.SecondaryTouchDown.canceled += _ => OnAnyTouchUp();
+            m_TouchControls.Touch.DoubleTap.performed += _ => OnDoubleTap();
         }
 
 
@@ -35,28 +45,45 @@ namespace Wallpaper.Input {
             ApplicationEvents.InvokeOnTap(screenPos);
         }
 
+        private void OnDoubleTap() {
+            ApplicationEvents.InvokeOnDoubleTap();
+        }
+
+        private void OnPrimaryTouchDown() {
+            m_OneFingerDown = true;
+            m_InitialPrimaryPos = m_TouchControls.Touch.PrimaryTouchPosition.ReadValue<Vector2>();
+
+            ApplicationEvents.InvokeOnPrimaryTouchDown(m_InitialPrimaryPos);
+            m_ParallaxCoroutine = StartCoroutine(nameof(Parallax_Coroutine));
+        }
+
         private void OnSecondaryTouchDown() {
             m_TwoFingersDown = true;
+
+            StopCoroutine(m_ParallaxCoroutine);
+            ApplicationEvents.InvokeOnParallaxEnd();
 
             ApplicationEvents.InvokeOnSecondTouchDown();
             m_PinchCoroutine = StartCoroutine(nameof(Pinch_Coroutine));
         }
 
-        private void OnPrimaryTouchDown() {
-            Vector2 touchPos = m_TouchControls.Touch.PrimaryTouchPosition.ReadValue<Vector2>();
-
-            ApplicationEvents.InvokeOnPrimaryTouchDown(touchPos);
-        }
-
         private void OnAnyTouchUp() {
             if (!m_TwoFingersDown) {
-                ApplicationEvents.InvokeOnPrimaryTouchUp();
-                return;
-            }
+                m_OneFingerDown = false;
 
-            StopCoroutine(m_PinchCoroutine);
-            ApplicationEvents.InvokeOnSecondTouchUp();
-            m_TwoFingersDown = false;
+                ApplicationEvents.InvokeOnPrimaryTouchUp();
+
+                StopCoroutine(m_ParallaxCoroutine);
+                ApplicationEvents.InvokeOnParallaxEnd();
+            }
+            else {
+                m_TwoFingersDown = false;
+
+                StopCoroutine(m_PinchCoroutine);
+                ApplicationEvents.InvokeOnSecondTouchUp();
+
+                m_ParallaxCoroutine = StartCoroutine(nameof(Parallax_Coroutine));
+            }
         }
 
         private IEnumerator Pinch_Coroutine() {
@@ -69,6 +96,30 @@ namespace Wallpaper.Input {
 
                 PinchUpdateLoop();
             }
+        }
+
+        private IEnumerator Parallax_Coroutine() {
+            yield return new WaitForEndOfFrame();
+
+            ParallaxStart();
+
+            while (true) {
+                yield return new WaitForEndOfFrame();
+
+                ParallaxUpdateLoop();
+            }
+        }
+
+        private void ParallaxStart() {
+            m_InitialPrimaryPos = m_TouchControls.Touch.PrimaryTouchPosition.ReadValue<Vector2>();
+            ApplicationEvents.InvokeOnParallaxBegin();
+        }
+
+        private void ParallaxUpdateLoop() {
+            Vector2 currPrimaryPos = m_TouchControls.Touch.PrimaryTouchPosition.ReadValue<Vector2>();
+            Vector2 initialToCurrDir = currPrimaryPos - m_InitialPrimaryPos;
+
+            ApplicationEvents.InvokeOnParallax(initialToCurrDir);
         }
 
         private void PinchStart() {

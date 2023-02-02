@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
-using Wallpaper.ImageHandling;
-using static Wallpaper.ImageHandling.ImageCropper;
+using Wallpaper.Utils;
+using static Wallpaper.Utils.ImageHandler;
 
 namespace Wallpaper.Editor {
 

@@ -1,9 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
-using Wallpaper.Utils;
 using Phezu.Util;
 
-namespace Wallpaper.Controllers {
+namespace Wallpaper.Collection {
 
     [AddComponentMenu("Wallpaper/Controllers/Collection Scene Controller")]
     public class CollectionSceneController : BaseController {
@@ -29,15 +28,15 @@ namespace Wallpaper.Controllers {
 
         protected override void OnSceneLoaded() {
             base.OnSceneLoaded();
-            ApplicationEvents.OnAndroidImageReceived += CreateWallpaper;
+            ApplicationEvents.OnAndroidImageReceived += OnCreateWallpaper;
         }
 
         protected override void OnSceneUnLoaded() {
             base.OnSceneUnLoaded();
-            ApplicationEvents.OnAndroidImageReceived -= CreateWallpaper;
+            ApplicationEvents.OnAndroidImageReceived -= OnCreateWallpaper;
         }
 
-        public void CreateWallpaper(byte[] imageData, int imageWidth, int imageHeight) {
+        public void OnCreateWallpaper(byte[] imageData, int imageWidth, int imageHeight) {
             WallpaperImage wallpaperImage = new() {
                 Data = imageData,
                 Width = imageWidth,

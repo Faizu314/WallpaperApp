@@ -2,10 +2,8 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using Wallpaper.Utils;
-using Phezu.Util;
 
-namespace Wallpaper.ImageHandling {
+namespace Wallpaper.Utils {
 
     public class ImagesHandler : MonoBehaviour {
 
@@ -13,22 +11,24 @@ namespace Wallpaper.ImageHandling {
         [SerializeField] private Transform m_ImagesParent;
         [SerializeField] private GraphicRaycaster m_Raycaster;
         [SerializeField] private LayerMask m_EditorImagesLayer;
+        [SerializeField] private float m_ParallaxAmplitude;
+        [SerializeField] private float[] m_ParallaxScales;
 
-        public int Count => m_Croppers.Count;
+        public int Count => m_ImageHandlers.Count;
         public int SelectedLayer => m_SelectedLayer;
         public bool IsCropping => m_IsCropping;
 
         private PointerEventData m_PointerEventData;
         private Dictionary<WallpaperImage, GameObject> m_ImageToObject = new();
-        private Dictionary<GameObject, ImageCropper> m_ObjectToCropper = new();
-        private List<ImageCropper> m_Croppers = new();
-        private ImageCropper m_CurrentlySelectedCropper;
+        private Dictionary<GameObject, ImageHandler> m_ObjectToCropper = new();
+        private List<ImageHandler> m_ImageHandlers = new();
+        private ImageHandler m_CurrentlySelectedCropper;
         private int m_SelectedLayer;
         private bool m_IsCropping;
 
-        public ImageCropper this[int i] {
+        public ImageHandler this[int i] {
             get {
-                return m_Croppers[i];
+                return m_ImageHandlers[i];
             }
         }
 
@@ -48,6 +48,16 @@ namespace Wallpaper.ImageHandling {
             ApplicationEvents.OnPrimaryTouchUp -= OnTouchUp;
             ApplicationEvents.OnTouchPinchBegin -= OnPinchBegin;
             ApplicationEvents.OnSecondTouchUp -= OnPinchEnd;
+        }
+
+        public void EnableParallax() {
+            for (int i = 0; i < m_ImageHandlers.Count; i++)
+                m_ImageHandlers[i].EnableParallax(m_ParallaxAmplitude, m_ParallaxScales[i]);
+        }
+
+        public void DisableParallax() {
+            foreach (var handler in m_ImageHandlers)
+                handler.DisableParallax();
         }
 
         private void OnTouchDown(Vector2 screenPosition) {
@@ -100,8 +110,8 @@ namespace Wallpaper.ImageHandling {
             m_SelectedLayer = layer;
         }
 
-        public List<ImageCropper.CropData[]> OnCropButtonPressed() {
-            List<ImageCropper.CropData[]> data = null;
+        public List<ImageHandler.CropData[]> OnCropButtonPressed() {
+            List<ImageHandler.CropData[]> data = null;
 
             if (!m_IsCropping)
                 BeginCropping();
@@ -115,7 +125,7 @@ namespace Wallpaper.ImageHandling {
 
         private void BeginCropping() {
             for (int i = 0; i < Count; i++)
-                m_Croppers[i].BeginCropping();
+                m_ImageHandlers[i].BeginCropping();
         }
 
         public void CancelCropping() {
@@ -123,17 +133,17 @@ namespace Wallpaper.ImageHandling {
                 return;
 
             for (int i = 0; i < Count; i++)
-                m_Croppers[i].CancelCropping();
+                m_ImageHandlers[i].CancelCropping();
 
             m_IsCropping = false;
         }
 
-        private List<ImageCropper.CropData[]> FinishCropping() {
-            List<ImageCropper.CropData[]> datas = new();
+        private List<ImageHandler.CropData[]> FinishCropping() {
+            List<ImageHandler.CropData[]> datas = new();
 
             bool areAllNulls = true;
             for (int i = 0; i < Count; i++) {
-                var data = m_Croppers[i].FinishCropping();
+                var data = m_ImageHandlers[i].FinishCropping();
 
                 if (data != null)
                     areAllNulls = false;
@@ -150,7 +160,7 @@ namespace Wallpaper.ImageHandling {
         public void OpenImage(WallpaperImage wallpaperImage, bool alwaysCoverScreen) {
             Sprite imageSprite = Util.WallpaperImageToSprite(wallpaperImage);
             GameObject imageObj = Instantiate(m_ImageContainerPrefab);
-            ImageCropper cropper = imageObj.GetComponent<ImageCropper>();
+            ImageHandler cropper = imageObj.GetComponent<ImageHandler>();
 
             cropper.SetImage(imageSprite);
             cropper.SetAlwaysCoverScreen(alwaysCoverScreen);
@@ -159,7 +169,7 @@ namespace Wallpaper.ImageHandling {
 
             m_ImageToObject.Add(wallpaperImage, imageObj);
             m_ObjectToCropper.Add(imageObj.transform.GetChild(0).GetChild(0).gameObject, cropper);
-            m_Croppers.Add(cropper);
+            m_ImageHandlers.Add(cropper);
         }
 
         public void AddImageToWallpaper(WallpaperImage wallpaperImage, Wallpaper wallpaper) {
@@ -175,7 +185,7 @@ namespace Wallpaper.ImageHandling {
                 return;
 
             int index = wallpaper.Images.IndexOf(wallpaperImage);
-            m_Croppers.RemoveAt(index);
+            m_ImageHandlers.RemoveAt(index);
 
             wallpaper.Images.Remove(wallpaperImage);
 

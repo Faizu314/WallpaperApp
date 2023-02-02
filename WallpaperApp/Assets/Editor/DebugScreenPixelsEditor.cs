@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
 using UnityEditor;
+using Wallpaper.Testers;
+
 
 [CustomEditor(typeof(DebugScreenPixels))]
-public class TestScriptEditor : Editor {
+public class DebugScreenPixelsEditor : Editor {
 
     private DebugScreenPixels m_Target;
 

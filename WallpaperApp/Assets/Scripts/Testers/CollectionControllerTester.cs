@@ -1,7 +1,6 @@
 using Phezu.Util;
 using System.Collections;
 using UnityEngine;
-using Wallpaper.Controllers;
 
 namespace Wallpaper.Testers {
 

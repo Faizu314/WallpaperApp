@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using UnityEditor;
-using Wallpaper.Testers;
 using Wallpaper.Input;
 using Wallpaper;
 

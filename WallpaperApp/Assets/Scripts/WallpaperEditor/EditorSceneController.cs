@@ -28,6 +28,8 @@ namespace Wallpaper.Editor {
 
             ApplicationEvents.OnWallpaperEdit += OnWallpaperEdit;
             ApplicationEvents.OnWallpaperPreview += OnPreviewWallpaper;
+            ApplicationEvents.OnBeginPreview += m_Editor.BeginPreview;
+            ApplicationEvents.OnEndPreview += m_Editor.EndPreview;
         }
 
         public override void OnAndroidBackPressed() {

@@ -99,11 +99,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3538130842644527532}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6494651438de5a04bbb2fd4214e7969d, type: 3}
+  m_Script: {fileID: 11500000, guid: fbdaf9d6b34fe374fb14b48db2554619, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Image: {fileID: 7308394735453871243}
   m_ZoomablePanel: {fileID: 7335133236015020247}
+  m_ParallaxImage: {fileID: 2889550456263863436}
+  m_ParallaxRadius: 0.5
 --- !u!1 &3811642593935430169
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,6 +179,7 @@ GameObject:
   - component: {fileID: 7308394735453871243}
   - component: {fileID: 7335133236015020247}
   - component: {fileID: 549197300969318287}
+  - component: {fileID: 2889550456263863436}
   m_Layer: 8
   m_Name: Content
   m_TagString: Untagged
@@ -270,3 +273,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AlwaysMoveInsideScreen: 1
+--- !u!114 &2889550456263863436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7138512076745403109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 767f4df76ed23ba4e8d223ffa57f5787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

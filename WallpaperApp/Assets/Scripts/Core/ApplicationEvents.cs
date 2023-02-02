@@ -8,30 +8,51 @@ namespace Wallpaper {
 
         public delegate void WallpaperNotification(Wallpaper wallpaper);
 
-        public delegate void AndroidImageReceived(byte[] imageData, int width, int height);
+        public delegate void RawWallpaperNotification(byte[] imageData, int width, int height);
 
         public delegate void TouchPinch(Vector2 pivot, float zoomMagnitude);
 
-        public delegate void Tap(Vector2 screenPos);
+        public delegate void VectorNotification(Vector2 screenPos);
 
 
         public static event Notification OnAndroidBackPressed;
-        
+
         public static event WallpaperNotification OnWallpaperEdit;
         public static event WallpaperNotification OnWallpaperPreview;
 
-        public static event AndroidImageReceived OnAndroidImageReceived;
+        public static event Notification OnBeginPreview;
+        public static event Notification OnEndPreview;
 
+        public static event RawWallpaperNotification OnAndroidImageReceived;
+
+        public static event Notification OnDoubleTap;
         public static event TouchPinch OnTouchPinch;
         public static event TouchPinch OnTouchPinchBegin;
-        public static event Tap OnTap;
-        public static event Tap OnPrimaryTouchDown;
+        public static event VectorNotification OnTap;
+        public static event VectorNotification OnPrimaryTouchDown;
         public static event Notification OnPrimaryTouchUp;
         public static event Notification OnSecondTouchDown;
         public static event Notification OnSecondTouchUp;
 
+        public static event Notification OnParallaxBegin;
+        public static event VectorNotification OnParallax;
+        public static event Notification OnParallaxEnd;
+
+
+        public static void InvokeOnDoubleTap() {
+            OnDoubleTap?.Invoke();
+        }
+
         public static void InvokeOnAndroidBackPressed() {
             OnAndroidBackPressed?.Invoke();
+        }
+
+        public static void InvokeOnBeginPreview() {
+            OnBeginPreview?.Invoke();
+        }
+
+        public static void InvokeOnEndPreview() {
+            OnEndPreview?.Invoke();
         }
 
         public static void InvokeOnWallpaperEdit(Wallpaper wallpaper) {
@@ -49,8 +70,6 @@ namespace Wallpaper {
         /// <summary>
         /// Zoom Magnitude is how much the screen space should be stretched or compressed. 1 means do nothing.
         /// </summary>
-        /// <param name="position1">Position of finger one.</param>
-        /// <param name="zoomMagnitude"></param>
         public static void InvokeOnTouchPinch(Vector2 pivot, float zoomMagnitude) {
             OnTouchPinch?.Invoke(pivot, zoomMagnitude);
         }
@@ -77,6 +96,18 @@ namespace Wallpaper {
 
         public static void InvokeOnSecondTouchUp() {
             OnSecondTouchUp?.Invoke();
+        }
+
+        public static void InvokeOnParallaxBegin() {
+            OnParallaxBegin?.Invoke();
+        }
+
+        public static void InvokeOnParallax(Vector2 parallaxDir) {
+            OnParallax?.Invoke(parallaxDir);
+        }
+
+        public static void InvokeOnParallaxEnd() {
+            OnParallaxEnd?.Invoke();
         }
     }
 }

@@ -1,15 +1,16 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
-using Wallpaper.Utils;
 
-namespace Wallpaper.ImageHandling {
+namespace Wallpaper.Utils {
 
     [RequireComponent(typeof(ScrollRect))]
-    public class ImageCropper : MonoBehaviour {
+    public class ImageHandler : MonoBehaviour {
 
         [SerializeField] private Image m_Image;
         [SerializeField] private ZoomablePanel m_ZoomablePanel;
+        [SerializeField] private ParallaxImage m_ParallaxImage;
+        [SerializeField] private float m_ParallaxRadius;
 
         private ScrollRect m_ScrollRect;
         private RectTransform m_ImageRect;
@@ -36,19 +37,22 @@ namespace Wallpaper.ImageHandling {
             DisableCropping();
         }
 
+        public void EnableParallax(float parallaxAmplitude, float parallaxDepth) {
+            m_ParallaxImage.EnableParallax(m_ParallaxRadius, parallaxAmplitude, parallaxDepth);
+        }
+
+        public void DisableParallax() {
+            m_ParallaxImage.DisableParallax();
+        }
+
         private void DisableCropping() {
             DisableMovement();
             DisableZooming();
         }
 
         public void EnableMovement() {
-            //var currentState = GetCurrentState();
-
             m_ScrollRect.horizontal = true;
             m_ScrollRect.vertical = true;
-            m_ScrollRect.StopMovement();
-
-            //SetCurrentState(currentState);
         }
 
         public void DisableMovement() {
@@ -115,13 +119,8 @@ namespace Wallpaper.ImageHandling {
 
             return cropData;
         }
+
         public void SetCurrentState(CropData cropData) {
-            StartCoroutine(nameof(SetStateCoroutine), cropData);
-        }
-
-        private IEnumerator SetStateCoroutine(CropData cropData) {
-            yield return new WaitForEndOfFrame();
-
             ResetPivot();
 
             cropData.DenormalizePosition(m_Camera);

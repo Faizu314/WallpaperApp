@@ -2,9 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using Wallpaper.ImageHandling;
-using Phezu.Util;
 using Wallpaper.Utils;
+using Phezu.Util;
 
 namespace Wallpaper.Editor {
 
@@ -92,10 +91,12 @@ namespace Wallpaper.Editor {
 
         public void BeginPreview() {
             m_UIPanel.gameObject.SetActive(false);
+            m_ImagesHandler.EnableParallax();
         }
 
         public void EndPreview() {
             m_UIPanel.gameObject.SetActive(true);
+            m_ImagesHandler.DisableParallax();
         }
 
         private void OnDeleteImageButtonPressed() {
@@ -156,6 +157,7 @@ namespace Wallpaper.Editor {
 
         private void CancelAllIncompleteActions() {
             m_ImagesHandler.CancelCropping();
+            m_ImagesHandler.DisableParallax();
             m_CropButtonText.SetState(false);
         }
 

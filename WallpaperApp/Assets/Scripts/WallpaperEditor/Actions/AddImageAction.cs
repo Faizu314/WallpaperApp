@@ -1,4 +1,4 @@
-﻿using Wallpaper.ImageHandling;
+﻿using Wallpaper.Utils;
 
 namespace Wallpaper.Editor {
 

@@ -1,13 +1,15 @@
 ﻿using UnityEngine;
-using Wallpaper;
 
-public class ApplicationLauncher : MonoBehaviour {
+namespace Wallpaper.Testers {
 
-    public AppManager.Page PageToOpen;
+    public class ApplicationLauncher : MonoBehaviour {
 
-    private void Start() {
-        AppManager.Instance.ShowScreen(PageToOpen);
+        public AppManager.Page PageToOpen;
+
+        private void Start() {
+            AppManager.Instance.ShowScreen(PageToOpen);
+        }
+
+
     }
-
-
 }

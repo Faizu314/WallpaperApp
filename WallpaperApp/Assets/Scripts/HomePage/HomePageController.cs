@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using Wallpaper.UI;
 using Phezu.Util;
 
-namespace Wallpaper.Controllers {
+namespace Wallpaper.Home {
 
     public class HomePageController : BaseController {
 
@@ -11,8 +11,6 @@ namespace Wallpaper.Controllers {
         [RequireInterface(typeof(IAndroidCommander))]
         private Object m_AndroidCommander;
         private IAndroidCommander AndroidCommander => (IAndroidCommander)m_AndroidCommander;
-
-        [SerializeField] private CollectionSceneController m_CollectionSceneController;
 
         [SerializeField] private Button m_MenuButton;
         [SerializeField] private SlidingBar m_MenuBar;
@@ -46,10 +44,11 @@ namespace Wallpaper.Controllers {
             m_MenuBar.Close();
         }
 
+        // do not remember why home page would would look out for this callback.
         private void OnImageReceivedFromAndroid(byte[] imageData, int imageWidth, int imageHeight) {
             AppManager.Instance.ShowScreen(AppManager.Page.Collection);
 
-            m_CollectionSceneController.CreateWallpaper(imageData, imageWidth, imageHeight);
+            ApplicationEvents.InvokeOnAndroidImageReceived(imageData, imageWidth, imageHeight);
         }
     }
 }

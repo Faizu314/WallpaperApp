@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Wallpaper.Controllers {
+namespace Wallpaper.Preview {
 
     [AddComponentMenu("Wallpaper/Controllers/Wallpaper Preview Controller")]
     public class WallpaperPreviewController : MonoBehaviour {
