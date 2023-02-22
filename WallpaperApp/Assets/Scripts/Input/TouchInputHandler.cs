@@ -69,21 +69,29 @@ namespace Wallpaper.Input {
 
         private void OnAnyTouchUp() {
             if (!m_TwoFingersDown) {
-                m_OneFingerDown = false;
-
-                ApplicationEvents.InvokeOnPrimaryTouchUp();
-
-                StopCoroutine(m_ParallaxCoroutine);
-                ApplicationEvents.InvokeOnParallaxEnd();
+                OnPrimaryTouchUp();
             }
             else {
-                m_TwoFingersDown = false;
-
-                StopCoroutine(m_PinchCoroutine);
-                ApplicationEvents.InvokeOnSecondTouchUp();
-
-                m_ParallaxCoroutine = StartCoroutine(nameof(Parallax_Coroutine));
+                OnSecondaryTouchUp();
             }
+        }
+
+        private void OnPrimaryTouchUp() {
+            m_OneFingerDown = false;
+
+            ApplicationEvents.InvokeOnPrimaryTouchUp();
+
+            StopCoroutine(m_ParallaxCoroutine);
+            ApplicationEvents.InvokeOnParallaxEnd();
+        }
+
+        private void OnSecondaryTouchUp() {
+            m_TwoFingersDown = false;
+
+            StopCoroutine(m_PinchCoroutine);
+            ApplicationEvents.InvokeOnSecondTouchUp();
+
+            m_ParallaxCoroutine = StartCoroutine(nameof(Parallax_Coroutine));
         }
 
         private IEnumerator Pinch_Coroutine() {

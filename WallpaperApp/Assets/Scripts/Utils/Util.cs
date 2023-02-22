@@ -98,7 +98,7 @@ namespace Wallpaper.Utils {
         /// <summary>
         /// Correction is the translation required to get the rect back inside screen.
         /// </summary>
-        public static bool DoesRectFitThanScreen(RectTransform transform, Camera camera, out Vector2 correction) {
+        public static bool DoesRectFitTheScreen(RectTransform transform, Camera camera, out Vector2 correction) {
             Vector3[] panelCornersWorldPos = new Vector3[4];
             transform.GetWorldCorners(panelCornersWorldPos);
             Vector2[] panelCornersScreenPos = new Vector2[4];
@@ -203,6 +203,12 @@ namespace Wallpaper.Utils {
 
             return cornersPos[3].x - cornersPos[0].x;
         }
+        public static float GetPanelPixelHeightInRectSpace(RectTransform transform) {
+            Vector3[] cornersPos = new Vector3[4];
+            transform.GetLocalCorners(cornersPos);
+
+            return cornersPos[1].y - cornersPos[0].y;
+        }
 
 
         public static bool CanvasRaycast(PointerEventData pointerEventData, GraphicRaycaster raycaster, Vector2 position, LayerMask layer, out List<RaycastResult> results) {
@@ -220,5 +226,10 @@ namespace Wallpaper.Utils {
             return true;
         }
 
+
+        public static void DestroyAllChildren(Transform transform) {
+            for (int i = 0; i < transform.childCount; i++)
+                Object.Destroy(transform.GetChild(0).gameObject);
+        }
     }
 }

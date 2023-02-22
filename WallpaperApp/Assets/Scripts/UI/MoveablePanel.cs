@@ -37,7 +37,7 @@ namespace Wallpaper.UI {
         }
 
         private void KeepContentInsideScreen() {
-            if (!Util.DoesRectFitThanScreen(m_Transform, m_Camera, out var correction))
+            if (!Util.DoesRectFitTheScreen(m_Transform, m_Camera, out var correction))
                 m_Transform.anchoredPosition += correction;
             //Debug.Log(correction);
         }

@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-using Phezu.Util;
 
 namespace Wallpaper.UI {
 
@@ -8,9 +7,7 @@ namespace Wallpaper.UI {
 
         [SerializeField] private GameObject m_WallpaperIconPrefab;
 
-        [SerializeField][RequireInterface(typeof(IWallpaperDatabase))]
-        private Object m_WallpaperDatabase;
-        private IWallpaperDatabase WallpaperDatabase => (IWallpaperDatabase)m_WallpaperDatabase;
+        private IWallpaperDatabase WallpaperDatabase => Refs.Instance.WallpaperDatabase;
 
         private void OnEnable() {
             OnCollectionSceneLoaded();

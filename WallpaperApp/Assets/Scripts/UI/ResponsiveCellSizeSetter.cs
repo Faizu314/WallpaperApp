@@ -11,7 +11,6 @@ namespace Wallpaper.UI {
 
         private void Awake() {
             m_GridLayout = GetComponent<GridLayoutGroup>();
-            m_GridLayout.cellSize = CalculateCellSize();
 
             StartCoroutine(nameof(SetCellSizeAfterUIUpdate));
         }
@@ -20,7 +19,7 @@ namespace Wallpaper.UI {
             yield return null;
             yield return new WaitForEndOfFrame();
 
-            CalculateCellSize();
+            m_GridLayout.cellSize = CalculateCellSize();
         }
 
         private Vector2 CalculateCellSize() {

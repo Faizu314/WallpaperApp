@@ -1,16 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 using Wallpaper.UI;
-using Phezu.Util;
 
 namespace Wallpaper.Home {
 
     public class HomePageController : BaseController {
 
-        [SerializeField]
-        [RequireInterface(typeof(IAndroidCommander))]
-        private Object m_AndroidCommander;
-        private IAndroidCommander AndroidCommander => (IAndroidCommander)m_AndroidCommander;
+        private IAndroidCommander AndroidCommander => Refs.Instance.AndroidCommander;
 
         [SerializeField] private Button m_MenuButton;
         [SerializeField] private SlidingBar m_MenuBar;

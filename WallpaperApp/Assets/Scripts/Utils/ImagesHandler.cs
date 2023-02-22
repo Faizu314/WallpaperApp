@@ -63,10 +63,14 @@ namespace Wallpaper.Utils {
         private void OnTouchDown(Vector2 screenPosition) {
             if (!m_IsCropping)
                 return;
+            Debug.Log("Hello");
             if (!Util.CanvasRaycast(m_PointerEventData, m_Raycaster, screenPosition, m_EditorImagesLayer, out var results))
                 return;
+            Debug.Log("Hello");
 
             m_ObjectToCropper.TryGetValue(results[0].gameObject, out m_CurrentlySelectedCropper);
+
+            Debug.Log(m_CurrentlySelectedCropper);
 
             if (m_CurrentlySelectedCropper == null)
                 return;
@@ -106,7 +110,7 @@ namespace Wallpaper.Utils {
                 return;
             if (layer >= Count)
                 return;
-
+            Debug.Log(layer);
             m_SelectedLayer = layer;
         }
 
@@ -165,17 +169,18 @@ namespace Wallpaper.Utils {
             cropper.SetImage(imageSprite);
             cropper.SetAlwaysCoverScreen(alwaysCoverScreen);
             imageObj.transform.SetParent(m_ImagesParent, false);
-            imageObj.transform.SetSiblingIndex(m_ImagesParent.childCount - 2);
+            imageObj.transform.SetSiblingIndex(m_SelectedLayer);
 
             m_ImageToObject.Add(wallpaperImage, imageObj);
             m_ObjectToCropper.Add(imageObj.transform.GetChild(0).GetChild(0).gameObject, cropper);
             m_ImageHandlers.Add(cropper);
+
+            m_SelectedLayer++;
         }
 
         public void AddImageToWallpaper(WallpaperImage wallpaperImage, Wallpaper wallpaper) {
             wallpaper.Images.Add(wallpaperImage);
             OpenImage(wallpaperImage, false);
-            m_SelectedLayer++;
         }
 
         public void RemoveImageFromWallpaper(WallpaperImage wallpaperImage, Wallpaper wallpaper) {
@@ -195,6 +200,7 @@ namespace Wallpaper.Utils {
 
             if (m_SelectedLayer >= Count)
                 m_SelectedLayer = Count - 1;
+            m_SelectedLayer = Mathf.Max(m_SelectedLayer, 0);
         }
 
     }

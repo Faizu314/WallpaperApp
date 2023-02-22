@@ -3,21 +3,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Wallpaper.Utils;
-using Phezu.Util;
 
 namespace Wallpaper.Editor {
 
     [AddComponentMenu("Wallpaper/Wallpaper Editor/Wallpaper Editor")]
     public class WallpaperEditor : MonoBehaviour {
 
-        [SerializeField][RequireInterface(typeof(IWallpaperDatabase))]
-        private Object m_WallpaperDatabase;
-        private IWallpaperDatabase WallpaperDatabase => (IWallpaperDatabase)m_WallpaperDatabase;
+        private IWallpaperDatabase WallpaperDatabase => Refs.Instance.WallpaperDatabase;
 
         [Header("References")][Space(5)]
         [SerializeField] private RectTransform m_UIPanel;
         [SerializeField] private TMP_InputField m_WallpaperName;
         [SerializeField] private ImagesHandler m_ImagesHandler;
+        [SerializeField] private EffectsHandler m_EffectsHandler;
 
         [Header("Buttons")]
         [Space(5)]
@@ -65,15 +63,15 @@ namespace Wallpaper.Editor {
             }
         }
 
-        public void OpenEditor() {
+        public void Open() {
             CancelAllIncompleteActions();
         }
 
-        public void CloseEditor() {
+        public void Close() {
             RemoveCurrentWallpaper();
         }
 
-        public void OnNewImageSelected(WallpaperImage image) {
+        public void AddImage(WallpaperImage image) {
             CancelAllIncompleteActions();
 
             AddImageAction action = new(m_ImagesHandler, m_CurrWallpaper, image);
@@ -82,6 +80,22 @@ namespace Wallpaper.Editor {
 
             m_CropButton.onClick.Invoke();
             m_CropButtonText.SetState(true);
+        }
+
+        public void AddEffect(WallpaperEffectBase effect) {
+            CancelAllIncompleteActions();
+
+            AddEffectAction action = new(m_EffectsHandler, effect, m_CurrWallpaper);
+            action.Execute();
+            m_ActionRecorder.Record(action);
+        }
+
+        public void RemoveEffect() {
+            CancelAllIncompleteActions();
+
+            RemoveEffectAction action = new(m_EffectsHandler, m_CurrWallpaper.Effect, m_CurrWallpaper);
+            action.Execute();
+            m_ActionRecorder.Record(action);
         }
 
         public void PreviewWallpaper(Wallpaper wallpaper) {
@@ -168,8 +182,13 @@ namespace Wallpaper.Editor {
         }
 
         private void RemoveCurrentWallpaper() {
+            if (m_CurrWallpaper == null) 
+                return;
+
             for (int i = 0; i < m_ImagesHandler.Count; i++)
                 m_ImagesHandler.RemoveImageFromWallpaper(m_CurrWallpaper.Images[0], m_CurrWallpaper);
+
+            m_EffectsHandler.RemoveEffectFromWallpaper(m_CurrWallpaper);
         }
 
         private void OpenWallpaper() {

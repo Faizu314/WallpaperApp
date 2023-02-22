@@ -5,10 +5,7 @@ namespace Wallpaper.Testers {
 
     public class AndroidMockup : MonoBehaviour
     {
-
-        [SerializeField][RequireInterface(typeof(IWallpaperDatabase))]
-        private Object m_WallpaperDatabase;
-        private IWallpaperDatabase WallpaperDatabase => (IWallpaperDatabase)m_WallpaperDatabase;
+        private IWallpaperDatabase WallpaperDatabase => Refs.Instance.WallpaperDatabase;
 
         [SerializeField] private string m_WallpaperName;
 

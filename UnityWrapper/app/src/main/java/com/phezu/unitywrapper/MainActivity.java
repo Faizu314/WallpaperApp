@@ -11,10 +11,13 @@ import android.annotation.SuppressLint;
 import android.app.WallpaperInfo;
 import android.app.WallpaperManager;
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -22,9 +25,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseUser;
+import com.phezu.wallpaper.OverrideUnityActivity;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -59,14 +64,34 @@ public class MainActivity extends AppCompatActivity {
             tryRunWallpaperService();
         });
 
+        findViewById(R.id.closeServiceButton).setOnClickListener((View view) -> {
+            OverrideUnityActivity.executeCommandInUnity(OverrideUnityActivity.START_AS_WALLPAPER_COMMAND);
+        });
+
         findViewById(R.id.unityButton).setOnClickListener((View view) -> {
             runUnity();
         });
 
-        if (SessionHolder.getInstance().getSessionUser() == null)
+        boolean isWifiConnected = isConnectedToWifi();
+        if (SessionHolder.getInstance().getSessionUser() == null && isWifiConnected)
             launchGoogleHelper();
         else
             loadUserScreen(SessionHolder.getInstance().getSessionUser());
+    }
+
+    private boolean isConnectedToWifi() {
+        ConnectivityManager cm = (ConnectivityManager) getApplicationContext()
+                .getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+
+        if (null != activeNetwork) {
+            if(activeNetwork.getType() == ConnectivityManager.TYPE_WIFI)
+                return true;
+            if(activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE)
+                return true;
+        }
+
+        return false;
     }
 
     private void launchGoogleHelper() {
@@ -105,11 +130,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadUserScreen(FirebaseUser signedInUser) {
-        usernameText.setText(signedInUser.getDisplayName());
+        String displayName = "Not signed in";
+        if (signedInUser != null)
+            displayName = signedInUser.getDisplayName();
+
+        usernameText.setText(displayName);
     }
 
     private void runUnity() {
-        stopService(new Intent(this, MyWallpaperService.class));
+        stopWallpaperService();
 
         Intent intent = new Intent(this, WallpaperAppActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
@@ -118,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void tryRunWallpaperService() {
         if (isOurLiveWallpaperServiceRunning()) {
-            stopService(new Intent(this, MyWallpaperService.class));
+            stopWallpaperService();
             Log.d("Me", "running service");
             runWallpaperService();
         } else {
@@ -138,6 +167,10 @@ public class MainActivity extends AppCompatActivity {
         WallpaperInfo info = wpm.getWallpaperInfo();
 
         return info != null && info.getPackageName().equals(this.getPackageName());
+    }
+
+    private void stopWallpaperService() {
+        stopService(new Intent(this, MyWallpaperService.class));
     }
 
     private void trySaveCurrentWallpaper() {

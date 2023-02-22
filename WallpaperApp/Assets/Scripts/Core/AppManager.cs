@@ -10,9 +10,7 @@ namespace Wallpaper {
 
         public enum Page { Home, Collection, Preview, Editor };
 
-        [SerializeField][RequireInterface(typeof(IWallpaperDatabase))]
-        private Object m_WallpaperDatabase;
-        private IWallpaperDatabase WallpaperDatabase => (IWallpaperDatabase)m_WallpaperDatabase;
+        private IWallpaperDatabase WallpaperDatabase => Refs.Instance.WallpaperDatabase;
 
         [Header("Screens")][Space(5)]
         [SerializeField] private BaseController m_HomeCanvas;
@@ -60,6 +58,7 @@ namespace Wallpaper {
         }
 
         public void StartAsWallpaperService() {
+            Debug.Log("Starting as wallpaper service");
             Wallpaper wallpaper = WallpaperDatabase.Load(m_SetWallpaperID);
             ApplicationEvents.InvokeOnWallpaperPreview(wallpaper);
         }

@@ -1,5 +1,4 @@
-﻿using Phezu.Util;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace Wallpaper.Android {
 
@@ -11,12 +10,11 @@ namespace Wallpaper.Android {
         public const string GET_IS_WALLPAPER_SET_COMMAND = "GET_IS_WALLPAPER_SET";
         public const string GET_IMAGE_FROM_ANDROID_COMMAND = "GET_IMAGE_FROM_ANDROID";
         public const string GO_BACK_COMMAND = "GO_BACK";
-
-        [SerializeField][RequireInterface(typeof(IAndroidCommander))]
-        private Object m_AndroidCommander;
-        private IAndroidCommander AndroidCommander => (IAndroidCommander)m_AndroidCommander;
+        private IAndroidCommander AndroidCommander => Refs.Instance.AndroidCommander;
 
         public void ExecuteAndroidCommand(string command) {
+            Debug.Log("Unity: Receiving command " + command);
+
             switch (command) {
                 case START_AS_WALLPAPER_COMMAND:
                     StartAsWallpaper();

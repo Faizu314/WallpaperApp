@@ -2,6 +2,7 @@ package com.phezu.unitywrapper;
 
 import android.content.res.Configuration;
 import android.service.wallpaper.WallpaperService;
+import android.util.Log;
 import android.view.MotionEvent;
 import android.view.Surface;
 import android.view.SurfaceHolder;
@@ -14,20 +15,25 @@ public class MyWallpaperService extends WallpaperService {
 
     @Override
     public void onCreate() {
+        Log.e("ME", "OnServiceCreate");
         super.onCreate();
         mUnityPlayer = new UnityPlayer(getApplicationContext());
+
+        Log.e("ME", "Sending Unity a command");
         OverrideUnityActivity.executeCommandInUnity(OverrideUnityActivity.START_AS_WALLPAPER_COMMAND);
     }
 
     @Override
     public void onDestroy() {
-        mUnityPlayer.destroy();
+        Log.e("ME", "OnServiceDestroy");
+        mUnityPlayer.quit();
         super.onDestroy();
     }
 
     @Override
     public void onLowMemory ()
     {
+        Log.e("ME", "OnLowMemory");
         super.onLowMemory();
         mUnityPlayer.lowMemory();
     }
@@ -35,6 +41,7 @@ public class MyWallpaperService extends WallpaperService {
     @Override
     public void onTrimMemory(int level)
     {
+        Log.e("ME", "OnTrimMemory");
         super.onTrimMemory(level);
         if (level == TRIM_MEMORY_RUNNING_CRITICAL)
             mUnityPlayer.lowMemory();
@@ -43,6 +50,7 @@ public class MyWallpaperService extends WallpaperService {
     @Override
     public void onConfigurationChanged (Configuration newConfig)
     {
+        Log.e("ME", "OnConfigurationChanged");
         super.onConfigurationChanged(newConfig);
         mUnityPlayer.configurationChanged(newConfig);
     }
@@ -50,6 +58,7 @@ public class MyWallpaperService extends WallpaperService {
 
     @Override
     public Engine onCreateEngine() {
+        Log.e("ME", "OnServiceCreateEngine");
         return new UnityEngine();
     }
 
@@ -59,16 +68,19 @@ public class MyWallpaperService extends WallpaperService {
 
         @Override
         public void onCreate(SurfaceHolder surfaceHolder) {
+            Log.e("ME" , "OnEngineCreate");
             super.onCreate(surfaceHolder);
         }
 
         @Override
         public void onDestroy() {
+            Log.e("ME", "OnEngineDestroy");
             super.onDestroy();
         }
 
         @Override
         public void onSurfaceCreated(SurfaceHolder holder) {
+            Log.e("ME", "OnSurfaceCreated");
             super.onSurfaceCreated(holder);
             surface = holder.getSurface();
             updateVisibleSurfaces(true);
@@ -76,6 +88,7 @@ public class MyWallpaperService extends WallpaperService {
 
         @Override
         public void onSurfaceChanged(SurfaceHolder holder, int format, int width, int height) {
+            Log.e("ME", "OnSurfaceChanged");
             super.onSurfaceChanged(holder, format, width, height);
             this.surface = holder.getSurface();
             updateUnityDisplay();
@@ -83,12 +96,14 @@ public class MyWallpaperService extends WallpaperService {
 
         @Override
         public void onSurfaceDestroyed(SurfaceHolder holder) {
+            Log.e("ME", "OnSurfaceDestroyed");
             this.surface = null;
             super.onSurfaceDestroyed(holder);
         }
 
         @Override
         public void onVisibilityChanged(boolean visible) {
+            Log.e("ME", "OnVisibilityChanged");
             super.onVisibilityChanged(visible);
 
             updateVisibleSurfaces(visible);
@@ -125,6 +140,7 @@ public class MyWallpaperService extends WallpaperService {
 
         @Override
         public void onTouchEvent(MotionEvent event) {
+            Log.e("ME", "TouchEvent");
             super.onTouchEvent(event);
             handleInput(event);
         }

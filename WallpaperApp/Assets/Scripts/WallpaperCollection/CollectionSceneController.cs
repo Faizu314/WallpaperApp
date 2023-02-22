@@ -1,15 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
-using Phezu.Util;
 
 namespace Wallpaper.Collection {
 
     [AddComponentMenu("Wallpaper/Controllers/Collection Scene Controller")]
     public class CollectionSceneController : BaseController {
 
-        [SerializeField][RequireInterface(typeof(IAndroidCommander))]
-        private Object m_AndroidCommander;
-        private IAndroidCommander AndroidCommander => (IAndroidCommander)m_AndroidCommander;
+        private IAndroidCommander AndroidCommander => Refs.Instance.AndroidCommander;
 
         [SerializeField] private Button m_CreateButton;
         [SerializeField] private Button m_BackButton;

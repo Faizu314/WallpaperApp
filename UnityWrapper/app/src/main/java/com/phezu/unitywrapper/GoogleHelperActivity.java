@@ -33,7 +33,9 @@ public class GoogleHelperActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        Log.e("ME", "Initializing");
         initialize();
+        Log.e("ME", "Initialized");
         displayOneTapUI();
     }
 
