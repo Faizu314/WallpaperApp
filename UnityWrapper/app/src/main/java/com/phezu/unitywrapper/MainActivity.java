@@ -73,10 +73,14 @@ public class MainActivity extends AppCompatActivity {
         });
 
         boolean isWifiConnected = isConnectedToWifi();
-        if (SessionHolder.getInstance().getSessionUser() == null && isWifiConnected)
+        if (SessionHolder.getInstance().getSessionUser() == null && isWifiConnected) {
+            Log.e("Me", "Launching google helper");
             launchGoogleHelper();
-        else
+        }
+        else {
+            Log.e("Me", "Loading user screen");
             loadUserScreen(SessionHolder.getInstance().getSessionUser());
+        }
     }
 
     private boolean isConnectedToWifi() {
@@ -84,10 +88,10 @@ public class MainActivity extends AppCompatActivity {
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
 
-        if (null != activeNetwork) {
-            if(activeNetwork.getType() == ConnectivityManager.TYPE_WIFI)
+        if (activeNetwork != null) {
+            if (activeNetwork.getType() == ConnectivityManager.TYPE_WIFI)
                 return true;
-            if(activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE)
+            if (activeNetwork.getType() == ConnectivityManager.TYPE_MOBILE)
                 return true;
         }
 

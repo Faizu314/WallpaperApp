@@ -42,7 +42,6 @@ public class WallpaperAppActivity extends OverrideUnityActivity {
 
     @Override
     public void OnBackButtonPressed() {
-        startActivity(new Intent(getApplicationContext(), MainActivity.class));
         finish();
     }
 

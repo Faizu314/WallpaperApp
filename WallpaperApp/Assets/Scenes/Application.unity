@@ -969,13 +969,37 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7189791218016129950, guid: 72e87fb6d03efc140b4311c4fb6f6725, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189791218016129950, guid: 72e87fb6d03efc140b4311c4fb6f6725, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189791218016129950, guid: 72e87fb6d03efc140b4311c4fb6f6725, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7189791218396658646, guid: 72e87fb6d03efc140b4311c4fb6f6725, type: 3}
       propertyPath: m_WallpaperDatabase
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7189791218642389849, guid: 72e87fb6d03efc140b4311c4fb6f6725, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189791218642389849, guid: 72e87fb6d03efc140b4311c4fb6f6725, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7189791219357263715, guid: 72e87fb6d03efc140b4311c4fb6f6725, type: 3}
       propertyPath: m_Name
       value: WallpaperCollectionCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7189791219357263715, guid: 72e87fb6d03efc140b4311c4fb6f6725, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7189791219357263716, guid: 72e87fb6d03efc140b4311c4fb6f6725, type: 3}
       propertyPath: m_AndroidCommander

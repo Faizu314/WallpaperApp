@@ -21,5 +21,9 @@ namespace Wallpaper.Editor {
             effect.transform.SetParent(m_PreviewPanel, false);
             effect.transform.localPosition = Vector3.back;
         }
+
+        public void DisablePreview() {
+            ActiveEffect?.DestroyEffectInstance();
+        }
     }
 }

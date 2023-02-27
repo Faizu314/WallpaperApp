@@ -14,6 +14,8 @@ import com.google.android.gms.auth.api.identity.BeginSignInRequest;
 import com.google.android.gms.auth.api.identity.Identity;
 import com.google.android.gms.auth.api.identity.SignInClient;
 import com.google.android.gms.auth.api.identity.SignInCredential;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.common.api.CommonStatusCodes;
 
@@ -33,13 +35,14 @@ public class GoogleHelperActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Log.e("ME", "Initializing");
+        Log.e("ME", "Initializing google helper");
         initialize();
-        Log.e("ME", "Initialized");
+        Log.e("ME", "Google helper initialized");
         displayOneTapUI();
     }
 
     private void onResult(int requestCode, int resultCode, @Nullable Intent data) {
+        Log.e("Me", "Google helper onResult called");
         switch (requestCode) {
             case REQ_ONE_TAP:
                 try {
@@ -60,6 +63,8 @@ public class GoogleHelperActivity extends AppCompatActivity {
                             break;
                         case CommonStatusCodes.NETWORK_ERROR:
                             Log.d("Me", "One-tap encountered a network error.");
+                            setResult(RESULT_CANCELED);
+                            finish();
                             // Try again or just ignore.
                             break;
                         default:
@@ -75,6 +80,11 @@ public class GoogleHelperActivity extends AppCompatActivity {
     }
 
     private void initialize() {
+        if (GoogleApiAvailability.getInstance().isGooglePlayServicesAvailable(this) != ConnectionResult.SUCCESS) {
+            setResult(RESULT_CANCELED);
+            finish();
+        }
+
         mOneTapClient = Identity.getSignInClient(this);
 
         mSignInRequest = BeginSignInRequest.builder()

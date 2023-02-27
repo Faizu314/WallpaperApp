@@ -40,6 +40,11 @@ public abstract class OverrideUnityActivity extends UnityPlayerActivity
         instance = null;
     }
 
+    @Override
+    protected String updateUnityCommandLineArguments(String cmdLine) {
+        return cmdLine + " -disable-assembly-updater -disable-gpu-skinning";
+    }
+
     //Here is the interface unity will use to communicate with android
 
     public void ReceiveCommandResult(String commandResult) {

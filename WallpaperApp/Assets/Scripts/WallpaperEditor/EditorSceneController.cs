@@ -21,7 +21,10 @@ namespace Wallpaper.Editor {
         public override void OnApplicationStart() {
             base.OnApplicationStart();
 
-            m_PromptPanelYesButton.onClick.AddListener(() => AndroidCommander.OpenAndroidGallery());
+            m_PromptPanelYesButton.onClick.AddListener(() => {
+                m_PromptPanel.SetActive(false);
+                AndroidCommander.OpenAndroidGallery();
+            });
 
             m_PromptPanelNoButton.onClick.AddListener(() => m_PromptPanel.SetActive(false));
 

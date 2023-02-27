@@ -22,78 +22,75 @@
 15    <uses-permission android:name="android.permission.INTERNET" />
 15-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:15:3-65
 15-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:15:20-62
-16    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-16-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:16:3-77
-16-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:16:20-74
-17
-18    <uses-feature
-18-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:17:3-88
-19        android:name="android.hardware.touchscreen"
-19-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:17:17-60
-20        android:required="false" />
-20-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:17:61-85
-21    <uses-feature
-21-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:18:3-99
-22        android:name="android.hardware.touchscreen.multitouch"
-22-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:18:17-71
-23        android:required="false" />
-23-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:18:72-96
-24    <uses-feature
-24-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:19:3-108
-25        android:name="android.hardware.touchscreen.multitouch.distinct"
-25-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:19:17-80
-26        android:required="false" />
-26-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:19:81-105
-27
-28    <application android:extractNativeLibs="true" >
-28-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:3:3-12:17
-28-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:3:16-48
-29        <activity
-29-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:4:5-6:16
-30            android:name="com.phezu.wallpaper.OverrideUnityActivity"
-30-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:4:15-71
-31            android:exported="true"
-31-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:4:114-137
-32            android:theme="@style/UnityThemeSelector" >
-32-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:4:72-113
-33            <meta-data
-33-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:5:7-78
-34                android:name="android.notch_support"
-34-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:5:18-54
-35                android:value="true" />
-35-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:5:55-75
-36        </activity>
-37
-38        <meta-data
-38-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:7:5-69
-39            android:name="unity.splash-mode"
-39-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:7:16-48
-40            android:value="0" />
-40-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:7:49-66
-41        <meta-data
-41-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:8:5-74
-42            android:name="unity.splash-enable"
-42-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:8:16-50
-43            android:value="True" />
-43-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:8:51-71
-44        <meta-data
-44-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:9:5-78
-45            android:name="unity.launch-fullscreen"
-45-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:9:16-54
-46            android:value="True" />
-46-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:9:55-75
-47        <meta-data
-47-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:10:5-84
-48            android:name="unity.allow-resizable-window"
-48-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:10:16-59
-49            android:value="False" />
-49-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:10:60-81
-50        <meta-data
-50-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:11:5-81
-51            android:name="notch.config"
-51-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:11:16-43
-52            android:value="portrait|landscape" />
-52-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:11:44-78
-53    </application>
-54
-55</manifest>
+16
+17    <uses-feature
+17-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:16:3-88
+18        android:name="android.hardware.touchscreen"
+18-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:16:17-60
+19        android:required="false" />
+19-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:16:61-85
+20    <uses-feature
+20-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:17:3-99
+21        android:name="android.hardware.touchscreen.multitouch"
+21-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:17:17-71
+22        android:required="false" />
+22-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:17:72-96
+23    <uses-feature
+23-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:18:3-108
+24        android:name="android.hardware.touchscreen.multitouch.distinct"
+24-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:18:17-80
+25        android:required="false" />
+25-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:18:81-105
+26
+27    <application android:extractNativeLibs="true" >
+27-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:3:3-12:17
+27-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:3:16-48
+28        <activity
+28-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:4:5-6:16
+29            android:name="com.phezu.wallpaper.OverrideUnityActivity"
+29-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:4:15-71
+30            android:exported="true"
+30-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:4:114-137
+31            android:theme="@style/UnityThemeSelector" >
+31-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:4:72-113
+32            <meta-data
+32-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:5:7-78
+33                android:name="android.notch_support"
+33-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:5:18-54
+34                android:value="true" />
+34-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:5:55-75
+35        </activity>
+36
+37        <meta-data
+37-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:7:5-69
+38            android:name="unity.splash-mode"
+38-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:7:16-48
+39            android:value="0" />
+39-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:7:49-66
+40        <meta-data
+40-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:8:5-74
+41            android:name="unity.splash-enable"
+41-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:8:16-50
+42            android:value="True" />
+42-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:8:51-71
+43        <meta-data
+43-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:9:5-78
+44            android:name="unity.launch-fullscreen"
+44-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:9:16-54
+45            android:value="True" />
+45-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:9:55-75
+46        <meta-data
+46-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:10:5-84
+47            android:name="unity.allow-resizable-window"
+47-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:10:16-59
+48            android:value="False" />
+48-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:10:60-81
+49        <meta-data
+49-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:11:5-81
+50            android:name="notch.config"
+50-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:11:16-43
+51            android:value="portrait|landscape" />
+51-->E:\Users\faiza\AndroidStudioProjects\WallpaperProject\WallpaperApp\androidBuild\unityLibrary\src\main\AndroidManifest.xml:11:44-78
+52    </application>
+53
+54</manifest>
