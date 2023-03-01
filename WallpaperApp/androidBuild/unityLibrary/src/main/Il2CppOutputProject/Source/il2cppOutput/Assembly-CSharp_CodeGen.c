@@ -394,1031 +394,1034 @@ extern void EffectsRepository_get_Item_mC0A56C40653CB53024608F9957527FD7C28882DC
 extern void EffectsRepository__ctor_mD3A2C22AD3AF7C759EEF9EB8E5721FECC960276F (void);
 // 0x000000BF System.Void Wallpaper.IAndroidCommander::OpenAndroidGallery()
 // 0x000000C0 System.Void Wallpaper.IAndroidCommander::OnBackButtonPressed()
-// 0x000000C1 System.Byte[] Wallpaper.IAndroidCommander::GetImageData()
-// 0x000000C2 System.Int32 Wallpaper.IAndroidCommander::GetImageHeight()
-// 0x000000C3 System.Int32 Wallpaper.IAndroidCommander::GetImageWidth()
-// 0x000000C4 System.Void Wallpaper.IAndroidCommander::SendData(System.String)
-// 0x000000C5 System.Void Wallpaper.IAndroidCommandReceiver::ExecuteAndroidCommand(System.String)
-// 0x000000C6 System.Void Wallpaper.IWallpaperDatabase::Save(Wallpaper.Wallpaper)
-// 0x000000C7 Wallpaper.Wallpaper Wallpaper.IWallpaperDatabase::Load(System.String)
-// 0x000000C8 System.Collections.Generic.List`1<Wallpaper.Wallpaper> Wallpaper.IWallpaperDatabase::GetWallpaperCollection()
-// 0x000000C9 System.Boolean Wallpaper.IWallpaperDatabase::DoesWallpaperExist(System.String)
-// 0x000000CA System.Void Wallpaper.IWallpaperDatabase::Rename(System.String,System.String)
-// 0x000000CB System.Int32 Wallpaper.IWallpaperDatabase::GetWallpaperCount()
-// 0x000000CC Wallpaper.IWallpaperDatabase Wallpaper.Refs::get_WallpaperDatabase()
+// 0x000000C1 System.Void Wallpaper.IAndroidCommander::RunWallpaperService()
+// 0x000000C2 System.Byte[] Wallpaper.IAndroidCommander::GetImageData()
+// 0x000000C3 System.Int32 Wallpaper.IAndroidCommander::GetImageHeight()
+// 0x000000C4 System.Int32 Wallpaper.IAndroidCommander::GetImageWidth()
+// 0x000000C5 System.Void Wallpaper.IAndroidCommander::SendData(System.String)
+// 0x000000C6 System.Void Wallpaper.IAndroidCommandReceiver::ExecuteAndroidCommand(System.String)
+// 0x000000C7 System.Void Wallpaper.IWallpaperDatabase::Save(Wallpaper.Wallpaper)
+// 0x000000C8 Wallpaper.Wallpaper Wallpaper.IWallpaperDatabase::Load(System.String)
+// 0x000000C9 System.Collections.Generic.List`1<Wallpaper.Wallpaper> Wallpaper.IWallpaperDatabase::GetWallpaperCollection()
+// 0x000000CA System.Boolean Wallpaper.IWallpaperDatabase::DoesWallpaperExist(System.String)
+// 0x000000CB System.Void Wallpaper.IWallpaperDatabase::Rename(System.String,System.String)
+// 0x000000CC System.Int32 Wallpaper.IWallpaperDatabase::GetWallpaperCount()
+// 0x000000CD Wallpaper.IWallpaperDatabase Wallpaper.Refs::get_WallpaperDatabase()
 extern void Refs_get_WallpaperDatabase_m35C209B6ABC58A9A04E9B756B9A601EEBE04EB3F (void);
-// 0x000000CD Wallpaper.IAndroidCommander Wallpaper.Refs::get_AndroidCommander()
+// 0x000000CE Wallpaper.IAndroidCommander Wallpaper.Refs::get_AndroidCommander()
 extern void Refs_get_AndroidCommander_m21D3F0972BA028FCFDA32E9B6C18886FBFF59331 (void);
-// 0x000000CE System.Void Wallpaper.Refs::.ctor()
+// 0x000000CF System.Void Wallpaper.Refs::.ctor()
 extern void Refs__ctor_mCBDA3FCB27FA608DB39F94142DA08451345EB060 (void);
-// 0x000000CF System.Void Wallpaper.Wallpaper::.ctor()
+// 0x000000D0 System.Void Wallpaper.Wallpaper::.ctor()
 extern void Wallpaper__ctor_mC97454E8136EAE9D17631FCC421C793C59F5E23A (void);
-// 0x000000D0 System.Void Wallpaper.WallpaperImage::.ctor()
+// 0x000000D1 System.Void Wallpaper.WallpaperImage::.ctor()
 extern void WallpaperImage__ctor_m52EBD616A78CBBFF6C05044E50126D7350AF142E (void);
-// 0x000000D1 System.Int32 Wallpaper.WallpaperEffectBase::get_FloatPropertiesCount()
+// 0x000000D2 System.Int32 Wallpaper.WallpaperEffectBase::get_FloatPropertiesCount()
 extern void WallpaperEffectBase_get_FloatPropertiesCount_mBB0B3A44667C3A118A7472A3A534CC206CE0519C (void);
-// 0x000000D2 System.Int32 Wallpaper.WallpaperEffectBase::get_ColorPropertiesCount()
+// 0x000000D3 System.Int32 Wallpaper.WallpaperEffectBase::get_ColorPropertiesCount()
 extern void WallpaperEffectBase_get_ColorPropertiesCount_mBE1E9F500BEE8A7AA61FEB2F9583ADDBD0867C5C (void);
-// 0x000000D3 System.Void Wallpaper.WallpaperEffectBase::Awake()
+// 0x000000D4 System.Void Wallpaper.WallpaperEffectBase::Awake()
 extern void WallpaperEffectBase_Awake_mC87831DAA231C6BDEC467F3A88E3E3F15D35372E (void);
-// 0x000000D4 UnityEngine.GameObject Wallpaper.WallpaperEffectBase::CreateEffectInstance()
+// 0x000000D5 UnityEngine.GameObject Wallpaper.WallpaperEffectBase::CreateEffectInstance()
 extern void WallpaperEffectBase_CreateEffectInstance_m975CB884E568CE745C4E2A970AC171B4EFB2C059 (void);
-// 0x000000D5 System.Void Wallpaper.WallpaperEffectBase::DestroyEffectInstance()
+// 0x000000D6 System.Void Wallpaper.WallpaperEffectBase::DestroyEffectInstance()
 extern void WallpaperEffectBase_DestroyEffectInstance_m53668C8B476167F9171B501E65D1669CF42EBF20 (void);
-// 0x000000D6 System.Void Wallpaper.WallpaperEffectBase::SetFloatProperty(System.Int32,System.Single)
+// 0x000000D7 System.Void Wallpaper.WallpaperEffectBase::SetFloatProperty(System.Int32,System.Single)
 extern void WallpaperEffectBase_SetFloatProperty_m9C01D69F2B5E39F880D2F110B53BA8207DD0B51C (void);
-// 0x000000D7 System.Void Wallpaper.WallpaperEffectBase::SetColorProperty(System.Int32,UnityEngine.Color)
+// 0x000000D8 System.Void Wallpaper.WallpaperEffectBase::SetColorProperty(System.Int32,UnityEngine.Color)
 extern void WallpaperEffectBase_SetColorProperty_m81438F1EE32C1371A0D74202537C517572E9E9C9 (void);
-// 0x000000D8 System.String Wallpaper.WallpaperEffectBase::GetFloatPropertyName(System.Int32)
+// 0x000000D9 System.String Wallpaper.WallpaperEffectBase::GetFloatPropertyName(System.Int32)
 extern void WallpaperEffectBase_GetFloatPropertyName_mAA973EB675A362445905F96BB8AE79683ED80D6B (void);
-// 0x000000D9 System.Single Wallpaper.WallpaperEffectBase::GetFloatProperty(System.Int32)
+// 0x000000DA System.Single Wallpaper.WallpaperEffectBase::GetFloatProperty(System.Int32)
 extern void WallpaperEffectBase_GetFloatProperty_mD5C9CD4E1B4227A511A85DB923EF6942D2B0C161 (void);
-// 0x000000DA System.String Wallpaper.WallpaperEffectBase::GetColorPropertyName(System.Int32)
+// 0x000000DB System.String Wallpaper.WallpaperEffectBase::GetColorPropertyName(System.Int32)
 extern void WallpaperEffectBase_GetColorPropertyName_mCDD8D963D63264976F2BA1CC5265EC48548C9991 (void);
-// 0x000000DB UnityEngine.Color Wallpaper.WallpaperEffectBase::GetColorProperty(System.Int32)
+// 0x000000DC UnityEngine.Color Wallpaper.WallpaperEffectBase::GetColorProperty(System.Int32)
 extern void WallpaperEffectBase_GetColorProperty_m41A55845D29346D6ECD155D78E4A660FC208ED62 (void);
-// 0x000000DC System.Void Wallpaper.WallpaperEffectBase::OnEffectInstanceCreated()
+// 0x000000DD System.Void Wallpaper.WallpaperEffectBase::OnEffectInstanceCreated()
 extern void WallpaperEffectBase_OnEffectInstanceCreated_m6F24E374F728F6A9A95D61BBDE62926F5E40695A (void);
-// 0x000000DD System.Void Wallpaper.WallpaperEffectBase::OnEffectInstanceDestroyed()
+// 0x000000DE System.Void Wallpaper.WallpaperEffectBase::OnEffectInstanceDestroyed()
 extern void WallpaperEffectBase_OnEffectInstanceDestroyed_m7C8AA6DB685CDC7F79F18ACF1F884377F20B0C50 (void);
-// 0x000000DE System.Void Wallpaper.WallpaperEffectBase::SetPropertiesToDefault()
-// 0x000000DF System.Void Wallpaper.WallpaperEffectBase::ApplyAllProperties()
-// 0x000000E0 System.Void Wallpaper.WallpaperEffectBase::ApplyFloatProperty(System.Int32)
-// 0x000000E1 System.Void Wallpaper.WallpaperEffectBase::ApplyColorProperty(System.Int32)
-// 0x000000E2 System.Void Wallpaper.WallpaperEffectBase::.ctor()
+// 0x000000DF System.Void Wallpaper.WallpaperEffectBase::SetPropertiesToDefault()
+// 0x000000E0 System.Void Wallpaper.WallpaperEffectBase::ApplyAllProperties()
+// 0x000000E1 System.Void Wallpaper.WallpaperEffectBase::ApplyFloatProperty(System.Int32)
+// 0x000000E2 System.Void Wallpaper.WallpaperEffectBase::ApplyColorProperty(System.Int32)
+// 0x000000E3 System.Void Wallpaper.WallpaperEffectBase::.ctor()
 extern void WallpaperEffectBase__ctor_m4B37397D2C51F804A1E6CED5372EEBFF2EBBB762 (void);
-// 0x000000E3 System.Void Wallpaper.Preview.WallpaperPreviewController::Awake()
+// 0x000000E4 System.Void Wallpaper.Preview.WallpaperPreviewController::Awake()
 extern void WallpaperPreviewController_Awake_mCE56D3BC8759070FD7D92DCAE1F969C4F6744963 (void);
-// 0x000000E4 System.Void Wallpaper.Preview.WallpaperPreviewController::EndPreview()
+// 0x000000E5 System.Void Wallpaper.Preview.WallpaperPreviewController::EndPreview()
 extern void WallpaperPreviewController_EndPreview_m8C5107B25977249FF44E858D532EFFF6857AA137 (void);
-// 0x000000E5 System.Void Wallpaper.Preview.WallpaperPreviewController::.ctor()
+// 0x000000E6 System.Void Wallpaper.Preview.WallpaperPreviewController::.ctor()
 extern void WallpaperPreviewController__ctor_m8ACDA09BCC82270EEC64CF06B6F4B2F37D542102 (void);
-// 0x000000E6 System.Void Wallpaper.Effects.TestEffect::OnEffectInstanceCreated()
+// 0x000000E7 System.Void Wallpaper.Effects.TestEffect::OnEffectInstanceCreated()
 extern void TestEffect_OnEffectInstanceCreated_m9FB2929675464B1328985692FD5717719C3EF3F4 (void);
-// 0x000000E7 System.Void Wallpaper.Effects.TestEffect::OnEffectInstanceDestroyed()
+// 0x000000E8 System.Void Wallpaper.Effects.TestEffect::OnEffectInstanceDestroyed()
 extern void TestEffect_OnEffectInstanceDestroyed_m59691D6F85F1A68F236FF5DC3D51C5466B474E5D (void);
-// 0x000000E8 System.Void Wallpaper.Effects.TestEffect::ApplyAllProperties()
+// 0x000000E9 System.Void Wallpaper.Effects.TestEffect::ApplyAllProperties()
 extern void TestEffect_ApplyAllProperties_m51680BC3938821CA4483557C7E6F63F25965A68A (void);
-// 0x000000E9 System.Void Wallpaper.Effects.TestEffect::ApplyColorProperty(System.Int32)
+// 0x000000EA System.Void Wallpaper.Effects.TestEffect::ApplyColorProperty(System.Int32)
 extern void TestEffect_ApplyColorProperty_mF4FD9073ADFE8E427F6DB4E24452D8F8CF691E43 (void);
-// 0x000000EA System.Void Wallpaper.Effects.TestEffect::ApplyFloatProperty(System.Int32)
+// 0x000000EB System.Void Wallpaper.Effects.TestEffect::ApplyFloatProperty(System.Int32)
 extern void TestEffect_ApplyFloatProperty_m6D573D30EF19EB8CC933E9B6708F0683AC1BB705 (void);
-// 0x000000EB System.Void Wallpaper.Effects.TestEffect::SetPropertiesToDefault()
+// 0x000000EC System.Void Wallpaper.Effects.TestEffect::SetPropertiesToDefault()
 extern void TestEffect_SetPropertiesToDefault_m611A0E1617633D312B46E6EF6B6CFDD6AFAFE360 (void);
-// 0x000000EC System.Void Wallpaper.Effects.TestEffect::.ctor()
+// 0x000000ED System.Void Wallpaper.Effects.TestEffect::.ctor()
 extern void TestEffect__ctor_m639EFE0EFE369269B2AAA75C16A2023B02E907F1 (void);
-// 0x000000ED System.Void Wallpaper.Editor.ActionRecorder::.ctor(System.Int32)
+// 0x000000EE System.Void Wallpaper.Editor.ActionRecorder::.ctor(System.Int32)
 extern void ActionRecorder__ctor_mA1FE9866D6BFD7FE9620124ADDD016180C479631 (void);
-// 0x000000EE System.Void Wallpaper.Editor.ActionRecorder::Record(Wallpaper.Editor.WallpaperEditorActionBase)
+// 0x000000EF System.Void Wallpaper.Editor.ActionRecorder::Record(Wallpaper.Editor.WallpaperEditorActionBase)
 extern void ActionRecorder_Record_mB52FD464CF93CCFBA3C59041341CAA0B7D5D6026 (void);
-// 0x000000EF System.Void Wallpaper.Editor.ActionRecorder::Undo()
+// 0x000000F0 System.Void Wallpaper.Editor.ActionRecorder::Undo()
 extern void ActionRecorder_Undo_m158B05B917DA966927F52D7291316F5E046BA451 (void);
-// 0x000000F0 System.Void Wallpaper.Editor.ActionRecorder::Redo()
+// 0x000000F1 System.Void Wallpaper.Editor.ActionRecorder::Redo()
 extern void ActionRecorder_Redo_mB6FB8ED98512F908EA74677D388374B50FA8133D (void);
-// 0x000000F1 System.Void Wallpaper.Editor.AddEffectAction::.ctor(Wallpaper.Utils.EffectsHandler,Wallpaper.WallpaperEffectBase,Wallpaper.Wallpaper)
+// 0x000000F2 System.Void Wallpaper.Editor.AddEffectAction::.ctor(Wallpaper.Utils.EffectsHandler,Wallpaper.WallpaperEffectBase,Wallpaper.Wallpaper)
 extern void AddEffectAction__ctor_mB368DD430FF591806A9B658FDA8953783D8EA825 (void);
-// 0x000000F2 System.Void Wallpaper.Editor.AddEffectAction::Execute()
+// 0x000000F3 System.Void Wallpaper.Editor.AddEffectAction::Execute()
 extern void AddEffectAction_Execute_mFF3F4E060F4B263E9E45DC826D0D91262D6C1067 (void);
-// 0x000000F3 System.Void Wallpaper.Editor.AddEffectAction::Undo()
+// 0x000000F4 System.Void Wallpaper.Editor.AddEffectAction::Undo()
 extern void AddEffectAction_Undo_m5EADDB5B21C91C0B99D1F34337FBBD12B39E0D21 (void);
-// 0x000000F4 System.Void Wallpaper.Editor.AddImageAction::.ctor(Wallpaper.Utils.ImagesHandler,Wallpaper.Wallpaper,Wallpaper.WallpaperImage)
+// 0x000000F5 System.Void Wallpaper.Editor.AddImageAction::.ctor(Wallpaper.Utils.ImagesHandler,Wallpaper.Wallpaper,Wallpaper.WallpaperImage)
 extern void AddImageAction__ctor_m1585982DEE82436631693EB80DA362EE9C31C0A4 (void);
-// 0x000000F5 System.Void Wallpaper.Editor.AddImageAction::Execute()
+// 0x000000F6 System.Void Wallpaper.Editor.AddImageAction::Execute()
 extern void AddImageAction_Execute_m8774B108A95B7AD33C213D9E9880CBAD56F87B41 (void);
-// 0x000000F6 System.Void Wallpaper.Editor.AddImageAction::Undo()
+// 0x000000F7 System.Void Wallpaper.Editor.AddImageAction::Undo()
 extern void AddImageAction_Undo_m6A40DF6A121D84641B2888705A4026E8AF0946B7 (void);
-// 0x000000F7 System.Void Wallpaper.Editor.CropAction::.ctor(Wallpaper.Utils.ImagesHandler,System.Collections.Generic.List`1<Wallpaper.Utils.ImageHandler/CropData[]>)
+// 0x000000F8 System.Void Wallpaper.Editor.CropAction::.ctor(Wallpaper.Utils.ImagesHandler,System.Collections.Generic.List`1<Wallpaper.Utils.ImageHandler/CropData[]>)
 extern void CropAction__ctor_m39C240CCF19E30AF1626186E9EDCCBE83DBFAEAA (void);
-// 0x000000F8 System.Void Wallpaper.Editor.CropAction::Execute()
+// 0x000000F9 System.Void Wallpaper.Editor.CropAction::Execute()
 extern void CropAction_Execute_mF9869417D585299117EC78D1235F5F9E988E98DC (void);
-// 0x000000F9 System.Void Wallpaper.Editor.CropAction::Undo()
+// 0x000000FA System.Void Wallpaper.Editor.CropAction::Undo()
 extern void CropAction_Undo_mFE2CFEFC93F63FD6F4C20B90C817CC8DCFE9F224 (void);
-// 0x000000FA System.Void Wallpaper.Editor.RemoveEffectAction::.ctor(Wallpaper.Utils.EffectsHandler,Wallpaper.WallpaperEffectBase,Wallpaper.Wallpaper)
+// 0x000000FB System.Void Wallpaper.Editor.RemoveEffectAction::.ctor(Wallpaper.Utils.EffectsHandler,Wallpaper.WallpaperEffectBase,Wallpaper.Wallpaper)
 extern void RemoveEffectAction__ctor_m5253A0B9A4186157D28835625909D171F99FAE6E (void);
-// 0x000000FB System.Void Wallpaper.Editor.RemoveEffectAction::Execute()
+// 0x000000FC System.Void Wallpaper.Editor.RemoveEffectAction::Execute()
 extern void RemoveEffectAction_Execute_mD405780850421A0F2E8FF61D16A73BE5909B1547 (void);
-// 0x000000FC System.Void Wallpaper.Editor.RemoveEffectAction::Undo()
+// 0x000000FD System.Void Wallpaper.Editor.RemoveEffectAction::Undo()
 extern void RemoveEffectAction_Undo_mF71B4CAE19333DCBE681AC6B9866B0948CF046A1 (void);
-// 0x000000FD System.Void Wallpaper.Editor.RemoveImageAction::.ctor(Wallpaper.Utils.ImagesHandler,Wallpaper.Wallpaper,Wallpaper.WallpaperImage,Wallpaper.Utils.ImageHandler/CropData)
+// 0x000000FE System.Void Wallpaper.Editor.RemoveImageAction::.ctor(Wallpaper.Utils.ImagesHandler,Wallpaper.Wallpaper,Wallpaper.WallpaperImage,Wallpaper.Utils.ImageHandler/CropData)
 extern void RemoveImageAction__ctor_m0A844AA940CD702D51144C084330A7DFAB7E1395 (void);
-// 0x000000FE System.Void Wallpaper.Editor.RemoveImageAction::Execute()
+// 0x000000FF System.Void Wallpaper.Editor.RemoveImageAction::Execute()
 extern void RemoveImageAction_Execute_mED74B48AA26B2EED7E63B5F4DE04B290BC9FA39C (void);
-// 0x000000FF System.Void Wallpaper.Editor.RemoveImageAction::Undo()
+// 0x00000100 System.Void Wallpaper.Editor.RemoveImageAction::Undo()
 extern void RemoveImageAction_Undo_mE61C624C2329D3BCCD79B9B1544A3F855A5DA7D1 (void);
-// 0x00000100 Wallpaper.IAndroidCommander Wallpaper.Editor.EditorSceneController::get_AndroidCommander()
+// 0x00000101 Wallpaper.IAndroidCommander Wallpaper.Editor.EditorSceneController::get_AndroidCommander()
 extern void EditorSceneController_get_AndroidCommander_mB5B6771393DF6D4BF9F15AD4C73196B3C3F63984 (void);
-// 0x00000101 System.Void Wallpaper.Editor.EditorSceneController::OnApplicationStart()
+// 0x00000102 System.Void Wallpaper.Editor.EditorSceneController::OnApplicationStart()
 extern void EditorSceneController_OnApplicationStart_m714ECC4CF32E0A4A55231021777B91D49B0E5F97 (void);
-// 0x00000102 System.Void Wallpaper.Editor.EditorSceneController::OnAndroidBackPressed()
+// 0x00000103 System.Void Wallpaper.Editor.EditorSceneController::OnAndroidBackPressed()
 extern void EditorSceneController_OnAndroidBackPressed_mD7DE100905B9820C747AD7F09BE698437D81D99E (void);
-// 0x00000103 System.Void Wallpaper.Editor.EditorSceneController::OnWallpaperEdit(Wallpaper.Wallpaper)
+// 0x00000104 System.Void Wallpaper.Editor.EditorSceneController::OnWallpaperEdit(Wallpaper.Wallpaper)
 extern void EditorSceneController_OnWallpaperEdit_m7C66B5AA3E3997A2C0697586DB97A2FC0B3E6CD7 (void);
-// 0x00000104 System.Void Wallpaper.Editor.EditorSceneController::OnPreviewWallpaper(Wallpaper.Wallpaper)
+// 0x00000105 System.Void Wallpaper.Editor.EditorSceneController::OnPreviewWallpaper(Wallpaper.Wallpaper)
 extern void EditorSceneController_OnPreviewWallpaper_mCBA8CEF69FAF230A65F96458E468A00EA95FBD06 (void);
-// 0x00000105 System.Void Wallpaper.Editor.EditorSceneController::OnSceneLoaded()
+// 0x00000106 System.Void Wallpaper.Editor.EditorSceneController::OnSceneLoaded()
 extern void EditorSceneController_OnSceneLoaded_m9657E2CAE4D49CC71184613310D57D2F6F0F3140 (void);
-// 0x00000106 System.Void Wallpaper.Editor.EditorSceneController::OnSceneUnLoaded()
+// 0x00000107 System.Void Wallpaper.Editor.EditorSceneController::OnSceneUnLoaded()
 extern void EditorSceneController_OnSceneUnLoaded_mAB7553B76E9E82C0F2709EAA8191B4D6B2983DCF (void);
-// 0x00000107 System.Void Wallpaper.Editor.EditorSceneController::PromptForAndroidImage()
+// 0x00000108 System.Void Wallpaper.Editor.EditorSceneController::PromptForAndroidImage()
 extern void EditorSceneController_PromptForAndroidImage_mD5049667513F1C20257D33D4A75822F33C54F38B (void);
-// 0x00000108 System.Void Wallpaper.Editor.EditorSceneController::OnAndroidImageReceived(System.Byte[],System.Int32,System.Int32)
+// 0x00000109 System.Void Wallpaper.Editor.EditorSceneController::OnAndroidImageReceived(System.Byte[],System.Int32,System.Int32)
 extern void EditorSceneController_OnAndroidImageReceived_m499A472CD3F0ABC635452E79C5474F4DE5C26C71 (void);
-// 0x00000109 System.Void Wallpaper.Editor.EditorSceneController::ShowEffectsSelection()
+// 0x0000010A System.Void Wallpaper.Editor.EditorSceneController::ShowEffectsSelection()
 extern void EditorSceneController_ShowEffectsSelection_m88D6F53BF94061DDB4AD7A53C0F0BD7DA6E09BB6 (void);
-// 0x0000010A System.Void Wallpaper.Editor.EditorSceneController::ShowParticleEffects()
+// 0x0000010B System.Void Wallpaper.Editor.EditorSceneController::ShowParticleEffects()
 extern void EditorSceneController_ShowParticleEffects_mDCB26A751F4462CD08B1E7706EC97B57AC1A5A25 (void);
-// 0x0000010B System.Void Wallpaper.Editor.EditorSceneController::ShowEditor()
+// 0x0000010C System.Void Wallpaper.Editor.EditorSceneController::ShowEditor()
 extern void EditorSceneController_ShowEditor_mDF0181EFF91E7CF18370E96AF54347F591C2CBF2 (void);
-// 0x0000010C System.Void Wallpaper.Editor.EditorSceneController::AddEffect(Wallpaper.WallpaperEffectBase)
+// 0x0000010D System.Void Wallpaper.Editor.EditorSceneController::AddEffect(Wallpaper.WallpaperEffectBase)
 extern void EditorSceneController_AddEffect_mB45D9DB12020A322F69DF73E5F9E1E3163AE5BFD (void);
-// 0x0000010D System.Void Wallpaper.Editor.EditorSceneController::.ctor()
+// 0x0000010E System.Void Wallpaper.Editor.EditorSceneController::.ctor()
 extern void EditorSceneController__ctor_m4D9191DEECD3091F6B8F4B470C7703BE1657791B (void);
-// 0x0000010E System.Void Wallpaper.Editor.EditorSceneController::<OnApplicationStart>b__10_0()
+// 0x0000010F System.Void Wallpaper.Editor.EditorSceneController::<OnApplicationStart>b__10_0()
 extern void EditorSceneController_U3COnApplicationStartU3Eb__10_0_m52252FA80AD4CF249BA881B2416B42BE3C3C56AB (void);
-// 0x0000010F System.Void Wallpaper.Editor.EditorSceneController::<OnApplicationStart>b__10_1()
+// 0x00000110 System.Void Wallpaper.Editor.EditorSceneController::<OnApplicationStart>b__10_1()
 extern void EditorSceneController_U3COnApplicationStartU3Eb__10_1_m56999DB1B0ECAA326C6271AA33D1B498848F3A38 (void);
-// 0x00000110 System.Void Wallpaper.Editor.EffectIconButton::Awake()
+// 0x00000111 System.Void Wallpaper.Editor.EffectIconButton::Awake()
 extern void EffectIconButton_Awake_mC62E164E35980D69B84CFAC035E50F6DE1115B2F (void);
-// 0x00000111 System.Void Wallpaper.Editor.EffectIconButton::.ctor()
+// 0x00000112 System.Void Wallpaper.Editor.EffectIconButton::.ctor()
 extern void EffectIconButton__ctor_m990410E1385709BA219F941FC32977AABF765C7C (void);
-// 0x00000112 System.Void Wallpaper.Editor.EffectIconButton::<Awake>b__3_0()
+// 0x00000113 System.Void Wallpaper.Editor.EffectIconButton::<Awake>b__3_0()
 extern void EffectIconButton_U3CAwakeU3Eb__3_0_m6D802DA9F0BFA17323C141E3B45317727A18EFBC (void);
-// 0x00000113 System.Void Wallpaper.Editor.EffectPreviewer::set_ActiveEffect(Wallpaper.WallpaperEffectBase)
+// 0x00000114 System.Void Wallpaper.Editor.EffectPreviewer::set_ActiveEffect(Wallpaper.WallpaperEffectBase)
 extern void EffectPreviewer_set_ActiveEffect_m26812185A8C0B848F2097B3CA258C4FBFA83B5DF (void);
-// 0x00000114 Wallpaper.WallpaperEffectBase Wallpaper.Editor.EffectPreviewer::get_ActiveEffect()
+// 0x00000115 Wallpaper.WallpaperEffectBase Wallpaper.Editor.EffectPreviewer::get_ActiveEffect()
 extern void EffectPreviewer_get_ActiveEffect_m60FD25436C34D9974B0E6E49891B3E42AE2E8861 (void);
-// 0x00000115 System.Void Wallpaper.Editor.EffectPreviewer::OnEffectSelected(Wallpaper.WallpaperEffectBase)
+// 0x00000116 System.Void Wallpaper.Editor.EffectPreviewer::OnEffectSelected(Wallpaper.WallpaperEffectBase)
 extern void EffectPreviewer_OnEffectSelected_m756D6363D91DDF2D8B7219DB4A0D9A8E1BF1D9BD (void);
-// 0x00000116 System.Void Wallpaper.Editor.EffectPreviewer::PreviewEffectObject(UnityEngine.GameObject)
+// 0x00000117 System.Void Wallpaper.Editor.EffectPreviewer::PreviewEffectObject(UnityEngine.GameObject)
 extern void EffectPreviewer_PreviewEffectObject_m2B6DEF37059F6FF8BC9520AAFA889B4EF05BA1E8 (void);
-// 0x00000117 System.Void Wallpaper.Editor.EffectPreviewer::DisablePreview()
+// 0x00000118 System.Void Wallpaper.Editor.EffectPreviewer::DisablePreview()
 extern void EffectPreviewer_DisablePreview_mCD4A238FE34CA1870A248755236B80EEE825FFAC (void);
-// 0x00000118 System.Void Wallpaper.Editor.EffectPreviewer::.ctor()
+// 0x00000119 System.Void Wallpaper.Editor.EffectPreviewer::.ctor()
 extern void EffectPreviewer__ctor_m6CDE6279445C2F8E9DC56AA34EA160BEE2F2453F (void);
-// 0x00000119 System.Void Wallpaper.Editor.EffectSelectButton::Awake()
+// 0x0000011A System.Void Wallpaper.Editor.EffectSelectButton::Awake()
 extern void EffectSelectButton_Awake_mDFF97E1D0799DCAFD4C111F44650B4D3B458F59D (void);
-// 0x0000011A System.Void Wallpaper.Editor.EffectSelectButton::.ctor()
+// 0x0000011B System.Void Wallpaper.Editor.EffectSelectButton::.ctor()
 extern void EffectSelectButton__ctor_m83F9B19503F7042C84D161559BD5F3730EEC3FE0 (void);
-// 0x0000011B System.Void Wallpaper.Editor.EffectSelectButton::<Awake>b__2_0()
+// 0x0000011C System.Void Wallpaper.Editor.EffectSelectButton::<Awake>b__2_0()
 extern void EffectSelectButton_U3CAwakeU3Eb__2_0_m4DC481268BD2F3192980F3E1A5DA0E1664B69C19 (void);
-// 0x0000011C Wallpaper.IWallpaperDatabase Wallpaper.Editor.WallpaperEditor::get_WallpaperDatabase()
+// 0x0000011D Wallpaper.IWallpaperDatabase Wallpaper.Editor.WallpaperEditor::get_WallpaperDatabase()
 extern void WallpaperEditor_get_WallpaperDatabase_m800A716D302A2F42B77B8298C49A024D8C6DA140 (void);
-// 0x0000011D System.Int32 Wallpaper.Editor.WallpaperEditor::get_SelectedLayer()
+// 0x0000011E System.Int32 Wallpaper.Editor.WallpaperEditor::get_SelectedLayer()
 extern void WallpaperEditor_get_SelectedLayer_m24E2D6D2E2105DEB94CD460FBAC515E3AA994277 (void);
-// 0x0000011E System.Void Wallpaper.Editor.WallpaperEditor::Initialize(Wallpaper.Editor.EditorSceneController)
+// 0x0000011F System.Void Wallpaper.Editor.WallpaperEditor::Initialize(Wallpaper.Editor.EditorSceneController)
 extern void WallpaperEditor_Initialize_m3DA3AA78A0AA9E4A9A4B2E37BB5718E0A7E16C9F (void);
-// 0x0000011F System.Void Wallpaper.Editor.WallpaperEditor::Open()
+// 0x00000120 System.Void Wallpaper.Editor.WallpaperEditor::Open()
 extern void WallpaperEditor_Open_m497A93B4658DBC77E07700C59278443D7B47528F (void);
-// 0x00000120 System.Void Wallpaper.Editor.WallpaperEditor::Close()
+// 0x00000121 System.Void Wallpaper.Editor.WallpaperEditor::Close()
 extern void WallpaperEditor_Close_m682C0511533A7C4280F216E3D575B134DC10E8E1 (void);
-// 0x00000121 System.Void Wallpaper.Editor.WallpaperEditor::AddImage(Wallpaper.WallpaperImage)
+// 0x00000122 System.Void Wallpaper.Editor.WallpaperEditor::AddImage(Wallpaper.WallpaperImage)
 extern void WallpaperEditor_AddImage_mCF1729EAC87E6C011A78E7086454AF1B290B3F28 (void);
-// 0x00000122 System.Void Wallpaper.Editor.WallpaperEditor::AddEffect(Wallpaper.WallpaperEffectBase)
+// 0x00000123 System.Void Wallpaper.Editor.WallpaperEditor::AddEffect(Wallpaper.WallpaperEffectBase)
 extern void WallpaperEditor_AddEffect_m5B373C7F0CC7FC481C72F98A42CDE067D316C643 (void);
-// 0x00000123 System.Void Wallpaper.Editor.WallpaperEditor::RemoveEffect()
+// 0x00000124 System.Void Wallpaper.Editor.WallpaperEditor::RemoveEffect()
 extern void WallpaperEditor_RemoveEffect_m5B80838925DE39D0C743730CD69658A27E4E44EA (void);
-// 0x00000124 System.Void Wallpaper.Editor.WallpaperEditor::PreviewWallpaper(Wallpaper.Wallpaper)
+// 0x00000125 System.Void Wallpaper.Editor.WallpaperEditor::PreviewWallpaper(Wallpaper.Wallpaper)
 extern void WallpaperEditor_PreviewWallpaper_m7762CDA7A724572C63CB2620725D691711039B6C (void);
-// 0x00000125 System.Void Wallpaper.Editor.WallpaperEditor::BeginPreview()
+// 0x00000126 System.Void Wallpaper.Editor.WallpaperEditor::BeginPreview()
 extern void WallpaperEditor_BeginPreview_m44A3481B53651B2A4C12DA4BDEB95B17D2A3D5DB (void);
-// 0x00000126 System.Void Wallpaper.Editor.WallpaperEditor::EndPreview()
+// 0x00000127 System.Void Wallpaper.Editor.WallpaperEditor::EndPreview()
 extern void WallpaperEditor_EndPreview_m70EF753D301E68479C4829D9B4F6A6B64A8B0FF3 (void);
-// 0x00000127 System.Void Wallpaper.Editor.WallpaperEditor::OnDeleteImageButtonPressed()
+// 0x00000128 System.Void Wallpaper.Editor.WallpaperEditor::OnDeleteImageButtonPressed()
 extern void WallpaperEditor_OnDeleteImageButtonPressed_m5A4D7C1CC81970E194D5CE428DC120C68F192EDD (void);
-// 0x00000128 System.Void Wallpaper.Editor.WallpaperEditor::OnLayerButtonPressed(System.Int32)
+// 0x00000129 System.Void Wallpaper.Editor.WallpaperEditor::OnLayerButtonPressed(System.Int32)
 extern void WallpaperEditor_OnLayerButtonPressed_m368D23DEC02903523BD8BF1FEAB8CFE12AA52BD4 (void);
-// 0x00000129 System.Void Wallpaper.Editor.WallpaperEditor::OnWallpaperRenamed(System.String)
+// 0x0000012A System.Void Wallpaper.Editor.WallpaperEditor::OnWallpaperRenamed(System.String)
 extern void WallpaperEditor_OnWallpaperRenamed_m55DA3B43BEBC43395BA5EACB3D2D4A48ABE26A52 (void);
-// 0x0000012A System.Void Wallpaper.Editor.WallpaperEditor::OnCropButtonPressed()
+// 0x0000012B System.Void Wallpaper.Editor.WallpaperEditor::OnCropButtonPressed()
 extern void WallpaperEditor_OnCropButtonPressed_mC515EEC4AD6649FA1CBCA4543B43375583C50EAB (void);
-// 0x0000012B System.Void Wallpaper.Editor.WallpaperEditor::OnSaveButtonPressed()
+// 0x0000012C System.Void Wallpaper.Editor.WallpaperEditor::OnSaveButtonPressed()
 extern void WallpaperEditor_OnSaveButtonPressed_mDA9359A4898115707A8F9F330F656E79C06EC48F (void);
-// 0x0000012C System.Boolean Wallpaper.Editor.WallpaperEditor::ShouldSave()
+// 0x0000012D System.Boolean Wallpaper.Editor.WallpaperEditor::ShouldSave()
 extern void WallpaperEditor_ShouldSave_m7B3B75E6D9AB7E190993E53A6235250657E29C16 (void);
-// 0x0000012D System.Void Wallpaper.Editor.WallpaperEditor::CancelAllIncompleteActions()
+// 0x0000012E System.Void Wallpaper.Editor.WallpaperEditor::CancelAllIncompleteActions()
 extern void WallpaperEditor_CancelAllIncompleteActions_mFD02CAB50A772305CD5CA976DCC855235DB2D504 (void);
-// 0x0000012E System.Void Wallpaper.Editor.WallpaperEditor::BeginEditing(Wallpaper.Wallpaper)
+// 0x0000012F System.Void Wallpaper.Editor.WallpaperEditor::BeginEditing(Wallpaper.Wallpaper)
 extern void WallpaperEditor_BeginEditing_m568F9AB5C2F6A86DE43B37ACC1F1CB31716F583A (void);
-// 0x0000012F System.Void Wallpaper.Editor.WallpaperEditor::RemoveCurrentWallpaper()
+// 0x00000130 System.Void Wallpaper.Editor.WallpaperEditor::RemoveCurrentWallpaper()
 extern void WallpaperEditor_RemoveCurrentWallpaper_m0DF86C47EEC4920A70F4296686953808FB924286 (void);
-// 0x00000130 System.Void Wallpaper.Editor.WallpaperEditor::OpenWallpaper()
+// 0x00000131 System.Void Wallpaper.Editor.WallpaperEditor::OpenWallpaper()
 extern void WallpaperEditor_OpenWallpaper_mA226D7B7B2198EC0C3CA366CEDF113AEB56D46EF (void);
-// 0x00000131 System.Void Wallpaper.Editor.WallpaperEditor::OpenWallpaperName()
+// 0x00000132 System.Void Wallpaper.Editor.WallpaperEditor::OpenWallpaperName()
 extern void WallpaperEditor_OpenWallpaperName_m68B9AB3E1F2260000A078D921445547CDF83AFC1 (void);
-// 0x00000132 System.Void Wallpaper.Editor.WallpaperEditor::OpenWallpaperImages()
+// 0x00000133 System.Void Wallpaper.Editor.WallpaperEditor::OpenWallpaperImages()
 extern void WallpaperEditor_OpenWallpaperImages_mE0BD869556A9A45D13047AA0999A3BD53565323C (void);
-// 0x00000133 System.Void Wallpaper.Editor.WallpaperEditor::LoadCropData()
+// 0x00000134 System.Void Wallpaper.Editor.WallpaperEditor::LoadCropData()
 extern void WallpaperEditor_LoadCropData_mD5DFABF2D0C58D55CF438662E739C40C7F50723C (void);
-// 0x00000134 System.Void Wallpaper.Editor.WallpaperEditor::.ctor()
+// 0x00000135 System.Void Wallpaper.Editor.WallpaperEditor::.ctor()
 extern void WallpaperEditor__ctor_mF19712CCD03E17CF4DC655DEFB4913FB8B9636AC (void);
-// 0x00000135 System.Void Wallpaper.Editor.WallpaperEditor::<Initialize>b__20_0()
+// 0x00000136 System.Void Wallpaper.Editor.WallpaperEditor::<Initialize>b__20_0()
 extern void WallpaperEditor_U3CInitializeU3Eb__20_0_m6EB5EE312C64B94C5F253681D234D21A305430BA (void);
-// 0x00000136 System.Void Wallpaper.Editor.WallpaperEditor/<>c__DisplayClass20_0::.ctor()
+// 0x00000137 System.Void Wallpaper.Editor.WallpaperEditor/<>c__DisplayClass20_0::.ctor()
 extern void U3CU3Ec__DisplayClass20_0__ctor_m5102AE87B63599A015F8AF4F889CCE6889CD5CC8 (void);
-// 0x00000137 System.Void Wallpaper.Editor.WallpaperEditor/<>c__DisplayClass20_0::<Initialize>b__1()
+// 0x00000138 System.Void Wallpaper.Editor.WallpaperEditor/<>c__DisplayClass20_0::<Initialize>b__1()
 extern void U3CU3Ec__DisplayClass20_0_U3CInitializeU3Eb__1_m4E41D008B9C2D2515B29B4EBD26D15FD28EF627E (void);
-// 0x00000138 System.Void Wallpaper.Editor.WallpaperEditorActionBase::Execute()
-// 0x00000139 System.Void Wallpaper.Editor.WallpaperEditorActionBase::Undo()
-// 0x0000013A System.Void Wallpaper.Editor.WallpaperEditorActionBase::.ctor()
+// 0x00000139 System.Void Wallpaper.Editor.WallpaperEditorActionBase::Execute()
+// 0x0000013A System.Void Wallpaper.Editor.WallpaperEditorActionBase::Undo()
+// 0x0000013B System.Void Wallpaper.Editor.WallpaperEditorActionBase::.ctor()
 extern void WallpaperEditorActionBase__ctor_m41F7C877A36360ACD22200AC901517F563F7F5BA (void);
-// 0x0000013B Wallpaper.IAndroidCommander Wallpaper.Collection.CollectionSceneController::get_AndroidCommander()
+// 0x0000013C Wallpaper.IAndroidCommander Wallpaper.Collection.CollectionSceneController::get_AndroidCommander()
 extern void CollectionSceneController_get_AndroidCommander_m0931245CFC4614759E1B82A57563551FB1138296 (void);
-// 0x0000013C System.Void Wallpaper.Collection.CollectionSceneController::Awake()
+// 0x0000013D System.Void Wallpaper.Collection.CollectionSceneController::Awake()
 extern void CollectionSceneController_Awake_mFB1C010C00898F994C91F26008CEA3C5B84FD2DC (void);
-// 0x0000013D System.Void Wallpaper.Collection.CollectionSceneController::OnAndroidBackPressed()
+// 0x0000013E System.Void Wallpaper.Collection.CollectionSceneController::OnAndroidBackPressed()
 extern void CollectionSceneController_OnAndroidBackPressed_m9EF74205E138453C9FF259D57AD7D40CDE184974 (void);
-// 0x0000013E System.Void Wallpaper.Collection.CollectionSceneController::OnSceneLoaded()
+// 0x0000013F System.Void Wallpaper.Collection.CollectionSceneController::OnSceneLoaded()
 extern void CollectionSceneController_OnSceneLoaded_mEA0DA770E07AECF4D3B925CCF902190919778566 (void);
-// 0x0000013F System.Void Wallpaper.Collection.CollectionSceneController::OnSceneUnLoaded()
+// 0x00000140 System.Void Wallpaper.Collection.CollectionSceneController::OnSceneUnLoaded()
 extern void CollectionSceneController_OnSceneUnLoaded_m7CC8C1A10726486B462A24BB6966D2B81C65B628 (void);
-// 0x00000140 System.Void Wallpaper.Collection.CollectionSceneController::OnCreateWallpaper(System.Byte[],System.Int32,System.Int32)
+// 0x00000141 System.Void Wallpaper.Collection.CollectionSceneController::OnCreateWallpaper(System.Byte[],System.Int32,System.Int32)
 extern void CollectionSceneController_OnCreateWallpaper_mB153C75E82171239D14B522A3E9506B00FA8519C (void);
-// 0x00000141 System.Void Wallpaper.Collection.CollectionSceneController::.ctor()
+// 0x00000142 System.Void Wallpaper.Collection.CollectionSceneController::.ctor()
 extern void CollectionSceneController__ctor_m0B1C0764081BE351DA5FC39558C63DB45264B22A (void);
-// 0x00000142 System.Void Wallpaper.Collection.CollectionSceneController::<Awake>b__4_0()
+// 0x00000143 System.Void Wallpaper.Collection.CollectionSceneController::<Awake>b__4_0()
 extern void CollectionSceneController_U3CAwakeU3Eb__4_0_mFD0DDAE151A9DE0F0DEE71643F344899FA045EE7 (void);
-// 0x00000143 System.Void Wallpaper.Collection.CollectionSceneController/<>c::.cctor()
+// 0x00000144 System.Void Wallpaper.Collection.CollectionSceneController/<>c::.cctor()
 extern void U3CU3Ec__cctor_m836E366AA12EF02E42457CD7A46224452995A38B (void);
-// 0x00000144 System.Void Wallpaper.Collection.CollectionSceneController/<>c::.ctor()
+// 0x00000145 System.Void Wallpaper.Collection.CollectionSceneController/<>c::.ctor()
 extern void U3CU3Ec__ctor_mD764FEB7713173B7A23E30C96CF9C70F01E1FE85 (void);
-// 0x00000145 System.Void Wallpaper.Collection.CollectionSceneController/<>c::<Awake>b__4_1()
+// 0x00000146 System.Void Wallpaper.Collection.CollectionSceneController/<>c::<Awake>b__4_1()
 extern void U3CU3Ec_U3CAwakeU3Eb__4_1_m422212F81D05523AB8097402A7308B4FA1A483BD (void);
-// 0x00000146 System.Void Wallpaper.Utils.ButtonText::Awake()
+// 0x00000147 System.Void Wallpaper.Utils.ButtonText::Awake()
 extern void ButtonText_Awake_m14A9438D16C1D786A99B0C7BC489C4D968297B45 (void);
-// 0x00000147 System.Void Wallpaper.Utils.ButtonText::OnClick()
+// 0x00000148 System.Void Wallpaper.Utils.ButtonText::OnClick()
 extern void ButtonText_OnClick_m7917EC85F358E567CD31F65EE596041B69D0BBDF (void);
-// 0x00000148 System.Void Wallpaper.Utils.ButtonText::UpdateState()
+// 0x00000149 System.Void Wallpaper.Utils.ButtonText::UpdateState()
 extern void ButtonText_UpdateState_mD37BE1F2FBE96A6A98B5CE99FE1D6FA66E14D092 (void);
-// 0x00000149 System.Void Wallpaper.Utils.ButtonText::SetState(System.Boolean)
+// 0x0000014A System.Void Wallpaper.Utils.ButtonText::SetState(System.Boolean)
 extern void ButtonText_SetState_m9D957C122C27224DD737543F18E1452CD45DF1EE (void);
-// 0x0000014A System.Void Wallpaper.Utils.ButtonText::.ctor()
+// 0x0000014B System.Void Wallpaper.Utils.ButtonText::.ctor()
 extern void ButtonText__ctor_mD7F95C4B4F0E2025330B1FB128257E21841CD213 (void);
-// 0x0000014B System.Void Wallpaper.Utils.ColorPickerSubmitButton::Awake()
+// 0x0000014C System.Void Wallpaper.Utils.ColorPickerSubmitButton::Awake()
 extern void ColorPickerSubmitButton_Awake_m6E7F96EF68D3308F1E56EF5BAFB53A820D786805 (void);
-// 0x0000014C System.Void Wallpaper.Utils.ColorPickerSubmitButton::OnClick()
+// 0x0000014D System.Void Wallpaper.Utils.ColorPickerSubmitButton::OnClick()
 extern void ColorPickerSubmitButton_OnClick_mD07867AA643BE5218773A1A638EF639344B19134 (void);
-// 0x0000014D System.Void Wallpaper.Utils.ColorPickerSubmitButton::.ctor()
+// 0x0000014E System.Void Wallpaper.Utils.ColorPickerSubmitButton::.ctor()
 extern void ColorPickerSubmitButton__ctor_m0CE64519D6E781A701CD826AA46539364BE1FB43 (void);
-// 0x0000014E System.Int32 Wallpaper.Utils.DropoutStack`1::get_MaxLength()
-// 0x0000014F System.Void Wallpaper.Utils.DropoutStack`1::set_MaxLength(System.Int32)
-// 0x00000150 System.Void Wallpaper.Utils.DropoutStack`1::.ctor()
-// 0x00000151 System.Void Wallpaper.Utils.DropoutStack`1::.ctor(System.Int32)
-// 0x00000152 System.Void Wallpaper.Utils.DropoutStack`1::Push(T)
-// 0x00000153 T Wallpaper.Utils.DropoutStack`1::Pop()
-// 0x00000154 System.Void Wallpaper.Utils.DropoutStack`1::SetMaxLength(System.Int32)
-// 0x00000155 System.Void Wallpaper.Utils.EffectsHandler::Awake()
+// 0x0000014F System.Int32 Wallpaper.Utils.DropoutStack`1::get_MaxLength()
+// 0x00000150 System.Void Wallpaper.Utils.DropoutStack`1::set_MaxLength(System.Int32)
+// 0x00000151 System.Void Wallpaper.Utils.DropoutStack`1::.ctor()
+// 0x00000152 System.Void Wallpaper.Utils.DropoutStack`1::.ctor(System.Int32)
+// 0x00000153 System.Void Wallpaper.Utils.DropoutStack`1::Push(T)
+// 0x00000154 T Wallpaper.Utils.DropoutStack`1::Pop()
+// 0x00000155 System.Void Wallpaper.Utils.DropoutStack`1::SetMaxLength(System.Int32)
+// 0x00000156 System.Void Wallpaper.Utils.EffectsHandler::Awake()
 extern void EffectsHandler_Awake_mE25D6DCAA1A322CB6D081B510ECE2567A0B24C6C (void);
-// 0x00000156 System.Void Wallpaper.Utils.EffectsHandler::AddEffectToWallpaper(Wallpaper.WallpaperEffectBase,Wallpaper.Wallpaper)
+// 0x00000157 System.Void Wallpaper.Utils.EffectsHandler::AddEffectToWallpaper(Wallpaper.WallpaperEffectBase,Wallpaper.Wallpaper)
 extern void EffectsHandler_AddEffectToWallpaper_m5E480F07C0B17B118F94520DC560341F893BB912 (void);
-// 0x00000157 System.Void Wallpaper.Utils.EffectsHandler::RemoveEffectFromWallpaper(Wallpaper.Wallpaper)
+// 0x00000158 System.Void Wallpaper.Utils.EffectsHandler::RemoveEffectFromWallpaper(Wallpaper.Wallpaper)
 extern void EffectsHandler_RemoveEffectFromWallpaper_mD22C43ADBC7E463A089A054B726F6A01F75370BD (void);
-// 0x00000158 System.Void Wallpaper.Utils.EffectsHandler::UnloadEffectSettings()
+// 0x00000159 System.Void Wallpaper.Utils.EffectsHandler::UnloadEffectSettings()
 extern void EffectsHandler_UnloadEffectSettings_m9D59BA38C38E96FD0FC8E01090E926410BE23091 (void);
-// 0x00000159 System.Void Wallpaper.Utils.EffectsHandler::LoadEffect(Wallpaper.WallpaperEffectBase)
+// 0x0000015A System.Void Wallpaper.Utils.EffectsHandler::LoadEffect(Wallpaper.WallpaperEffectBase)
 extern void EffectsHandler_LoadEffect_mEAB27B06C1E50961B9B5F4A536F0818CB6ED0B59 (void);
-// 0x0000015A System.Void Wallpaper.Utils.EffectsHandler::SpawnEffect(Wallpaper.WallpaperEffectBase)
+// 0x0000015B System.Void Wallpaper.Utils.EffectsHandler::SpawnEffect(Wallpaper.WallpaperEffectBase)
 extern void EffectsHandler_SpawnEffect_m5E552EB7A02C77CB5FA640ED13A071D96AFBA6A6 (void);
-// 0x0000015B System.Void Wallpaper.Utils.EffectsHandler::LoadEffectSettings(Wallpaper.WallpaperEffectBase)
+// 0x0000015C System.Void Wallpaper.Utils.EffectsHandler::LoadEffectSettings(Wallpaper.WallpaperEffectBase)
 extern void EffectsHandler_LoadEffectSettings_mEBC1B492D434B9664511D247B7592C00CE86DD58 (void);
-// 0x0000015C System.Void Wallpaper.Utils.EffectsHandler::LoadEffectFloatSettings(Wallpaper.WallpaperEffectBase)
+// 0x0000015D System.Void Wallpaper.Utils.EffectsHandler::LoadEffectFloatSettings(Wallpaper.WallpaperEffectBase)
 extern void EffectsHandler_LoadEffectFloatSettings_m64E3197F309DAF6DE62FAD4E0AA4905267993CC7 (void);
-// 0x0000015D System.Void Wallpaper.Utils.EffectsHandler::LoadEffectColorSettings(Wallpaper.WallpaperEffectBase)
+// 0x0000015E System.Void Wallpaper.Utils.EffectsHandler::LoadEffectColorSettings(Wallpaper.WallpaperEffectBase)
 extern void EffectsHandler_LoadEffectColorSettings_m0363FFDE00A55454163D21CCE7E5F10498FCF5FE (void);
-// 0x0000015E System.Void Wallpaper.Utils.EffectsHandler::.ctor()
+// 0x0000015F System.Void Wallpaper.Utils.EffectsHandler::.ctor()
 extern void EffectsHandler__ctor_mF1352C915E3F859D6BE2B86C079986DE672DD15F (void);
-// 0x0000015F System.Void Wallpaper.Utils.EffectsHandler/<>c__DisplayClass17_0::.ctor()
+// 0x00000160 System.Void Wallpaper.Utils.EffectsHandler/<>c__DisplayClass17_0::.ctor()
 extern void U3CU3Ec__DisplayClass17_0__ctor_m7569BA8145952513EDFF4E4A6FD1C4C015999CAB (void);
-// 0x00000160 System.Void Wallpaper.Utils.EffectsHandler/<>c__DisplayClass17_1::.ctor()
+// 0x00000161 System.Void Wallpaper.Utils.EffectsHandler/<>c__DisplayClass17_1::.ctor()
 extern void U3CU3Ec__DisplayClass17_1__ctor_mA4FE0EC5123E6E1CDFD6C99BEE6862B3035D4169 (void);
-// 0x00000161 System.Void Wallpaper.Utils.EffectsHandler/<>c__DisplayClass17_1::<LoadEffectFloatSettings>b__0(System.Single)
+// 0x00000162 System.Void Wallpaper.Utils.EffectsHandler/<>c__DisplayClass17_1::<LoadEffectFloatSettings>b__0(System.Single)
 extern void U3CU3Ec__DisplayClass17_1_U3CLoadEffectFloatSettingsU3Eb__0_m8DBDFC85719F60C2F351A82DF9FD75D585AD71A4 (void);
-// 0x00000162 System.Void Wallpaper.Utils.EffectsHandler/<>c__DisplayClass18_0::.ctor()
+// 0x00000163 System.Void Wallpaper.Utils.EffectsHandler/<>c__DisplayClass18_0::.ctor()
 extern void U3CU3Ec__DisplayClass18_0__ctor_m5ED787511E13EC76C89BE49881528F99329DA30E (void);
-// 0x00000163 System.Void Wallpaper.Utils.EffectsHandler/<>c__DisplayClass18_1::.ctor()
+// 0x00000164 System.Void Wallpaper.Utils.EffectsHandler/<>c__DisplayClass18_1::.ctor()
 extern void U3CU3Ec__DisplayClass18_1__ctor_mA308D79FD4A01AA8CD6954786C23B0E378D77B14 (void);
-// 0x00000164 System.Void Wallpaper.Utils.EffectsHandler/<>c__DisplayClass18_1::<LoadEffectColorSettings>b__0(UnityEngine.Color)
+// 0x00000165 System.Void Wallpaper.Utils.EffectsHandler/<>c__DisplayClass18_1::<LoadEffectColorSettings>b__0(UnityEngine.Color)
 extern void U3CU3Ec__DisplayClass18_1_U3CLoadEffectColorSettingsU3Eb__0_mC4ED3068381272112F17DD163F66C5990DA3B569 (void);
-// 0x00000165 System.Void Wallpaper.Utils.ImageHandler::Awake()
+// 0x00000166 System.Void Wallpaper.Utils.ImageHandler::Awake()
 extern void ImageHandler_Awake_m756E4E15EC1BF27AD47C4993630243BB531F9692 (void);
-// 0x00000166 System.Void Wallpaper.Utils.ImageHandler::EnableParallax(System.Single,System.Single)
+// 0x00000167 System.Void Wallpaper.Utils.ImageHandler::EnableParallax(System.Single,System.Single)
 extern void ImageHandler_EnableParallax_m603E534F9E51B8BA173094656876B5F8964FE5BD (void);
-// 0x00000167 System.Void Wallpaper.Utils.ImageHandler::DisableParallax()
+// 0x00000168 System.Void Wallpaper.Utils.ImageHandler::DisableParallax()
 extern void ImageHandler_DisableParallax_m77DC2FB918E94084EF6CA20ADCEF2C36F831910F (void);
-// 0x00000168 System.Void Wallpaper.Utils.ImageHandler::DisableCropping()
+// 0x00000169 System.Void Wallpaper.Utils.ImageHandler::DisableCropping()
 extern void ImageHandler_DisableCropping_mEEC2B2E978F8B5C22734DE93215AE9911D5C887B (void);
-// 0x00000169 System.Void Wallpaper.Utils.ImageHandler::EnableMovement()
+// 0x0000016A System.Void Wallpaper.Utils.ImageHandler::EnableMovement()
 extern void ImageHandler_EnableMovement_m5B010AB16A5604837B18652842EBBAA3553FE7BE (void);
-// 0x0000016A System.Void Wallpaper.Utils.ImageHandler::DisableMovement()
+// 0x0000016B System.Void Wallpaper.Utils.ImageHandler::DisableMovement()
 extern void ImageHandler_DisableMovement_m5729B77AC7F2EE613A52D9D0908AFC82693EF7C4 (void);
-// 0x0000016B System.Void Wallpaper.Utils.ImageHandler::EnableZooming()
+// 0x0000016C System.Void Wallpaper.Utils.ImageHandler::EnableZooming()
 extern void ImageHandler_EnableZooming_mAE9C3B7D47EF626E8AE2AC05FF32B98043D36832 (void);
-// 0x0000016C System.Void Wallpaper.Utils.ImageHandler::DisableZooming()
+// 0x0000016D System.Void Wallpaper.Utils.ImageHandler::DisableZooming()
 extern void ImageHandler_DisableZooming_mFEE1B8A6266BEBFE05B2C9BB74CE4F903811D178 (void);
-// 0x0000016D System.Void Wallpaper.Utils.ImageHandler::BeginCropping()
+// 0x0000016E System.Void Wallpaper.Utils.ImageHandler::BeginCropping()
 extern void ImageHandler_BeginCropping_mD399883143353D4BA6A73EA58CCF09E710EBDE5F (void);
-// 0x0000016E System.Void Wallpaper.Utils.ImageHandler::CancelCropping()
+// 0x0000016F System.Void Wallpaper.Utils.ImageHandler::CancelCropping()
 extern void ImageHandler_CancelCropping_mEA0D1CEE352D8F136BD6758F32C7ED1B0605DE86 (void);
-// 0x0000016F Wallpaper.Utils.ImageHandler/CropData[] Wallpaper.Utils.ImageHandler::FinishCropping()
+// 0x00000170 Wallpaper.Utils.ImageHandler/CropData[] Wallpaper.Utils.ImageHandler::FinishCropping()
 extern void ImageHandler_FinishCropping_mE9672F9487A91ACFD268F9B93A052397B5FB0139 (void);
-// 0x00000170 System.Void Wallpaper.Utils.ImageHandler::SetAlwaysCoverScreen(System.Boolean)
+// 0x00000171 System.Void Wallpaper.Utils.ImageHandler::SetAlwaysCoverScreen(System.Boolean)
 extern void ImageHandler_SetAlwaysCoverScreen_m084949D7E72091723FB4B7D73FFA8EAB17B2A14F (void);
-// 0x00000171 System.Void Wallpaper.Utils.ImageHandler::SetImage(UnityEngine.Sprite)
+// 0x00000172 System.Void Wallpaper.Utils.ImageHandler::SetImage(UnityEngine.Sprite)
 extern void ImageHandler_SetImage_m5338E1577A945B6B68EBEFB4B1907224762B5CE0 (void);
-// 0x00000172 System.Void Wallpaper.Utils.ImageHandler::ResetPivot()
+// 0x00000173 System.Void Wallpaper.Utils.ImageHandler::ResetPivot()
 extern void ImageHandler_ResetPivot_mCFDB6FE672DE0F7159AA5892FC61B3129C4B702F (void);
-// 0x00000173 Wallpaper.Utils.ImageHandler/CropData Wallpaper.Utils.ImageHandler::GetCurrentState()
+// 0x00000174 Wallpaper.Utils.ImageHandler/CropData Wallpaper.Utils.ImageHandler::GetCurrentState()
 extern void ImageHandler_GetCurrentState_m3AB2C127C34F847DD3DBA56A86FC121B82D8019E (void);
-// 0x00000174 System.Void Wallpaper.Utils.ImageHandler::SetCurrentState(Wallpaper.Utils.ImageHandler/CropData)
+// 0x00000175 System.Void Wallpaper.Utils.ImageHandler::SetCurrentState(Wallpaper.Utils.ImageHandler/CropData)
 extern void ImageHandler_SetCurrentState_mD2FC410A3176DAD6903D6DFC001BBBBC9B1CB46B (void);
-// 0x00000175 System.Void Wallpaper.Utils.ImageHandler::.ctor()
+// 0x00000176 System.Void Wallpaper.Utils.ImageHandler::.ctor()
 extern void ImageHandler__ctor_mBAAADC02AA3EDB0779152616F03FE4DA47F285CE (void);
-// 0x00000176 System.Void Wallpaper.Utils.ImageHandler/CropData::.ctor(UnityEngine.Vector2,UnityEngine.Vector2)
+// 0x00000177 System.Void Wallpaper.Utils.ImageHandler/CropData::.ctor(UnityEngine.Vector2,UnityEngine.Vector2)
 extern void CropData__ctor_m5BB30057A99EB3D9BD26AB2A95275A6BC59C91DB (void);
-// 0x00000177 System.Void Wallpaper.Utils.ImageHandler/CropData::NormalizePosition(UnityEngine.Camera)
+// 0x00000178 System.Void Wallpaper.Utils.ImageHandler/CropData::NormalizePosition(UnityEngine.Camera)
 extern void CropData_NormalizePosition_mBF6BF076FC9200C0E5DCB7DEC202BE3A1929EBFE (void);
-// 0x00000178 System.Void Wallpaper.Utils.ImageHandler/CropData::DenormalizePosition(UnityEngine.Camera)
+// 0x00000179 System.Void Wallpaper.Utils.ImageHandler/CropData::DenormalizePosition(UnityEngine.Camera)
 extern void CropData_DenormalizePosition_mBCD33D43AA04E9B777E857C8025F2C76E49A1F67 (void);
-// 0x00000179 System.Int32 Wallpaper.Utils.ImagesHandler::get_Count()
+// 0x0000017A System.Int32 Wallpaper.Utils.ImagesHandler::get_Count()
 extern void ImagesHandler_get_Count_mD30061F9210E94FFB549257B212B0858C3856AF4 (void);
-// 0x0000017A System.Int32 Wallpaper.Utils.ImagesHandler::get_SelectedLayer()
+// 0x0000017B System.Int32 Wallpaper.Utils.ImagesHandler::get_SelectedLayer()
 extern void ImagesHandler_get_SelectedLayer_m2C2CE24FF60A61A33D94582390E6BC586275AC5A (void);
-// 0x0000017B System.Boolean Wallpaper.Utils.ImagesHandler::get_IsCropping()
+// 0x0000017C System.Boolean Wallpaper.Utils.ImagesHandler::get_IsCropping()
 extern void ImagesHandler_get_IsCropping_mE6866AD4C3340CB6CB8A2D108000B7C103479D16 (void);
-// 0x0000017C Wallpaper.Utils.ImageHandler Wallpaper.Utils.ImagesHandler::get_Item(System.Int32)
+// 0x0000017D Wallpaper.Utils.ImageHandler Wallpaper.Utils.ImagesHandler::get_Item(System.Int32)
 extern void ImagesHandler_get_Item_m167DE1DC07C06931CB381035767E917569F8B2A1 (void);
-// 0x0000017D System.Void Wallpaper.Utils.ImagesHandler::Awake()
+// 0x0000017E System.Void Wallpaper.Utils.ImagesHandler::Awake()
 extern void ImagesHandler_Awake_m885BE696CAEC5C91F10F5FC1192CE18300917E59 (void);
-// 0x0000017E System.Void Wallpaper.Utils.ImagesHandler::OnEnable()
+// 0x0000017F System.Void Wallpaper.Utils.ImagesHandler::OnEnable()
 extern void ImagesHandler_OnEnable_m4FC7301CE4CE2C4A7E6BD71A630267D90F28DD0A (void);
-// 0x0000017F System.Void Wallpaper.Utils.ImagesHandler::OnDisable()
+// 0x00000180 System.Void Wallpaper.Utils.ImagesHandler::OnDisable()
 extern void ImagesHandler_OnDisable_mB6682BBAB9CB929B69EEBC1B6097DE6A34019696 (void);
-// 0x00000180 System.Void Wallpaper.Utils.ImagesHandler::EnableParallax()
+// 0x00000181 System.Void Wallpaper.Utils.ImagesHandler::EnableParallax()
 extern void ImagesHandler_EnableParallax_m2758AB8D6264ED11E9D36D843B7D5EE9E4EAAA13 (void);
-// 0x00000181 System.Void Wallpaper.Utils.ImagesHandler::DisableParallax()
+// 0x00000182 System.Void Wallpaper.Utils.ImagesHandler::DisableParallax()
 extern void ImagesHandler_DisableParallax_mDBCF902B49E917F546B2C1880BF50D7BBE75B910 (void);
-// 0x00000182 System.Void Wallpaper.Utils.ImagesHandler::OnTouchDown(UnityEngine.Vector2)
+// 0x00000183 System.Void Wallpaper.Utils.ImagesHandler::OnTouchDown(UnityEngine.Vector2)
 extern void ImagesHandler_OnTouchDown_m8487996FFE1C0EC0795BC2A5E8A242AC1F3C0640 (void);
-// 0x00000183 System.Void Wallpaper.Utils.ImagesHandler::OnTouchUp()
+// 0x00000184 System.Void Wallpaper.Utils.ImagesHandler::OnTouchUp()
 extern void ImagesHandler_OnTouchUp_m8A0E41523055E8FEDF2913550B9F6A13E2B7E1FA (void);
-// 0x00000184 System.Void Wallpaper.Utils.ImagesHandler::OnPinchBegin(UnityEngine.Vector2,System.Single)
+// 0x00000185 System.Void Wallpaper.Utils.ImagesHandler::OnPinchBegin(UnityEngine.Vector2,System.Single)
 extern void ImagesHandler_OnPinchBegin_mF970A65320C4AA3C16564C4A53B1A9693178D525 (void);
-// 0x00000185 System.Void Wallpaper.Utils.ImagesHandler::OnPinchEnd()
+// 0x00000186 System.Void Wallpaper.Utils.ImagesHandler::OnPinchEnd()
 extern void ImagesHandler_OnPinchEnd_mC86328E2E029748B7163E3A29BEA1BE444D4A26A (void);
-// 0x00000186 System.Void Wallpaper.Utils.ImagesHandler::SetCurrentLayer(System.Int32)
+// 0x00000187 System.Void Wallpaper.Utils.ImagesHandler::SetCurrentLayer(System.Int32)
 extern void ImagesHandler_SetCurrentLayer_mEA5821B23ADCB00B869DAB451A2D26424F2975FD (void);
-// 0x00000187 System.Collections.Generic.List`1<Wallpaper.Utils.ImageHandler/CropData[]> Wallpaper.Utils.ImagesHandler::OnCropButtonPressed()
+// 0x00000188 System.Collections.Generic.List`1<Wallpaper.Utils.ImageHandler/CropData[]> Wallpaper.Utils.ImagesHandler::OnCropButtonPressed()
 extern void ImagesHandler_OnCropButtonPressed_m0C94DBB791847F135368DEB4A48D8F9CA28099F4 (void);
-// 0x00000188 System.Void Wallpaper.Utils.ImagesHandler::BeginCropping()
+// 0x00000189 System.Void Wallpaper.Utils.ImagesHandler::BeginCropping()
 extern void ImagesHandler_BeginCropping_m150785CBE84FA43A251E5673DD63F64F6185F96C (void);
-// 0x00000189 System.Void Wallpaper.Utils.ImagesHandler::CancelCropping()
+// 0x0000018A System.Void Wallpaper.Utils.ImagesHandler::CancelCropping()
 extern void ImagesHandler_CancelCropping_mF4C8E06E7EC1A62CE314F586DABE7AEACFB4BB68 (void);
-// 0x0000018A System.Collections.Generic.List`1<Wallpaper.Utils.ImageHandler/CropData[]> Wallpaper.Utils.ImagesHandler::FinishCropping()
+// 0x0000018B System.Collections.Generic.List`1<Wallpaper.Utils.ImageHandler/CropData[]> Wallpaper.Utils.ImagesHandler::FinishCropping()
 extern void ImagesHandler_FinishCropping_m2B3251353D3F2E6BD621FDA1296A1BDE5D7BD743 (void);
-// 0x0000018B System.Void Wallpaper.Utils.ImagesHandler::OpenImage(Wallpaper.WallpaperImage,System.Boolean)
+// 0x0000018C System.Void Wallpaper.Utils.ImagesHandler::OpenImage(Wallpaper.WallpaperImage,System.Boolean)
 extern void ImagesHandler_OpenImage_m4B34AAAA3EBFBF5CCE5BAE7604E501DAB6197C4A (void);
-// 0x0000018C System.Void Wallpaper.Utils.ImagesHandler::AddImageToWallpaper(Wallpaper.WallpaperImage,Wallpaper.Wallpaper)
+// 0x0000018D System.Void Wallpaper.Utils.ImagesHandler::AddImageToWallpaper(Wallpaper.WallpaperImage,Wallpaper.Wallpaper)
 extern void ImagesHandler_AddImageToWallpaper_m69F5ACDE6FBD7956AB5A263C51414227C0963EF4 (void);
-// 0x0000018D System.Void Wallpaper.Utils.ImagesHandler::RemoveImageFromWallpaper(Wallpaper.WallpaperImage,Wallpaper.Wallpaper)
+// 0x0000018E System.Void Wallpaper.Utils.ImagesHandler::RemoveImageFromWallpaper(Wallpaper.WallpaperImage,Wallpaper.Wallpaper)
 extern void ImagesHandler_RemoveImageFromWallpaper_mE1CA50731B48EE09B2F39F336231CC8B84123EDE (void);
-// 0x0000018E System.Void Wallpaper.Utils.ImagesHandler::.ctor()
+// 0x0000018F System.Void Wallpaper.Utils.ImagesHandler::.ctor()
 extern void ImagesHandler__ctor_mC09A96F65A5264B2D52723918F2DE5694660D32B (void);
-// 0x0000018F System.Void Wallpaper.Utils.ParallaxImage::Awake()
+// 0x00000190 System.Void Wallpaper.Utils.ParallaxImage::Awake()
 extern void ParallaxImage_Awake_mDB2CD1A404BA5298BAE00BE33C1BAE0576E92F1B (void);
-// 0x00000190 System.Void Wallpaper.Utils.ParallaxImage::EnableParallax(System.Single,System.Single,System.Single)
+// 0x00000191 System.Void Wallpaper.Utils.ParallaxImage::EnableParallax(System.Single,System.Single,System.Single)
 extern void ParallaxImage_EnableParallax_mC0857C82264B39CA16F125433CBBBE248B6AAD65 (void);
-// 0x00000191 System.Void Wallpaper.Utils.ParallaxImage::DisableParallax()
+// 0x00000192 System.Void Wallpaper.Utils.ParallaxImage::DisableParallax()
 extern void ParallaxImage_DisableParallax_mC11A2C79BE7A46D23CE74885AD37598EE1CF6F70 (void);
-// 0x00000192 System.Void Wallpaper.Utils.ParallaxImage::OnParallax(UnityEngine.Vector2)
+// 0x00000193 System.Void Wallpaper.Utils.ParallaxImage::OnParallax(UnityEngine.Vector2)
 extern void ParallaxImage_OnParallax_mA52537AC5BD78AE43618EC1C5D1F489DC9B11242 (void);
-// 0x00000193 System.Void Wallpaper.Utils.ParallaxImage::OnParallaxEnd()
+// 0x00000194 System.Void Wallpaper.Utils.ParallaxImage::OnParallaxEnd()
 extern void ParallaxImage_OnParallaxEnd_m058BB6BC7190E643D03965E77D76EF5FE70A17BD (void);
-// 0x00000194 System.Void Wallpaper.Utils.ParallaxImage::.ctor()
+// 0x00000195 System.Void Wallpaper.Utils.ParallaxImage::.ctor()
 extern void ParallaxImage__ctor_m07F25A99350284829B785384148E5CCE90E211A8 (void);
-// 0x00000195 System.Void Wallpaper.Utils.PickableColor::Awake()
+// 0x00000196 System.Void Wallpaper.Utils.PickableColor::Awake()
 extern void PickableColor_Awake_mD62E5066D6DF359B2BFEB2BEBDA79C2946EA8DF5 (void);
-// 0x00000196 System.Void Wallpaper.Utils.PickableColor::Initialize(FlexibleColorPicker,System.Action`1<UnityEngine.Color>,UnityEngine.Color)
+// 0x00000197 System.Void Wallpaper.Utils.PickableColor::Initialize(FlexibleColorPicker,System.Action`1<UnityEngine.Color>,UnityEngine.Color)
 extern void PickableColor_Initialize_m3B50E85CDD700F898D96D281D56EA633AE4D4ACD (void);
-// 0x00000197 System.Void Wallpaper.Utils.PickableColor::OnClick()
+// 0x00000198 System.Void Wallpaper.Utils.PickableColor::OnClick()
 extern void PickableColor_OnClick_mA736B47705BA18EE6E247467AB70AA2D21345B52 (void);
-// 0x00000198 System.Void Wallpaper.Utils.PickableColor::.ctor()
+// 0x00000199 System.Void Wallpaper.Utils.PickableColor::.ctor()
 extern void PickableColor__ctor_m5D9BA4BF1E4D68D07FDC7BECA7C86A2A8E27B2BB (void);
-// 0x00000199 System.Void Wallpaper.Utils.PickableColor::<OnClick>b__5_0(UnityEngine.Color)
+// 0x0000019A System.Void Wallpaper.Utils.PickableColor::<OnClick>b__5_0(UnityEngine.Color)
 extern void PickableColor_U3COnClickU3Eb__5_0_mF50C315C980C930455C6C33FCB0264B407BC1BCE (void);
-// 0x0000019A System.Void Wallpaper.Utils.RestrictedInputField::Awake()
+// 0x0000019B System.Void Wallpaper.Utils.RestrictedInputField::Awake()
 extern void RestrictedInputField_Awake_m2CC3848B0989454CBC8DDD8606BFC7925F79AA20 (void);
-// 0x0000019B System.Void Wallpaper.Utils.RestrictedInputField::OnValueChanged(System.String)
+// 0x0000019C System.Void Wallpaper.Utils.RestrictedInputField::OnValueChanged(System.String)
 extern void RestrictedInputField_OnValueChanged_m427ADB3865509AE9ABA6C4017995CE1570800BA0 (void);
-// 0x0000019C System.Void Wallpaper.Utils.RestrictedInputField::.ctor()
+// 0x0000019D System.Void Wallpaper.Utils.RestrictedInputField::.ctor()
 extern void RestrictedInputField__ctor_m6FF67184ACD4EA1AB883337B787FF01CCCDD0053 (void);
-// 0x0000019D UnityEngine.Texture2D Wallpaper.Utils.Util::ToTexture2D(Wallpaper.WallpaperImage)
+// 0x0000019E UnityEngine.Texture2D Wallpaper.Utils.Util::ToTexture2D(Wallpaper.WallpaperImage)
 extern void Util_ToTexture2D_m9AB322E6242B119D2E5CA931A2EE9DEC51F16568 (void);
-// 0x0000019E UnityEngine.Texture2D Wallpaper.Utils.Util::ToTexture2D(System.Byte[],System.Int32,System.Int32)
+// 0x0000019F UnityEngine.Texture2D Wallpaper.Utils.Util::ToTexture2D(System.Byte[],System.Int32,System.Int32)
 extern void Util_ToTexture2D_mFC8069CA62EA383D8CB225E678B4F4CA124AD2AC (void);
-// 0x0000019F Wallpaper.WallpaperImage Wallpaper.Utils.Util::ToWallpaperImage(System.Byte[],System.Int32,System.Int32)
+// 0x000001A0 Wallpaper.WallpaperImage Wallpaper.Utils.Util::ToWallpaperImage(System.Byte[],System.Int32,System.Int32)
 extern void Util_ToWallpaperImage_mC0DD7E3D557157214403E7C789232A39FAD5C222 (void);
-// 0x000001A0 UnityEngine.Mesh Wallpaper.Utils.Util::GenerateQuadMesh(System.Single,System.Single)
+// 0x000001A1 UnityEngine.Mesh Wallpaper.Utils.Util::GenerateQuadMesh(System.Single,System.Single)
 extern void Util_GenerateQuadMesh_m467CEBF4942A7F90DEB2C079FE412DF55756A5C3 (void);
-// 0x000001A1 UnityEngine.Sprite Wallpaper.Utils.Util::ImageToSprite(UnityEngine.Texture2D)
+// 0x000001A2 UnityEngine.Sprite Wallpaper.Utils.Util::ImageToSprite(UnityEngine.Texture2D)
 extern void Util_ImageToSprite_m2F0431816A1DD80D2E23FFB5BDE295A15C777E68 (void);
-// 0x000001A2 UnityEngine.Sprite Wallpaper.Utils.Util::WallpaperImageToSprite(Wallpaper.WallpaperImage)
+// 0x000001A3 UnityEngine.Sprite Wallpaper.Utils.Util::WallpaperImageToSprite(Wallpaper.WallpaperImage)
 extern void Util_WallpaperImageToSprite_mE66576066482F333700699D15534EB50DC6DE28F (void);
-// 0x000001A3 UnityEngine.Texture2D Wallpaper.Utils.Util::ToTexture2D(UnityEngine.RenderTexture)
+// 0x000001A4 UnityEngine.Texture2D Wallpaper.Utils.Util::ToTexture2D(UnityEngine.RenderTexture)
 extern void Util_ToTexture2D_m54AB0105053DAF5A61484C858C9E623DAA3B0305 (void);
-// 0x000001A4 System.Void Wallpaper.Utils.Util::SetRectTransformPivot(UnityEngine.RectTransform,UnityEngine.Vector2)
+// 0x000001A5 System.Void Wallpaper.Utils.Util::SetRectTransformPivot(UnityEngine.RectTransform,UnityEngine.Vector2)
 extern void Util_SetRectTransformPivot_m911C2D70D26B14E000221D0566F6C9427B8D213F (void);
-// 0x000001A5 System.Boolean Wallpaper.Utils.Util::DoesRectFitTheScreen(UnityEngine.RectTransform,UnityEngine.Camera,UnityEngine.Vector2&)
+// 0x000001A6 System.Boolean Wallpaper.Utils.Util::DoesRectFitTheScreen(UnityEngine.RectTransform,UnityEngine.Camera,UnityEngine.Vector2&)
 extern void Util_DoesRectFitTheScreen_mFF405587DFC913BE08649ABA486D8FB262078C9F (void);
-// 0x000001A6 System.Boolean Wallpaper.Utils.Util::IsRectHeightLargerThanScreen(UnityEngine.RectTransform,UnityEngine.Camera)
+// 0x000001A7 System.Boolean Wallpaper.Utils.Util::IsRectHeightLargerThanScreen(UnityEngine.RectTransform,UnityEngine.Camera)
 extern void Util_IsRectHeightLargerThanScreen_m4EAC9FA7DB4410D2E8026987318021E0854BE38F (void);
-// 0x000001A7 System.Boolean Wallpaper.Utils.Util::IsRectHeightLargerThanScreenAfterScaling(UnityEngine.RectTransform,UnityEngine.Camera,System.Single)
+// 0x000001A8 System.Boolean Wallpaper.Utils.Util::IsRectHeightLargerThanScreenAfterScaling(UnityEngine.RectTransform,UnityEngine.Camera,System.Single)
 extern void Util_IsRectHeightLargerThanScreenAfterScaling_mCFCDBE29D86C9391B996052B9A5933878B776FE1 (void);
-// 0x000001A8 System.Boolean Wallpaper.Utils.Util::IsRectWidthLargerThanScreen(UnityEngine.RectTransform,UnityEngine.Camera)
+// 0x000001A9 System.Boolean Wallpaper.Utils.Util::IsRectWidthLargerThanScreen(UnityEngine.RectTransform,UnityEngine.Camera)
 extern void Util_IsRectWidthLargerThanScreen_m3DD0E5BA95423D72758CAB57E02DCA3F5D4C77CA (void);
-// 0x000001A9 System.Boolean Wallpaper.Utils.Util::IsRectWidthLargerThanScreenAfterScaling(UnityEngine.RectTransform,UnityEngine.Camera,System.Single)
+// 0x000001AA System.Boolean Wallpaper.Utils.Util::IsRectWidthLargerThanScreenAfterScaling(UnityEngine.RectTransform,UnityEngine.Camera,System.Single)
 extern void Util_IsRectWidthLargerThanScreenAfterScaling_m5BE52479FEBFF6CB04C7E25E9D491AF4E291C005 (void);
-// 0x000001AA System.Boolean Wallpaper.Utils.Util::DoesRectFitScreenAfterScaling(UnityEngine.RectTransform,UnityEngine.Camera,System.Single)
+// 0x000001AB System.Boolean Wallpaper.Utils.Util::DoesRectFitScreenAfterScaling(UnityEngine.RectTransform,UnityEngine.Camera,System.Single)
 extern void Util_DoesRectFitScreenAfterScaling_mB7782DBFF9E5C9C31729D09442C98894B429E504 (void);
-// 0x000001AB System.Single Wallpaper.Utils.Util::GetPanelPixelWidthInRectSpace(UnityEngine.RectTransform)
+// 0x000001AC System.Single Wallpaper.Utils.Util::GetPanelPixelWidthInRectSpace(UnityEngine.RectTransform)
 extern void Util_GetPanelPixelWidthInRectSpace_mDC2BBF9494FB53D2A7D390EDCC0E53010F2DF8AE (void);
-// 0x000001AC System.Single Wallpaper.Utils.Util::GetPanelPixelHeightInRectSpace(UnityEngine.RectTransform)
+// 0x000001AD System.Single Wallpaper.Utils.Util::GetPanelPixelHeightInRectSpace(UnityEngine.RectTransform)
 extern void Util_GetPanelPixelHeightInRectSpace_m07E9E3AC8ADA50F3BFD1A5227BB365D760F3BB36 (void);
-// 0x000001AD System.Boolean Wallpaper.Utils.Util::CanvasRaycast(UnityEngine.EventSystems.PointerEventData,UnityEngine.UI.GraphicRaycaster,UnityEngine.Vector2,UnityEngine.LayerMask,System.Collections.Generic.List`1<UnityEngine.EventSystems.RaycastResult>&)
+// 0x000001AE System.Boolean Wallpaper.Utils.Util::CanvasRaycast(UnityEngine.EventSystems.PointerEventData,UnityEngine.UI.GraphicRaycaster,UnityEngine.Vector2,UnityEngine.LayerMask,System.Collections.Generic.List`1<UnityEngine.EventSystems.RaycastResult>&)
 extern void Util_CanvasRaycast_mADFBB9D1CDE64D4517B0137FD32A52E54E5ED28F (void);
-// 0x000001AE System.Void Wallpaper.Utils.Util::DestroyAllChildren(UnityEngine.Transform)
+// 0x000001AF System.Void Wallpaper.Utils.Util::DestroyAllChildren(UnityEngine.Transform)
 extern void Util_DestroyAllChildren_mF99FA519B99E2796EAAF0EBF5C488965DA7A75EF (void);
-// 0x000001AF System.Void Wallpaper.Utils.ZoomablePanel::Awake()
+// 0x000001B0 System.Void Wallpaper.Utils.ZoomablePanel::Awake()
 extern void ZoomablePanel_Awake_m644123EC7CAE9035340C5889BCC159C81A24731F (void);
-// 0x000001B0 System.Void Wallpaper.Utils.ZoomablePanel::OnEnable()
+// 0x000001B1 System.Void Wallpaper.Utils.ZoomablePanel::OnEnable()
 extern void ZoomablePanel_OnEnable_m75B29C8E1B20CE16A813AB8A07A1FC22805C0805 (void);
-// 0x000001B1 System.Void Wallpaper.Utils.ZoomablePanel::OnDisable()
+// 0x000001B2 System.Void Wallpaper.Utils.ZoomablePanel::OnDisable()
 extern void ZoomablePanel_OnDisable_mA12472512D569A1A34BCB2E9608D6FA082371A6B (void);
-// 0x000001B2 System.Boolean Wallpaper.Utils.ZoomablePanel::IsScaleValid(UnityEngine.Vector2)
+// 0x000001B3 System.Boolean Wallpaper.Utils.ZoomablePanel::IsScaleValid(UnityEngine.Vector2)
 extern void ZoomablePanel_IsScaleValid_m35845C1E78754A53B3C9B0719C2786784F881AB9 (void);
-// 0x000001B3 System.Void Wallpaper.Utils.ZoomablePanel::Scale(System.Single)
+// 0x000001B4 System.Void Wallpaper.Utils.ZoomablePanel::Scale(System.Single)
 extern void ZoomablePanel_Scale_m613D6E50FE0E670137472370E00325B3C3A3C1AC (void);
-// 0x000001B4 System.Void Wallpaper.Utils.ZoomablePanel::ScaleDirectly(System.Single)
+// 0x000001B5 System.Void Wallpaper.Utils.ZoomablePanel::ScaleDirectly(System.Single)
 extern void ZoomablePanel_ScaleDirectly_mF01F811EF18D60C3DFD0FF7C97C72356C7369B80 (void);
-// 0x000001B5 System.Void Wallpaper.Utils.ZoomablePanel::OnTouchPinch(UnityEngine.Vector2,System.Single)
+// 0x000001B6 System.Void Wallpaper.Utils.ZoomablePanel::OnTouchPinch(UnityEngine.Vector2,System.Single)
 extern void ZoomablePanel_OnTouchPinch_m74916B67A30204DC8DBF4E163616FD015B60422A (void);
-// 0x000001B6 System.Single Wallpaper.Utils.ZoomablePanel::GetZoomFactor(System.Single)
+// 0x000001B7 System.Single Wallpaper.Utils.ZoomablePanel::GetZoomFactor(System.Single)
 extern void ZoomablePanel_GetZoomFactor_m7085BC5B693B4D20061F2C85106E28C9069A4F11 (void);
-// 0x000001B7 System.Single Wallpaper.Utils.ZoomablePanel::GetLerpedZoomValue()
+// 0x000001B8 System.Single Wallpaper.Utils.ZoomablePanel::GetLerpedZoomValue()
 extern void ZoomablePanel_GetLerpedZoomValue_mC9B711CE52D344E4739AABA4822132685EC92980 (void);
-// 0x000001B8 System.Void Wallpaper.Utils.ZoomablePanel::.ctor()
+// 0x000001B9 System.Void Wallpaper.Utils.ZoomablePanel::.ctor()
 extern void ZoomablePanel__ctor_m1456B2E28467F5E2D6B3886EC6CFCE712C10472D (void);
-// 0x000001B9 System.Void Wallpaper.UI.AnchorAdapter::OnRectTransformDimensionsChange()
+// 0x000001BA System.Void Wallpaper.UI.AnchorAdapter::OnRectTransformDimensionsChange()
 extern void AnchorAdapter_OnRectTransformDimensionsChange_m78921287F2369B97864F1F41C83973B51E72EE2B (void);
-// 0x000001BA System.Void Wallpaper.UI.AnchorAdapter::.ctor()
+// 0x000001BB System.Void Wallpaper.UI.AnchorAdapter::.ctor()
 extern void AnchorAdapter__ctor_m58CD1E6C306057FF9D60E3504DEC862CD6967A05 (void);
-// 0x000001BB System.Void Wallpaper.UI.AnchorSizeToRect::Awake()
+// 0x000001BC System.Void Wallpaper.UI.AnchorSizeToRect::Awake()
 extern void AnchorSizeToRect_Awake_m5B91DBFF27B8709D8B898F2EFD6F57F558270E2B (void);
-// 0x000001BC System.Void Wallpaper.UI.AnchorSizeToRect::Initialize()
+// 0x000001BD System.Void Wallpaper.UI.AnchorSizeToRect::Initialize()
 extern void AnchorSizeToRect_Initialize_mC47C45B1EC12EEDE95787A53CEED66187FCFAF79 (void);
-// 0x000001BD System.Void Wallpaper.UI.AnchorSizeToRect::OnRectTransformDimensionsChange()
+// 0x000001BE System.Void Wallpaper.UI.AnchorSizeToRect::OnRectTransformDimensionsChange()
 extern void AnchorSizeToRect_OnRectTransformDimensionsChange_mF8F5C9CE831CC990B78F09F880EBFC90F5D5AE52 (void);
-// 0x000001BE System.Void Wallpaper.UI.AnchorSizeToRect::AttachTo(Wallpaper.UI.AnchorAdapter)
+// 0x000001BF System.Void Wallpaper.UI.AnchorSizeToRect::AttachTo(Wallpaper.UI.AnchorAdapter)
 extern void AnchorSizeToRect_AttachTo_mDA4B4A4D70FE5ADC6972D932460F64648A457F76 (void);
-// 0x000001BF System.Void Wallpaper.UI.AnchorSizeToRect::SetSize()
+// 0x000001C0 System.Void Wallpaper.UI.AnchorSizeToRect::SetSize()
 extern void AnchorSizeToRect_SetSize_m396CB757B39AA677C7446CDA83AA186AD14CEFE4 (void);
-// 0x000001C0 System.Void Wallpaper.UI.AnchorSizeToRect::.ctor()
+// 0x000001C1 System.Void Wallpaper.UI.AnchorSizeToRect::.ctor()
 extern void AnchorSizeToRect__ctor_m745DB0ACF3C27F88294DA01CA644D91E0CB8F2A6 (void);
-// 0x000001C1 System.Void Wallpaper.UI.CollectionWallpaperIcon::Awake()
+// 0x000001C2 System.Void Wallpaper.UI.CollectionWallpaperIcon::Awake()
 extern void CollectionWallpaperIcon_Awake_m7C41E99468D236B8D523B59E7E270CAD2B4B9068 (void);
-// 0x000001C2 System.Void Wallpaper.UI.CollectionWallpaperIcon::Initialize(Wallpaper.Wallpaper)
+// 0x000001C3 System.Void Wallpaper.UI.CollectionWallpaperIcon::Initialize(Wallpaper.Wallpaper)
 extern void CollectionWallpaperIcon_Initialize_m958DB05E2110D658E803594928856F3FE33F5D5C (void);
-// 0x000001C3 System.Void Wallpaper.UI.CollectionWallpaperIcon::.ctor()
+// 0x000001C4 System.Void Wallpaper.UI.CollectionWallpaperIcon::.ctor()
 extern void CollectionWallpaperIcon__ctor_m6A03D6F7108D0B013ED1CFCA81B0918D1F62A071 (void);
-// 0x000001C4 System.Void Wallpaper.UI.CollectionWallpaperIcon::<Awake>b__3_0()
+// 0x000001C5 System.Void Wallpaper.UI.CollectionWallpaperIcon::<Awake>b__3_0()
 extern void CollectionWallpaperIcon_U3CAwakeU3Eb__3_0_m1C5DC1DA9A140AA7C026160AC6EC5AD426ECEA1C (void);
-// 0x000001C5 System.Void Wallpaper.UI.DiscreteScroller::Awake()
+// 0x000001C6 System.Void Wallpaper.UI.DiscreteScroller::Awake()
 extern void DiscreteScroller_Awake_m2110728365AAFE75032DF6136FF01EEEE63E864F (void);
-// 0x000001C6 System.Void Wallpaper.UI.DiscreteScroller::Next()
+// 0x000001C7 System.Void Wallpaper.UI.DiscreteScroller::Next()
 extern void DiscreteScroller_Next_m1CB55E760DA6BC7924623A5A58DD2A45A33E26BF (void);
-// 0x000001C7 System.Void Wallpaper.UI.DiscreteScroller::Previous()
+// 0x000001C8 System.Void Wallpaper.UI.DiscreteScroller::Previous()
 extern void DiscreteScroller_Previous_mEAFC943B432A1C812A53AB3BF3D6DD7A74712F66 (void);
-// 0x000001C8 System.Void Wallpaper.UI.DiscreteScroller::SetScrollPosition()
+// 0x000001C9 System.Void Wallpaper.UI.DiscreteScroller::SetScrollPosition()
 extern void DiscreteScroller_SetScrollPosition_mC4A224D37A57804E2F49CE8BD90D8871F90103EB (void);
-// 0x000001C9 System.Void Wallpaper.UI.DiscreteScroller::.ctor()
+// 0x000001CA System.Void Wallpaper.UI.DiscreteScroller::.ctor()
 extern void DiscreteScroller__ctor_m6F548B6F6217FE185D3307A314069C409B35BFC9 (void);
-// 0x000001CA System.Void Wallpaper.UI.FlexibleGridLayout::CalculateLayoutInputHorizontal()
+// 0x000001CB System.Void Wallpaper.UI.FlexibleGridLayout::CalculateLayoutInputHorizontal()
 extern void FlexibleGridLayout_CalculateLayoutInputHorizontal_m0A0640E933B34B4E042388A5A197FC849F4400D6 (void);
-// 0x000001CB System.Void Wallpaper.UI.FlexibleGridLayout::CalculateLayoutInputVertical()
+// 0x000001CC System.Void Wallpaper.UI.FlexibleGridLayout::CalculateLayoutInputVertical()
 extern void FlexibleGridLayout_CalculateLayoutInputVertical_mED11E87266F9F61A63E7D364D518AF5C1B5FFF76 (void);
-// 0x000001CC System.Void Wallpaper.UI.FlexibleGridLayout::SetLayoutHorizontal()
+// 0x000001CD System.Void Wallpaper.UI.FlexibleGridLayout::SetLayoutHorizontal()
 extern void FlexibleGridLayout_SetLayoutHorizontal_m8C4B68E1FA9A3BE32B053194FF71653619C35F77 (void);
-// 0x000001CD System.Void Wallpaper.UI.FlexibleGridLayout::SetLayoutVertical()
+// 0x000001CE System.Void Wallpaper.UI.FlexibleGridLayout::SetLayoutVertical()
 extern void FlexibleGridLayout_SetLayoutVertical_m4C0E380DB7F866C1BA294A4D40D61908D911AFD5 (void);
-// 0x000001CE System.Void Wallpaper.UI.FlexibleGridLayout::.ctor()
+// 0x000001CF System.Void Wallpaper.UI.FlexibleGridLayout::.ctor()
 extern void FlexibleGridLayout__ctor_m152738FDFB543A4BB7576571C970C6CDC0CEE2D8 (void);
-// 0x000001CF System.Void Wallpaper.UI.ForceExpandImage::Awake()
+// 0x000001D0 System.Void Wallpaper.UI.ForceExpandImage::Awake()
 extern void ForceExpandImage_Awake_m2E85A6C4C4F81A79901C16485FB316109CFCA0C6 (void);
-// 0x000001D0 System.Collections.IEnumerator Wallpaper.UI.ForceExpandImage::SetupPanelAfterUIUpdate()
+// 0x000001D1 System.Collections.IEnumerator Wallpaper.UI.ForceExpandImage::SetupPanelAfterUIUpdate()
 extern void ForceExpandImage_SetupPanelAfterUIUpdate_m78DE185A8AB9BFB6876DDD10A4D486DC6FD30486 (void);
-// 0x000001D1 System.Void Wallpaper.UI.ForceExpandImage::SetupPanel()
+// 0x000001D2 System.Void Wallpaper.UI.ForceExpandImage::SetupPanel()
 extern void ForceExpandImage_SetupPanel_m115EC55CEB0916EAB71E882B24B3596269FD0D54 (void);
-// 0x000001D2 System.Void Wallpaper.UI.ForceExpandImage::ExpandImage()
+// 0x000001D3 System.Void Wallpaper.UI.ForceExpandImage::ExpandImage()
 extern void ForceExpandImage_ExpandImage_m4847D91A7C5877B769CFFD3B3AFF647085CCAC63 (void);
-// 0x000001D3 System.Void Wallpaper.UI.ForceExpandImage::.ctor()
+// 0x000001D4 System.Void Wallpaper.UI.ForceExpandImage::.ctor()
 extern void ForceExpandImage__ctor_m2AC72F189635B9D3C8ADCAC2C061E57EA2120E4D (void);
-// 0x000001D4 System.Void Wallpaper.UI.ForceExpandImage/<SetupPanelAfterUIUpdate>d__3::.ctor(System.Int32)
+// 0x000001D5 System.Void Wallpaper.UI.ForceExpandImage/<SetupPanelAfterUIUpdate>d__3::.ctor(System.Int32)
 extern void U3CSetupPanelAfterUIUpdateU3Ed__3__ctor_mE386DE548974DB7682DCED1358B2C3CC97A3322D (void);
-// 0x000001D5 System.Void Wallpaper.UI.ForceExpandImage/<SetupPanelAfterUIUpdate>d__3::System.IDisposable.Dispose()
+// 0x000001D6 System.Void Wallpaper.UI.ForceExpandImage/<SetupPanelAfterUIUpdate>d__3::System.IDisposable.Dispose()
 extern void U3CSetupPanelAfterUIUpdateU3Ed__3_System_IDisposable_Dispose_m51B208F041A818474CB4C70F42AD4707046FEECC (void);
-// 0x000001D6 System.Boolean Wallpaper.UI.ForceExpandImage/<SetupPanelAfterUIUpdate>d__3::MoveNext()
+// 0x000001D7 System.Boolean Wallpaper.UI.ForceExpandImage/<SetupPanelAfterUIUpdate>d__3::MoveNext()
 extern void U3CSetupPanelAfterUIUpdateU3Ed__3_MoveNext_m6ABF5E3E3346B222CA31BB4941E5A68E1E4BCC0A (void);
-// 0x000001D7 System.Object Wallpaper.UI.ForceExpandImage/<SetupPanelAfterUIUpdate>d__3::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000001D8 System.Object Wallpaper.UI.ForceExpandImage/<SetupPanelAfterUIUpdate>d__3::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CSetupPanelAfterUIUpdateU3Ed__3_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m91759194A886550FB952BAE9C6BC37548BBDA1C1 (void);
-// 0x000001D8 System.Void Wallpaper.UI.ForceExpandImage/<SetupPanelAfterUIUpdate>d__3::System.Collections.IEnumerator.Reset()
+// 0x000001D9 System.Void Wallpaper.UI.ForceExpandImage/<SetupPanelAfterUIUpdate>d__3::System.Collections.IEnumerator.Reset()
 extern void U3CSetupPanelAfterUIUpdateU3Ed__3_System_Collections_IEnumerator_Reset_mFA81CB5C745B0B85C6E2F8367BF9381968397CE4 (void);
-// 0x000001D9 System.Object Wallpaper.UI.ForceExpandImage/<SetupPanelAfterUIUpdate>d__3::System.Collections.IEnumerator.get_Current()
+// 0x000001DA System.Object Wallpaper.UI.ForceExpandImage/<SetupPanelAfterUIUpdate>d__3::System.Collections.IEnumerator.get_Current()
 extern void U3CSetupPanelAfterUIUpdateU3Ed__3_System_Collections_IEnumerator_get_Current_mB1EDE7EE2FCE52E3EB13A61140A566A7C2C3B8D4 (void);
-// 0x000001DA System.Void Wallpaper.UI.MoveablePanel::Awake()
+// 0x000001DB System.Void Wallpaper.UI.MoveablePanel::Awake()
 extern void MoveablePanel_Awake_mEF675134F029CEA2EC9D01335E4D0A350FF2D730 (void);
-// 0x000001DB System.Void Wallpaper.UI.MoveablePanel::OnEnable()
+// 0x000001DC System.Void Wallpaper.UI.MoveablePanel::OnEnable()
 extern void MoveablePanel_OnEnable_m4E60492C11BB0DBA3C31D28D1EEB6414739014D8 (void);
-// 0x000001DC System.Void Wallpaper.UI.MoveablePanel::OnDisable()
+// 0x000001DD System.Void Wallpaper.UI.MoveablePanel::OnDisable()
 extern void MoveablePanel_OnDisable_mB3C3871C32EDB133FCF3A4DA7F185BE04DA1DC42 (void);
-// 0x000001DD System.Collections.IEnumerator Wallpaper.UI.MoveablePanel::UpdateCoroutine()
+// 0x000001DE System.Collections.IEnumerator Wallpaper.UI.MoveablePanel::UpdateCoroutine()
 extern void MoveablePanel_UpdateCoroutine_m1EB2C5D3072B971F28AEF2857731D34306FD4820 (void);
-// 0x000001DE System.Void Wallpaper.UI.MoveablePanel::KeepContentInsideScreen()
+// 0x000001DF System.Void Wallpaper.UI.MoveablePanel::KeepContentInsideScreen()
 extern void MoveablePanel_KeepContentInsideScreen_mBAFC1C9089D3B920C0D04F8B5606171DAC5FD2B5 (void);
-// 0x000001DF System.Void Wallpaper.UI.MoveablePanel::OnScrollRectUpdate(UnityEngine.Vector2)
+// 0x000001E0 System.Void Wallpaper.UI.MoveablePanel::OnScrollRectUpdate(UnityEngine.Vector2)
 extern void MoveablePanel_OnScrollRectUpdate_m118684A8D5A1101608DAEA00AC21317130E0A756 (void);
-// 0x000001E0 System.Void Wallpaper.UI.MoveablePanel::.ctor()
+// 0x000001E1 System.Void Wallpaper.UI.MoveablePanel::.ctor()
 extern void MoveablePanel__ctor_m41F36F5363863FE57F7A5B94E9B5F84A985E5D2B (void);
-// 0x000001E1 System.Void Wallpaper.UI.MoveablePanel/<UpdateCoroutine>d__7::.ctor(System.Int32)
+// 0x000001E2 System.Void Wallpaper.UI.MoveablePanel/<UpdateCoroutine>d__7::.ctor(System.Int32)
 extern void U3CUpdateCoroutineU3Ed__7__ctor_m0A3EBF919907AC4E7CD813D40A0C4515CD941887 (void);
-// 0x000001E2 System.Void Wallpaper.UI.MoveablePanel/<UpdateCoroutine>d__7::System.IDisposable.Dispose()
+// 0x000001E3 System.Void Wallpaper.UI.MoveablePanel/<UpdateCoroutine>d__7::System.IDisposable.Dispose()
 extern void U3CUpdateCoroutineU3Ed__7_System_IDisposable_Dispose_mDCFDB17071001627677D27A24A8022C93305E6F0 (void);
-// 0x000001E3 System.Boolean Wallpaper.UI.MoveablePanel/<UpdateCoroutine>d__7::MoveNext()
+// 0x000001E4 System.Boolean Wallpaper.UI.MoveablePanel/<UpdateCoroutine>d__7::MoveNext()
 extern void U3CUpdateCoroutineU3Ed__7_MoveNext_m96C478EBF79703E56B9333F029AF25966287982D (void);
-// 0x000001E4 System.Object Wallpaper.UI.MoveablePanel/<UpdateCoroutine>d__7::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000001E5 System.Object Wallpaper.UI.MoveablePanel/<UpdateCoroutine>d__7::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CUpdateCoroutineU3Ed__7_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mF790DC8262E0E78F2C87C39FFA93BDCC1B55DFAD (void);
-// 0x000001E5 System.Void Wallpaper.UI.MoveablePanel/<UpdateCoroutine>d__7::System.Collections.IEnumerator.Reset()
+// 0x000001E6 System.Void Wallpaper.UI.MoveablePanel/<UpdateCoroutine>d__7::System.Collections.IEnumerator.Reset()
 extern void U3CUpdateCoroutineU3Ed__7_System_Collections_IEnumerator_Reset_mDF1540EDF5B2578A30555B3B4AA5A1E56F7B773C (void);
-// 0x000001E6 System.Object Wallpaper.UI.MoveablePanel/<UpdateCoroutine>d__7::System.Collections.IEnumerator.get_Current()
+// 0x000001E7 System.Object Wallpaper.UI.MoveablePanel/<UpdateCoroutine>d__7::System.Collections.IEnumerator.get_Current()
 extern void U3CUpdateCoroutineU3Ed__7_System_Collections_IEnumerator_get_Current_m6C72540BD72618798AF7F012B5E4BD0AE162C05A (void);
-// 0x000001E7 System.Void Wallpaper.UI.PreviewButton::Awake()
+// 0x000001E8 System.Void Wallpaper.UI.PreviewButton::Awake()
 extern void PreviewButton_Awake_m558E2F4051D5672F79E93381B8BA17A70A639A51 (void);
-// 0x000001E8 System.Void Wallpaper.UI.PreviewButton::OnDoubleTap()
+// 0x000001E9 System.Void Wallpaper.UI.PreviewButton::OnDoubleTap()
 extern void PreviewButton_OnDoubleTap_m52255394282A6D42D68BD8BBEEE820B1719B5ECF (void);
-// 0x000001E9 System.Void Wallpaper.UI.PreviewButton::OnPress()
+// 0x000001EA System.Void Wallpaper.UI.PreviewButton::OnPress()
 extern void PreviewButton_OnPress_m42C80618D0D85E83B3C4B605FE81EF147FB6863A (void);
-// 0x000001EA System.Void Wallpaper.UI.PreviewButton::.ctor()
+// 0x000001EB System.Void Wallpaper.UI.PreviewButton::.ctor()
 extern void PreviewButton__ctor_mE7BD3C02711836F89455DEFFADED49CB05338BBC (void);
-// 0x000001EB System.Void Wallpaper.UI.ResponsiveCellSizeSetter::Awake()
+// 0x000001EC System.Void Wallpaper.UI.ResponsiveCellSizeSetter::Awake()
 extern void ResponsiveCellSizeSetter_Awake_m137C1A0D84BF9DB2FD5820F912EC9BB38E945EC7 (void);
-// 0x000001EC System.Collections.IEnumerator Wallpaper.UI.ResponsiveCellSizeSetter::SetCellSizeAfterUIUpdate()
+// 0x000001ED System.Collections.IEnumerator Wallpaper.UI.ResponsiveCellSizeSetter::SetCellSizeAfterUIUpdate()
 extern void ResponsiveCellSizeSetter_SetCellSizeAfterUIUpdate_mBDCDF932099D4F4378213188B91F876DE7597727 (void);
-// 0x000001ED UnityEngine.Vector2 Wallpaper.UI.ResponsiveCellSizeSetter::CalculateCellSize()
+// 0x000001EE UnityEngine.Vector2 Wallpaper.UI.ResponsiveCellSizeSetter::CalculateCellSize()
 extern void ResponsiveCellSizeSetter_CalculateCellSize_m18F90EFE3FF176D267DD96259985A0D59C5D65B3 (void);
-// 0x000001EE System.Void Wallpaper.UI.ResponsiveCellSizeSetter::.ctor()
+// 0x000001EF System.Void Wallpaper.UI.ResponsiveCellSizeSetter::.ctor()
 extern void ResponsiveCellSizeSetter__ctor_m9ED22C3E58F212AF28AA6A0BBE9C030EB7283E77 (void);
-// 0x000001EF System.Void Wallpaper.UI.ResponsiveCellSizeSetter/<SetCellSizeAfterUIUpdate>d__2::.ctor(System.Int32)
+// 0x000001F0 System.Void Wallpaper.UI.ResponsiveCellSizeSetter/<SetCellSizeAfterUIUpdate>d__2::.ctor(System.Int32)
 extern void U3CSetCellSizeAfterUIUpdateU3Ed__2__ctor_mAD2E7B62C8D30AD13EDF9F1DFAE7A246C75BA685 (void);
-// 0x000001F0 System.Void Wallpaper.UI.ResponsiveCellSizeSetter/<SetCellSizeAfterUIUpdate>d__2::System.IDisposable.Dispose()
+// 0x000001F1 System.Void Wallpaper.UI.ResponsiveCellSizeSetter/<SetCellSizeAfterUIUpdate>d__2::System.IDisposable.Dispose()
 extern void U3CSetCellSizeAfterUIUpdateU3Ed__2_System_IDisposable_Dispose_m157468832B573C3060271038DB5E0C4F4514B13D (void);
-// 0x000001F1 System.Boolean Wallpaper.UI.ResponsiveCellSizeSetter/<SetCellSizeAfterUIUpdate>d__2::MoveNext()
+// 0x000001F2 System.Boolean Wallpaper.UI.ResponsiveCellSizeSetter/<SetCellSizeAfterUIUpdate>d__2::MoveNext()
 extern void U3CSetCellSizeAfterUIUpdateU3Ed__2_MoveNext_m7D54E0E9A4E3451394A14D4DC8D6262715C5DF8B (void);
-// 0x000001F2 System.Object Wallpaper.UI.ResponsiveCellSizeSetter/<SetCellSizeAfterUIUpdate>d__2::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000001F3 System.Object Wallpaper.UI.ResponsiveCellSizeSetter/<SetCellSizeAfterUIUpdate>d__2::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CSetCellSizeAfterUIUpdateU3Ed__2_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m3D77E8ABD52C1178ACA24D71364F3286583F616C (void);
-// 0x000001F3 System.Void Wallpaper.UI.ResponsiveCellSizeSetter/<SetCellSizeAfterUIUpdate>d__2::System.Collections.IEnumerator.Reset()
+// 0x000001F4 System.Void Wallpaper.UI.ResponsiveCellSizeSetter/<SetCellSizeAfterUIUpdate>d__2::System.Collections.IEnumerator.Reset()
 extern void U3CSetCellSizeAfterUIUpdateU3Ed__2_System_Collections_IEnumerator_Reset_m1FA000B3CC8108F2573BAF81B27F9E3A57199A9B (void);
-// 0x000001F4 System.Object Wallpaper.UI.ResponsiveCellSizeSetter/<SetCellSizeAfterUIUpdate>d__2::System.Collections.IEnumerator.get_Current()
+// 0x000001F5 System.Object Wallpaper.UI.ResponsiveCellSizeSetter/<SetCellSizeAfterUIUpdate>d__2::System.Collections.IEnumerator.get_Current()
 extern void U3CSetCellSizeAfterUIUpdateU3Ed__2_System_Collections_IEnumerator_get_Current_mE3EED318133A16EC2EF60890B3A76E8EE58FB5CC (void);
-// 0x000001F5 System.Void Wallpaper.UI.SafeAreaPanel::Start()
+// 0x000001F6 System.Void Wallpaper.UI.SafeAreaPanel::Start()
 extern void SafeAreaPanel_Start_mCCD009E13BFF1DA49ABB8ADEFCFABE80FAE4E20F (void);
-// 0x000001F6 System.Void Wallpaper.UI.SafeAreaPanel::CalculateSafeArea()
+// 0x000001F7 System.Void Wallpaper.UI.SafeAreaPanel::CalculateSafeArea()
 extern void SafeAreaPanel_CalculateSafeArea_m3B0701F0C6968B39363A9D83F1A7A331DD71967C (void);
-// 0x000001F7 System.Void Wallpaper.UI.SafeAreaPanel::.ctor()
+// 0x000001F8 System.Void Wallpaper.UI.SafeAreaPanel::.ctor()
 extern void SafeAreaPanel__ctor_m5AFA26532C36CFEE8E0328FEC7CFEE13D0B55A57 (void);
-// 0x000001F8 System.Void Wallpaper.UI.SlidingBar::OnEnable()
+// 0x000001F9 System.Void Wallpaper.UI.SlidingBar::OnEnable()
 extern void SlidingBar_OnEnable_mF5D57BC511DB331CB74F88249D91C3D1EF3C364C (void);
-// 0x000001F9 System.Void Wallpaper.UI.SlidingBar::OnDisable()
+// 0x000001FA System.Void Wallpaper.UI.SlidingBar::OnDisable()
 extern void SlidingBar_OnDisable_mB483C5FBC6A3FBA5E2F94027EFB84B237F4D487B (void);
-// 0x000001FA System.Void Wallpaper.UI.SlidingBar::OnTap(UnityEngine.Vector2)
+// 0x000001FB System.Void Wallpaper.UI.SlidingBar::OnTap(UnityEngine.Vector2)
 extern void SlidingBar_OnTap_m1C6B293837D8651B68431D18C03367FB614BB40E (void);
-// 0x000001FB System.Void Wallpaper.UI.SlidingBar::Awake()
+// 0x000001FC System.Void Wallpaper.UI.SlidingBar::Awake()
 extern void SlidingBar_Awake_m4B857F91389CAC7F711F2128E884240A1617BCFD (void);
-// 0x000001FC System.Void Wallpaper.UI.SlidingBar::Initialize()
+// 0x000001FD System.Void Wallpaper.UI.SlidingBar::Initialize()
 extern void SlidingBar_Initialize_mB3EDE8D0FFDBDC95AB0885C90F2D8EF0815D250D (void);
-// 0x000001FD System.Collections.IEnumerator Wallpaper.UI.SlidingBar::SetupPanelAfterUIUpdate()
+// 0x000001FE System.Collections.IEnumerator Wallpaper.UI.SlidingBar::SetupPanelAfterUIUpdate()
 extern void SlidingBar_SetupPanelAfterUIUpdate_m957929505EF4DEFAAD8845C2E625B1C43BF65C85 (void);
-// 0x000001FE System.Void Wallpaper.UI.SlidingBar::SetupPanel()
+// 0x000001FF System.Void Wallpaper.UI.SlidingBar::SetupPanel()
 extern void SlidingBar_SetupPanel_mBD72473C92B8A6794EFA74DD18D1E95D21046EB2 (void);
-// 0x000001FF System.Void Wallpaper.UI.SlidingBar::Open()
+// 0x00000200 System.Void Wallpaper.UI.SlidingBar::Open()
 extern void SlidingBar_Open_m6100D031813BB154287203A532440484C22869CA (void);
-// 0x00000200 System.Void Wallpaper.UI.SlidingBar::Close()
+// 0x00000201 System.Void Wallpaper.UI.SlidingBar::Close()
 extern void SlidingBar_Close_m6B21ED161AD3AAFD03C694FDEEC696D30C2A6275 (void);
-// 0x00000201 System.Void Wallpaper.UI.SlidingBar::Editor_Open()
+// 0x00000202 System.Void Wallpaper.UI.SlidingBar::Editor_Open()
 extern void SlidingBar_Editor_Open_m9A2FD0907A319DBC3DF335C039E041A598B76852 (void);
-// 0x00000202 System.Void Wallpaper.UI.SlidingBar::Editor_Close()
+// 0x00000203 System.Void Wallpaper.UI.SlidingBar::Editor_Close()
 extern void SlidingBar_Editor_Close_m54BA6186BDF3D41FF4EC09943BDEDE537F44F24C (void);
-// 0x00000203 System.Void Wallpaper.UI.SlidingBar::Editor_SetupPanel()
+// 0x00000204 System.Void Wallpaper.UI.SlidingBar::Editor_SetupPanel()
 extern void SlidingBar_Editor_SetupPanel_m1AE7EE8261382DD09930FD0BBE8A999F4484F53B (void);
-// 0x00000204 System.Void Wallpaper.UI.SlidingBar::.ctor()
+// 0x00000205 System.Void Wallpaper.UI.SlidingBar::.ctor()
 extern void SlidingBar__ctor_m4F94D8189CAA2119E207C0342A7A2C404AA3A577 (void);
-// 0x00000205 System.Void Wallpaper.UI.SlidingBar/<SetupPanelAfterUIUpdate>d__9::.ctor(System.Int32)
+// 0x00000206 System.Void Wallpaper.UI.SlidingBar/<SetupPanelAfterUIUpdate>d__9::.ctor(System.Int32)
 extern void U3CSetupPanelAfterUIUpdateU3Ed__9__ctor_mB880AFECEADF0CA4BD5EAF3C553355EA6547D3F1 (void);
-// 0x00000206 System.Void Wallpaper.UI.SlidingBar/<SetupPanelAfterUIUpdate>d__9::System.IDisposable.Dispose()
+// 0x00000207 System.Void Wallpaper.UI.SlidingBar/<SetupPanelAfterUIUpdate>d__9::System.IDisposable.Dispose()
 extern void U3CSetupPanelAfterUIUpdateU3Ed__9_System_IDisposable_Dispose_m5D3752F7B4C26932534C5613CB8F02A7C2FA1F6B (void);
-// 0x00000207 System.Boolean Wallpaper.UI.SlidingBar/<SetupPanelAfterUIUpdate>d__9::MoveNext()
+// 0x00000208 System.Boolean Wallpaper.UI.SlidingBar/<SetupPanelAfterUIUpdate>d__9::MoveNext()
 extern void U3CSetupPanelAfterUIUpdateU3Ed__9_MoveNext_mE375D8B1171E2F67986F03F9F3C2BCF769F57062 (void);
-// 0x00000208 System.Object Wallpaper.UI.SlidingBar/<SetupPanelAfterUIUpdate>d__9::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x00000209 System.Object Wallpaper.UI.SlidingBar/<SetupPanelAfterUIUpdate>d__9::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CSetupPanelAfterUIUpdateU3Ed__9_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mBC31DE47ADF90F7DB723E9B0706DFEABDA071F13 (void);
-// 0x00000209 System.Void Wallpaper.UI.SlidingBar/<SetupPanelAfterUIUpdate>d__9::System.Collections.IEnumerator.Reset()
+// 0x0000020A System.Void Wallpaper.UI.SlidingBar/<SetupPanelAfterUIUpdate>d__9::System.Collections.IEnumerator.Reset()
 extern void U3CSetupPanelAfterUIUpdateU3Ed__9_System_Collections_IEnumerator_Reset_m78D56417DDEAF282FA4FA192FA699DD415CAD44D (void);
-// 0x0000020A System.Object Wallpaper.UI.SlidingBar/<SetupPanelAfterUIUpdate>d__9::System.Collections.IEnumerator.get_Current()
+// 0x0000020B System.Object Wallpaper.UI.SlidingBar/<SetupPanelAfterUIUpdate>d__9::System.Collections.IEnumerator.get_Current()
 extern void U3CSetupPanelAfterUIUpdateU3Ed__9_System_Collections_IEnumerator_get_Current_m67625B3CF13F15698BAF9BF4CF4662A5F7135706 (void);
-// 0x0000020B Wallpaper.IWallpaperDatabase Wallpaper.UI.WallpaperIconsContent::get_WallpaperDatabase()
+// 0x0000020C Wallpaper.IWallpaperDatabase Wallpaper.UI.WallpaperIconsContent::get_WallpaperDatabase()
 extern void WallpaperIconsContent_get_WallpaperDatabase_mEA37BFA2C50275966D247CCDE0071F84FCB6289C (void);
-// 0x0000020C System.Void Wallpaper.UI.WallpaperIconsContent::OnEnable()
+// 0x0000020D System.Void Wallpaper.UI.WallpaperIconsContent::OnEnable()
 extern void WallpaperIconsContent_OnEnable_m538F4D76281CB41084E4C537F3B7A09F95D20292 (void);
-// 0x0000020D System.Void Wallpaper.UI.WallpaperIconsContent::OnDisable()
+// 0x0000020E System.Void Wallpaper.UI.WallpaperIconsContent::OnDisable()
 extern void WallpaperIconsContent_OnDisable_m57779AC56E62945E0CE1D4D99DA1370B22D66D99 (void);
-// 0x0000020E System.Void Wallpaper.UI.WallpaperIconsContent::OnCollectionSceneLoaded()
+// 0x0000020F System.Void Wallpaper.UI.WallpaperIconsContent::OnCollectionSceneLoaded()
 extern void WallpaperIconsContent_OnCollectionSceneLoaded_m19EE0876E9C4834B53EE99EDE70EBFB89C540182 (void);
-// 0x0000020F System.Void Wallpaper.UI.WallpaperIconsContent::OnCollectionSceneUnLoaded()
+// 0x00000210 System.Void Wallpaper.UI.WallpaperIconsContent::OnCollectionSceneUnLoaded()
 extern void WallpaperIconsContent_OnCollectionSceneUnLoaded_m9F8E8B022C495D1F1F7E32CBDC169774A786F9FB (void);
-// 0x00000210 System.Void Wallpaper.UI.WallpaperIconsContent::.ctor()
+// 0x00000211 System.Void Wallpaper.UI.WallpaperIconsContent::.ctor()
 extern void WallpaperIconsContent__ctor_m0D60DB50E4E8B1D2DA9B879C5CBBE5F4A31036C7 (void);
-// 0x00000211 Wallpaper.IWallpaperDatabase Wallpaper.Testers.AndroidMockup::get_WallpaperDatabase()
+// 0x00000212 Wallpaper.IWallpaperDatabase Wallpaper.Testers.AndroidMockup::get_WallpaperDatabase()
 extern void AndroidMockup_get_WallpaperDatabase_m3BF2F3A06BE29D00314935DDDAD8A638042DA256 (void);
-// 0x00000212 System.Void Wallpaper.Testers.AndroidMockup::SendOnImageReceivedEvent()
+// 0x00000213 System.Void Wallpaper.Testers.AndroidMockup::SendOnImageReceivedEvent()
 extern void AndroidMockup_SendOnImageReceivedEvent_m1B4D671DA582CB6F5F1D326EFA63F35837B2ACF0 (void);
-// 0x00000213 System.Void Wallpaper.Testers.AndroidMockup::.ctor()
+// 0x00000214 System.Void Wallpaper.Testers.AndroidMockup::.ctor()
 extern void AndroidMockup__ctor_m0056CDF7E1B8E33FAF802FFC813AC8DEC18E1CD9 (void);
-// 0x00000214 System.Void Wallpaper.Testers.ApplicationLauncher::Start()
+// 0x00000215 System.Void Wallpaper.Testers.ApplicationLauncher::Start()
 extern void ApplicationLauncher_Start_mE7D84750D9D946EEF211B5C586993B00541499E5 (void);
-// 0x00000215 System.Void Wallpaper.Testers.ApplicationLauncher::.ctor()
+// 0x00000216 System.Void Wallpaper.Testers.ApplicationLauncher::.ctor()
 extern void ApplicationLauncher__ctor_m02F3EA86B26A1765D5F9E9E81634E1E6B3BFCC7E (void);
-// 0x00000216 Wallpaper.IWallpaperDatabase Wallpaper.Testers.CollectionControllerTester::get_WallpaperDatabase()
+// 0x00000217 Wallpaper.IWallpaperDatabase Wallpaper.Testers.CollectionControllerTester::get_WallpaperDatabase()
 extern void CollectionControllerTester_get_WallpaperDatabase_mBA024293B964E1CF1310A08041D81721E681AEA0 (void);
-// 0x00000217 System.Void Wallpaper.Testers.CollectionControllerTester::Start()
+// 0x00000218 System.Void Wallpaper.Testers.CollectionControllerTester::Start()
 extern void CollectionControllerTester_Start_m19B98F9AE1F64F472906A29180AB9593CAA2B57D (void);
-// 0x00000218 System.Collections.IEnumerator Wallpaper.Testers.CollectionControllerTester::Wait()
+// 0x00000219 System.Collections.IEnumerator Wallpaper.Testers.CollectionControllerTester::Wait()
 extern void CollectionControllerTester_Wait_mBB9A0B86AB07D9ECB2C412C8A2064960793395A0 (void);
-// 0x00000219 System.Void Wallpaper.Testers.CollectionControllerTester::.ctor()
+// 0x0000021A System.Void Wallpaper.Testers.CollectionControllerTester::.ctor()
 extern void CollectionControllerTester__ctor_m538A102A89CF8985E2F6DB0E2C2B99989C28C886 (void);
-// 0x0000021A System.Void Wallpaper.Testers.CollectionControllerTester/<Wait>d__4::.ctor(System.Int32)
+// 0x0000021B System.Void Wallpaper.Testers.CollectionControllerTester/<Wait>d__4::.ctor(System.Int32)
 extern void U3CWaitU3Ed__4__ctor_mE1AA85F60898A77984151354BBD1E2E3992CA79F (void);
-// 0x0000021B System.Void Wallpaper.Testers.CollectionControllerTester/<Wait>d__4::System.IDisposable.Dispose()
+// 0x0000021C System.Void Wallpaper.Testers.CollectionControllerTester/<Wait>d__4::System.IDisposable.Dispose()
 extern void U3CWaitU3Ed__4_System_IDisposable_Dispose_mC3888407FE3FE3965A41495D1F0874F7C327DBBF (void);
-// 0x0000021C System.Boolean Wallpaper.Testers.CollectionControllerTester/<Wait>d__4::MoveNext()
+// 0x0000021D System.Boolean Wallpaper.Testers.CollectionControllerTester/<Wait>d__4::MoveNext()
 extern void U3CWaitU3Ed__4_MoveNext_m302D77AB4B76627761FA7CC4191C7D8C00411951 (void);
-// 0x0000021D System.Object Wallpaper.Testers.CollectionControllerTester/<Wait>d__4::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x0000021E System.Object Wallpaper.Testers.CollectionControllerTester/<Wait>d__4::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CWaitU3Ed__4_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m95DCFA29A590416FD40341672BA331F318B427F0 (void);
-// 0x0000021E System.Void Wallpaper.Testers.CollectionControllerTester/<Wait>d__4::System.Collections.IEnumerator.Reset()
+// 0x0000021F System.Void Wallpaper.Testers.CollectionControllerTester/<Wait>d__4::System.Collections.IEnumerator.Reset()
 extern void U3CWaitU3Ed__4_System_Collections_IEnumerator_Reset_mF621071909B80E43B3A00830ED06B1C4A0A6F2B7 (void);
-// 0x0000021F System.Object Wallpaper.Testers.CollectionControllerTester/<Wait>d__4::System.Collections.IEnumerator.get_Current()
+// 0x00000220 System.Object Wallpaper.Testers.CollectionControllerTester/<Wait>d__4::System.Collections.IEnumerator.get_Current()
 extern void U3CWaitU3Ed__4_System_Collections_IEnumerator_get_Current_m3677AA06B6BB9B2A7A85CCD8A3E15BFA23DF381D (void);
-// 0x00000220 System.Void Wallpaper.Testers.DebugScreenPixels::GetCameraDimensions()
+// 0x00000221 System.Void Wallpaper.Testers.DebugScreenPixels::GetCameraDimensions()
 extern void DebugScreenPixels_GetCameraDimensions_mB60D193638AD8B7BA4AF2A689B94C7F29832E0BD (void);
-// 0x00000221 System.Void Wallpaper.Testers.DebugScreenPixels::UseTransformedLocalPosition()
+// 0x00000222 System.Void Wallpaper.Testers.DebugScreenPixels::UseTransformedLocalPosition()
 extern void DebugScreenPixels_UseTransformedLocalPosition_m42E2B5622554610C443A8C6FD7674BE5F29AC6EF (void);
-// 0x00000222 System.Void Wallpaper.Testers.DebugScreenPixels::UseTransformedPosition()
+// 0x00000223 System.Void Wallpaper.Testers.DebugScreenPixels::UseTransformedPosition()
 extern void DebugScreenPixels_UseTransformedPosition_m868F45A6370E45FA130515E5D1B251A9A7001981 (void);
-// 0x00000223 System.Void Wallpaper.Testers.DebugScreenPixels::UsePosition()
+// 0x00000224 System.Void Wallpaper.Testers.DebugScreenPixels::UsePosition()
 extern void DebugScreenPixels_UsePosition_mFDA877AF02CB17D32214E1183776C9BD7E1DEC64 (void);
-// 0x00000224 System.Void Wallpaper.Testers.DebugScreenPixels::.ctor()
+// 0x00000225 System.Void Wallpaper.Testers.DebugScreenPixels::.ctor()
 extern void DebugScreenPixels__ctor_mF657FE24F50A86BCBAFA78165C09DAF61670E604 (void);
-// 0x00000225 System.Void Wallpaper.Testers.DummyController::OnSceneLoaded()
+// 0x00000226 System.Void Wallpaper.Testers.DummyController::OnSceneLoaded()
 extern void DummyController_OnSceneLoaded_m2A729F2314AE6A9F3A4FCE973526784BE1EB4703 (void);
-// 0x00000226 System.Void Wallpaper.Testers.DummyController::OnSceneUnLoaded()
+// 0x00000227 System.Void Wallpaper.Testers.DummyController::OnSceneUnLoaded()
 extern void DummyController_OnSceneUnLoaded_m477E5474F10EAC4256555394997DCC790E713EC9 (void);
-// 0x00000227 System.Void Wallpaper.Testers.DummyController::.ctor()
+// 0x00000228 System.Void Wallpaper.Testers.DummyController::.ctor()
 extern void DummyController__ctor_mCE141A114962403E0196F132B80257EE2EDB6157 (void);
-// 0x00000228 Wallpaper.IWallpaperDatabase Wallpaper.Testers.EditorTester::get_WallpaperDatabase()
+// 0x00000229 Wallpaper.IWallpaperDatabase Wallpaper.Testers.EditorTester::get_WallpaperDatabase()
 extern void EditorTester_get_WallpaperDatabase_m2104DD78C09877F7A116B1498C396B0A2CFEC13E (void);
-// 0x00000229 System.Void Wallpaper.Testers.EditorTester::Start()
+// 0x0000022A System.Void Wallpaper.Testers.EditorTester::Start()
 extern void EditorTester_Start_m0A922F6F66BEB1C32940E5BB3FD8ABE0C9EDC8B5 (void);
-// 0x0000022A System.Collections.IEnumerator Wallpaper.Testers.EditorTester::StartCoroutine()
+// 0x0000022B System.Collections.IEnumerator Wallpaper.Testers.EditorTester::StartCoroutine()
 extern void EditorTester_StartCoroutine_m4B7AF2497DE1C532ED4AE80C3ED4BAF3B6BE9B64 (void);
-// 0x0000022B System.Void Wallpaper.Testers.EditorTester::.ctor()
+// 0x0000022C System.Void Wallpaper.Testers.EditorTester::.ctor()
 extern void EditorTester__ctor_m862B1A2B4F4000F31E94E485C9B429481861FD08 (void);
-// 0x0000022C System.Void Wallpaper.Testers.EditorTester/<StartCoroutine>d__6::.ctor(System.Int32)
+// 0x0000022D System.Void Wallpaper.Testers.EditorTester/<StartCoroutine>d__6::.ctor(System.Int32)
 extern void U3CStartCoroutineU3Ed__6__ctor_m27BD9CCB48041C9B2ADFB0C31A479E1C78B96DEC (void);
-// 0x0000022D System.Void Wallpaper.Testers.EditorTester/<StartCoroutine>d__6::System.IDisposable.Dispose()
+// 0x0000022E System.Void Wallpaper.Testers.EditorTester/<StartCoroutine>d__6::System.IDisposable.Dispose()
 extern void U3CStartCoroutineU3Ed__6_System_IDisposable_Dispose_m0A5E9F75E27A8F19D1ABB7DA6510BA8D5F5EDB05 (void);
-// 0x0000022E System.Boolean Wallpaper.Testers.EditorTester/<StartCoroutine>d__6::MoveNext()
+// 0x0000022F System.Boolean Wallpaper.Testers.EditorTester/<StartCoroutine>d__6::MoveNext()
 extern void U3CStartCoroutineU3Ed__6_MoveNext_m48AF2E8158AECC7FDD47C3B862AB38B5F1CBB0AE (void);
-// 0x0000022F System.Object Wallpaper.Testers.EditorTester/<StartCoroutine>d__6::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x00000230 System.Object Wallpaper.Testers.EditorTester/<StartCoroutine>d__6::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CStartCoroutineU3Ed__6_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_m84E418E7004F550E2D63D709BFEA5D501E790AEE (void);
-// 0x00000230 System.Void Wallpaper.Testers.EditorTester/<StartCoroutine>d__6::System.Collections.IEnumerator.Reset()
+// 0x00000231 System.Void Wallpaper.Testers.EditorTester/<StartCoroutine>d__6::System.Collections.IEnumerator.Reset()
 extern void U3CStartCoroutineU3Ed__6_System_Collections_IEnumerator_Reset_m8197F2E9DA0090B17C86830E3E3104D2FE1BEACF (void);
-// 0x00000231 System.Object Wallpaper.Testers.EditorTester/<StartCoroutine>d__6::System.Collections.IEnumerator.get_Current()
+// 0x00000232 System.Object Wallpaper.Testers.EditorTester/<StartCoroutine>d__6::System.Collections.IEnumerator.get_Current()
 extern void U3CStartCoroutineU3Ed__6_System_Collections_IEnumerator_get_Current_m40E8E3F20AA5768198C8BA50D41E4D8BB01C19EA (void);
-// 0x00000232 System.Void Wallpaper.Testers.ParallaxTester::Awake()
+// 0x00000233 System.Void Wallpaper.Testers.ParallaxTester::Awake()
 extern void ParallaxTester_Awake_mF8E90AF6A9932C22DFB28A09B5F67520B15E516F (void);
-// 0x00000233 System.Void Wallpaper.Testers.ParallaxTester::OnParallaxBegin()
+// 0x00000234 System.Void Wallpaper.Testers.ParallaxTester::OnParallaxBegin()
 extern void ParallaxTester_OnParallaxBegin_mF2687D46984436F7B52C123E41DC42968518FEDE (void);
-// 0x00000234 System.Void Wallpaper.Testers.ParallaxTester::OnParallax(UnityEngine.Vector2)
+// 0x00000235 System.Void Wallpaper.Testers.ParallaxTester::OnParallax(UnityEngine.Vector2)
 extern void ParallaxTester_OnParallax_mDDAB249844C66B16E4F5A32F0044FC38502C81E0 (void);
-// 0x00000235 System.Void Wallpaper.Testers.ParallaxTester::OnParallaxEnd()
+// 0x00000236 System.Void Wallpaper.Testers.ParallaxTester::OnParallaxEnd()
 extern void ParallaxTester_OnParallaxEnd_mC4F658FF520F379711ADBA7E5699080675445B2F (void);
-// 0x00000236 System.Void Wallpaper.Testers.ParallaxTester::.ctor()
+// 0x00000237 System.Void Wallpaper.Testers.ParallaxTester::.ctor()
 extern void ParallaxTester__ctor_m9CCED21ADB3FBF6240F39A1CCE37334A69D7A123 (void);
-// 0x00000237 System.Void Wallpaper.Testers.WallpaperDatabaseTester::Start()
+// 0x00000238 System.Void Wallpaper.Testers.WallpaperDatabaseTester::Start()
 extern void WallpaperDatabaseTester_Start_m493DA253ECC48106E4398F135813DF19348EE417 (void);
-// 0x00000238 System.Void Wallpaper.Testers.WallpaperDatabaseTester::.ctor()
+// 0x00000239 System.Void Wallpaper.Testers.WallpaperDatabaseTester::.ctor()
 extern void WallpaperDatabaseTester__ctor_m385F83CB1ED0C9C7EAB6893A1765652BDF1D7AAE (void);
-// 0x00000239 Wallpaper.IAndroidCommander Wallpaper.Home.HomePageController::get_AndroidCommander()
+// 0x0000023A Wallpaper.IAndroidCommander Wallpaper.Home.HomePageController::get_AndroidCommander()
 extern void HomePageController_get_AndroidCommander_mAD93384C8C64698F63E89AAFB5FE0AE9F1D6527E (void);
-// 0x0000023A System.Void Wallpaper.Home.HomePageController::OnApplicationStart()
+// 0x0000023B System.Void Wallpaper.Home.HomePageController::OnApplicationStart()
 extern void HomePageController_OnApplicationStart_m79F004CDC26CF53A0E284DAD97617E1C8E87FF46 (void);
-// 0x0000023B System.Void Wallpaper.Home.HomePageController::OnSceneLoaded()
+// 0x0000023C System.Void Wallpaper.Home.HomePageController::OnSceneLoaded()
 extern void HomePageController_OnSceneLoaded_m97DB4F0FDB478E13C1BA1DE0BD83885F6FA5C2AE (void);
-// 0x0000023C System.Void Wallpaper.Home.HomePageController::OnSceneUnLoaded()
+// 0x0000023D System.Void Wallpaper.Home.HomePageController::OnSceneUnLoaded()
 extern void HomePageController_OnSceneUnLoaded_m380310FCE5F66E5FE06E8CC6B5928F2B41C55627 (void);
-// 0x0000023D System.Void Wallpaper.Home.HomePageController::OnImageReceivedFromAndroid(System.Byte[],System.Int32,System.Int32)
+// 0x0000023E System.Void Wallpaper.Home.HomePageController::OnImageReceivedFromAndroid(System.Byte[],System.Int32,System.Int32)
 extern void HomePageController_OnImageReceivedFromAndroid_mF1DD30D88F94146AFAB6D7934CE258A13390B6AA (void);
-// 0x0000023E System.Void Wallpaper.Home.HomePageController::.ctor()
+// 0x0000023F System.Void Wallpaper.Home.HomePageController::.ctor()
 extern void HomePageController__ctor_m8D0429CEA2C13A85C8815175D98FC7F44C0706DF (void);
-// 0x0000023F System.Void Wallpaper.Home.HomePageController::<OnApplicationStart>b__7_0()
+// 0x00000240 System.Void Wallpaper.Home.HomePageController::<OnApplicationStart>b__7_0()
 extern void HomePageController_U3COnApplicationStartU3Eb__7_0_m7FE809656052D357E0019CDF082026AF3279977F (void);
-// 0x00000240 System.Void Wallpaper.Home.HomePageController::<OnApplicationStart>b__7_2()
+// 0x00000241 System.Void Wallpaper.Home.HomePageController::<OnApplicationStart>b__7_2()
 extern void HomePageController_U3COnApplicationStartU3Eb__7_2_mF6DBF80BDFF62F1E0077EEC1C74465E955C9433A (void);
-// 0x00000241 System.Void Wallpaper.Home.HomePageController::<OnApplicationStart>b__7_3()
+// 0x00000242 System.Void Wallpaper.Home.HomePageController::<OnApplicationStart>b__7_3()
 extern void HomePageController_U3COnApplicationStartU3Eb__7_3_m4BD2731E41CA98EBC9A4564B57B0EA91F6D01061 (void);
-// 0x00000242 System.Void Wallpaper.Home.HomePageController/<>c::.cctor()
+// 0x00000243 System.Void Wallpaper.Home.HomePageController/<>c::.cctor()
 extern void U3CU3Ec__cctor_m80A7EDDE5245BF479828078ED67DF79174CA7B1B (void);
-// 0x00000243 System.Void Wallpaper.Home.HomePageController/<>c::.ctor()
+// 0x00000244 System.Void Wallpaper.Home.HomePageController/<>c::.ctor()
 extern void U3CU3Ec__ctor_m44F4E4D10FBFDCF48B8787F45A8A23E938210AA8 (void);
-// 0x00000244 System.Void Wallpaper.Home.HomePageController/<>c::<OnApplicationStart>b__7_1()
+// 0x00000245 System.Void Wallpaper.Home.HomePageController/<>c::<OnApplicationStart>b__7_1()
 extern void U3CU3Ec_U3COnApplicationStartU3Eb__7_1_m48CE037756DA290E0049DEB751976568BDF4C6CF (void);
-// 0x00000245 System.Void Wallpaper.Data.ImageDatabase::Save(System.Byte[],System.String,System.Int32)
+// 0x00000246 System.Void Wallpaper.Data.ImageDatabase::Save(System.Byte[],System.String,System.Int32)
 extern void ImageDatabase_Save_m64079A9CC11B22C3748132D3769B8F58694887C9 (void);
-// 0x00000246 System.Byte[] Wallpaper.Data.ImageDatabase::Load(System.String,System.Int32)
+// 0x00000247 System.Byte[] Wallpaper.Data.ImageDatabase::Load(System.String,System.Int32)
 extern void ImageDatabase_Load_mB167B2CA8BCBC10D20BFFA77273D8C4FE71568A9 (void);
-// 0x00000247 System.Byte[] Wallpaper.Data.ImageDatabase::LoadFromPath(System.String)
+// 0x00000248 System.Byte[] Wallpaper.Data.ImageDatabase::LoadFromPath(System.String)
 extern void ImageDatabase_LoadFromPath_m1C51AEB8A0264C4076A308DD1894B315F47E3507 (void);
-// 0x00000248 System.String Wallpaper.Data.ImageDatabase::GetImagesPath(System.String,System.Int32)
+// 0x00000249 System.String Wallpaper.Data.ImageDatabase::GetImagesPath(System.String,System.Int32)
 extern void ImageDatabase_GetImagesPath_mE5AB57F85B1FE267A0378FBED188F804ABD32A40 (void);
-// 0x00000249 Wallpaper.Data.WallpaperData Wallpaper.Data.WallpaperConverter::GetData(Wallpaper.Wallpaper)
+// 0x0000024A Wallpaper.Data.WallpaperData Wallpaper.Data.WallpaperConverter::GetData(Wallpaper.Wallpaper)
 extern void WallpaperConverter_GetData_m8C6875344E39450B3F7269384FFDEF9F7F6BFAC5 (void);
-// 0x0000024A Wallpaper.Wallpaper Wallpaper.Data.WallpaperConverter::GetWallpaper(Wallpaper.Data.WallpaperData)
+// 0x0000024B Wallpaper.Wallpaper Wallpaper.Data.WallpaperConverter::GetWallpaper(Wallpaper.Data.WallpaperData)
 extern void WallpaperConverter_GetWallpaper_m39F99F01AD2DC4B643D6FD81EA99E979FC08D834 (void);
-// 0x0000024B System.Void Wallpaper.Data.WallpaperConverter::WriteImage(Wallpaper.Wallpaper,System.Collections.Generic.Dictionary`2<System.String,System.String>,System.Int32)
+// 0x0000024C System.Void Wallpaper.Data.WallpaperConverter::WriteImage(Wallpaper.Wallpaper,System.Collections.Generic.Dictionary`2<System.String,System.String>,System.Int32)
 extern void WallpaperConverter_WriteImage_mE848DFDB2EBC1703F9EA5CC7E05ADE00B80009B2 (void);
-// 0x0000024C Wallpaper.WallpaperImage Wallpaper.Data.WallpaperConverter::ReadImage(Wallpaper.Wallpaper,System.Collections.Generic.Dictionary`2<System.String,System.String>,System.Int32)
+// 0x0000024D Wallpaper.WallpaperImage Wallpaper.Data.WallpaperConverter::ReadImage(Wallpaper.Wallpaper,System.Collections.Generic.Dictionary`2<System.String,System.String>,System.Int32)
 extern void WallpaperConverter_ReadImage_mA1BD42286E98D5609B4ED42888BA88206706F5B6 (void);
-// 0x0000024D UnityEngine.Vector2 Wallpaper.Data.WallpaperConverter::StringToVector(System.String)
+// 0x0000024E UnityEngine.Vector2 Wallpaper.Data.WallpaperConverter::StringToVector(System.String)
 extern void WallpaperConverter_StringToVector_mCD334DC4B7D970AD74CF57FE15E91D985F7CD338 (void);
-// 0x0000024E System.Void Wallpaper.Data.WallpaperData::.ctor(System.Collections.Generic.Dictionary`2<System.String,System.String>)
+// 0x0000024F System.Void Wallpaper.Data.WallpaperData::.ctor(System.Collections.Generic.Dictionary`2<System.String,System.String>)
 extern void WallpaperData__ctor_m5096004AD883CCDF01454A95A4E6B042B516EE3A (void);
-// 0x0000024F System.Void Wallpaper.Data.WallpaperData::OnAfterDeserialize()
+// 0x00000250 System.Void Wallpaper.Data.WallpaperData::OnAfterDeserialize()
 extern void WallpaperData_OnAfterDeserialize_m7FFB1BB9C473CF9D1DD76E4F2B407FA5B945744E (void);
-// 0x00000250 System.Void Wallpaper.Data.WallpaperData::OnBeforeSerialize()
+// 0x00000251 System.Void Wallpaper.Data.WallpaperData::OnBeforeSerialize()
 extern void WallpaperData_OnBeforeSerialize_m91136666856614D53CB77F5CC1440A8F74F157D7 (void);
-// 0x00000251 System.Void Wallpaper.Data.WallpaperDatabase::Rename(System.String,System.String)
+// 0x00000252 System.Void Wallpaper.Data.WallpaperDatabase::Rename(System.String,System.String)
 extern void WallpaperDatabase_Rename_m22B24A86DFE0C87535088E311CD40C8B2F54A029 (void);
-// 0x00000252 System.Boolean Wallpaper.Data.WallpaperDatabase::DoesWallpaperExist(System.String)
+// 0x00000253 System.Boolean Wallpaper.Data.WallpaperDatabase::DoesWallpaperExist(System.String)
 extern void WallpaperDatabase_DoesWallpaperExist_mCEC08F5854F4449A49791AA3DC8DDECA871F6EF7 (void);
-// 0x00000253 System.Int32 Wallpaper.Data.WallpaperDatabase::GetWallpaperCount()
+// 0x00000254 System.Int32 Wallpaper.Data.WallpaperDatabase::GetWallpaperCount()
 extern void WallpaperDatabase_GetWallpaperCount_m048A59165014328AF84F4AE0E1CD3EF86EB28ED1 (void);
-// 0x00000254 System.Void Wallpaper.Data.WallpaperDatabase::Save(Wallpaper.Wallpaper)
+// 0x00000255 System.Void Wallpaper.Data.WallpaperDatabase::Save(Wallpaper.Wallpaper)
 extern void WallpaperDatabase_Save_mE7FA06F5E2A776EF4B95885E679B096F4C0AFF7E (void);
-// 0x00000255 Wallpaper.Wallpaper Wallpaper.Data.WallpaperDatabase::LoadFromPath(System.String)
+// 0x00000256 Wallpaper.Wallpaper Wallpaper.Data.WallpaperDatabase::LoadFromPath(System.String)
 extern void WallpaperDatabase_LoadFromPath_mCD7A470487FC1D73378E0BEAAA229037236A5B3E (void);
-// 0x00000256 Wallpaper.Wallpaper Wallpaper.Data.WallpaperDatabase::Load(System.String)
+// 0x00000257 Wallpaper.Wallpaper Wallpaper.Data.WallpaperDatabase::Load(System.String)
 extern void WallpaperDatabase_Load_mF902B4FB87D59337F2414C6A79023D5ACE56A517 (void);
-// 0x00000257 System.Collections.Generic.List`1<Wallpaper.Wallpaper> Wallpaper.Data.WallpaperDatabase::GetWallpaperCollection()
+// 0x00000258 System.Collections.Generic.List`1<Wallpaper.Wallpaper> Wallpaper.Data.WallpaperDatabase::GetWallpaperCollection()
 extern void WallpaperDatabase_GetWallpaperCollection_m35358A39F306F29FAC988D2F540B19B6D3571FDA (void);
-// 0x00000258 System.String Wallpaper.Data.WallpaperDatabase::GetCollectionPath()
+// 0x00000259 System.String Wallpaper.Data.WallpaperDatabase::GetCollectionPath()
 extern void WallpaperDatabase_GetCollectionPath_m8396DA649CEC11DF538C2B356107A1590C02EF39 (void);
-// 0x00000259 System.String Wallpaper.Data.WallpaperDatabase::GetWallpaperPath(System.String)
+// 0x0000025A System.String Wallpaper.Data.WallpaperDatabase::GetWallpaperPath(System.String)
 extern void WallpaperDatabase_GetWallpaperPath_m867215B369FD417AD2A79F5ED1BF9339907E4E86 (void);
-// 0x0000025A System.Void Wallpaper.Data.WallpaperDatabase::.ctor()
+// 0x0000025B System.Void Wallpaper.Data.WallpaperDatabase::.ctor()
 extern void WallpaperDatabase__ctor_mBF49DEA7A05D433B7C17FA6E0942531C7720F57F (void);
-// 0x0000025B System.Void Wallpaper.Android.AndroidCommander::Start()
+// 0x0000025C System.Void Wallpaper.Android.AndroidCommander::Start()
 extern void AndroidCommander_Start_m607DDABA2D96B232FB97698DD88B251D13307662 (void);
-// 0x0000025C System.Void Wallpaper.Android.AndroidCommander::Initialize()
+// 0x0000025D System.Void Wallpaper.Android.AndroidCommander::Initialize()
 extern void AndroidCommander_Initialize_m4691861F1FDE13B9A9E14F1BAEB13213F79F8C55 (void);
-// 0x0000025D System.Void Wallpaper.Android.AndroidCommander::OpenAndroidGallery()
+// 0x0000025E System.Void Wallpaper.Android.AndroidCommander::OpenAndroidGallery()
 extern void AndroidCommander_OpenAndroidGallery_m265D422767BA4477374E4A530822BB16839EE1D0 (void);
-// 0x0000025E System.Void Wallpaper.Android.AndroidCommander::OnBackButtonPressed()
+// 0x0000025F System.Void Wallpaper.Android.AndroidCommander::OnBackButtonPressed()
 extern void AndroidCommander_OnBackButtonPressed_m96C8539260E6D9262CA34F7ABDDECDD63236BEDA (void);
-// 0x0000025F System.Byte[] Wallpaper.Android.AndroidCommander::GetImageData()
+// 0x00000260 System.Byte[] Wallpaper.Android.AndroidCommander::GetImageData()
 extern void AndroidCommander_GetImageData_mEA450B6DE68931FA86168D5BCE00DBEE17C00143 (void);
-// 0x00000260 System.Int32 Wallpaper.Android.AndroidCommander::GetImageHeight()
+// 0x00000261 System.Int32 Wallpaper.Android.AndroidCommander::GetImageHeight()
 extern void AndroidCommander_GetImageHeight_m1A72CA8241B490429324E50D23B0C74BB930A6F2 (void);
-// 0x00000261 System.Int32 Wallpaper.Android.AndroidCommander::GetImageWidth()
+// 0x00000262 System.Int32 Wallpaper.Android.AndroidCommander::GetImageWidth()
 extern void AndroidCommander_GetImageWidth_mAAE68DEA8EC31A26CB9C06CA88E68978FCBBB726 (void);
-// 0x00000262 System.Void Wallpaper.Android.AndroidCommander::SendData(System.String)
+// 0x00000263 System.Void Wallpaper.Android.AndroidCommander::RunWallpaperService()
+extern void AndroidCommander_RunWallpaperService_mB301F9C7C31D653D57D76DEECF4261FAB1558880 (void);
+// 0x00000264 System.Void Wallpaper.Android.AndroidCommander::SendData(System.String)
 extern void AndroidCommander_SendData_m38AF57EDC78E7FDF5150A55547269CA4FAB5FACC (void);
-// 0x00000263 System.Void Wallpaper.Android.AndroidCommander::.ctor()
+// 0x00000265 System.Void Wallpaper.Android.AndroidCommander::.ctor()
 extern void AndroidCommander__ctor_mB3D578B8FAC2C2DA86FD5FAB56EC5E0D0346C900 (void);
-// 0x00000264 Wallpaper.IAndroidCommander Wallpaper.Android.AndroidCommandReceiver::get_AndroidCommander()
+// 0x00000266 Wallpaper.IAndroidCommander Wallpaper.Android.AndroidCommandReceiver::get_AndroidCommander()
 extern void AndroidCommandReceiver_get_AndroidCommander_mAF920BE6A28C90D675095F07EDD440618F3C9B22 (void);
-// 0x00000265 System.Void Wallpaper.Android.AndroidCommandReceiver::ExecuteAndroidCommand(System.String)
+// 0x00000267 System.Void Wallpaper.Android.AndroidCommandReceiver::ExecuteAndroidCommand(System.String)
 extern void AndroidCommandReceiver_ExecuteAndroidCommand_m6D78549416051260C2F62303AAA2A82585101E7E (void);
-// 0x00000266 System.Void Wallpaper.Android.AndroidCommandReceiver::StartAsWallpaper()
+// 0x00000268 System.Void Wallpaper.Android.AndroidCommandReceiver::StartAsWallpaper()
 extern void AndroidCommandReceiver_StartAsWallpaper_m685E7A51CC0014F78535716F40F86796449CC4F2 (void);
-// 0x00000267 System.Void Wallpaper.Android.AndroidCommandReceiver::StartAsApplication()
+// 0x00000269 System.Void Wallpaper.Android.AndroidCommandReceiver::StartAsApplication()
 extern void AndroidCommandReceiver_StartAsApplication_mA481AE8652D0923304C0C3364C7823B499A22F1D (void);
-// 0x00000268 System.Void Wallpaper.Android.AndroidCommandReceiver::GetIsWallpaperSet()
+// 0x0000026A System.Void Wallpaper.Android.AndroidCommandReceiver::GetIsWallpaperSet()
 extern void AndroidCommandReceiver_GetIsWallpaperSet_m81E1B560664FDAAD86D4FC8E0106E46703CE1B0C (void);
-// 0x00000269 System.Void Wallpaper.Android.AndroidCommandReceiver::GetImageFromAndroid()
+// 0x0000026B System.Void Wallpaper.Android.AndroidCommandReceiver::GetImageFromAndroid()
 extern void AndroidCommandReceiver_GetImageFromAndroid_m6DF0ACAA35DB45C0FBC6AC34E60A43CB349C3247 (void);
-// 0x0000026A System.Void Wallpaper.Android.AndroidCommandReceiver::GoBack()
+// 0x0000026C System.Void Wallpaper.Android.AndroidCommandReceiver::GoBack()
 extern void AndroidCommandReceiver_GoBack_m73BE255689B17F5E4C987961FE9C79BB9FE7F56A (void);
-// 0x0000026B System.Void Wallpaper.Android.AndroidCommandReceiver::.ctor()
+// 0x0000026D System.Void Wallpaper.Android.AndroidCommandReceiver::.ctor()
 extern void AndroidCommandReceiver__ctor_mF3A514C9128A6AB0EB4E9BBF1AD02640F0EEF838 (void);
-// 0x0000026C UnityEngine.InputSystem.InputActionAsset Wallpaper.Input.TouchControls::get_asset()
+// 0x0000026E UnityEngine.InputSystem.InputActionAsset Wallpaper.Input.TouchControls::get_asset()
 extern void TouchControls_get_asset_m156DF08B5EC8DC77D4196564947ACAEC9161A573 (void);
-// 0x0000026D System.Void Wallpaper.Input.TouchControls::.ctor()
+// 0x0000026F System.Void Wallpaper.Input.TouchControls::.ctor()
 extern void TouchControls__ctor_mE5A53475CBED10E4860E7C5860A5A30778B62C15 (void);
-// 0x0000026E System.Void Wallpaper.Input.TouchControls::Dispose()
+// 0x00000270 System.Void Wallpaper.Input.TouchControls::Dispose()
 extern void TouchControls_Dispose_m153EC5F7B419C0AD3BD3037B8CDA570FFF951A7E (void);
-// 0x0000026F System.Nullable`1<UnityEngine.InputSystem.InputBinding> Wallpaper.Input.TouchControls::get_bindingMask()
+// 0x00000271 System.Nullable`1<UnityEngine.InputSystem.InputBinding> Wallpaper.Input.TouchControls::get_bindingMask()
 extern void TouchControls_get_bindingMask_m7D67812F2AF2784E973F5FCC661076E9B12D54D6 (void);
-// 0x00000270 System.Void Wallpaper.Input.TouchControls::set_bindingMask(System.Nullable`1<UnityEngine.InputSystem.InputBinding>)
+// 0x00000272 System.Void Wallpaper.Input.TouchControls::set_bindingMask(System.Nullable`1<UnityEngine.InputSystem.InputBinding>)
 extern void TouchControls_set_bindingMask_m199DC5261827DA1EC5ABD24E08274DD70FBE7F2D (void);
-// 0x00000271 System.Nullable`1<UnityEngine.InputSystem.Utilities.ReadOnlyArray`1<UnityEngine.InputSystem.InputDevice>> Wallpaper.Input.TouchControls::get_devices()
+// 0x00000273 System.Nullable`1<UnityEngine.InputSystem.Utilities.ReadOnlyArray`1<UnityEngine.InputSystem.InputDevice>> Wallpaper.Input.TouchControls::get_devices()
 extern void TouchControls_get_devices_m8900927DC78E434DF0924A29333862CC11913475 (void);
-// 0x00000272 System.Void Wallpaper.Input.TouchControls::set_devices(System.Nullable`1<UnityEngine.InputSystem.Utilities.ReadOnlyArray`1<UnityEngine.InputSystem.InputDevice>>)
+// 0x00000274 System.Void Wallpaper.Input.TouchControls::set_devices(System.Nullable`1<UnityEngine.InputSystem.Utilities.ReadOnlyArray`1<UnityEngine.InputSystem.InputDevice>>)
 extern void TouchControls_set_devices_mF743427C0B168B5F30A735A6CD9B4C1A5C9712F4 (void);
-// 0x00000273 UnityEngine.InputSystem.Utilities.ReadOnlyArray`1<UnityEngine.InputSystem.InputControlScheme> Wallpaper.Input.TouchControls::get_controlSchemes()
+// 0x00000275 UnityEngine.InputSystem.Utilities.ReadOnlyArray`1<UnityEngine.InputSystem.InputControlScheme> Wallpaper.Input.TouchControls::get_controlSchemes()
 extern void TouchControls_get_controlSchemes_mAA5544D8D76F8EEE456CB9C466362E758FC056E8 (void);
-// 0x00000274 System.Boolean Wallpaper.Input.TouchControls::Contains(UnityEngine.InputSystem.InputAction)
+// 0x00000276 System.Boolean Wallpaper.Input.TouchControls::Contains(UnityEngine.InputSystem.InputAction)
 extern void TouchControls_Contains_m0F3C0E0B9BF2617B8B5F24013DA614C7CB1B1E6C (void);
-// 0x00000275 System.Collections.Generic.IEnumerator`1<UnityEngine.InputSystem.InputAction> Wallpaper.Input.TouchControls::GetEnumerator()
+// 0x00000277 System.Collections.Generic.IEnumerator`1<UnityEngine.InputSystem.InputAction> Wallpaper.Input.TouchControls::GetEnumerator()
 extern void TouchControls_GetEnumerator_m92CA293A76C2EDDFFD22ECD506EAAA1A815FA196 (void);
-// 0x00000276 System.Collections.IEnumerator Wallpaper.Input.TouchControls::System.Collections.IEnumerable.GetEnumerator()
+// 0x00000278 System.Collections.IEnumerator Wallpaper.Input.TouchControls::System.Collections.IEnumerable.GetEnumerator()
 extern void TouchControls_System_Collections_IEnumerable_GetEnumerator_mF406B86E856C449D6EB0CDE9A859C2B54E33BB97 (void);
-// 0x00000277 System.Void Wallpaper.Input.TouchControls::Enable()
+// 0x00000279 System.Void Wallpaper.Input.TouchControls::Enable()
 extern void TouchControls_Enable_m6B676A0F12CAF18814B61D9DC01708E68FF78C08 (void);
-// 0x00000278 System.Void Wallpaper.Input.TouchControls::Disable()
+// 0x0000027A System.Void Wallpaper.Input.TouchControls::Disable()
 extern void TouchControls_Disable_m40FF584CDF109215D64E2978E2897AF3B86EA161 (void);
-// 0x00000279 System.Collections.Generic.IEnumerable`1<UnityEngine.InputSystem.InputBinding> Wallpaper.Input.TouchControls::get_bindings()
+// 0x0000027B System.Collections.Generic.IEnumerable`1<UnityEngine.InputSystem.InputBinding> Wallpaper.Input.TouchControls::get_bindings()
 extern void TouchControls_get_bindings_m14FC255FF5B2EE2ACF19B0828F8E4DB2F78E860A (void);
-// 0x0000027A UnityEngine.InputSystem.InputAction Wallpaper.Input.TouchControls::FindAction(System.String,System.Boolean)
+// 0x0000027C UnityEngine.InputSystem.InputAction Wallpaper.Input.TouchControls::FindAction(System.String,System.Boolean)
 extern void TouchControls_FindAction_mEC0E3524D6608743E95FA8B4ABE84578942B007C (void);
-// 0x0000027B System.Int32 Wallpaper.Input.TouchControls::FindBinding(UnityEngine.InputSystem.InputBinding,UnityEngine.InputSystem.InputAction&)
+// 0x0000027D System.Int32 Wallpaper.Input.TouchControls::FindBinding(UnityEngine.InputSystem.InputBinding,UnityEngine.InputSystem.InputAction&)
 extern void TouchControls_FindBinding_m6BE2F9661D02C2EFA1A01C6A133887724925A54B (void);
-// 0x0000027C Wallpaper.Input.TouchControls/TouchActions Wallpaper.Input.TouchControls::get_Touch()
+// 0x0000027E Wallpaper.Input.TouchControls/TouchActions Wallpaper.Input.TouchControls::get_Touch()
 extern void TouchControls_get_Touch_m66B1A555DDE6785256A602AE3F6B4BA2D27FE79E (void);
-// 0x0000027D Wallpaper.Input.TouchControls/MouseWheelActions Wallpaper.Input.TouchControls::get_MouseWheel()
+// 0x0000027F Wallpaper.Input.TouchControls/MouseWheelActions Wallpaper.Input.TouchControls::get_MouseWheel()
 extern void TouchControls_get_MouseWheel_m3F1B331B670AD5C6B8B763096A217261625D302C (void);
-// 0x0000027E UnityEngine.InputSystem.InputControlScheme Wallpaper.Input.TouchControls::get_TouchScheme()
+// 0x00000280 UnityEngine.InputSystem.InputControlScheme Wallpaper.Input.TouchControls::get_TouchScheme()
 extern void TouchControls_get_TouchScheme_mAD58041D73674D2DA7986F65D936420CD23D4141 (void);
-// 0x0000027F UnityEngine.InputSystem.InputControlScheme Wallpaper.Input.TouchControls::get_DesktopScheme()
+// 0x00000281 UnityEngine.InputSystem.InputControlScheme Wallpaper.Input.TouchControls::get_DesktopScheme()
 extern void TouchControls_get_DesktopScheme_mDA2E1256679493EF04F675DB853A41C06D47BD81 (void);
-// 0x00000280 System.Void Wallpaper.Input.TouchControls/TouchActions::.ctor(Wallpaper.Input.TouchControls)
+// 0x00000282 System.Void Wallpaper.Input.TouchControls/TouchActions::.ctor(Wallpaper.Input.TouchControls)
 extern void TouchActions__ctor_mABBE9EBD02BF8318008A1A9813B45133F80AD9AC (void);
-// 0x00000281 UnityEngine.InputSystem.InputAction Wallpaper.Input.TouchControls/TouchActions::get_PrimaryTouchDelta()
+// 0x00000283 UnityEngine.InputSystem.InputAction Wallpaper.Input.TouchControls/TouchActions::get_PrimaryTouchDelta()
 extern void TouchActions_get_PrimaryTouchDelta_m1DAE1E0B87921A7BDF4D039B5CFE0A8E83B2260E (void);
-// 0x00000282 UnityEngine.InputSystem.InputAction Wallpaper.Input.TouchControls/TouchActions::get_SecondaryTouchDelta()
+// 0x00000284 UnityEngine.InputSystem.InputAction Wallpaper.Input.TouchControls/TouchActions::get_SecondaryTouchDelta()
 extern void TouchActions_get_SecondaryTouchDelta_m5B358169911C9F4FFAB462FA5A7819E88F1C05CE (void);
-// 0x00000283 UnityEngine.InputSystem.InputAction Wallpaper.Input.TouchControls/TouchActions::get_SecondaryTouchDown()
+// 0x00000285 UnityEngine.InputSystem.InputAction Wallpaper.Input.TouchControls/TouchActions::get_SecondaryTouchDown()
 extern void TouchActions_get_SecondaryTouchDown_m73BC4C9FFF0C288DD6DBBDE6CB249CA2161284F9 (void);
-// 0x00000284 UnityEngine.InputSystem.InputAction Wallpaper.Input.TouchControls/TouchActions::get_PrimaryTouchPosition()
+// 0x00000286 UnityEngine.InputSystem.InputAction Wallpaper.Input.TouchControls/TouchActions::get_PrimaryTouchPosition()
 extern void TouchActions_get_PrimaryTouchPosition_m0D5479751945CCC6BFEA77CBA4C9E23348DC43DA (void);
-// 0x00000285 UnityEngine.InputSystem.InputAction Wallpaper.Input.TouchControls/TouchActions::get_SecondaryTouchPosition()
+// 0x00000287 UnityEngine.InputSystem.InputAction Wallpaper.Input.TouchControls/TouchActions::get_SecondaryTouchPosition()
 extern void TouchActions_get_SecondaryTouchPosition_mCB27E8D58E7EC98071E45831BD654185C62EA85B (void);
-// 0x00000286 UnityEngine.InputSystem.InputAction Wallpaper.Input.TouchControls/TouchActions::get_PrimaryTouch()
+// 0x00000288 UnityEngine.InputSystem.InputAction Wallpaper.Input.TouchControls/TouchActions::get_PrimaryTouch()
 extern void TouchActions_get_PrimaryTouch_m16329B322FA68C77DF4B2AEBFC88CA8EC73B8DB9 (void);
-// 0x00000287 UnityEngine.InputSystem.InputAction Wallpaper.Input.TouchControls/TouchActions::get_PrimaryTouchDown()
+// 0x00000289 UnityEngine.InputSystem.InputAction Wallpaper.Input.TouchControls/TouchActions::get_PrimaryTouchDown()
 extern void TouchActions_get_PrimaryTouchDown_mE7B48DF788D07F7CFE8FC7B16C286F31F28006BD (void);
-// 0x00000288 UnityEngine.InputSystem.InputAction Wallpaper.Input.TouchControls/TouchActions::get_Tap()
+// 0x0000028A UnityEngine.InputSystem.InputAction Wallpaper.Input.TouchControls/TouchActions::get_Tap()
 extern void TouchActions_get_Tap_mEDB8608D83E4F75D6CF56D928D47F6D33C47ACD3 (void);
-// 0x00000289 UnityEngine.InputSystem.InputAction Wallpaper.Input.TouchControls/TouchActions::get_DoubleTap()
+// 0x0000028B UnityEngine.InputSystem.InputAction Wallpaper.Input.TouchControls/TouchActions::get_DoubleTap()
 extern void TouchActions_get_DoubleTap_m0D9B9FE742C2E6A26D2A899EDD4148205BC2C00A (void);
-// 0x0000028A UnityEngine.InputSystem.InputActionMap Wallpaper.Input.TouchControls/TouchActions::Get()
+// 0x0000028C UnityEngine.InputSystem.InputActionMap Wallpaper.Input.TouchControls/TouchActions::Get()
 extern void TouchActions_Get_m4238F80C621CB1FC6FDEB1D890C9A45752820BB6 (void);
-// 0x0000028B System.Void Wallpaper.Input.TouchControls/TouchActions::Enable()
+// 0x0000028D System.Void Wallpaper.Input.TouchControls/TouchActions::Enable()
 extern void TouchActions_Enable_m869417B0EA14DE91D6B90379124D32E89EED32F9 (void);
-// 0x0000028C System.Void Wallpaper.Input.TouchControls/TouchActions::Disable()
+// 0x0000028E System.Void Wallpaper.Input.TouchControls/TouchActions::Disable()
 extern void TouchActions_Disable_m7C40F5C9F23E1034B98A04291187617678C61A74 (void);
-// 0x0000028D System.Boolean Wallpaper.Input.TouchControls/TouchActions::get_enabled()
+// 0x0000028F System.Boolean Wallpaper.Input.TouchControls/TouchActions::get_enabled()
 extern void TouchActions_get_enabled_mF8DD7B6AD586A28CDB8B3060DE585C472F4C87B1 (void);
-// 0x0000028E UnityEngine.InputSystem.InputActionMap Wallpaper.Input.TouchControls/TouchActions::op_Implicit(Wallpaper.Input.TouchControls/TouchActions)
+// 0x00000290 UnityEngine.InputSystem.InputActionMap Wallpaper.Input.TouchControls/TouchActions::op_Implicit(Wallpaper.Input.TouchControls/TouchActions)
 extern void TouchActions_op_Implicit_mCA7949D8CD6672388E8C5339E098F51067FA8A4C (void);
-// 0x0000028F System.Void Wallpaper.Input.TouchControls/TouchActions::SetCallbacks(Wallpaper.Input.TouchControls/ITouchActions)
+// 0x00000291 System.Void Wallpaper.Input.TouchControls/TouchActions::SetCallbacks(Wallpaper.Input.TouchControls/ITouchActions)
 extern void TouchActions_SetCallbacks_mED3DEAC650079015C4DA1DA45531A0E3B28C63E1 (void);
-// 0x00000290 System.Void Wallpaper.Input.TouchControls/MouseWheelActions::.ctor(Wallpaper.Input.TouchControls)
+// 0x00000292 System.Void Wallpaper.Input.TouchControls/MouseWheelActions::.ctor(Wallpaper.Input.TouchControls)
 extern void MouseWheelActions__ctor_mD8A5F07934F78FAB0A2D384B7C21965E8A176845 (void);
-// 0x00000291 UnityEngine.InputSystem.InputAction Wallpaper.Input.TouchControls/MouseWheelActions::get_Zoom()
+// 0x00000293 UnityEngine.InputSystem.InputAction Wallpaper.Input.TouchControls/MouseWheelActions::get_Zoom()
 extern void MouseWheelActions_get_Zoom_m19BD32A1EF47A497F61BA6007DC6E6A2B04DE906 (void);
-// 0x00000292 UnityEngine.InputSystem.InputActionMap Wallpaper.Input.TouchControls/MouseWheelActions::Get()
+// 0x00000294 UnityEngine.InputSystem.InputActionMap Wallpaper.Input.TouchControls/MouseWheelActions::Get()
 extern void MouseWheelActions_Get_m36E1B9AB07DFFECF75368E97BA9E720880D5C8E7 (void);
-// 0x00000293 System.Void Wallpaper.Input.TouchControls/MouseWheelActions::Enable()
+// 0x00000295 System.Void Wallpaper.Input.TouchControls/MouseWheelActions::Enable()
 extern void MouseWheelActions_Enable_mC1405B956236C53FCA380BE6E56CA5EDA9ED5B70 (void);
-// 0x00000294 System.Void Wallpaper.Input.TouchControls/MouseWheelActions::Disable()
+// 0x00000296 System.Void Wallpaper.Input.TouchControls/MouseWheelActions::Disable()
 extern void MouseWheelActions_Disable_m7D2D8695258CFB36166DA0D11113EB98B5A3F861 (void);
-// 0x00000295 System.Boolean Wallpaper.Input.TouchControls/MouseWheelActions::get_enabled()
+// 0x00000297 System.Boolean Wallpaper.Input.TouchControls/MouseWheelActions::get_enabled()
 extern void MouseWheelActions_get_enabled_m45C75BF159D2CCBD5F25443F5762893326226D95 (void);
-// 0x00000296 UnityEngine.InputSystem.InputActionMap Wallpaper.Input.TouchControls/MouseWheelActions::op_Implicit(Wallpaper.Input.TouchControls/MouseWheelActions)
+// 0x00000298 UnityEngine.InputSystem.InputActionMap Wallpaper.Input.TouchControls/MouseWheelActions::op_Implicit(Wallpaper.Input.TouchControls/MouseWheelActions)
 extern void MouseWheelActions_op_Implicit_m1E3B7DA245460ABAC96E1953FB351BB1D96D69C2 (void);
-// 0x00000297 System.Void Wallpaper.Input.TouchControls/MouseWheelActions::SetCallbacks(Wallpaper.Input.TouchControls/IMouseWheelActions)
+// 0x00000299 System.Void Wallpaper.Input.TouchControls/MouseWheelActions::SetCallbacks(Wallpaper.Input.TouchControls/IMouseWheelActions)
 extern void MouseWheelActions_SetCallbacks_m772E128BF64817249CFB6204BD9CBA094BF55A37 (void);
-// 0x00000298 System.Void Wallpaper.Input.TouchControls/ITouchActions::OnPrimaryTouchDelta(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x00000299 System.Void Wallpaper.Input.TouchControls/ITouchActions::OnSecondaryTouchDelta(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x0000029A System.Void Wallpaper.Input.TouchControls/ITouchActions::OnSecondaryTouchDown(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x0000029B System.Void Wallpaper.Input.TouchControls/ITouchActions::OnPrimaryTouchPosition(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x0000029C System.Void Wallpaper.Input.TouchControls/ITouchActions::OnSecondaryTouchPosition(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x0000029D System.Void Wallpaper.Input.TouchControls/ITouchActions::OnPrimaryTouch(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x0000029E System.Void Wallpaper.Input.TouchControls/ITouchActions::OnPrimaryTouchDown(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x0000029F System.Void Wallpaper.Input.TouchControls/ITouchActions::OnTap(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x000002A0 System.Void Wallpaper.Input.TouchControls/ITouchActions::OnDoubleTap(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x000002A1 System.Void Wallpaper.Input.TouchControls/IMouseWheelActions::OnZoom(UnityEngine.InputSystem.InputAction/CallbackContext)
-// 0x000002A2 System.Void Wallpaper.Input.TouchInputHandler::Start()
+// 0x0000029A System.Void Wallpaper.Input.TouchControls/ITouchActions::OnPrimaryTouchDelta(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x0000029B System.Void Wallpaper.Input.TouchControls/ITouchActions::OnSecondaryTouchDelta(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x0000029C System.Void Wallpaper.Input.TouchControls/ITouchActions::OnSecondaryTouchDown(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x0000029D System.Void Wallpaper.Input.TouchControls/ITouchActions::OnPrimaryTouchPosition(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x0000029E System.Void Wallpaper.Input.TouchControls/ITouchActions::OnSecondaryTouchPosition(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x0000029F System.Void Wallpaper.Input.TouchControls/ITouchActions::OnPrimaryTouch(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x000002A0 System.Void Wallpaper.Input.TouchControls/ITouchActions::OnPrimaryTouchDown(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x000002A1 System.Void Wallpaper.Input.TouchControls/ITouchActions::OnTap(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x000002A2 System.Void Wallpaper.Input.TouchControls/ITouchActions::OnDoubleTap(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x000002A3 System.Void Wallpaper.Input.TouchControls/IMouseWheelActions::OnZoom(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x000002A4 System.Void Wallpaper.Input.TouchInputHandler::Start()
 extern void TouchInputHandler_Start_mDDC020CF476C2D038226CF70E34FA8A85092B7D9 (void);
-// 0x000002A3 System.Void Wallpaper.Input.TouchInputHandler::OnTap()
+// 0x000002A5 System.Void Wallpaper.Input.TouchInputHandler::OnTap()
 extern void TouchInputHandler_OnTap_m20D9F43CB891A997887A0789C93FF214A1DB576F (void);
-// 0x000002A4 System.Void Wallpaper.Input.TouchInputHandler::OnDoubleTap()
+// 0x000002A6 System.Void Wallpaper.Input.TouchInputHandler::OnDoubleTap()
 extern void TouchInputHandler_OnDoubleTap_m8B7CF3F1CA6AF788A55F56C8B7715E4C5588293F (void);
-// 0x000002A5 System.Void Wallpaper.Input.TouchInputHandler::OnPrimaryTouchDown()
+// 0x000002A7 System.Void Wallpaper.Input.TouchInputHandler::OnPrimaryTouchDown()
 extern void TouchInputHandler_OnPrimaryTouchDown_m298EFA914181A751B76F3ADCC5C18E551B3893F9 (void);
-// 0x000002A6 System.Void Wallpaper.Input.TouchInputHandler::OnSecondaryTouchDown()
+// 0x000002A8 System.Void Wallpaper.Input.TouchInputHandler::OnSecondaryTouchDown()
 extern void TouchInputHandler_OnSecondaryTouchDown_m7D6094E5916C11EFE74CF89A0E297A372323AE99 (void);
-// 0x000002A7 System.Void Wallpaper.Input.TouchInputHandler::OnAnyTouchUp()
+// 0x000002A9 System.Void Wallpaper.Input.TouchInputHandler::OnAnyTouchUp()
 extern void TouchInputHandler_OnAnyTouchUp_m16FB55BC49F56730F9C96FF68E20E7347AA7B560 (void);
-// 0x000002A8 System.Void Wallpaper.Input.TouchInputHandler::OnPrimaryTouchUp()
+// 0x000002AA System.Void Wallpaper.Input.TouchInputHandler::OnPrimaryTouchUp()
 extern void TouchInputHandler_OnPrimaryTouchUp_m513168C349FF6E1EEF49794946FC1D6B51C434FB (void);
-// 0x000002A9 System.Void Wallpaper.Input.TouchInputHandler::OnSecondaryTouchUp()
+// 0x000002AB System.Void Wallpaper.Input.TouchInputHandler::OnSecondaryTouchUp()
 extern void TouchInputHandler_OnSecondaryTouchUp_m2FACC10B06F9117D7E42A9C9F6988C45985533B7 (void);
-// 0x000002AA System.Collections.IEnumerator Wallpaper.Input.TouchInputHandler::Pinch_Coroutine()
+// 0x000002AC System.Collections.IEnumerator Wallpaper.Input.TouchInputHandler::Pinch_Coroutine()
 extern void TouchInputHandler_Pinch_Coroutine_m201FC1FBEA6A13C175CCA8946D16DDEFBAA85C7F (void);
-// 0x000002AB System.Collections.IEnumerator Wallpaper.Input.TouchInputHandler::Parallax_Coroutine()
+// 0x000002AD System.Collections.IEnumerator Wallpaper.Input.TouchInputHandler::Parallax_Coroutine()
 extern void TouchInputHandler_Parallax_Coroutine_mFE3F10A63B8D38B4F79F7BBE4C2A1CBBADD62B77 (void);
-// 0x000002AC System.Void Wallpaper.Input.TouchInputHandler::ParallaxStart()
+// 0x000002AE System.Void Wallpaper.Input.TouchInputHandler::ParallaxStart()
 extern void TouchInputHandler_ParallaxStart_m26307AD5C162A2862C690592ACFE983912BA61C2 (void);
-// 0x000002AD System.Void Wallpaper.Input.TouchInputHandler::ParallaxUpdateLoop()
+// 0x000002AF System.Void Wallpaper.Input.TouchInputHandler::ParallaxUpdateLoop()
 extern void TouchInputHandler_ParallaxUpdateLoop_mC29083962CFC9C915091994380D1E8BE90AFFAD3 (void);
-// 0x000002AE System.Void Wallpaper.Input.TouchInputHandler::PinchStart()
+// 0x000002B0 System.Void Wallpaper.Input.TouchInputHandler::PinchStart()
 extern void TouchInputHandler_PinchStart_m16F804DFBC7DE8755ACD9883266285DA4E489749 (void);
-// 0x000002AF System.Void Wallpaper.Input.TouchInputHandler::PinchUpdateLoop()
+// 0x000002B1 System.Void Wallpaper.Input.TouchInputHandler::PinchUpdateLoop()
 extern void TouchInputHandler_PinchUpdateLoop_m4957D9A0B6F7A42621A407B755B0CD8E356CB522 (void);
-// 0x000002B0 Wallpaper.Input.TouchInputHandler/PinchData Wallpaper.Input.TouchInputHandler::GetPinchData()
+// 0x000002B2 Wallpaper.Input.TouchInputHandler/PinchData Wallpaper.Input.TouchInputHandler::GetPinchData()
 extern void TouchInputHandler_GetPinchData_m54C65593F9EE71DC7FF258BC02FF64EC894ABED3 (void);
-// 0x000002B1 System.Single Wallpaper.Input.TouchInputHandler::CalculateZoomMagnitude(UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2)
+// 0x000002B3 System.Single Wallpaper.Input.TouchInputHandler::CalculateZoomMagnitude(UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2,UnityEngine.Vector2)
 extern void TouchInputHandler_CalculateZoomMagnitude_mA6545886B46DD16FE46153B01B6DC2564C6B31AC (void);
-// 0x000002B2 System.Void Wallpaper.Input.TouchInputHandler::InvokeOnTouchPinch(UnityEngine.Vector2,System.Single)
+// 0x000002B4 System.Void Wallpaper.Input.TouchInputHandler::InvokeOnTouchPinch(UnityEngine.Vector2,System.Single)
 extern void TouchInputHandler_InvokeOnTouchPinch_mAAADCE4EF8584D9F2F239101EC3D572455E35003 (void);
-// 0x000002B3 System.Void Wallpaper.Input.TouchInputHandler::InvokeOnTouchPinchBegin(UnityEngine.Vector2,System.Single)
+// 0x000002B5 System.Void Wallpaper.Input.TouchInputHandler::InvokeOnTouchPinchBegin(UnityEngine.Vector2,System.Single)
 extern void TouchInputHandler_InvokeOnTouchPinchBegin_m60E63C4339A8FECBC017EB48023415A34B406493 (void);
-// 0x000002B4 System.Void Wallpaper.Input.TouchInputHandler::.ctor()
+// 0x000002B6 System.Void Wallpaper.Input.TouchInputHandler::.ctor()
 extern void TouchInputHandler__ctor_m4E708FD17B5CED8C64A5880DF7C0464E7D24A145 (void);
-// 0x000002B5 System.Void Wallpaper.Input.TouchInputHandler::<Start>b__10_0(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x000002B7 System.Void Wallpaper.Input.TouchInputHandler::<Start>b__10_0(UnityEngine.InputSystem.InputAction/CallbackContext)
 extern void TouchInputHandler_U3CStartU3Eb__10_0_mE3EEAFB4699D4D99D8186E426908B7340F036404 (void);
-// 0x000002B6 System.Void Wallpaper.Input.TouchInputHandler::<Start>b__10_1(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x000002B8 System.Void Wallpaper.Input.TouchInputHandler::<Start>b__10_1(UnityEngine.InputSystem.InputAction/CallbackContext)
 extern void TouchInputHandler_U3CStartU3Eb__10_1_mD9E32FD6263869FF3D60CDCDF5E518D9CABB6F79 (void);
-// 0x000002B7 System.Void Wallpaper.Input.TouchInputHandler::<Start>b__10_2(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x000002B9 System.Void Wallpaper.Input.TouchInputHandler::<Start>b__10_2(UnityEngine.InputSystem.InputAction/CallbackContext)
 extern void TouchInputHandler_U3CStartU3Eb__10_2_m12EF46EDCBF3828B792A56F96AECC77936576518 (void);
-// 0x000002B8 System.Void Wallpaper.Input.TouchInputHandler::<Start>b__10_3(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x000002BA System.Void Wallpaper.Input.TouchInputHandler::<Start>b__10_3(UnityEngine.InputSystem.InputAction/CallbackContext)
 extern void TouchInputHandler_U3CStartU3Eb__10_3_mE4C9563AF64ED9B0D5A9F52B1126B11DDB6584AA (void);
-// 0x000002B9 System.Void Wallpaper.Input.TouchInputHandler::<Start>b__10_4(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x000002BB System.Void Wallpaper.Input.TouchInputHandler::<Start>b__10_4(UnityEngine.InputSystem.InputAction/CallbackContext)
 extern void TouchInputHandler_U3CStartU3Eb__10_4_m67B2F138E6CF899476C6FD81F28D703B6D44443F (void);
-// 0x000002BA System.Void Wallpaper.Input.TouchInputHandler::<Start>b__10_5(UnityEngine.InputSystem.InputAction/CallbackContext)
+// 0x000002BC System.Void Wallpaper.Input.TouchInputHandler::<Start>b__10_5(UnityEngine.InputSystem.InputAction/CallbackContext)
 extern void TouchInputHandler_U3CStartU3Eb__10_5_m7E8CA61359D4B0C70073D71443009D47507BA765 (void);
-// 0x000002BB System.Void Wallpaper.Input.TouchInputHandler/PinchData::.ctor(UnityEngine.Vector2,System.Single,System.Boolean)
+// 0x000002BD System.Void Wallpaper.Input.TouchInputHandler/PinchData::.ctor(UnityEngine.Vector2,System.Single,System.Boolean)
 extern void PinchData__ctor_m62CC40A0B80DAA9CD5361875017E6096F224775B (void);
-// 0x000002BC System.Void Wallpaper.Input.TouchInputHandler/<Pinch_Coroutine>d__18::.ctor(System.Int32)
+// 0x000002BE System.Void Wallpaper.Input.TouchInputHandler/<Pinch_Coroutine>d__18::.ctor(System.Int32)
 extern void U3CPinch_CoroutineU3Ed__18__ctor_m7C9CE4463404CCABF13EBA8334D1D67716F3B6A6 (void);
-// 0x000002BD System.Void Wallpaper.Input.TouchInputHandler/<Pinch_Coroutine>d__18::System.IDisposable.Dispose()
+// 0x000002BF System.Void Wallpaper.Input.TouchInputHandler/<Pinch_Coroutine>d__18::System.IDisposable.Dispose()
 extern void U3CPinch_CoroutineU3Ed__18_System_IDisposable_Dispose_m2F1682F4B582948A38C6256AE1F38F1B4444215D (void);
-// 0x000002BE System.Boolean Wallpaper.Input.TouchInputHandler/<Pinch_Coroutine>d__18::MoveNext()
+// 0x000002C0 System.Boolean Wallpaper.Input.TouchInputHandler/<Pinch_Coroutine>d__18::MoveNext()
 extern void U3CPinch_CoroutineU3Ed__18_MoveNext_m5607DA5329E34052B80F2F1DDBBF30942EC35537 (void);
-// 0x000002BF System.Object Wallpaper.Input.TouchInputHandler/<Pinch_Coroutine>d__18::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000002C1 System.Object Wallpaper.Input.TouchInputHandler/<Pinch_Coroutine>d__18::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CPinch_CoroutineU3Ed__18_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mC4E028EBE6EA4A92855BB92828B0C75C60E29439 (void);
-// 0x000002C0 System.Void Wallpaper.Input.TouchInputHandler/<Pinch_Coroutine>d__18::System.Collections.IEnumerator.Reset()
+// 0x000002C2 System.Void Wallpaper.Input.TouchInputHandler/<Pinch_Coroutine>d__18::System.Collections.IEnumerator.Reset()
 extern void U3CPinch_CoroutineU3Ed__18_System_Collections_IEnumerator_Reset_m8D38EB721A230807E166708F869228CE8A76B59F (void);
-// 0x000002C1 System.Object Wallpaper.Input.TouchInputHandler/<Pinch_Coroutine>d__18::System.Collections.IEnumerator.get_Current()
+// 0x000002C3 System.Object Wallpaper.Input.TouchInputHandler/<Pinch_Coroutine>d__18::System.Collections.IEnumerator.get_Current()
 extern void U3CPinch_CoroutineU3Ed__18_System_Collections_IEnumerator_get_Current_mA2401B28F424908CEAB2D34AEDA8586AB1BCE037 (void);
-// 0x000002C2 System.Void Wallpaper.Input.TouchInputHandler/<Parallax_Coroutine>d__19::.ctor(System.Int32)
+// 0x000002C4 System.Void Wallpaper.Input.TouchInputHandler/<Parallax_Coroutine>d__19::.ctor(System.Int32)
 extern void U3CParallax_CoroutineU3Ed__19__ctor_m408C9BEC5FC9CCE9DDBDC2C0E5B45CDA0697DE7B (void);
-// 0x000002C3 System.Void Wallpaper.Input.TouchInputHandler/<Parallax_Coroutine>d__19::System.IDisposable.Dispose()
+// 0x000002C5 System.Void Wallpaper.Input.TouchInputHandler/<Parallax_Coroutine>d__19::System.IDisposable.Dispose()
 extern void U3CParallax_CoroutineU3Ed__19_System_IDisposable_Dispose_m1BD67DC2BB76438B592221F0CACCFA17D17FB4FD (void);
-// 0x000002C4 System.Boolean Wallpaper.Input.TouchInputHandler/<Parallax_Coroutine>d__19::MoveNext()
+// 0x000002C6 System.Boolean Wallpaper.Input.TouchInputHandler/<Parallax_Coroutine>d__19::MoveNext()
 extern void U3CParallax_CoroutineU3Ed__19_MoveNext_m512F553789420EE72213B8F3C2022498809AAB09 (void);
-// 0x000002C5 System.Object Wallpaper.Input.TouchInputHandler/<Parallax_Coroutine>d__19::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
+// 0x000002C7 System.Object Wallpaper.Input.TouchInputHandler/<Parallax_Coroutine>d__19::System.Collections.Generic.IEnumerator<System.Object>.get_Current()
 extern void U3CParallax_CoroutineU3Ed__19_System_Collections_Generic_IEnumeratorU3CSystem_ObjectU3E_get_Current_mA8E8E69DC8B08F6F1ECC8BC6BF642A80C163B9E9 (void);
-// 0x000002C6 System.Void Wallpaper.Input.TouchInputHandler/<Parallax_Coroutine>d__19::System.Collections.IEnumerator.Reset()
+// 0x000002C8 System.Void Wallpaper.Input.TouchInputHandler/<Parallax_Coroutine>d__19::System.Collections.IEnumerator.Reset()
 extern void U3CParallax_CoroutineU3Ed__19_System_Collections_IEnumerator_Reset_mAADFCEFBC1ED22F0AD4DA2AC80FAA397F361EE3D (void);
-// 0x000002C7 System.Object Wallpaper.Input.TouchInputHandler/<Parallax_Coroutine>d__19::System.Collections.IEnumerator.get_Current()
+// 0x000002C9 System.Object Wallpaper.Input.TouchInputHandler/<Parallax_Coroutine>d__19::System.Collections.IEnumerator.get_Current()
 extern void U3CParallax_CoroutineU3Ed__19_System_Collections_IEnumerator_get_Current_m9C629168B4711DEA7B895C2883829F3137E61929 (void);
-// 0x000002C8 System.Void Crystal.SafeAreaDemo::Awake()
+// 0x000002CA System.Void Crystal.SafeAreaDemo::Awake()
 extern void SafeAreaDemo_Awake_m70309B415D084CED95470CA1A35CFCC84BA318AE (void);
-// 0x000002C9 System.Void Crystal.SafeAreaDemo::Update()
+// 0x000002CB System.Void Crystal.SafeAreaDemo::Update()
 extern void SafeAreaDemo_Update_m474130B29E65A63C19F1423A52ACCC3314D9EF3B (void);
-// 0x000002CA System.Void Crystal.SafeAreaDemo::ToggleSafeArea()
+// 0x000002CC System.Void Crystal.SafeAreaDemo::ToggleSafeArea()
 extern void SafeAreaDemo_ToggleSafeArea_m39EC69B62D5CA8C4C1D71ED670E61D6AC220CDB9 (void);
-// 0x000002CB System.Void Crystal.SafeAreaDemo::.ctor()
+// 0x000002CD System.Void Crystal.SafeAreaDemo::.ctor()
 extern void SafeAreaDemo__ctor_m3297CAA9BC3353E63D3FFEBE5172095C9A132AA4 (void);
-// 0x000002CC System.Void Crystal.SafeArea::Awake()
+// 0x000002CE System.Void Crystal.SafeArea::Awake()
 extern void SafeArea_Awake_mFAAD0518B04FA595839CA89E637D3B695F5E47B5 (void);
-// 0x000002CD System.Void Crystal.SafeArea::Update()
+// 0x000002CF System.Void Crystal.SafeArea::Update()
 extern void SafeArea_Update_mAC4051AFEC584503438092855D70BB4D175A12A4 (void);
-// 0x000002CE System.Void Crystal.SafeArea::Refresh()
+// 0x000002D0 System.Void Crystal.SafeArea::Refresh()
 extern void SafeArea_Refresh_m2EB186CFFCAB2AB7E5B57A46A2A57D14493FD8EA (void);
-// 0x000002CF UnityEngine.Rect Crystal.SafeArea::GetSafeArea()
+// 0x000002D1 UnityEngine.Rect Crystal.SafeArea::GetSafeArea()
 extern void SafeArea_GetSafeArea_m4B6B53C8ED0A4B2F5DBC404E2F208E6A71411815 (void);
-// 0x000002D0 System.Void Crystal.SafeArea::ApplySafeArea(UnityEngine.Rect)
+// 0x000002D2 System.Void Crystal.SafeArea::ApplySafeArea(UnityEngine.Rect)
 extern void SafeArea_ApplySafeArea_m19691250ABEE5AFFA7F793548BCCE402CCF38548 (void);
-// 0x000002D1 System.Void Crystal.SafeArea::.ctor()
+// 0x000002D3 System.Void Crystal.SafeArea::.ctor()
 extern void SafeArea__ctor_mC10940463499A1652DEC94CACFCB811ADA5CD6FF (void);
-static Il2CppMethodPointer s_methodPointers[721] = 
+static Il2CppMethodPointer s_methodPointers[723] = 
 {
 	FCP_Persistence_Awake_m99EBD1570077F6445B1DBDA734A5E5A56469D47D,
 	FCP_Persistence_InitStatic_m01595FCEA748BA9C268DFD30FAF2121D77491364,
@@ -1610,6 +1613,7 @@ static Il2CppMethodPointer s_methodPointers[721] =
 	BaseController__ctor_m8662269E2E4025BD94889DEA90FE409A34E33210,
 	EffectsRepository_get_Item_mC0A56C40653CB53024608F9957527FD7C28882DC,
 	EffectsRepository__ctor_mD3A2C22AD3AF7C759EEF9EB8E5721FECC960276F,
+	NULL,
 	NULL,
 	NULL,
 	NULL,
@@ -2029,6 +2033,7 @@ static Il2CppMethodPointer s_methodPointers[721] =
 	AndroidCommander_GetImageData_mEA450B6DE68931FA86168D5BCE00DBEE17C00143,
 	AndroidCommander_GetImageHeight_m1A72CA8241B490429324E50D23B0C74BB930A6F2,
 	AndroidCommander_GetImageWidth_mAAE68DEA8EC31A26CB9C06CA88E68978FCBBB726,
+	AndroidCommander_RunWallpaperService_mB301F9C7C31D653D57D76DEECF4261FAB1558880,
 	AndroidCommander_SendData_m38AF57EDC78E7FDF5150A55547269CA4FAB5FACC,
 	AndroidCommander__ctor_mB3D578B8FAC2C2DA86FD5FAB56EC5E0D0346C900,
 	AndroidCommandReceiver_get_AndroidCommander_mAF920BE6A28C90D675095F07EDD440618F3C9B22,
@@ -2169,697 +2174,224 @@ extern void MouseWheelActions_get_enabled_m45C75BF159D2CCBD5F25443F5762893326226
 extern void MouseWheelActions_SetCallbacks_m772E128BF64817249CFB6204BD9CBA094BF55A37_AdjustorThunk (void);
 static Il2CppTokenAdjustorThunkPair s_adjustorThunks[25] = 
 {
-	{ 0x06000176, CropData__ctor_m5BB30057A99EB3D9BD26AB2A95275A6BC59C91DB_AdjustorThunk },
-	{ 0x06000177, CropData_NormalizePosition_mBF6BF076FC9200C0E5DCB7DEC202BE3A1929EBFE_AdjustorThunk },
-	{ 0x06000178, CropData_DenormalizePosition_mBCD33D43AA04E9B777E857C8025F2C76E49A1F67_AdjustorThunk },
-	{ 0x06000280, TouchActions__ctor_mABBE9EBD02BF8318008A1A9813B45133F80AD9AC_AdjustorThunk },
-	{ 0x06000281, TouchActions_get_PrimaryTouchDelta_m1DAE1E0B87921A7BDF4D039B5CFE0A8E83B2260E_AdjustorThunk },
-	{ 0x06000282, TouchActions_get_SecondaryTouchDelta_m5B358169911C9F4FFAB462FA5A7819E88F1C05CE_AdjustorThunk },
-	{ 0x06000283, TouchActions_get_SecondaryTouchDown_m73BC4C9FFF0C288DD6DBBDE6CB249CA2161284F9_AdjustorThunk },
-	{ 0x06000284, TouchActions_get_PrimaryTouchPosition_m0D5479751945CCC6BFEA77CBA4C9E23348DC43DA_AdjustorThunk },
-	{ 0x06000285, TouchActions_get_SecondaryTouchPosition_mCB27E8D58E7EC98071E45831BD654185C62EA85B_AdjustorThunk },
-	{ 0x06000286, TouchActions_get_PrimaryTouch_m16329B322FA68C77DF4B2AEBFC88CA8EC73B8DB9_AdjustorThunk },
-	{ 0x06000287, TouchActions_get_PrimaryTouchDown_mE7B48DF788D07F7CFE8FC7B16C286F31F28006BD_AdjustorThunk },
-	{ 0x06000288, TouchActions_get_Tap_mEDB8608D83E4F75D6CF56D928D47F6D33C47ACD3_AdjustorThunk },
-	{ 0x06000289, TouchActions_get_DoubleTap_m0D9B9FE742C2E6A26D2A899EDD4148205BC2C00A_AdjustorThunk },
-	{ 0x0600028A, TouchActions_Get_m4238F80C621CB1FC6FDEB1D890C9A45752820BB6_AdjustorThunk },
-	{ 0x0600028B, TouchActions_Enable_m869417B0EA14DE91D6B90379124D32E89EED32F9_AdjustorThunk },
-	{ 0x0600028C, TouchActions_Disable_m7C40F5C9F23E1034B98A04291187617678C61A74_AdjustorThunk },
-	{ 0x0600028D, TouchActions_get_enabled_mF8DD7B6AD586A28CDB8B3060DE585C472F4C87B1_AdjustorThunk },
-	{ 0x0600028F, TouchActions_SetCallbacks_mED3DEAC650079015C4DA1DA45531A0E3B28C63E1_AdjustorThunk },
-	{ 0x06000290, MouseWheelActions__ctor_mD8A5F07934F78FAB0A2D384B7C21965E8A176845_AdjustorThunk },
-	{ 0x06000291, MouseWheelActions_get_Zoom_m19BD32A1EF47A497F61BA6007DC6E6A2B04DE906_AdjustorThunk },
-	{ 0x06000292, MouseWheelActions_Get_m36E1B9AB07DFFECF75368E97BA9E720880D5C8E7_AdjustorThunk },
-	{ 0x06000293, MouseWheelActions_Enable_mC1405B956236C53FCA380BE6E56CA5EDA9ED5B70_AdjustorThunk },
-	{ 0x06000294, MouseWheelActions_Disable_m7D2D8695258CFB36166DA0D11113EB98B5A3F861_AdjustorThunk },
-	{ 0x06000295, MouseWheelActions_get_enabled_m45C75BF159D2CCBD5F25443F5762893326226D95_AdjustorThunk },
-	{ 0x06000297, MouseWheelActions_SetCallbacks_m772E128BF64817249CFB6204BD9CBA094BF55A37_AdjustorThunk },
+	{ 0x06000177, CropData__ctor_m5BB30057A99EB3D9BD26AB2A95275A6BC59C91DB_AdjustorThunk },
+	{ 0x06000178, CropData_NormalizePosition_mBF6BF076FC9200C0E5DCB7DEC202BE3A1929EBFE_AdjustorThunk },
+	{ 0x06000179, CropData_DenormalizePosition_mBCD33D43AA04E9B777E857C8025F2C76E49A1F67_AdjustorThunk },
+	{ 0x06000282, TouchActions__ctor_mABBE9EBD02BF8318008A1A9813B45133F80AD9AC_AdjustorThunk },
+	{ 0x06000283, TouchActions_get_PrimaryTouchDelta_m1DAE1E0B87921A7BDF4D039B5CFE0A8E83B2260E_AdjustorThunk },
+	{ 0x06000284, TouchActions_get_SecondaryTouchDelta_m5B358169911C9F4FFAB462FA5A7819E88F1C05CE_AdjustorThunk },
+	{ 0x06000285, TouchActions_get_SecondaryTouchDown_m73BC4C9FFF0C288DD6DBBDE6CB249CA2161284F9_AdjustorThunk },
+	{ 0x06000286, TouchActions_get_PrimaryTouchPosition_m0D5479751945CCC6BFEA77CBA4C9E23348DC43DA_AdjustorThunk },
+	{ 0x06000287, TouchActions_get_SecondaryTouchPosition_mCB27E8D58E7EC98071E45831BD654185C62EA85B_AdjustorThunk },
+	{ 0x06000288, TouchActions_get_PrimaryTouch_m16329B322FA68C77DF4B2AEBFC88CA8EC73B8DB9_AdjustorThunk },
+	{ 0x06000289, TouchActions_get_PrimaryTouchDown_mE7B48DF788D07F7CFE8FC7B16C286F31F28006BD_AdjustorThunk },
+	{ 0x0600028A, TouchActions_get_Tap_mEDB8608D83E4F75D6CF56D928D47F6D33C47ACD3_AdjustorThunk },
+	{ 0x0600028B, TouchActions_get_DoubleTap_m0D9B9FE742C2E6A26D2A899EDD4148205BC2C00A_AdjustorThunk },
+	{ 0x0600028C, TouchActions_Get_m4238F80C621CB1FC6FDEB1D890C9A45752820BB6_AdjustorThunk },
+	{ 0x0600028D, TouchActions_Enable_m869417B0EA14DE91D6B90379124D32E89EED32F9_AdjustorThunk },
+	{ 0x0600028E, TouchActions_Disable_m7C40F5C9F23E1034B98A04291187617678C61A74_AdjustorThunk },
+	{ 0x0600028F, TouchActions_get_enabled_mF8DD7B6AD586A28CDB8B3060DE585C472F4C87B1_AdjustorThunk },
+	{ 0x06000291, TouchActions_SetCallbacks_mED3DEAC650079015C4DA1DA45531A0E3B28C63E1_AdjustorThunk },
+	{ 0x06000292, MouseWheelActions__ctor_mD8A5F07934F78FAB0A2D384B7C21965E8A176845_AdjustorThunk },
+	{ 0x06000293, MouseWheelActions_get_Zoom_m19BD32A1EF47A497F61BA6007DC6E6A2B04DE906_AdjustorThunk },
+	{ 0x06000294, MouseWheelActions_Get_m36E1B9AB07DFFECF75368E97BA9E720880D5C8E7_AdjustorThunk },
+	{ 0x06000295, MouseWheelActions_Enable_mC1405B956236C53FCA380BE6E56CA5EDA9ED5B70_AdjustorThunk },
+	{ 0x06000296, MouseWheelActions_Disable_m7D2D8695258CFB36166DA0D11113EB98B5A3F861_AdjustorThunk },
+	{ 0x06000297, MouseWheelActions_get_enabled_m45C75BF159D2CCBD5F25443F5762893326226D95_AdjustorThunk },
+	{ 0x06000299, MouseWheelActions_SetCallbacks_m772E128BF64817249CFB6204BD9CBA094BF55A37_AdjustorThunk },
 };
-static const int32_t s_InvokerIndices[721] = 
+static const int32_t s_InvokerIndices[723] = 
 {
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	1763,
-	1370,
-	4305,
-	2095,
-	2095,
-	2019,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	1756,
+	1365,
+	4274,
+	2080,
+	2080,
+	2004,
 	488,
-	2095,
-	2030,
-	1979,
-	1763,
-	1979,
-	1763,
-	1979,
-	1763,
-	2095,
-	2095,
-	2095,
-	1799,
-	1806,
-	1806,
-	1806,
+	2080,
+	2015,
+	1964,
+	1756,
+	1964,
+	1756,
+	1964,
+	1756,
+	2080,
+	2080,
+	2080,
+	1792,
 	1799,
 	1799,
-	2095,
-	1196,
-	1828,
-	667,
-	1069,
-	667,
-	667,
-	247,
+	1799,
+	1792,
+	1792,
+	2080,
+	1193,
+	1820,
 	666,
-	2095,
-	877,
+	1067,
+	666,
+	666,
+	247,
+	665,
+	2080,
+	876,
 	533,
-	1067,
-	1711,
-	1666,
-	1711,
-	2095,
-	1799,
-	1799,
-	1574,
-	1430,
-	1430,
-	2095,
-	1220,
-	2095,
-	1799,
-	3865,
-	3865,
-	3880,
-	3581,
-	3877,
-	3886,
-	3461,
-	3137,
-	3680,
-	3137,
-	3889,
-	2939,
-	4180,
-	3144,
-	2095,
-	2095,
-	1619,
-	2095,
-	2095,
-	2055,
-	2055,
-	2055,
-	2055,
-	2055,
-	2055,
-	2055,
-	2095,
-	1763,
-	749,
-	1171,
-	1763,
-	749,
-	1629,
-	1629,
-	1629,
-	1629,
-	1629,
-	1629,
-	1629,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4205,
-	4348,
-	4348,
-	4348,
-	4348,
-	4205,
-	4205,
-	3233,
-	3787,
-	3787,
-	4214,
-	4214,
-	4348,
-	4348,
-	4348,
-	4348,
-	4214,
-	4348,
-	1230,
-	2095,
-	1067,
-	1806,
-	1230,
-	1806,
-	673,
-	1806,
-	1230,
-	802,
-	245,
-	1806,
-	1230,
-	1288,
-	407,
-	1806,
-	1230,
-	1854,
-	683,
-	1806,
-	2030,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	1799,
-	2095,
-	1806,
-	1977,
-	1806,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	1619,
-	2095,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	2030,
-	2030,
-	2095,
-	2095,
-	2095,
-	2019,
-	2019,
-	2095,
-	2030,
-	2095,
-	1196,
-	1188,
-	1619,
-	1666,
-	1619,
-	1534,
-	2095,
-	2095,
-	0,
-	0,
-	0,
-	0,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	1799,
-	1799,
-	2095,
-	2095,
-	1799,
-	1806,
-	2095,
-	2095,
-	826,
-	2095,
-	2095,
-	826,
-	2095,
-	2095,
-	1234,
-	2095,
-	2095,
-	826,
-	2095,
-	2095,
-	519,
-	2095,
-	2095,
-	2030,
-	2095,
-	2095,
-	1806,
-	1806,
-	2095,
-	2095,
-	2095,
-	802,
-	2095,
-	2095,
-	2095,
-	1806,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	1806,
-	2030,
-	1806,
-	1806,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2030,
-	2019,
-	1806,
-	2095,
-	2095,
-	1806,
-	1806,
-	2095,
-	1806,
-	2095,
-	2095,
-	2095,
-	1799,
-	1806,
-	2095,
-	2095,
-	1977,
-	2095,
-	1806,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	0,
-	0,
-	2095,
-	2030,
-	2095,
-	2095,
-	2095,
-	2095,
-	802,
-	2095,
-	2095,
-	4348,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	1760,
-	2095,
-	2095,
-	2095,
-	2095,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	0,
-	2095,
-	1234,
-	1806,
-	2095,
-	1806,
-	1806,
-	1806,
-	1806,
-	1806,
-	2095,
-	2095,
-	2095,
-	1828,
-	2095,
-	2095,
-	1763,
-	2095,
-	1263,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2030,
-	1760,
-	1806,
-	2095,
-	2103,
-	1865,
-	2095,
-	1289,
-	1806,
-	1806,
-	2019,
-	2019,
-	1977,
-	1619,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	1854,
-	2095,
-	1288,
-	2095,
-	1799,
-	2030,
-	2095,
-	2095,
-	2030,
-	1220,
-	1234,
-	1234,
-	2095,
-	2095,
-	851,
-	2095,
-	1854,
-	2095,
-	2095,
-	2095,
-	821,
-	2095,
-	2095,
-	1763,
-	2095,
-	1806,
-	2095,
-	4020,
-	3059,
-	3059,
-	3606,
-	4020,
-	4020,
-	4020,
-	3767,
-	2915,
-	3387,
-	2919,
-	3387,
-	2919,
-	2919,
-	4101,
-	4101,
-	2404,
-	4205,
-	2095,
-	2095,
-	2095,
-	1504,
-	1828,
-	1828,
-	1288,
-	1668,
-	2055,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	1806,
-	2095,
-	2095,
-	2095,
-	1806,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2030,
-	2095,
-	2095,
-	2095,
-	1799,
-	2095,
-	1977,
-	2030,
-	2095,
-	2030,
-	2095,
-	2095,
-	2095,
-	2030,
-	2095,
-	1854,
-	2095,
-	1799,
-	2095,
-	1977,
-	2030,
-	2095,
-	2030,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2030,
-	2087,
-	2095,
-	1799,
-	2095,
-	1977,
-	2030,
-	2095,
-	2030,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	1854,
-	2095,
-	2095,
-	2030,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	1799,
-	2095,
-	1977,
-	2030,
-	2095,
-	2030,
-	2030,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2030,
-	2095,
-	2095,
-	2095,
-	2095,
-	2030,
-	2095,
-	2030,
-	2095,
-	1799,
-	2095,
-	1977,
-	2030,
-	2095,
-	2030,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2030,
-	2095,
-	2030,
-	2095,
-	1799,
-	2095,
-	1977,
-	2030,
-	2095,
-	2030,
-	2095,
-	2095,
-	1854,
-	2095,
-	2095,
-	2095,
-	2095,
-	2030,
-	2095,
-	2095,
-	2095,
-	802,
-	2095,
-	2095,
-	2095,
-	2095,
-	4348,
-	2095,
-	2095,
-	3245,
-	3585,
-	4020,
-	3585,
-	4020,
-	4020,
-	3245,
-	3064,
+	1065,
+	1706,
+	1661,
+	1706,
+	2080,
+	1792,
+	1792,
+	1569,
+	1425,
+	1425,
+	2080,
+	1217,
+	2080,
+	1792,
+	3835,
+	3835,
+	3850,
+	3556,
+	3847,
+	3856,
+	3437,
+	3116,
+	3655,
+	3116,
+	3859,
+	2918,
+	4150,
+	3123,
+	2080,
+	2080,
+	1614,
+	2080,
+	2080,
+	2040,
+	2040,
+	2040,
+	2040,
+	2040,
+	2040,
+	2040,
+	2080,
+	1756,
+	748,
+	1169,
+	1756,
+	748,
+	1624,
+	1624,
+	1624,
+	1624,
+	1624,
+	1624,
+	1624,
 	4175,
-	1806,
-	2095,
-	2095,
-	1234,
-	1445,
-	2019,
-	1806,
-	1625,
-	1625,
-	2030,
-	2030,
-	1625,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2030,
-	2019,
-	2019,
-	1806,
-	2095,
-	2030,
-	1806,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2030,
-	2095,
-	2095,
-	1939,
-	1732,
-	1937,
-	1730,
-	1949,
-	1445,
-	2030,
-	2030,
-	2095,
-	2095,
-	2030,
-	1063,
-	996,
-	2132,
-	2131,
-	2010,
-	2010,
-	1806,
-	2030,
-	2030,
-	2030,
-	2030,
-	2030,
-	2030,
-	2030,
-	2030,
-	2030,
-	2030,
-	2095,
-	2095,
-	1977,
-	4045,
-	1806,
-	1806,
-	2030,
-	2030,
-	2095,
-	2095,
-	1977,
-	4044,
-	1806,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4175,
+	4317,
+	4317,
+	4317,
+	4317,
+	4175,
+	4175,
+	3210,
+	3760,
+	3760,
+	4184,
+	4184,
+	4317,
+	4317,
+	4317,
+	4317,
+	4184,
+	4317,
+	1227,
+	2080,
+	1065,
+	1799,
+	1227,
+	1799,
+	672,
+	1799,
+	1227,
+	801,
+	245,
+	1799,
+	1227,
+	1285,
+	407,
+	1799,
+	1227,
+	1845,
+	682,
+	1799,
+	2015,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	1792,
+	2080,
+	1799,
+	1962,
+	1799,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	1614,
+	2080,
 	0,
 	0,
 	0,
@@ -2870,54 +2402,529 @@ static const int32_t s_InvokerIndices[721] =
 	0,
 	0,
 	0,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2030,
-	2030,
-	2095,
-	2095,
-	2095,
-	2095,
-	2030,
+	0,
+	0,
+	0,
+	0,
+	2015,
+	2015,
+	2080,
+	2080,
+	2080,
+	2004,
+	2004,
+	2080,
+	2015,
+	2080,
+	1193,
+	1185,
+	1614,
+	1661,
+	1614,
+	1529,
+	2080,
+	2080,
+	0,
+	0,
+	0,
+	0,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	1792,
+	1792,
+	2080,
+	2080,
+	1792,
+	1799,
+	2080,
+	2080,
+	825,
+	2080,
+	2080,
+	825,
+	2080,
+	2080,
+	1231,
+	2080,
+	2080,
+	825,
+	2080,
+	2080,
+	519,
+	2080,
+	2080,
+	2015,
+	2080,
+	2080,
+	1799,
+	1799,
+	2080,
+	2080,
+	2080,
+	801,
+	2080,
+	2080,
+	2080,
+	1799,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	1799,
+	2015,
+	1799,
+	1799,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2015,
+	2004,
+	1799,
+	2080,
+	2080,
+	1799,
+	1799,
+	2080,
+	1799,
+	2080,
+	2080,
+	2080,
+	1792,
+	1799,
+	2080,
+	2080,
+	1962,
+	2080,
+	1799,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	0,
+	0,
+	2080,
+	2015,
+	2080,
+	2080,
+	2080,
+	2080,
+	801,
+	2080,
+	2080,
+	4317,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	1753,
+	2080,
+	2080,
+	2080,
+	2080,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	2080,
+	1231,
+	1799,
+	2080,
+	1799,
+	1799,
+	1799,
+	1799,
+	1799,
+	2080,
+	2080,
+	2080,
+	1820,
+	2080,
+	2080,
+	1756,
+	2080,
+	1260,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2015,
+	1753,
+	1799,
+	2080,
+	2087,
+	1855,
+	2080,
+	1286,
+	1799,
+	1799,
+	2004,
+	2004,
+	1962,
+	1614,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	1845,
+	2080,
+	1285,
+	2080,
+	1792,
+	2015,
+	2080,
+	2080,
+	2015,
+	1217,
+	1231,
+	1231,
+	2080,
+	2080,
+	850,
+	2080,
+	1845,
+	2080,
+	2080,
+	2080,
+	820,
+	2080,
+	2080,
+	1756,
+	2080,
+	1799,
+	2080,
+	3990,
+	3038,
+	3038,
+	3581,
+	3990,
+	3990,
+	3990,
+	3740,
+	2894,
+	3363,
+	2898,
+	3363,
+	2898,
+	2898,
+	4071,
+	4071,
+	2386,
+	4175,
+	2080,
+	2080,
+	2080,
+	1499,
+	1820,
+	1820,
+	1285,
+	1663,
+	2040,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	1799,
+	2080,
+	2080,
+	2080,
+	1799,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2015,
+	2080,
+	2080,
+	2080,
+	1792,
+	2080,
+	1962,
+	2015,
+	2080,
+	2015,
+	2080,
+	2080,
+	2080,
+	2015,
+	2080,
+	1845,
+	2080,
+	1792,
+	2080,
+	1962,
+	2015,
+	2080,
+	2015,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2015,
+	2072,
+	2080,
+	1792,
+	2080,
+	1962,
+	2015,
+	2080,
+	2015,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	1845,
+	2080,
+	2080,
+	2015,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	1792,
+	2080,
+	1962,
+	2015,
+	2080,
+	2015,
+	2015,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2015,
+	2080,
+	2080,
+	2080,
+	2080,
+	2015,
+	2080,
+	2015,
+	2080,
+	1792,
+	2080,
+	1962,
+	2015,
+	2080,
+	2015,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2015,
+	2080,
+	2015,
+	2080,
+	1792,
+	2080,
+	1962,
+	2015,
+	2080,
+	2015,
+	2080,
+	2080,
+	1845,
+	2080,
+	2080,
+	2080,
+	2080,
+	2015,
+	2080,
+	2080,
+	2080,
+	801,
+	2080,
+	2080,
+	2080,
+	2080,
+	4317,
+	2080,
+	2080,
+	3222,
+	3560,
+	3990,
+	3560,
+	3990,
+	3990,
+	3222,
+	3043,
+	4145,
+	1799,
+	2080,
+	2080,
+	1231,
+	1440,
+	2004,
+	1799,
+	1620,
+	1620,
+	2015,
+	2015,
+	1620,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2015,
+	2004,
+	2004,
+	2080,
+	1799,
+	2080,
+	2015,
+	1799,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2015,
+	2080,
+	2080,
+	1925,
+	1726,
+	1923,
+	1724,
+	1934,
+	1440,
+	2015,
+	2015,
+	2080,
+	2080,
+	2015,
+	1061,
+	994,
+	2114,
+	2113,
+	1995,
+	1995,
+	1799,
+	2015,
+	2015,
+	2015,
+	2015,
+	2015,
+	2015,
+	2015,
+	2015,
+	2015,
+	2015,
+	2080,
+	2080,
+	1962,
+	4015,
+	1799,
+	1799,
+	2015,
+	2015,
+	2080,
+	2080,
+	1962,
+	4014,
+	1799,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	0,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2015,
+	2015,
+	2080,
+	2080,
+	2080,
+	2080,
+	2015,
 	414,
-	1288,
-	1288,
-	2095,
-	1866,
-	1866,
-	1866,
-	1866,
-	1866,
-	1866,
-	862,
-	1799,
-	2095,
-	1977,
-	2030,
-	2095,
-	2030,
-	1799,
-	2095,
-	1977,
-	2030,
-	2095,
-	2030,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2095,
-	2041,
-	1818,
-	2095,
+	1285,
+	1285,
+	2080,
+	1856,
+	1856,
+	1856,
+	1856,
+	1856,
+	1856,
+	861,
+	1792,
+	2080,
+	1962,
+	2015,
+	2080,
+	2015,
+	1792,
+	2080,
+	1962,
+	2015,
+	2080,
+	2015,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2080,
+	2026,
+	1810,
+	2080,
 };
 static const Il2CppTokenRangePair s_rgctxIndices[1] = 
 {
@@ -2958,7 +2965,7 @@ IL2CPP_EXTERN_C const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule;
 const Il2CppCodeGenModule g_AssemblyU2DCSharp_CodeGenModule = 
 {
 	"Assembly-CSharp.dll",
-	721,
+	723,
 	s_methodPointers,
 	25,
 	s_adjustorThunks,

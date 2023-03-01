@@ -5,6 +5,8 @@ namespace Wallpaper {
         void OpenAndroidGallery();
         void OnBackButtonPressed();
 
+        void RunWallpaperService();
+
         byte[] GetImageData();
         int GetImageHeight();
         int GetImageWidth();

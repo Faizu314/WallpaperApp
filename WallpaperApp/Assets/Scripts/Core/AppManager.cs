@@ -1,5 +1,6 @@
 using UnityEngine;
 using Phezu.Util;
+using Wallpaper.Android;
 
 namespace Wallpaper {
 
@@ -58,7 +59,6 @@ namespace Wallpaper {
         }
 
         public void StartAsWallpaperService() {
-            Debug.Log("Starting as wallpaper service");
             Wallpaper wallpaper = WallpaperDatabase.Load(m_SetWallpaperID);
             ApplicationEvents.InvokeOnWallpaperPreview(wallpaper);
         }
@@ -102,6 +102,7 @@ namespace Wallpaper {
         public void SetCurrentWallpaper(string wallpaperID) {
             m_SetWallpaperID = wallpaperID;
             PlayerPrefs.SetString(SET_WALLPAPER_KEY, m_SetWallpaperID);
+            Refs.Instance.AndroidCommander.RunWallpaperService();
         }
 
     }

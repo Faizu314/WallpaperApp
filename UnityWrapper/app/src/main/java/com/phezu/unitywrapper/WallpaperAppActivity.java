@@ -1,18 +1,17 @@
 package com.phezu.unitywrapper;
 
+
+import android.app.WallpaperInfo;
+import android.app.WallpaperManager;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
-import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.service.wallpaper.WallpaperService;
 import android.util.Log;
 import android.widget.Toast;
-import android.window.OnBackInvokedCallback;
-import android.window.OnBackInvokedDispatcher;
-
-import androidx.activity.OnBackPressedCallback;
-import androidx.activity.OnBackPressedDispatcher;
 
 import com.phezu.wallpaper.OverrideUnityActivity;
 
@@ -35,14 +34,18 @@ public class WallpaperAppActivity extends OverrideUnityActivity {
 
     @Override
     public void onBackPressed() {
-
-        Log.e("Me", "Back");
+        Log.e("Me", "Back Pressed");
         executeCommandInUnity(GO_BACK_COMMAND);
     }
 
     @Override
     public void OnBackButtonPressed() {
         finish();
+    }
+
+    @Override
+    public void RunWallpaperService() {
+        tryRunWallpaperService();
     }
 
     @Override
@@ -113,4 +116,35 @@ public class WallpaperAppActivity extends OverrideUnityActivity {
         return byteBuffer.array();
     }
 
+
+
+
+
+    private void tryRunWallpaperService() {
+        if (isOurLiveWallpaperServiceRunning()) {
+            stopWallpaperService();
+            Log.d("Me", "stopping and running service");
+            runWallpaperService();
+        } else {
+            Log.d("Me", "running service");
+            runWallpaperService();
+        }
+    }
+
+    private void runWallpaperService() {
+        Intent intent = new Intent(WallpaperManager.ACTION_CHANGE_LIVE_WALLPAPER);
+        intent.putExtra(WallpaperManager.EXTRA_LIVE_WALLPAPER_COMPONENT, new ComponentName(this, MyWallpaperService.class));
+        startActivity(intent);
+    }
+
+    private boolean isOurLiveWallpaperServiceRunning() {
+        WallpaperManager wpm = WallpaperManager.getInstance(this);
+        WallpaperInfo info = wpm.getWallpaperInfo();
+
+        return info != null && info.getPackageName().equals(this.getPackageName());
+    }
+
+    private void stopWallpaperService() {
+        stopService(new Intent(this, WallpaperService.class));
+    }
 }

@@ -29,7 +29,6 @@ import com.phezu.wallpaper.OverrideUnityActivity;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -72,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
             runUnity();
         });
 
+        /*
         boolean isWifiConnected = isConnectedToWifi();
         if (SessionHolder.getInstance().getSessionUser() == null && isWifiConnected) {
             Log.e("Me", "Launching google helper");
@@ -81,6 +81,9 @@ public class MainActivity extends AppCompatActivity {
             Log.e("Me", "Loading user screen");
             loadUserScreen(SessionHolder.getInstance().getSessionUser());
         }
+        */
+
+        runUnity();
     }
 
     private boolean isConnectedToWifi() {

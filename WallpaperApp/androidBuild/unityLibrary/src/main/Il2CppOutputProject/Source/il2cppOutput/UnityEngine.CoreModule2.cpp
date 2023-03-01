@@ -5827,10 +5827,6 @@ inline Camera_tA92CC927D7439999BC82DBEDC0AA45B470F9E184* List_1_get_Item_m7CEE3A
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void GC_SuppressFinalize_m71815DBD5A0CD2EA1BE43317B08B7A14949EDC65 (RuntimeObject* ___obj0, const RuntimeMethod* method) ;
 // System.Void UnityEngine.Rendering.RenderPipeline::set_disposed(System.Boolean)
 IL2CPP_MANAGED_FORCE_INLINE IL2CPP_METHOD_ATTR void RenderPipeline_set_disposed_mB7EC4BD04C80015CBCC0B92A65A6DE615F2828A8_inline (RenderPipeline_t3AF1E2046D27ABCEBA2279770AADA9F531073E69* __this, bool ___value0, const RuntimeMethod* method) ;
-// System.Int32 UnityEngine.Rendering.RenderQueueRange::get_lowerBound()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t RenderQueueRange_get_lowerBound_m0F11004DA9B02414047A9DB92275F009487581E4 (RenderQueueRange_t7518252AA6426B1EA45D3D9B394F304EEF784D71* __this, const RuntimeMethod* method) ;
-// System.Int32 UnityEngine.Rendering.RenderQueueRange::get_upperBound()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t RenderQueueRange_get_upperBound_m6A89E9331EE632619B0B71A36B183290C97A1D9F (RenderQueueRange_t7518252AA6426B1EA45D3D9B394F304EEF784D71* __this, const RuntimeMethod* method) ;
 // System.Boolean UnityEngine.Rendering.RenderQueueRange::Equals(UnityEngine.Rendering.RenderQueueRange)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool RenderQueueRange_Equals_m365F88BC7D2E35E08F56821E98DE455689176A88 (RenderQueueRange_t7518252AA6426B1EA45D3D9B394F304EEF784D71* __this, RenderQueueRange_t7518252AA6426B1EA45D3D9B394F304EEF784D71 ___other0, const RuntimeMethod* method) ;
 // System.Boolean UnityEngine.Rendering.RenderQueueRange::Equals(System.Object)
@@ -10178,56 +10174,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR RenderQueueRange_t7518252AA6426B1EA45D3D9B394
 		RenderQueueRange_t7518252AA6426B1EA45D3D9B394F304EEF784D71 L_0 = V_0;
 		return L_0;
 	}
-}
-// System.Int32 UnityEngine.Rendering.RenderQueueRange::get_lowerBound()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t RenderQueueRange_get_lowerBound_m0F11004DA9B02414047A9DB92275F009487581E4 (RenderQueueRange_t7518252AA6426B1EA45D3D9B394F304EEF784D71* __this, const RuntimeMethod* method) 
-{
-	int32_t V_0 = 0;
-	{
-		int32_t L_0 = __this->___m_LowerBound_0;
-		V_0 = L_0;
-		goto IL_000a;
-	}
-
-IL_000a:
-	{
-		int32_t L_1 = V_0;
-		return L_1;
-	}
-}
-IL2CPP_EXTERN_C  int32_t RenderQueueRange_get_lowerBound_m0F11004DA9B02414047A9DB92275F009487581E4_AdjustorThunk (RuntimeObject* __this, const RuntimeMethod* method)
-{
-	RenderQueueRange_t7518252AA6426B1EA45D3D9B394F304EEF784D71* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<RenderQueueRange_t7518252AA6426B1EA45D3D9B394F304EEF784D71*>(__this + _offset);
-	int32_t _returnValue;
-	_returnValue = RenderQueueRange_get_lowerBound_m0F11004DA9B02414047A9DB92275F009487581E4(_thisAdjusted, method);
-	return _returnValue;
-}
-// System.Int32 UnityEngine.Rendering.RenderQueueRange::get_upperBound()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t RenderQueueRange_get_upperBound_m6A89E9331EE632619B0B71A36B183290C97A1D9F (RenderQueueRange_t7518252AA6426B1EA45D3D9B394F304EEF784D71* __this, const RuntimeMethod* method) 
-{
-	int32_t V_0 = 0;
-	{
-		int32_t L_0 = __this->___m_UpperBound_1;
-		V_0 = L_0;
-		goto IL_000a;
-	}
-
-IL_000a:
-	{
-		int32_t L_1 = V_0;
-		return L_1;
-	}
-}
-IL2CPP_EXTERN_C  int32_t RenderQueueRange_get_upperBound_m6A89E9331EE632619B0B71A36B183290C97A1D9F_AdjustorThunk (RuntimeObject* __this, const RuntimeMethod* method)
-{
-	RenderQueueRange_t7518252AA6426B1EA45D3D9B394F304EEF784D71* _thisAdjusted;
-	int32_t _offset = 1;
-	_thisAdjusted = reinterpret_cast<RenderQueueRange_t7518252AA6426B1EA45D3D9B394F304EEF784D71*>(__this + _offset);
-	int32_t _returnValue;
-	_returnValue = RenderQueueRange_get_upperBound_m6A89E9331EE632619B0B71A36B183290C97A1D9F(_thisAdjusted, method);
-	return _returnValue;
 }
 // System.Boolean UnityEngine.Rendering.RenderQueueRange::Equals(UnityEngine.Rendering.RenderQueueRange)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR bool RenderQueueRange_Equals_m365F88BC7D2E35E08F56821E98DE455689176A88 (RenderQueueRange_t7518252AA6426B1EA45D3D9B394F304EEF784D71* __this, RenderQueueRange_t7518252AA6426B1EA45D3D9B394F304EEF784D71 ___other0, const RuntimeMethod* method) 
@@ -24067,7 +24013,7 @@ IL_003b:
 		(L_16)->SetAt(static_cast<il2cpp_array_size_t>(0), (Type_t*)L_17);
 		NullCheck(L_14);
 		Type_t* L_18;
-		L_18 = VirtualFuncInvoker1< Type_t*, TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB* >::Invoke(117 /* System.Type System.Type::MakeGenericType(System.Type[]) */, L_14, L_16);
+		L_18 = VirtualFuncInvoker1< Type_t*, TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB* >::Invoke(116 /* System.Type System.Type::MakeGenericType(System.Type[]) */, L_14, L_16);
 		V_2 = L_18;
 		Type_t* L_19 = V_2;
 		TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB* L_20 = (TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB*)(TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB*)SZArrayNew(TypeU5BU5D_t97234E1129B564EB38B8D85CAC2AD8B5B9522FFB_il2cpp_TypeInfo_var, (uint32_t)3);
@@ -25335,7 +25281,7 @@ IL_0088:
 		Type_t* L_32 = ___objectType0;
 		NullCheck(L_32);
 		Type_t* L_33;
-		L_33 = VirtualFuncInvoker0< Type_t* >::Invoke(107 /* System.Type System.Type::get_BaseType() */, L_32);
+		L_33 = VirtualFuncInvoker0< Type_t* >::Invoke(106 /* System.Type System.Type::get_BaseType() */, L_32);
 		___objectType0 = L_33;
 	}
 

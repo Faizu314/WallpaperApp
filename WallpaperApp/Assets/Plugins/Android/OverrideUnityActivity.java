@@ -25,8 +25,6 @@ public abstract class OverrideUnityActivity extends UnityPlayerActivity
         UnityPlayer.UnitySendMessage(ANDROID_COMMUNICATOR_GAMEOBJECT, COMMAND_FUNCTION, command);
     }
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -40,6 +38,11 @@ public abstract class OverrideUnityActivity extends UnityPlayerActivity
         instance = null;
     }
 
+    @Override
+    protected String updateUnityCommandLineArguments(String cmdLine) {
+        return cmdLine + " -disable-assembly-updater -disable-gpu-skinning";
+    }
+
     //Here is the interface unity will use to communicate with android
 
     public void ReceiveCommandResult(String commandResult) {
@@ -51,4 +54,5 @@ public abstract class OverrideUnityActivity extends UnityPlayerActivity
     public abstract int GetImageHeight();
     public abstract int GetImageWidth();
     public abstract void OnBackButtonPressed();
+    public abstract void RunWallpaperService();
 }

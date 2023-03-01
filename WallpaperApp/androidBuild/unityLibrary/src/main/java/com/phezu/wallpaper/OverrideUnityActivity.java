@@ -25,8 +25,6 @@ public abstract class OverrideUnityActivity extends UnityPlayerActivity
         UnityPlayer.UnitySendMessage(ANDROID_COMMUNICATOR_GAMEOBJECT, COMMAND_FUNCTION, command);
     }
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -56,4 +54,5 @@ public abstract class OverrideUnityActivity extends UnityPlayerActivity
     public abstract int GetImageHeight();
     public abstract int GetImageWidth();
     public abstract void OnBackButtonPressed();
+    public abstract void RunWallpaperService();
 }

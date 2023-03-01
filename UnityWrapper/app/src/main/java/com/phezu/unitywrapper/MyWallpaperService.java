@@ -17,7 +17,7 @@ public class MyWallpaperService extends WallpaperService {
     public void onCreate() {
         Log.e("ME", "OnServiceCreate");
         super.onCreate();
-        mUnityPlayer = new UnityPlayer(getApplicationContext());
+        mUnityPlayer = new UnityPlayer(this);
 
         Log.e("ME", "Sending Unity a command");
         OverrideUnityActivity.executeCommandInUnity(OverrideUnityActivity.START_AS_WALLPAPER_COMMAND);
@@ -75,6 +75,7 @@ public class MyWallpaperService extends WallpaperService {
         @Override
         public void onDestroy() {
             Log.e("ME", "OnEngineDestroy");
+            mUnityPlayer.quit();
             super.onDestroy();
         }
 

@@ -38,8 +38,13 @@ namespace Wallpaper.Android {
             return m_UnityToAndroidInterface.Call<int>(nameof(GetImageWidth));
         }
 
+        public void RunWallpaperService() {
+            m_UnityToAndroidInterface.Call(nameof(RunWallpaperService));
+        }
+
         public void SendData(string data) {
             m_UnityToAndroidInterface.Call("ReceiveCommandResult", data);
         }
+
     }
 }
